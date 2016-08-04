@@ -1,0 +1,44 @@
+Luke Paulo - HOCKD User Stories
+
+As a user, I want to create a profile to contribute to the site.
+As a user, I want to enter enter info about my profile.
+As a user, I want to be able to upload a profile picture so people know what I look like.
+As a user, I want to be able to select my preferences so I will know when new items matching my likes are posted.
+As a user, I want to receive notifications when items matching my preferences are posted so I can gauge my interest level.
+As a user, I want to be able to post my items to pawn so I can secure a loan.
+As a user, I want to be able to input my item's info and upload pictures to help secure the loan.
+As a user, I want to set what I feel my loan value should be so I can get the appropriate value for it.
+As a user, I want to know if my requested price is reasonable so I will know if it needs adjusting.
+As a user, I want to know if there are similar items to what I'm posting and what they went for so I can know if I need adjusting.
+As a user, I want to receive a notification if someone wants to loan me the money.
+As a user, I want to receive a notification if someone is willing to loan me the money for a different value than I listed.
+As a user, I want to be able to decline any low requests I don't want to pursue.
+As a user, I want to be able to negotiate a fair price for my item if I am low-balled.
+As a user, I want to be able to agree upon the loan amount so I am happy with my loan.
+As a user, I want to be able to receive my pre-paid shipping label in a notification and email message so I can send my item in.
+As a user, I want to receive a notification when my item arrives to the company for review of condition.
+As a user, I want to receive a notification when my item is either accepted or rejected on grounds of matching my description.
+As a user, I want to repay the money.
+As a user, I want to have the option to request a loan extension.
+As a user, I want to receive money direct to my bank account.
+As a user, I want to receive money direct to my PayPal account.
+As a user, I want to pay back the money with a direct transaction from my bank account.
+As a user, I want to pay back the money through my PayPal account.
+As a user, I want to be able to view all current posts up for pawn.
+As a user, I want to be able to filter what is currently posted for a loan by what my preferences are.
+As a user, I want to be able to navigate and view a single post and all relevant info.
+As a user, I want to know if the item's posted loan amount is reasonable given the item's condition and current market value. 
+As a user, I want to be able to offer the loan for an item.
+As a user, I want to be able to offer a different value for the item.
+As a user, I want to receive notifications when my loan offer is accepted.
+As a user, I want to receive notifications when the item reaches the warehouse and is confirmed or rejected as an accurate portrayal of what was posted.
+As a user, I want to receive a notification when my account has been charged.
+As a user, I want to link my profile to my bank account for fast transfers.
+As a user, I want to link my profile to my PayPal account for fast transfers.
+As a user, I want to receive a notification for when my loan has been repaid.
+As a user, I want my loan and interest to go directly to my account.
+As a user, I want to receive a notification if the loan isn't repaid and how long until my item will take to get to me.
+As a user, if requested, I want to have the option to extend my loan for additional interest fees.
+As a user, I want to be able to look up info on how the process works.
+As a user, I want to be able to edit my personal info.
+As a user, I want to be able to invite my friends!
