@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000E028D1D618CD800AD71BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E028C1D618CD800AD71BC /* main.m */; };
+		000E02901D618CD800AD71BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E028F1D618CD800AD71BC /* AppDelegate.m */; };
+		000E02931D618CD800AD71BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02921D618CD800AD71BC /* ViewController.m */; };
+		000E02961D618CD800AD71BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000E02941D618CD800AD71BC /* Main.storyboard */; };
+		000E02981D618CD800AD71BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000E02971D618CD800AD71BC /* Assets.xcassets */; };
+		000E029B1D618CD800AD71BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000E02991D618CD800AD71BC /* LaunchScreen.storyboard */; };
+		000E02A61D618CD800AD71BC /* Hockd_iOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */; };
+		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		000E02A21D618CD800AD71BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000E02801D618CD700AD71BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000E02871D618CD700AD71BC;
+			remoteInfo = "Hockd iOS App";
+		};
+		000E02AD1D618CD800AD71BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000E02801D618CD700AD71BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000E02871D618CD700AD71BC;
+			remoteInfo = "Hockd iOS App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000E02881D618CD700AD71BC /* Hockd iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockd iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000E028C1D618CD800AD71BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		000E028E1D618CD800AD71BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		000E028F1D618CD800AD71BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		000E02911D618CD800AD71BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		000E02921D618CD800AD71BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		000E02951D618CD800AD71BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		000E02971D618CD800AD71BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000E029A1D618CD800AD71BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		000E029C1D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000E02A11D618CD800AD71BC /* Hockd iOS AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockd iOS AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hockd_iOS_AppTests.m; sourceTree = "<group>"; };
+		000E02A71D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000E02AC1D618CD800AD71BC /* Hockd iOS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockd iOS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hockd_iOS_AppUITests.m; sourceTree = "<group>"; };
+		000E02B21D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000E02851D618CD700AD71BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E029E1D618CD800AD71BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E02A91D618CD800AD71BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000E027F1D618CD700AD71BC = {
+			isa = PBXGroup;
+			children = (
+				000E028A1D618CD800AD71BC /* Hockd iOS App */,
+				000E02A41D618CD800AD71BC /* Hockd iOS AppTests */,
+				000E02AF1D618CD800AD71BC /* Hockd iOS AppUITests */,
+				000E02891D618CD700AD71BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000E02891D618CD700AD71BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000E02881D618CD700AD71BC /* Hockd iOS App.app */,
+				000E02A11D618CD800AD71BC /* Hockd iOS AppTests.xctest */,
+				000E02AC1D618CD800AD71BC /* Hockd iOS AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000E028A1D618CD800AD71BC /* Hockd iOS App */ = {
+			isa = PBXGroup;
+			children = (
+				000E028E1D618CD800AD71BC /* AppDelegate.h */,
+				000E028F1D618CD800AD71BC /* AppDelegate.m */,
+				000E02911D618CD800AD71BC /* ViewController.h */,
+				000E02921D618CD800AD71BC /* ViewController.m */,
+				000E02941D618CD800AD71BC /* Main.storyboard */,
+				000E02971D618CD800AD71BC /* Assets.xcassets */,
+				000E02991D618CD800AD71BC /* LaunchScreen.storyboard */,
+				000E029C1D618CD800AD71BC /* Info.plist */,
+				000E028B1D618CD800AD71BC /* Supporting Files */,
+			);
+			path = "Hockd iOS App";
+			sourceTree = "<group>";
+		};
+		000E028B1D618CD800AD71BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				000E028C1D618CD800AD71BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		000E02A41D618CD800AD71BC /* Hockd iOS AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */,
+				000E02A71D618CD800AD71BC /* Info.plist */,
+			);
+			path = "Hockd iOS AppTests";
+			sourceTree = "<group>";
+		};
+		000E02AF1D618CD800AD71BC /* Hockd iOS AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */,
+				000E02B21D618CD800AD71BC /* Info.plist */,
+			);
+			path = "Hockd iOS AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000E02871D618CD700AD71BC /* Hockd iOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000E02B51D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS App" */;
+			buildPhases = (
+				000E02841D618CD700AD71BC /* Sources */,
+				000E02851D618CD700AD71BC /* Frameworks */,
+				000E02861D618CD700AD71BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hockd iOS App";
+			productName = "Hockd iOS App";
+			productReference = 000E02881D618CD700AD71BC /* Hockd iOS App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000E02A01D618CD800AD71BC /* Hockd iOS AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000E02B81D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppTests" */;
+			buildPhases = (
+				000E029D1D618CD800AD71BC /* Sources */,
+				000E029E1D618CD800AD71BC /* Frameworks */,
+				000E029F1D618CD800AD71BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000E02A31D618CD800AD71BC /* PBXTargetDependency */,
+			);
+			name = "Hockd iOS AppTests";
+			productName = "Hockd iOS AppTests";
+			productReference = 000E02A11D618CD800AD71BC /* Hockd iOS AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		000E02AB1D618CD800AD71BC /* Hockd iOS AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000E02BB1D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppUITests" */;
+			buildPhases = (
+				000E02A81D618CD800AD71BC /* Sources */,
+				000E02A91D618CD800AD71BC /* Frameworks */,
+				000E02AA1D618CD800AD71BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000E02AE1D618CD800AD71BC /* PBXTargetDependency */,
+			);
+			name = "Hockd iOS AppUITests";
+			productName = "Hockd iOS AppUITests";
+			productReference = 000E02AC1D618CD800AD71BC /* Hockd iOS AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000E02801D618CD700AD71BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = HOCKD;
+				TargetAttributes = {
+					000E02871D618CD700AD71BC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4UJ46XA4Z7;
+					};
+					000E02A01D618CD800AD71BC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 000E02871D618CD700AD71BC;
+					};
+					000E02AB1D618CD800AD71BC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 000E02871D618CD700AD71BC;
+					};
+				};
+			};
+			buildConfigurationList = 000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hockd iOS App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000E027F1D618CD700AD71BC;
+			productRefGroup = 000E02891D618CD700AD71BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000E02871D618CD700AD71BC /* Hockd iOS App */,
+				000E02A01D618CD800AD71BC /* Hockd iOS AppTests */,
+				000E02AB1D618CD800AD71BC /* Hockd iOS AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000E02861D618CD700AD71BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000E029B1D618CD800AD71BC /* LaunchScreen.storyboard in Resources */,
+				000E02981D618CD800AD71BC /* Assets.xcassets in Resources */,
+				000E02961D618CD800AD71BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E029F1D618CD800AD71BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E02AA1D618CD800AD71BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000E02841D618CD700AD71BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000E02931D618CD800AD71BC /* ViewController.m in Sources */,
+				000E02901D618CD800AD71BC /* AppDelegate.m in Sources */,
+				000E028D1D618CD800AD71BC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E029D1D618CD800AD71BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000E02A61D618CD800AD71BC /* Hockd_iOS_AppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000E02A81D618CD800AD71BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		000E02A31D618CD800AD71BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000E02871D618CD700AD71BC /* Hockd iOS App */;
+			targetProxy = 000E02A21D618CD800AD71BC /* PBXContainerItemProxy */;
+		};
+		000E02AE1D618CD800AD71BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000E02871D618CD700AD71BC /* Hockd iOS App */;
+			targetProxy = 000E02AD1D618CD800AD71BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		000E02941D618CD800AD71BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				000E02951D618CD800AD71BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		000E02991D618CD800AD71BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				000E029A1D618CD800AD71BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		000E02B31D618CD800AD71BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		000E02B41D618CD800AD71BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		000E02B61D618CD800AD71BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Hockd iOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		000E02B71D618CD800AD71BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Hockd iOS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		000E02B91D618CD800AD71BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Hockd iOS AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockd iOS App.app/Hockd iOS App";
+			};
+			name = Debug;
+		};
+		000E02BA1D618CD800AD71BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Hockd iOS AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockd iOS App.app/Hockd iOS App";
+			};
+			name = Release;
+		};
+		000E02BC1D618CD800AD71BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Hockd iOS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Hockd iOS App";
+			};
+			name = Debug;
+		};
+		000E02BD1D618CD800AD71BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Hockd iOS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Hockd iOS App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hockd iOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000E02B31D618CD800AD71BC /* Debug */,
+				000E02B41D618CD800AD71BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000E02B51D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000E02B61D618CD800AD71BC /* Debug */,
+				000E02B71D618CD800AD71BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		000E02B81D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000E02B91D618CD800AD71BC /* Debug */,
+				000E02BA1D618CD800AD71BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		000E02BB1D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000E02BC1D618CD800AD71BC /* Debug */,
+				000E02BD1D618CD800AD71BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000E02801D618CD700AD71BC /* Project object */;
+}
