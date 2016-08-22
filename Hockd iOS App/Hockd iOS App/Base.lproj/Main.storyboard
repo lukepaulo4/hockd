@@ -120,5 +120,119 @@
             </objects>
             <point key="canvasLocation" x="245" y="308"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="qnS-BC-k8c">
+            <objects>
+                <viewController id="yXH-0p-ysR" customClass="ForgotPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j1t-eS-HM3"/>
+                        <viewControllerLayoutGuide type="bottom" id="PRx-7D-xXT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jVH-uP-sHk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4I-aS-9sf">
+                                <rect key="frame" x="75" y="271" width="118" height="19"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-aa-CpG">
+                                <rect key="frame" x="20" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="ZZt-hZ-TtN"/>
+                                    <action selector="forgotPasswordButtonPressed:" destination="yXH-0p-ysR" eventType="touchUpInside" id="dIq-hV-bI5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83x-CS-Vz3">
+                                <rect key="frame" x="75" y="233" width="450" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterEmailTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="adk-L7-3ld"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="RdU-cW-zZX"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nc-GA-dKH">
+                                <rect key="frame" x="154" y="28" width="293" height="57"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <color key="textColor" red="0.94999998809999997" green="0.33467579489999999" blue="0.63659735070000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecurityQuestion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opG-Wl-VMX">
+                                <rect key="frame" x="75" y="191" width="118" height="19"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-NU-eAd">
+                                <rect key="frame" x="323" y="313" width="202" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Send Temporary Password"/>
+                                <connections>
+                                    <action selector="sendTempPassButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="faU-6r-b0K"/>
+                                    <action selector="submitButtonPressed:" destination="yXH-0p-ysR" eventType="touchUpInside" id="JTJ-WG-itj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yij-4P-ZOx">
+                                <rect key="frame" x="75" y="153" width="450" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="securityQuestionTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="aKy-X5-EDw"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="c2V-Yq-7ql"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="top" secondItem="8nc-GA-dKH" secondAttribute="bottom" constant="68" id="3TE-OC-Ukt"/>
+                            <constraint firstItem="83x-CS-Vz3" firstAttribute="top" secondItem="Yij-4P-ZOx" secondAttribute="bottom" constant="50" id="3Ti-wk-O13"/>
+                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="leading" secondItem="jVH-uP-sHk" secondAttribute="leadingMargin" constant="55" id="4rb-q0-arv"/>
+                            <constraint firstItem="J4I-aS-9sf" firstAttribute="width" secondItem="opG-Wl-VMX" secondAttribute="width" id="5TC-e7-cBQ"/>
+                            <constraint firstItem="8nc-GA-dKH" firstAttribute="centerX" secondItem="jVH-uP-sHk" secondAttribute="centerX" id="5xy-ba-fdw"/>
+                            <constraint firstItem="opG-Wl-VMX" firstAttribute="top" secondItem="Yij-4P-ZOx" secondAttribute="bottom" constant="8" id="EYT-5o-Xqz"/>
+                            <constraint firstItem="83x-CS-Vz3" firstAttribute="centerX" secondItem="Yij-4P-ZOx" secondAttribute="centerX" id="Eee-VM-5uG"/>
+                            <constraint firstItem="xF8-NU-eAd" firstAttribute="top" secondItem="83x-CS-Vz3" secondAttribute="bottom" constant="50" id="Era-Yt-x3h"/>
+                            <constraint firstItem="83x-CS-Vz3" firstAttribute="width" secondItem="Yij-4P-ZOx" secondAttribute="width" id="JtO-rz-0L0"/>
+                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="centerX" secondItem="8nc-GA-dKH" secondAttribute="centerX" id="MS8-bS-K9X"/>
+                            <constraint firstItem="J4I-aS-9sf" firstAttribute="leading" secondItem="83x-CS-Vz3" secondAttribute="leading" id="RSb-cM-9H5"/>
+                            <constraint firstItem="opG-Wl-VMX" firstAttribute="leading" secondItem="Yij-4P-ZOx" secondAttribute="leading" id="UBq-x5-tCQ"/>
+                            <constraint firstItem="J4I-aS-9sf" firstAttribute="top" secondItem="83x-CS-Vz3" secondAttribute="bottom" constant="8" id="dxp-LQ-3qw"/>
+                            <constraint firstItem="8nc-GA-dKH" firstAttribute="top" secondItem="j1t-eS-HM3" secondAttribute="bottom" constant="8" id="fLf-5U-gnJ"/>
+                            <constraint firstItem="PRx-7D-xXT" firstAttribute="top" secondItem="QUr-aa-CpG" secondAttribute="bottom" constant="20" id="jLn-vd-137"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QUr-aa-CpG" secondAttribute="leading" id="lUL-V8-dWQ"/>
+                            <constraint firstItem="xF8-NU-eAd" firstAttribute="trailing" secondItem="83x-CS-Vz3" secondAttribute="trailing" id="zGJ-F4-sJv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yij-4P-ZOx" secondAttribute="trailing" constant="55" id="zwM-if-nNs"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hae-1d-J14" appends="YES" id="Gyw-kD-shk"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="enterEmailLabel" destination="J4I-aS-9sf" id="LZ0-pp-GEK"/>
+                        <outlet property="enterEmailTextField" destination="83x-CS-Vz3" id="TIE-QO-8IS"/>
+                        <outlet property="forgotPasswordLabel" destination="8nc-GA-dKH" id="GPB-PZ-K3p"/>
+                        <outlet property="loginLabel" destination="8nc-GA-dKH" id="0I4-kC-wT9"/>
+                        <outlet property="passwordLabel" destination="J4I-aS-9sf" id="iPM-Ik-8n6"/>
+                        <outlet property="passwordTextField" destination="83x-CS-Vz3" id="Zqi-Va-M07"/>
+                        <outlet property="securityQuestionLabel" destination="opG-Wl-VMX" id="6NG-Hc-Idn"/>
+                        <outlet property="securityQuestionTextField" destination="Yij-4P-ZOx" id="y87-zH-62S"/>
+                        <outlet property="usernameLabel" destination="opG-Wl-VMX" id="vJF-gY-PK0"/>
+                        <outlet property="usernameTextField" destination="Yij-4P-ZOx" id="CAU-WD-V3j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzw-H7-sra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hae-1d-J14">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="yXH-0p-ysR" id="Rfx-Bx-3Lw"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="245" y="1026"/>
+        </scene>
     </scenes>
 </document>

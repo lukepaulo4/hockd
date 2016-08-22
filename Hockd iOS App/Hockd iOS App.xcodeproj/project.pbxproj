@@ -15,6 +15,7 @@
 		000E029B1D618CD800AD71BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000E02991D618CD800AD71BC /* LaunchScreen.storyboard */; };
 		000E02A61D618CD800AD71BC /* Hockd_iOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */; };
 		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
+		000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		000E02AC1D618CD800AD71BC /* Hockd iOS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockd iOS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hockd_iOS_AppUITests.m; sourceTree = "<group>"; };
 		000E02B21D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				000E028F1D618CD800AD71BC /* AppDelegate.m */,
 				000E02911D618CD800AD71BC /* LoginViewController.h */,
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
+				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
+				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
 				000E02971D618CD800AD71BC /* Assets.xcassets */,
 				000E02991D618CD800AD71BC /* LaunchScreen.storyboard */,
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				000E02901D618CD800AD71BC /* AppDelegate.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
@@ -501,6 +507,7 @@
 				000E02B71D618CD800AD71BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		000E02B81D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +516,7 @@
 				000E02BA1D618CD800AD71BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		000E02BB1D618CD800AD71BC /* Build configuration list for PBXNativeTarget "Hockd iOS AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +525,7 @@
 				000E02BD1D618CD800AD71BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
