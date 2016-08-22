@@ -39,11 +39,11 @@
 }
 
 - (IBAction)usernameTextFieldDidChange:(UITextField *)sender {
-    NSString *usernameText = sender.text;
+    //NSString *usernameText = sender.text;
 }
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
-    NSString *passwordText = sender.text;
+    //NSString *passwordText = sender.text;
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
