@@ -29,7 +29,7 @@
                                 <state key="normal" title="Forgot Password"/>
                                 <connections>
                                     <action selector="forgotPasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hz0-GL-owr"/>
-                                    <segue destination="yXH-0p-ysR" kind="show" id="joW-ar-TTv"/>
+                                    <segue destination="yXH-0p-ysR" kind="show" id="LDf-Xl-G3Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-n6-j0C">
@@ -134,97 +134,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4I-aS-9sf">
-                                <rect key="frame" x="75" y="271" width="118" height="19"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-aa-CpG">
-                                <rect key="frame" x="20" y="550" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="ZZt-hZ-TtN"/>
-                                    <action selector="forgotPasswordButtonPressed:" destination="yXH-0p-ysR" eventType="touchUpInside" id="dIq-hV-bI5"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="83x-CS-Vz3">
-                                <rect key="frame" x="75" y="233" width="450" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enterEmailTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="adk-L7-3ld"/>
-                                    <action selector="passwordTextFieldDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="RdU-cW-zZX"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nc-GA-dKH">
-                                <rect key="frame" x="154" y="28" width="293" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-4i-A89">
+                                <rect key="frame" x="154" y="72" width="293" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.94999998809999997" green="0.33467579489999999" blue="0.63659735070000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecurityQuestion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opG-Wl-VMX">
-                                <rect key="frame" x="75" y="191" width="118" height="19"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-Ck-0GD">
+                                <rect key="frame" x="75" y="197" width="451" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="securityQuestionTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="IX8-L8-5Ro"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-Ac-nDC">
+                                <rect key="frame" x="75" y="277" width="451" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enterEmailTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="lbU-Id-Ve8"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-Kw-Q9V">
+                                <rect key="frame" x="75" y="235" width="122" height="19"/>
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xF8-NU-eAd">
-                                <rect key="frame" x="323" y="313" width="202" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Send Temporary Password"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRt-ah-PXd">
+                                <rect key="frame" x="75" y="315" width="122" height="19"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjs-z7-TMZ">
+                                <rect key="frame" x="20" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="sendTempPassButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="faU-6r-b0K"/>
-                                    <action selector="submitButtonPressed:" destination="yXH-0p-ysR" eventType="touchUpInside" id="JTJ-WG-itj"/>
+                                    <action selector="backButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="qAa-nZ-snI"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yij-4P-ZOx">
-                                <rect key="frame" x="75" y="153" width="450" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqM-dM-zjq">
+                                <rect key="frame" x="209" y="357" width="183" height="30"/>
+                                <state key="normal" title="Send Temporary Password"/>
                                 <connections>
-                                    <action selector="securityQuestionTextDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="aKy-X5-EDw"/>
-                                    <action selector="usernameTextFieldDidChange:" destination="yXH-0p-ysR" eventType="editingChanged" id="c2V-Yq-7ql"/>
+                                    <action selector="sendTempPassButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="8r0-PU-BxA"/>
                                 </connections>
-                            </textField>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="top" secondItem="8nc-GA-dKH" secondAttribute="bottom" constant="68" id="3TE-OC-Ukt"/>
-                            <constraint firstItem="83x-CS-Vz3" firstAttribute="top" secondItem="Yij-4P-ZOx" secondAttribute="bottom" constant="50" id="3Ti-wk-O13"/>
-                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="leading" secondItem="jVH-uP-sHk" secondAttribute="leadingMargin" constant="55" id="4rb-q0-arv"/>
-                            <constraint firstItem="J4I-aS-9sf" firstAttribute="width" secondItem="opG-Wl-VMX" secondAttribute="width" id="5TC-e7-cBQ"/>
-                            <constraint firstItem="8nc-GA-dKH" firstAttribute="centerX" secondItem="jVH-uP-sHk" secondAttribute="centerX" id="5xy-ba-fdw"/>
-                            <constraint firstItem="opG-Wl-VMX" firstAttribute="top" secondItem="Yij-4P-ZOx" secondAttribute="bottom" constant="8" id="EYT-5o-Xqz"/>
-                            <constraint firstItem="83x-CS-Vz3" firstAttribute="centerX" secondItem="Yij-4P-ZOx" secondAttribute="centerX" id="Eee-VM-5uG"/>
-                            <constraint firstItem="xF8-NU-eAd" firstAttribute="top" secondItem="83x-CS-Vz3" secondAttribute="bottom" constant="50" id="Era-Yt-x3h"/>
-                            <constraint firstItem="83x-CS-Vz3" firstAttribute="width" secondItem="Yij-4P-ZOx" secondAttribute="width" id="JtO-rz-0L0"/>
-                            <constraint firstItem="Yij-4P-ZOx" firstAttribute="centerX" secondItem="8nc-GA-dKH" secondAttribute="centerX" id="MS8-bS-K9X"/>
-                            <constraint firstItem="J4I-aS-9sf" firstAttribute="leading" secondItem="83x-CS-Vz3" secondAttribute="leading" id="RSb-cM-9H5"/>
-                            <constraint firstItem="opG-Wl-VMX" firstAttribute="leading" secondItem="Yij-4P-ZOx" secondAttribute="leading" id="UBq-x5-tCQ"/>
-                            <constraint firstItem="J4I-aS-9sf" firstAttribute="top" secondItem="83x-CS-Vz3" secondAttribute="bottom" constant="8" id="dxp-LQ-3qw"/>
-                            <constraint firstItem="8nc-GA-dKH" firstAttribute="top" secondItem="j1t-eS-HM3" secondAttribute="bottom" constant="8" id="fLf-5U-gnJ"/>
-                            <constraint firstItem="PRx-7D-xXT" firstAttribute="top" secondItem="QUr-aa-CpG" secondAttribute="bottom" constant="20" id="jLn-vd-137"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="QUr-aa-CpG" secondAttribute="leading" id="lUL-V8-dWQ"/>
-                            <constraint firstItem="xF8-NU-eAd" firstAttribute="trailing" secondItem="83x-CS-Vz3" secondAttribute="trailing" id="zGJ-F4-sJv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yij-4P-ZOx" secondAttribute="trailing" constant="55" id="zwM-if-nNs"/>
+                            <constraint firstItem="Z34-Kw-Q9V" firstAttribute="leading" secondItem="n0C-Ck-0GD" secondAttribute="leading" id="6hF-sj-dGO"/>
+                            <constraint firstItem="n0C-Ck-0GD" firstAttribute="leading" secondItem="jVH-uP-sHk" secondAttribute="leadingMargin" constant="55" id="7wi-Df-0Yb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n0C-Ck-0GD" secondAttribute="trailing" constant="54" id="AX2-Hr-geb"/>
+                            <constraint firstItem="kLc-Ac-nDC" firstAttribute="width" secondItem="n0C-Ck-0GD" secondAttribute="width" id="Epc-D4-vwr"/>
+                            <constraint firstItem="YRt-ah-PXd" firstAttribute="width" secondItem="Z34-Kw-Q9V" secondAttribute="width" id="H4R-1F-aWe"/>
+                            <constraint firstItem="o4T-4i-A89" firstAttribute="centerX" secondItem="jVH-uP-sHk" secondAttribute="centerX" id="H7a-58-Wjg"/>
+                            <constraint firstItem="kLc-Ac-nDC" firstAttribute="centerX" secondItem="n0C-Ck-0GD" secondAttribute="centerX" id="JB1-oj-s5E"/>
+                            <constraint firstItem="RqM-dM-zjq" firstAttribute="trailing" secondItem="kLc-Ac-nDC" secondAttribute="trailing" id="Q4k-5w-AhN"/>
+                            <constraint firstItem="RqM-dM-zjq" firstAttribute="top" secondItem="kLc-Ac-nDC" secondAttribute="bottom" constant="50" id="QD2-Pb-AFv"/>
+                            <constraint firstItem="PRx-7D-xXT" firstAttribute="top" secondItem="Jjs-z7-TMZ" secondAttribute="bottom" constant="20" id="blC-3d-tMr"/>
+                            <constraint firstItem="n0C-Ck-0GD" firstAttribute="centerX" secondItem="o4T-4i-A89" secondAttribute="centerX" id="cWg-Ai-e0g"/>
+                            <constraint firstItem="YRt-ah-PXd" firstAttribute="top" secondItem="kLc-Ac-nDC" secondAttribute="bottom" constant="8" id="eFi-nw-DNk"/>
+                            <constraint firstItem="RqM-dM-zjq" firstAttribute="centerX" secondItem="kLc-Ac-nDC" secondAttribute="centerX" id="iEH-fT-WMk"/>
+                            <constraint firstItem="n0C-Ck-0GD" firstAttribute="top" secondItem="o4T-4i-A89" secondAttribute="bottom" constant="68" id="iMZ-6o-h20"/>
+                            <constraint firstItem="o4T-4i-A89" firstAttribute="top" secondItem="j1t-eS-HM3" secondAttribute="bottom" constant="8" id="iy0-qI-Qvc"/>
+                            <constraint firstItem="kLc-Ac-nDC" firstAttribute="top" secondItem="n0C-Ck-0GD" secondAttribute="bottom" constant="50" id="jLk-Ug-Ch7"/>
+                            <constraint firstItem="o4T-4i-A89" firstAttribute="centerX" secondItem="jVH-uP-sHk" secondAttribute="centerX" id="jnv-2Z-2mg"/>
+                            <constraint firstItem="YRt-ah-PXd" firstAttribute="leading" secondItem="kLc-Ac-nDC" secondAttribute="leading" id="nw2-p8-Ilj"/>
+                            <constraint firstItem="n0C-Ck-0GD" firstAttribute="leading" secondItem="jVH-uP-sHk" secondAttribute="leadingMargin" constant="55" id="omP-Sk-2k0"/>
+                            <constraint firstItem="Z34-Kw-Q9V" firstAttribute="top" secondItem="n0C-Ck-0GD" secondAttribute="bottom" constant="8" id="qh5-oc-SZ0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o4T-4i-A89" secondAttribute="trailing" constant="134" id="xG6-i1-3pF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n0C-Ck-0GD" secondAttribute="trailing" constant="55" id="xli-16-OiX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Jjs-z7-TMZ" secondAttribute="leading" id="z61-SB-lzL"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jnv-2Z-2mg"/>
+                                <exclude reference="xG6-i1-3pF"/>
+                                <exclude reference="omP-Sk-2k0"/>
+                                <exclude reference="xli-16-OiX"/>
+                                <exclude reference="Q4k-5w-AhN"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hae-1d-J14" appends="YES" id="Gyw-kD-shk"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="enterEmailLabel" destination="J4I-aS-9sf" id="LZ0-pp-GEK"/>
-                        <outlet property="enterEmailTextField" destination="83x-CS-Vz3" id="TIE-QO-8IS"/>
-                        <outlet property="forgotPasswordLabel" destination="8nc-GA-dKH" id="GPB-PZ-K3p"/>
-                        <outlet property="loginLabel" destination="8nc-GA-dKH" id="0I4-kC-wT9"/>
-                        <outlet property="passwordLabel" destination="J4I-aS-9sf" id="iPM-Ik-8n6"/>
-                        <outlet property="passwordTextField" destination="83x-CS-Vz3" id="Zqi-Va-M07"/>
-                        <outlet property="securityQuestionLabel" destination="opG-Wl-VMX" id="6NG-Hc-Idn"/>
-                        <outlet property="securityQuestionTextField" destination="Yij-4P-ZOx" id="y87-zH-62S"/>
-                        <outlet property="usernameLabel" destination="opG-Wl-VMX" id="vJF-gY-PK0"/>
-                        <outlet property="usernameTextField" destination="Yij-4P-ZOx" id="CAU-WD-V3j"/>
+                        <outlet property="enterEmailLabel" destination="YRt-ah-PXd" id="fex-4f-6xj"/>
+                        <outlet property="enterEmailTextField" destination="kLc-Ac-nDC" id="wv9-2V-cF6"/>
+                        <outlet property="forgotPasswordLabel" destination="o4T-4i-A89" id="BlR-gK-nMi"/>
+                        <outlet property="securityQuestionLabel" destination="Z34-Kw-Q9V" id="nHw-VU-8fY"/>
+                        <outlet property="securityQuestionTextField" destination="n0C-Ck-0GD" id="jpU-mv-hgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzw-H7-sra" userLabel="First Responder" sceneMemberID="firstResponder"/>
