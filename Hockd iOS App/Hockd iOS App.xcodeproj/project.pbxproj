@@ -16,6 +16,11 @@
 		000E02A61D618CD800AD71BC /* Hockd_iOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */; };
 		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
 		000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */; };
+		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
+		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
+		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
+		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
+		00A100E41D6D971D00ADDBCF /* PawnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* PawnViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,16 @@
 		000E02B21D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
+		00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemsViewController.m; sourceTree = "<group>"; };
+		00A100D91D6D968200ADDBCF /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		00A100DA1D6D968200ADDBCF /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		00A100E21D6D971D00ADDBCF /* PawnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PawnViewController.h; sourceTree = "<group>"; };
+		00A100E31D6D971D00ADDBCF /* PawnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PawnViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +125,16 @@
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
+				00A100D31D6D954700ADDBCF /* SearchViewController.h */,
+				00A100D41D6D954700ADDBCF /* SearchViewController.m */,
+				00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */,
+				00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */,
+				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
+				00A100DA1D6D968200ADDBCF /* MessagesViewController.m */,
+				00A100E21D6D971D00ADDBCF /* PawnViewController.h */,
+				00A100E31D6D971D00ADDBCF /* PawnViewController.m */,
+				00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */,
+				00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
 				000E02971D618CD800AD71BC /* Assets.xcassets */,
 				000E02991D618CD800AD71BC /* LaunchScreen.storyboard */,
@@ -277,9 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */,
+				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
+				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
+				00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */,
 				000E02901D618CD800AD71BC /* AppDelegate.m in Sources */,
+				00A100E41D6D971D00ADDBCF /* PawnViewController.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
+				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
