@@ -21,6 +21,7 @@
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
 		00A100E41D6D971D00ADDBCF /* PawnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* PawnViewController.m */; };
+		00F499561D76BBA600641ACE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499551D76BBA600641ACE /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		00A100E21D6D971D00ADDBCF /* PawnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PawnViewController.h; sourceTree = "<group>"; };
 		00A100E31D6D971D00ADDBCF /* PawnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PawnViewController.m; sourceTree = "<group>"; };
+		00F499541D76BBA600641ACE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		00F499551D76BBA600641ACE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				000E028E1D618CD800AD71BC /* AppDelegate.h */,
 				000E028F1D618CD800AD71BC /* AppDelegate.m */,
+				00F499541D76BBA600641ACE /* User.h */,
+				00F499551D76BBA600641ACE /* User.m */,
 				000E02911D618CD800AD71BC /* LoginViewController.h */,
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
@@ -301,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F499561D76BBA600641ACE /* User.m in Sources */,
 				000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */,
 				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
