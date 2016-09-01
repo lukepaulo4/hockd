@@ -11,4 +11,7 @@
 
 @implementation Item
 
+-(void)test {
+    self.status = underPawn;
+}
 @end

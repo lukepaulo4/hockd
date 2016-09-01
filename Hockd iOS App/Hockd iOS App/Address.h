@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class User;
 
 @interface Address : NSObject
 
-//Array of automated messages that will populate the message. These will be set and just for notification/update purposes. Does this make sense? Does a User class property need to be stored in here? Or does it make more sense when building the message to just use the username/profile pic from user, then pull a string message from here? 
-@property (nonatomic, strong) NSString *automatedMessage;
+//Does it make sense to separate out the address? OR shoulld this just be included with the user class?
+@property (nonatomic, strong) NSString *idNumber;
+@property (nonatomic, strong) User *user;
+
+@property (nonatomic, strong) NSString *addressLineOne;
+@property (nonatomic, strong) NSString *addressLineTwo;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *zip;
 
 @end

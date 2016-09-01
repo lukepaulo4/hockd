@@ -10,6 +10,16 @@
 
 @class User;
 
+
+typedef NS_ENUM(NSUInteger, ItemStatus) {
+    inReview,
+    posted,
+    receivedOffer,
+    underPawn,
+    pawnRepayed,
+    pawnFaulted
+};
+
 @interface Item : NSObject
 
 //List all the data this class should store about an 'item'
@@ -60,8 +70,7 @@
 }
  Should these be represented and set equal to #s? Similar to how we did the Like status? This way can easily write if/for statements? Or probably define them as strings here, then can set to #s in the implementation?
  */
-@property (nonatomic, strong) NSString *itemStatus;
-
+@property (nonatomic, assign) ItemStatus status;
 
 
 @end

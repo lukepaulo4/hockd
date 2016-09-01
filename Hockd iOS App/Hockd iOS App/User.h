@@ -10,7 +10,7 @@
 
 @interface User : NSObject
 
-//List all of the data this class should store about the user. When doing the Blocstagram, we used NSString for idNumber. However, many data models I saw used 'int' for the id type?
+//List all of the data this class should store about the user. When doing the Blocstagram, we used NSString for idNumber. However, many data models I saw used 'int' for the id type? Receive as string.... 
 @property (nonatomic, strong) NSString *idNumber;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *email;
