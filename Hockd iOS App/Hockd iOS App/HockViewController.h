@@ -1,5 +1,5 @@
 //
-//  PawnViewController.h
+//  HockViewController.h
 //  Hockd iOS App
 //
 //  Created by Luke Paulo on 8/24/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PawnViewController : UIViewController
+@interface HockViewController : UIViewController
 
 @end

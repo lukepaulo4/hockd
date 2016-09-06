@@ -383,8 +383,16 @@
                                                     <rect key="frame" x="300" y="0.0" width="150" height="128"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MyJ-w9-Xzt" firstAttribute="leading" secondItem="3VH-1F-TuC" secondAttribute="trailing" id="Dzi-Se-DM6"/>
+                                                <constraint firstItem="osz-5C-5La" firstAttribute="leading" secondItem="MyJ-w9-Xzt" secondAttribute="trailing" id="WLC-8H-Er2"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9lY-sk-BrP" firstAttribute="leading" secondItem="vVz-N5-arA" secondAttribute="leadingMargin" constant="60" id="4dv-xY-OI8"/>
+                                        <constraint firstItem="3VH-1F-TuC" firstAttribute="leading" secondItem="vVz-N5-arA" secondAttribute="leadingMargin" constant="60" id="q89-5N-Lea"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -399,10 +407,10 @@
             </objects>
             <point key="canvasLocation" x="3896" y="332"/>
         </scene>
-        <!--Pawn-->
+        <!--Hock-->
         <scene sceneID="9hA-qP-boq">
             <objects>
-                <viewController id="Ib1-ra-rju" customClass="PawnViewController" sceneMemberID="viewController">
+                <viewController title="Hock" id="Ib1-ra-rju" customClass="HockViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lGz-Gw-MWb"/>
                         <viewControllerLayoutGuide type="bottom" id="Pwv-BB-S2Z"/>
@@ -412,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pawn" id="vRb-WO-apc"/>
+                    <navigationItem key="navigationItem" title="Hock" id="vRb-WO-apc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiQ-w6-fR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,11 +698,11 @@
             </objects>
             <point key="canvasLocation" x="1800" y="2021"/>
         </scene>
-        <!--PAWN-->
+        <!--HOCK-->
         <scene sceneID="Bh5-g2-mRz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PAWN" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
+                <navigationController title="HOCK" automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HOCK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZd-yG-VEp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

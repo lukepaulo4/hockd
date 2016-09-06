@@ -1,18 +1,18 @@
 //
-//  PawnViewController.m
+//  HockViewController.m
 //  Hockd iOS App
 //
 //  Created by Luke Paulo on 8/24/16.
 //  Copyright © 2016 HOCKD. All rights reserved.
 //
 
-#import "PawnViewController.h"
+#import "HockViewController.h"
 
-@interface PawnViewController ()
+@interface HockViewController ()
 
 @end
 
-@implementation PawnViewController
+@implementation HockViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
