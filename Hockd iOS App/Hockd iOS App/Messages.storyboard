@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LDR-sH-cAi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages-->
+        <scene sceneID="eoF-ER-ggY">
+            <objects>
+                <tableViewController id="Ak8-ks-dAX" customClass="MessagesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="236" sectionHeaderHeight="28" sectionFooterHeight="28" id="RSB-Dj-FiC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="236" id="Fpn-F0-TLE">
+                                <rect key="frame" x="0.0" y="92" width="600" height="236"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fpn-F0-TLE" id="vVz-N5-arA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-OB-3JK">
+                                            <rect key="frame" x="68" y="9" width="268" height="17"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Item Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lY-sk-BrP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mft-1w-vxv">
+                                                    <rect key="frame" x="134" y="0.0" width="134" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AoI-Qj-K77">
+                                            <rect key="frame" x="68" y="85" width="450" height="128"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-1F-TuC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MyJ-w9-Xzt">
+                                                    <rect key="frame" x="150" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osz-5C-5La">
+                                                    <rect key="frame" x="300" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MyJ-w9-Xzt" firstAttribute="leading" secondItem="3VH-1F-TuC" secondAttribute="trailing" id="Dzi-Se-DM6"/>
+                                                <constraint firstItem="osz-5C-5La" firstAttribute="leading" secondItem="MyJ-w9-Xzt" secondAttribute="trailing" id="WLC-8H-Er2"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9lY-sk-BrP" firstAttribute="leading" secondItem="vVz-N5-arA" secondAttribute="leadingMargin" constant="60" id="4dv-xY-OI8"/>
+                                        <constraint firstItem="3VH-1F-TuC" firstAttribute="leading" secondItem="vVz-N5-arA" secondAttribute="leadingMargin" constant="60" id="q89-5N-Lea"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ak8-ks-dAX" id="7rX-Z4-JLe"/>
+                            <outlet property="delegate" destination="Ak8-ks-dAX" id="iLb-rT-Dox"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Messages" id="rLy-0I-Joq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9O-s6-Q36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3896" y="332"/>
+        </scene>
+        <!--MESSAGES-->
+        <scene sceneID="AtO-ii-SPN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-sH-cAi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MESSAGES" image="Messages" selectedImage="Messages" id="nA2-bA-3HM"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GaM-d3-q5T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ak8-ks-dAX" kind="relationship" relationship="rootViewController" id="ARq-2D-nTO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAW-2f-eFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="332"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Messages" width="25" height="25"/>
+    </resources>
+</document>
