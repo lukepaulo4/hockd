@@ -1,18 +1,18 @@
 //
-//  HockViewController.m
-//  Hockd iOS App
+//  HokViewController.m
+//  Hokd iOS App
 //
 //  Created by Luke Paulo on 8/24/16.
-//  Copyright © 2016 HOCKD. All rights reserved.
+//  Copyright © 2016 HOKD. All rights reserved.
 //
 
-#import "HockViewController.h"
+#import "HokViewController.h"
 
-@interface HockViewController ()
+@interface HokViewController ()
 
 @end
 
-@implementation HockViewController
+@implementation HokViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

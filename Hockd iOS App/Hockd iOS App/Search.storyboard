@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1515.5" y="917"/>
         </scene>
-        <!--Hock-->
+        <!--Hok-->
         <scene sceneID="K1N-QM-bbY">
             <objects>
-                <viewControllerPlaceholder storyboardName="Hock" id="Hl2-xZ-GOE" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Hok" id="Hl2-xZ-GOE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="xPb-0L-4Wn"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-OI-LSw" userLabel="First Responder" sceneMemberID="firstResponder"/>

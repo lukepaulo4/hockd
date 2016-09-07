@@ -1,14 +1,16 @@
 //
 //  SettingsViewController.m
-//  Hockd iOS App
+//  Hokd iOS App
 //
 //  Created by Luke Paulo on 8/24/16.
-//  Copyright © 2016 HOCKD. All rights reserved.
+//  Copyright © 2016 HOKD. All rights reserved.
 //
 
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *settings;
 
 @end
 
@@ -29,17 +31,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (IBAction)helpAndSupportButton:(UIButton *)sender {
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (IBAction)profileButton:(UIButton *)sender {
 }
+
+- (IBAction)funHokdFactsButton:(UIButton *)sender {
+}
+
+- (IBAction)giveUsFeedbackButton:(UIButton *)sender {
+}
+
+- (IBAction)inviteYourFriendsButton:(UIButton *)sender {
+}
+
+
+//#pragma mark - Table view data source
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 0;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

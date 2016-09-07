@@ -1,9 +1,9 @@
 //
 //  DataSource.h
-//  Hockd iOS App
+//  Hokd iOS App
 //
 //  Created by Luke Paulo on 8/31/16.
-//  Copyright © 2016 HOCKD. All rights reserved.
+//  Copyright © 2016 HOKD. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

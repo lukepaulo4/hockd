@@ -54,6 +54,9 @@
                                                     <state key="normal" title="HELP &amp; SUPPORT">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="helpAndSupportButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="Sa2-DD-qyd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -99,6 +102,9 @@
                                                             <exclude reference="6c0-pU-VT9"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="profileButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="cjo-Ez-PsL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -115,12 +121,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-VD-aZU">
-                                                    <rect key="frame" x="211" y="4" width="179" height="37"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-VD-aZU">
+                                                    <rect key="frame" x="207" y="4" width="188" height="37"/>
                                                     <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="FUN PAWN FACTS">
+                                                    <state key="normal" title="FUN HOKD FACTS">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="funHokdFactsButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="xcH-Ww-YlC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -142,6 +151,9 @@
                                                     <state key="normal" title="GIVE US FEEDBACK">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="giveUsFeedbackButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="T4h-Nf-hhZ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -158,11 +170,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuI-sg-Vq0">
-                                                    <rect key="frame" x="190" y="4" width="221" height="37"/>
+                                                    <rect key="frame" x="190" y="3" width="221" height="37"/>
                                                     <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
                                                     <state key="normal" title="INVITE YOUR FRIENDS">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.39275659784303318" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="inviteYourFriendsButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="Xvb-3t-XN1"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -180,6 +195,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="Lju-hz-XXY"/>
+                    <connections>
+                        <outlet property="settings" destination="Ht9-mG-gdf" id="Ch7-UG-bSs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKK-3j-KPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

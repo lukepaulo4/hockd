@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Hock-->
+        <!--Hok-->
         <scene sceneID="9hA-qP-boq">
             <objects>
-                <viewController title="Hock" id="Ib1-ra-rju" customClass="HockViewController" sceneMemberID="viewController">
+                <viewController title="Hok" id="Ib1-ra-rju" customClass="HokViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lGz-Gw-MWb"/>
                         <viewControllerLayoutGuide type="bottom" id="Pwv-BB-S2Z"/>
@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hock" id="vRb-WO-apc"/>
+                    <navigationItem key="navigationItem" title="Hok" id="vRb-WO-apc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiQ-w6-fR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3424" y="1238"/>
         </scene>
-        <!--HOCK-->
+        <!--HOK-->
         <scene sceneID="Bh5-g2-mRz">
             <objects>
-                <navigationController title="HOCK" automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOCK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
+                <navigationController title="HOK" automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HOK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZd-yG-VEp">

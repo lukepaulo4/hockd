@@ -20,9 +20,9 @@
 		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
-		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
+		00A100E41D6D971D00ADDBCF /* HokViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HokViewController.m */; };
 		00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1031D7E914800297AAD /* Settings.storyboard */; };
-		00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1051D7E919A00297AAD /* Hock.storyboard */; };
+		00E7F1071D7E919A00297AAD /* Hok.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1051D7E919A00297AAD /* Hok.storyboard */; };
 		00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1081D7E91CC00297AAD /* Messages.storyboard */; };
 		00E7F10C1D7E920F00297AAD /* MyItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10A1D7E920F00297AAD /* MyItems.storyboard */; };
 		00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10D1D7E92B300297AAD /* Search.storyboard */; };
@@ -77,10 +77,10 @@
 		00A100DA1D6D968200ADDBCF /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		00A100E21D6D971D00ADDBCF /* HockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HockViewController.h; sourceTree = "<group>"; };
-		00A100E31D6D971D00ADDBCF /* HockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HockViewController.m; sourceTree = "<group>"; };
+		00A100E21D6D971D00ADDBCF /* HokViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HokViewController.h; sourceTree = "<group>"; };
+		00A100E31D6D971D00ADDBCF /* HokViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HokViewController.m; sourceTree = "<group>"; };
 		00E7F1031D7E914800297AAD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
-		00E7F1061D7E919A00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hock.storyboard; sourceTree = "<group>"; };
+		00E7F1061D7E919A00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hok.storyboard; sourceTree = "<group>"; };
 		00E7F1081D7E91CC00297AAD /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		00E7F10B1D7E920F00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyItems.storyboard; sourceTree = "<group>"; };
 		00E7F10D1D7E92B300297AAD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -166,15 +166,15 @@
 				00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */,
 				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
 				00A100DA1D6D968200ADDBCF /* MessagesViewController.m */,
-				00A100E21D6D971D00ADDBCF /* HockViewController.h */,
-				00A100E31D6D971D00ADDBCF /* HockViewController.m */,
+				00A100E21D6D971D00ADDBCF /* HokViewController.h */,
+				00A100E31D6D971D00ADDBCF /* HokViewController.m */,
 				00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */,
 				00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
 				00E7F10D1D7E92B300297AAD /* Search.storyboard */,
 				00E7F10A1D7E920F00297AAD /* MyItems.storyboard */,
 				00E7F1081D7E91CC00297AAD /* Messages.storyboard */,
-				00E7F1051D7E919A00297AAD /* Hock.storyboard */,
+				00E7F1051D7E919A00297AAD /* Hok.storyboard */,
 				00E7F1031D7E914800297AAD /* Settings.storyboard */,
 				000E02971D618CD800AD71BC /* Assets.xcassets */,
 				000E02991D618CD800AD71BC /* LaunchScreen.storyboard */,
@@ -321,7 +321,7 @@
 				000E02961D618CD800AD71BC /* Main.storyboard in Resources */,
 				00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */,
 				00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */,
-				00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */,
+				00E7F1071D7E919A00297AAD /* Hok.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +357,7 @@
 				00F4995C1D76C71700641ACE /* Address.m in Sources */,
 				000E02901D618CD800AD71BC /* AppDelegate.m in Sources */,
 				00F499591D76BD9400641ACE /* Item.m in Sources */,
-				00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */,
+				00A100E41D6D971D00ADDBCF /* HokViewController.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
 			);
@@ -411,12 +411,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		00E7F1051D7E919A00297AAD /* Hock.storyboard */ = {
+		00E7F1051D7E919A00297AAD /* Hok.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				00E7F1061D7E919A00297AAD /* Base */,
 			);
-			name = Hock.storyboard;
+			name = Hok.storyboard;
 			sourceTree = "<group>";
 		};
 		00E7F10A1D7E920F00297AAD /* MyItems.storyboard */ = {

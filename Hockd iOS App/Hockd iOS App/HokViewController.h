@@ -1,5 +1,5 @@
 //
-//  SearchViewController.h
+//  HokViewController.h
 //  Hokd iOS App
 //
 //  Created by Luke Paulo on 8/24/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UITableViewController
+@interface HokViewController : UIViewController
 
 @end
