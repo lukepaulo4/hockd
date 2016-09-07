@@ -3,201 +3,35 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Settings-->
         <scene sceneID="jWA-Or-mgU">
             <objects>
                 <tableViewController id="VHd-Bb-sNI" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rq5-AT-SHE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rq5-AT-SHE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                        <sections>
-                            <tableViewSection id="AkF-pl-Oai">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tad-Tb-cpk">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tad-Tb-cpk" id="hhj-mg-Wf0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht9-mG-gdf">
-                                                    <rect key="frame" x="223" y="3" width="155" height="38"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="Ht9-mG-gdf" firstAttribute="centerY" secondItem="tad-Tb-cpk" secondAttribute="centerY" id="tfN-JB-9QP"/>
-                                            <constraint firstItem="Ht9-mG-gdf" firstAttribute="centerX" secondItem="tad-Tb-cpk" secondAttribute="centerX" id="zKs-oR-4lY"/>
-                                        </constraints>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="S1U-Bc-88h">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1U-Bc-88h" id="apf-y3-I1d">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucf-hN-uZk">
-                                                    <rect key="frame" x="216" y="4" width="169" height="37"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="HELP &amp; SUPPORT">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="helpAndSupportButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="Sa2-DD-qyd"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ucf-hN-uZk" secondAttribute="trailing" id="DfR-XD-a15"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="ucf-hN-uZk" secondAttribute="leading" id="eTD-Pk-4WS"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="DfR-XD-a15"/>
-                                                    <exclude reference="eTD-Pk-4WS"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="ucf-hN-uZk" firstAttribute="centerX" secondItem="S1U-Bc-88h" secondAttribute="centerX" id="Djy-tV-Ev6"/>
-                                            <constraint firstItem="ucf-hN-uZk" firstAttribute="top" secondItem="S1U-Bc-88h" secondAttribute="top" constant="6" id="wo7-wS-PI4"/>
-                                            <constraint firstItem="ucf-hN-uZk" firstAttribute="centerY" secondItem="S1U-Bc-88h" secondAttribute="centerY" id="zQB-SI-2lA"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="wo7-wS-PI4"/>
-                                            </mask>
-                                        </variation>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rdO-eg-Q2s">
-                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rdO-eg-Q2s" id="aXq-fB-xcy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i62-R0-9Au">
-                                                    <rect key="frame" x="258" y="6" width="84" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="i62-R0-9Au" secondAttribute="height" multiplier="146:9" id="6c0-pU-VT9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="PROFILE">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="6c0-pU-VT9"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <connections>
-                                                        <action selector="profileButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="cjo-Ez-PsL"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="i62-R0-9Au" firstAttribute="centerY" secondItem="rdO-eg-Q2s" secondAttribute="centerY" id="4Ah-NO-KGd"/>
-                                            <constraint firstItem="i62-R0-9Au" firstAttribute="top" secondItem="rdO-eg-Q2s" secondAttribute="top" constant="6" id="nZz-rm-sKg"/>
-                                            <constraint firstItem="i62-R0-9Au" firstAttribute="centerX" secondItem="rdO-eg-Q2s" secondAttribute="centerX" id="pJz-zh-eAa"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eCt-4T-8u1">
-                                        <rect key="frame" x="0.0" y="196" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eCt-4T-8u1" id="dDb-5Q-xiS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-VD-aZU">
-                                                    <rect key="frame" x="207" y="4" width="188" height="37"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="FUN HOKD FACTS">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="funHokdFactsButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="xcH-Ww-YlC"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="Gyw-VD-aZU" firstAttribute="centerX" secondItem="eCt-4T-8u1" secondAttribute="centerX" id="1dt-5h-7yf"/>
-                                            <constraint firstItem="Gyw-VD-aZU" firstAttribute="centerY" secondItem="eCt-4T-8u1" secondAttribute="centerY" id="38U-1B-Uxe"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ndQ-D7-0Ny">
-                                        <rect key="frame" x="0.0" y="240" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ndQ-D7-0Ny" id="D95-p8-akh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHY-Ka-JZY">
-                                                    <rect key="frame" x="205" y="4" width="191" height="37"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="GIVE US FEEDBACK">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="giveUsFeedbackButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="T4h-Nf-hhZ"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="IHY-Ka-JZY" firstAttribute="centerX" secondItem="ndQ-D7-0Ny" secondAttribute="centerX" id="Nsm-lI-BDn"/>
-                                            <constraint firstItem="IHY-Ka-JZY" firstAttribute="centerY" secondItem="ndQ-D7-0Ny" secondAttribute="centerY" id="wXH-Ow-2iK"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="abN-vF-GYb">
-                                        <rect key="frame" x="0.0" y="284" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="abN-vF-GYb" id="zkh-ZB-ai2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuI-sg-Vq0">
-                                                    <rect key="frame" x="190" y="3" width="221" height="37"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                                    <state key="normal" title="INVITE YOUR FRIENDS">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.39275659784303318" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="inviteYourFriendsButton:" destination="VHd-Bb-sNI" eventType="touchUpInside" id="Xvb-3t-XN1"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="uuI-sg-Vq0" firstAttribute="centerX" secondItem="abN-vF-GYb" secondAttribute="centerX" id="XZs-LK-Y0D"/>
-                                            <constraint firstItem="uuI-sg-Vq0" firstAttribute="centerY" secondItem="abN-vF-GYb" secondAttribute="centerY" id="lRT-rz-Lq0"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Settings Cell Identifier" id="25g-rV-m0H">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25g-rV-m0H" id="f4U-M4-bqw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="VHd-Bb-sNI" id="qYB-u8-wBf"/>
                             <outlet property="delegate" destination="VHd-Bb-sNI" id="kxW-rX-0f0"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="Lju-hz-XXY"/>
-                    <connections>
-                        <outlet property="settings" destination="Ht9-mG-gdf" id="Ch7-UG-bSs"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKK-3j-KPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +50,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VHd-Bb-sNI" kind="relationship" relationship="rootViewController" id="VWW-sb-7wZ"/>
+                        <segue destination="VHd-Bb-sNI" kind="relationship" relationship="rootViewController" id="oqL-ky-o8F"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKM-ZE-Kfw" userLabel="First Responder" sceneMemberID="firstResponder"/>

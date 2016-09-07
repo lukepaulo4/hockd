@@ -10,7 +10,7 @@
 
 @interface SettingsViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *settings;
+
 
 @end
 
@@ -24,6 +24,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //meh about the above to. Set your array of possible settings
+
+    self.settingsLabels =  [NSArray arrayWithObjects:@"HELP & SUPPORT",
+                                @"PROFILE",
+                                @"FUN HOKD FACTS",
+                                @"GIVE US FEEDBACK",
+                                @"INVITE YOUR FRIENDS",
+                                nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,43 +40,100 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)helpAndSupportButton:(UIButton *)sender {
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    //Will have 1 section in our table view
+    return 1;
 }
 
-- (IBAction)profileButton:(UIButton *)sender {
-}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-- (IBAction)funHokdFactsButton:(UIButton *)sender {
-}
-
-- (IBAction)giveUsFeedbackButton:(UIButton *)sender {
-}
-
-- (IBAction)inviteYourFriendsButton:(UIButton *)sender {
+    //Make this equal to the number of array objects in the settingsLinks. Shoulnd't this create only 5 rows from the 5 objects in the array?
+    return [self.settingsLabels count];
 }
 
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Settings Cell Identifier" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Settings Cell Identifier"];
+    }
     
+    cell.textLabel.text = self.settingsLabels[indexPath.row];
+    cell.textLabel.font =  [UIFont boldSystemFontOfSize:20];
+    
+     
+     //Can make a NSMutableAttributedString then apply the below slayage
+//    addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Bradley Hand" size:20] range:range];
+//    [cell.textLabel addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold" size:10] range: range];
+//    [cell.textLabel addAttribute:NSKernAttributeName value:@1.3 range:range];
+//    [cell.textLabel addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1] range:range];
+    
+     
+     
+     
+    //This would be to add another sub text either below or to the sides. See if you can incorporate how to get image of arrows on side for this one
+//    if (indexPath.row < self.settingsLabels.count) {
+//        cell.detailTextLabel.text = @"";
+//    } else {
+//        cell.detailTextLabel = @""
+//    }
+
     return cell;
 }
-*/
+
+//Use this method to indent title/info if needed
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Sets indent for all rows less than count to 0. So none will be indented, but can easibly come back and play with numbers to edit.
+    if (indexPath.row < self.settingsLabels.count) {
+        return 0;
+    } else {
+        return 2;
+    }
+}
+
+//This method will allow if you can select a row. The way it is set up now won't let you select row 0 (the first one)
+//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    if (indexPath.row == 0) {
+//        return nil;
+//    } else {
+//        return indexPath;
+//    }
+//}
+
+//Output for when we do select something. Makes a little pop up screen son.
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *rowValue = self.settingsLabels[indexPath.row];
+    NSString *message = [[NSString alloc] initWithFormat:@"You selected %@", rowValue];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"HELL YEAH" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
+
+//Set the cell height here... Make it proportional to the number of cells and the over screen size? Bigger screen means can show more info, but should all the sizes be the same, or should it start to scale down at a certain size?
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    
+//}
+
+
+
+
+
+
+
+
 
 /*
 // Override to support conditional editing of the table view.

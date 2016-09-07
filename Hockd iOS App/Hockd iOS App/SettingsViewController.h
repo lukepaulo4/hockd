@@ -10,4 +10,6 @@
 
 @interface SettingsViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *settingsLabels;
+
 @end
