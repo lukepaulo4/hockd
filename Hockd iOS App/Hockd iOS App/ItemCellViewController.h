@@ -1,0 +1,18 @@
+//
+//  ItemCellViewController.h
+//  Hockd iOS App
+//
+//  Created by Luke Paulo on 9/7/16.
+//  Copyright © 2016 HOCKD. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ItemCellViewController : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *image1View;
+@property (strong, nonatomic) IBOutlet UIImageView *image2View;
+@property (strong, nonatomic) IBOutlet UIImageView *image3View;
+
+@end

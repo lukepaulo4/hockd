@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--My Items-->
@@ -14,29 +15,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyItemsCell" textLabel="96I-wg-TGH" detailTextLabel="l53-F6-Cnm" style="IBUITableViewCellStyleSubtitle" id="pLp-7F-Hpa">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" rowHeight="236" id="Q0a-aW-iAl" customClass="ItemCellViewController">
+                                <rect key="frame" x="0.0" y="92" width="600" height="236"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pLp-7F-Hpa" id="WpB-xm-Shg">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q0a-aW-iAl" id="iUG-6Q-yF8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="96I-wg-TGH">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l53-F6-Cnm">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hee-Fe-eZ9">
+                                            <rect key="frame" x="68" y="9" width="156" height="17"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Item Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfR-Y4-3dh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpy-AM-F0n">
+                                                    <rect key="frame" x="134" y="0.0" width="22" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-gR-LtU">
+                                            <rect key="frame" x="68" y="85" width="450" height="128"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4t-fw-mna">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-7N-JAW">
+                                                    <rect key="frame" x="150" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GrG-5s-OVh">
+                                                    <rect key="frame" x="300" y="0.0" width="150" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Va-7N-JAW" firstAttribute="leading" secondItem="g4t-fw-mna" secondAttribute="trailing" id="FXP-6s-5Nj"/>
+                                                <constraint firstItem="GrG-5s-OVh" firstAttribute="leading" secondItem="8Va-7N-JAW" secondAttribute="trailing" id="P1S-F7-UB1"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AfR-Y4-3dh" firstAttribute="leading" secondItem="iUG-6Q-yF8" secondAttribute="leadingMargin" constant="60" id="Kqo-0A-Y5F"/>
+                                        <constraint firstItem="g4t-fw-mna" firstAttribute="leading" secondItem="iUG-6Q-yF8" secondAttribute="leadingMargin" constant="60" id="ia1-5l-Ibc"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="image1View" destination="g4t-fw-mna" id="olN-um-mve"/>
+                                    <outlet property="image2View" destination="8Va-7N-JAW" id="YVF-df-IoX"/>
+                                    <outlet property="image3View" destination="GrG-5s-OVh" id="Z6X-oU-jTE"/>
+                                    <outlet property="itemDescriptionLabel" destination="AfR-Y4-3dh" id="JEd-XW-WBJ"/>
+                                    <outlet property="priceLabel" destination="kpy-AM-F0n" id="raB-ra-8xs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

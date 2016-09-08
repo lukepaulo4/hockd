@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HokViewController : UIViewController
+@interface HokViewController : UIViewController <UITextFieldDelegate>
 
 @end
