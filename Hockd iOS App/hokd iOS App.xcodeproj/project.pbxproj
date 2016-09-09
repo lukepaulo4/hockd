@@ -31,9 +31,6 @@
 		00F4995C1D76C71700641ACE /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4995B1D76C71700641ACE /* Address.m */; };
 		00F4995F1D76CA2000641ACE /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4995E1D76CA2000641ACE /* DataSource.m */; };
 		00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499611D76D0D700641ACE /* AutomatedMessages.m */; };
-		00FBCB3C1D80E0CF002DD04D /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB3B1D80E0CF002DD04D /* ItemCell.m */; };
-		00FBCB3F1D829142002DD04D /* HokPostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB3E1D829142002DD04D /* HokPostedViewController.m */; };
-		00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,12 +94,6 @@
 		00F4995E1D76CA2000641ACE /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		00F499601D76D0D700641ACE /* AutomatedMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomatedMessages.h; sourceTree = "<group>"; };
 		00F499611D76D0D700641ACE /* AutomatedMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomatedMessages.m; sourceTree = "<group>"; };
-		00FBCB3A1D80E0CF002DD04D /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
-		00FBCB3B1D80E0CF002DD04D /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
-		00FBCB3D1D829142002DD04D /* HokPostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HokPostedViewController.h; sourceTree = "<group>"; };
-		00FBCB3E1D829142002DD04D /* HokPostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HokPostedViewController.m; sourceTree = "<group>"; };
-		00FBCB401D82A23F002DD04D /* CameraAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraAccessViewController.h; sourceTree = "<group>"; };
-		00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraAccessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,16 +164,10 @@
 				00A100D41D6D954700ADDBCF /* SearchViewController.m */,
 				00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */,
 				00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */,
-				00FBCB3A1D80E0CF002DD04D /* ItemCell.h */,
-				00FBCB3B1D80E0CF002DD04D /* ItemCell.m */,
 				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
 				00A100DA1D6D968200ADDBCF /* MessagesViewController.m */,
 				00A100E21D6D971D00ADDBCF /* HokViewController.h */,
 				00A100E31D6D971D00ADDBCF /* HokViewController.m */,
-				00FBCB3D1D829142002DD04D /* HokPostedViewController.h */,
-				00FBCB3E1D829142002DD04D /* HokPostedViewController.m */,
-				00FBCB401D82A23F002DD04D /* CameraAccessViewController.h */,
-				00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */,
 				00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */,
 				00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
@@ -304,7 +289,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hockd iOS App" */;
+			buildConfigurationList = 000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hokd iOS App" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -365,9 +350,7 @@
 				000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */,
 				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
-				00FBCB3F1D829142002DD04D /* HokPostedViewController.m in Sources */,
 				00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */,
-				00FBCB3C1D80E0CF002DD04D /* ItemCell.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
 				00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */,
@@ -377,7 +360,6 @@
 				00A100E41D6D971D00ADDBCF /* HokViewController.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
-				00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +587,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hockd iOS App" */ = {
+		000E02831D618CD700AD71BC /* Build configuration list for PBXProject "Hokd iOS App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				000E02B31D618CD800AD71BC /* Debug */,

@@ -65,6 +65,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHo-tr-8HB"/>
+                                    <segue destination="8JQ-a7-Vmb" kind="show" id="lDk-96-7wq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
@@ -120,7 +121,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1057" y="308"/>
+            <point key="canvasLocation" x="833" y="316"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="qnS-BC-k8c">
@@ -173,6 +174,7 @@
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="qAa-nZ-snI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="fwZ-Ez-ysw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqM-dM-zjq">
@@ -238,7 +240,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1057" y="1028"/>
+            <point key="canvasLocation" x="833" y="1036"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ylo-w2-myy">
@@ -256,7 +258,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMr-Nd-VDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="308"/>
+            <point key="canvasLocation" x="21" y="316"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Ys1-Vq-gqa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="8JQ-a7-Vmb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSE-7b-TsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="316"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fwZ-Ez-ysw"/>
+    </inferredMetricsTieBreakers>
 </document>
