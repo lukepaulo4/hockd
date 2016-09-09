@@ -12,6 +12,7 @@
 
 @end
 
+//This is a pretty BAB way to do it. I like the way we set up the camera in Blocstagram better. So go back through and use that as it looks way better. But this should hold for now while you upload data and check to make sure APIs work to sign in and upload a HOK item. 9/9/16
 @implementation CameraAccessViewController
 
 - (void)viewDidLoad {
@@ -42,23 +43,60 @@
 //Create a picker controller. Want the camera picker since we are taking a photo
 - (IBAction)takePhotoButton:(UIButton *)sender {
     
+    //Again, so app don't crash, give warning message if no camera available
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertController *cameraAlertView = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                 message:@"Device has no camera :(" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * action) {
+                                                                 
+                                                             }];
+        [cameraAlertView addAction:cancelButton];
+        
+        [self presentViewController:cameraAlertView animated:YES completion:nil];
+        
+    } else {
+    
+        //Then let the picker code kick!!
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
+    }
 }
 
 //Create a picker controller for the photo library
 - (IBAction)selectPhotoButton:(UIButton *)sender {
     
+    //Again, so app don't crash, give warning if no camera available on device
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertController *cameraAlertView = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                 message:@"Device has no camera :(" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* cancelButton = [UIAlertAction actionWithTitle:@"OK"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * action) {
+                                                                 
+                                                             }];
+        [cameraAlertView addAction:cancelButton];
+        
+        [self presentViewController:cameraAlertView animated:YES completion:nil];
+        
+    } else {
+    
+        //Then slay with that code!!!!!!!!!!!
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
+        
+    }
 }
 
 //Since we allowed for image resizing (allowsEditing = YES) the didFinishPickingMediaWithInfo method is called. As the first argument we have the picker who called the method, something very useful if we have more than one image picker, but since we dont yet, we ignore it. **NOTE** if add one for profile pic, need to come back to this!!! Second argument is the NSDictionary which contains, among other things, the original image and edited image.
