@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="45y-lb-fKc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="45y-lb-fKc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -10,8 +10,6 @@
         <!--Hok-->
         <scene sceneID="9hA-qP-boq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PiQ-w6-fR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="8LY-cO-OSK"/>
                 <viewController title="Hok" id="Ib1-ra-rju" customClass="HokViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lGz-Gw-MWb"/>
@@ -251,6 +249,8 @@
                         <outlet property="otherCommentsTextField" destination="dCB-rf-mGm" id="ZRO-Oz-rkm"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PiQ-w6-fR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8LY-cO-OSK"/>
             </objects>
             <point key="canvasLocation" x="3424" y="1238"/>
         </scene>
@@ -326,7 +326,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="26" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we9-uU-4IV">
                                 <rect key="frame" x="30" y="79" width="540" height="195"/>
-                                <mutableString key="text">THANK YOU FOR SUBMITTING! WITHIN 24 HOURS WE WILL LET YOU KNOW WHAT WE BELIEVE YOUR HOKD ITEM IS WORTH. IF YOUR REQUESTED LOAN AMOUNT IS WITHIN 10% OF THE ITEM'S LOAN VALUE, YOU WILL RECEIVE A MESSAGE GIVING YOU AN OPTION TO POST THE ITEM WITH THE LOAN REQUEST VALUE IN GREEN. IF WE BELIEVE YOUR REQUESTED LOAN AMOUNT IS NOT WITHIN 10% OF THE ITEM'S LOAN VALUE, YOU MAY EITHER POST THE ITEM AND THE LOAN AMOUNT WILL SHOW AS RED, OR YOU MAY READJUST THE PRICE PER OUR RECOMMENDED PRICE RANGE. IF A VALUE IS CHOSEN WITHIN THIS RANGE, THE LOAN AMOUNT WILL POST AS GREEN.</mutableString>
+                                <string key="text">THANK YOU FOR SUBMITTING! WITHIN 24 HOURS WE WILL LET YOU KNOW WHAT WE BELIEVE YOUR HOKD ITEM IS WORTH. IF YOUR REQUESTED LOAN AMOUNT IS WITHIN 10% OF THE ITEM'S LOAN VALUE, YOU WILL RECEIVE A MESSAGE GIVING YOU AN OPTION TO POST THE ITEM WITH THE LOAN REQUEST VALUE IN GREEN. IF WE BELIEVE YOUR REQUESTED LOAN AMOUNT IS NOT WITHIN 10% OF THE ITEM'S LOAN VALUE, YOU MAY EITHER POST THE ITEM AND THE LOAN AMOUNT WILL SHOW AS RED, OR YOU MAY READJUST THE PRICE PER OUR RECOMMENDED PRICE RANGE. IF A VALUE IS CHOSEN WITHIN THIS RANGE, THE LOAN AMOUNT WILL POST AS GREEN.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

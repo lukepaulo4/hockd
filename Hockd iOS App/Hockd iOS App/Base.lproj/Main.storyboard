@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oBu-Rx-xG6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oBu-Rx-xG6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66G-0L-siP">
-                                <rect key="frame" x="75" y="271" width="67" height="19"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uj-wN-uRE">
                                 <rect key="frame" x="20" y="550" width="115" height="30"/>
                                 <state key="normal" title="Forgot Password"/>
@@ -39,10 +33,10 @@
                                     <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azk-VR-jNp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
                                 <rect key="frame" x="75" y="233" width="450" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="tbI-v9-cct"/>
                                 </connections>
@@ -51,12 +45,6 @@
                                 <rect key="frame" x="253" y="28" width="94" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.94999998809999997" green="0.33467579489999999" blue="0.63659735070000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQZ-VN-zgk">
-                                <rect key="frame" x="75" y="191" width="67" height="19"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-NF-ItS">
@@ -68,7 +56,7 @@
                                     <segue destination="8JQ-a7-Vmb" kind="show" id="lDk-96-7wq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
                                 <rect key="frame" x="75" y="153" width="450" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -80,23 +68,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="cQZ-VN-zgk" firstAttribute="leading" secondItem="m3Y-Ub-jj4" secondAttribute="leading" id="1ZB-xD-0rZ"/>
                             <constraint firstItem="vwP-43-6oA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hb-1v-PPH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="1Uj-wN-uRE" secondAttribute="leading" id="GzD-JT-xzd"/>
                             <constraint firstItem="2k7-zO-zTF" firstAttribute="top" secondItem="m3Y-Ub-jj4" secondAttribute="bottom" constant="50" id="IQx-xM-g1J"/>
                             <constraint firstItem="2k7-zO-zTF" firstAttribute="width" secondItem="m3Y-Ub-jj4" secondAttribute="width" id="Kra-qR-akc"/>
-                            <constraint firstItem="66G-0L-siP" firstAttribute="top" secondItem="2k7-zO-zTF" secondAttribute="bottom" constant="8" id="Mdf-4g-8o6"/>
-                            <constraint firstItem="66G-0L-siP" firstAttribute="leading" secondItem="2k7-zO-zTF" secondAttribute="leading" id="Q2I-fg-SVm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m3Y-Ub-jj4" secondAttribute="trailing" constant="55" id="Zbi-fh-TVE"/>
                             <constraint firstItem="WGg-NF-ItS" firstAttribute="top" secondItem="2k7-zO-zTF" secondAttribute="bottom" constant="50" id="aja-7s-jUJ"/>
                             <constraint firstItem="lBq-n6-j0C" firstAttribute="leading" secondItem="1Uj-wN-uRE" secondAttribute="leading" id="iil-1y-1hU"/>
-                            <constraint firstItem="cQZ-VN-zgk" firstAttribute="top" secondItem="m3Y-Ub-jj4" secondAttribute="bottom" constant="8" id="pcx-bQ-W41"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Uj-wN-uRE" secondAttribute="bottom" constant="20" id="pyX-1d-czY"/>
                             <constraint firstItem="1Uj-wN-uRE" firstAttribute="top" secondItem="lBq-n6-j0C" secondAttribute="bottom" constant="8" id="qbS-gD-81n"/>
                             <constraint firstItem="WGg-NF-ItS" firstAttribute="trailing" secondItem="2k7-zO-zTF" secondAttribute="trailing" id="sEO-a2-lsp"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="centerX" secondItem="vwP-43-6oA" secondAttribute="centerX" id="uzK-ne-neF"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="top" secondItem="vwP-43-6oA" secondAttribute="bottom" constant="68" id="vfu-3f-y9A"/>
-                            <constraint firstItem="66G-0L-siP" firstAttribute="width" secondItem="cQZ-VN-zgk" secondAttribute="width" id="w56-Av-RhX"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="wG1-HC-R97"/>
                             <constraint firstItem="2k7-zO-zTF" firstAttribute="centerX" secondItem="m3Y-Ub-jj4" secondAttribute="centerX" id="ybr-sa-XJv"/>
                             <constraint firstItem="vwP-43-6oA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="z2S-iY-yRS"/>
@@ -108,9 +91,7 @@
                     <navigationItem key="navigationItem" title="Login Page" id="wgQ-oQ-w0I"/>
                     <connections>
                         <outlet property="loginLabel" destination="vwP-43-6oA" id="LIO-0x-aGq"/>
-                        <outlet property="passwordLabel" destination="66G-0L-siP" id="Wkz-Q5-din"/>
                         <outlet property="passwordTextField" destination="2k7-zO-zTF" id="sBS-S1-Asd"/>
-                        <outlet property="usernameLabel" destination="cQZ-VN-zgk" id="G23-UG-TIp"/>
                         <outlet property="usernameTextField" destination="m3Y-Ub-jj4" id="K9n-2A-XPj"/>
                     </connections>
                 </viewController>
