@@ -34,7 +34,8 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
-                                <rect key="frame" x="75" y="233" width="450" height="30"/>
+                                <rect key="frame" x="75" y="277" width="450" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="passwordTextField" label="passwordTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -42,13 +43,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-43-6oA">
-                                <rect key="frame" x="253" y="28" width="94" height="57"/>
+                                <rect key="frame" x="253" y="72" width="94" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.94999998809999997" green="0.33467579489999999" blue="0.63659735070000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-NF-ItS">
-                                <rect key="frame" x="471" y="313" width="54" height="32"/>
+                                <rect key="frame" x="471" y="357" width="54" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -57,7 +58,8 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
-                                <rect key="frame" x="75" y="153" width="450" height="30"/>
+                                <rect key="frame" x="75" y="197" width="450" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="usernameTextField" label="usernameTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -223,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="833" y="1036"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Root Controller-->
         <scene sceneID="ylo-w2-myy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oBu-Rx-xG6" sceneMemberID="viewController">
+                <navigationController title="Root Controller" automaticallyAdjustsScrollViewInsets="NO" id="oBu-Rx-xG6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EZW-Cd-Ncy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -234,12 +236,35 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z0z-CF-F5l"/>
+                        <segue destination="tfH-Ab-CXY" kind="relationship" relationship="rootViewController" id="fiC-qR-WRh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMr-Nd-VDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="316"/>
+            <point key="canvasLocation" x="-759" y="316"/>
+        </scene>
+        <!--CredentialCheckViewController-->
+        <scene sceneID="Rvb-kV-sKu">
+            <objects>
+                <viewController title="CredentialCheckViewController" id="tfH-Ab-CXY" customClass="CredentialCheckViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ESQ-gE-aRM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oxa-lh-MOF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ldx-M5-QyM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ckh-rj-6q7"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GoToLoginViewController" id="8Pk-pE-zYF"/>
+                        <segue destination="8JQ-a7-Vmb" kind="show" identifier="GoToSearchViewController" id="tfj-fV-dYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rxw-Lb-WZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="316"/>
         </scene>
         <!--Search-->
         <scene sceneID="Ys1-Vq-gqa">
@@ -247,10 +272,11 @@
                 <viewControllerPlaceholder storyboardName="Search" id="8JQ-a7-Vmb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSE-7b-TsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="316"/>
+            <point key="canvasLocation" x="1281.5" y="-466"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fwZ-Ez-ysw"/>
+        <segue reference="8Pk-pE-zYF"/>
+        <segue reference="lDk-96-7wq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,8 @@
 		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
 		000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */; };
 		00845D0D1D85FDBD00F3659B /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00845D0C1D85FDBD00F3659B /* KeychainWrapper.m */; };
+		00845D101D865C5A00F3659B /* CredentialCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00845D0F1D865C5A00F3659B /* CredentialCheckViewController.m */; };
+		00845D131D866EAF00F3659B /* PinConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 00845D121D866EAF00F3659B /* PinConstants.m */; };
 		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
@@ -75,6 +77,10 @@
 		000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		00845D0B1D85FDBD00F3659B /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		00845D0C1D85FDBD00F3659B /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		00845D0E1D865C5A00F3659B /* CredentialCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialCheckViewController.h; sourceTree = "<group>"; };
+		00845D0F1D865C5A00F3659B /* CredentialCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialCheckViewController.m; sourceTree = "<group>"; };
+		00845D111D866EAF00F3659B /* PinConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinConstants.h; sourceTree = "<group>"; };
+		00845D121D866EAF00F3659B /* PinConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinConstants.m; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
@@ -170,6 +176,10 @@
 				00F4995E1D76CA2000641ACE /* DataSource.m */,
 				000E02911D618CD800AD71BC /* LoginViewController.h */,
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
+				00845D0E1D865C5A00F3659B /* CredentialCheckViewController.h */,
+				00845D0F1D865C5A00F3659B /* CredentialCheckViewController.m */,
+				00845D111D866EAF00F3659B /* PinConstants.h */,
+				00845D121D866EAF00F3659B /* PinConstants.m */,
 				00845D0B1D85FDBD00F3659B /* KeychainWrapper.h */,
 				00845D0C1D85FDBD00F3659B /* KeychainWrapper.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
@@ -371,6 +381,7 @@
 				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
 				00FBCB3F1D829142002DD04D /* HokPostedViewController.m in Sources */,
+				00845D131D866EAF00F3659B /* PinConstants.m in Sources */,
 				00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */,
 				00FBCB3C1D80E0CF002DD04D /* ItemCell.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
@@ -384,6 +395,7 @@
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
 				00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */,
+				00845D101D865C5A00F3659B /* CredentialCheckViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

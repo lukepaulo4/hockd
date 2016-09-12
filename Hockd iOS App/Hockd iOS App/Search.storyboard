@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="KgN-EY-yEa">
             <objects>
-                <tabBarController id="gcS-5p-ahh" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Search" id="gcS-5p-ahh" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mCp-Lr-vtI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
