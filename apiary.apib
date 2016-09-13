@@ -39,6 +39,59 @@ Hok Item is a simple API allowing consumers to view all current hok items, hokd 
             }
         ]
         
+### Create a New Item [POST]
+
+You may post a new item using this action. It takes multiple JSON objects.
+
++ Request (application/json)
+
+         {
+            "category": "electronics",
+            "itemDescription": "brand new iPad2",
+            "manufacturer": "apple",
+            "manufactureYear": "2015",
+            "modelName": "iPad 2 2nd generation",
+            "condition": "brand new",
+            "otherComments": "electronics",
+            "loanDesired": "$250",
+            "finalLoanAmount": "nil"
+            "itemStatus": "posted for loan"
+            "itemPics": {
+                "server/img/01845_1/hockd.png",
+                "server/img/01845_2/hockd.png",
+                "server/img/01845_3/hockd.png"
+                }
+            
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /my_items/2
+
+    + Body
+
+            {
+                "publishedAt": "2015-08-05T08:40:51.620Z",
+                "itemId": 02385,
+                "category": "electronics",
+                "itemDescription": "brand new iPad2",
+                "manufacturer": "apple",
+                "manufactureYear": "2015",
+                "modelName": "iPad 2 2nd generation",
+                "condition": "brand new",
+                "otherComments": "electronics",
+                "loanDesired": "$250",
+                "finalLoanAmount": "nil"
+                "itemStatus": "posted for loan"
+                "itemPics": {
+                    "server/img/01845_1/hockd.png",
+                    "server/img/01845_2/hockd.png",
+                    "server/img/01845_3/hockd.png"
+                    }
+            }
+        
         
 ## Active Item List [/active_items/{active_items_id}]
 
@@ -93,121 +146,6 @@ Hok Item is a simple API allowing consumers to view all current hok items, hokd 
             ]
         }
         
-
-### Create a New Item [POST]
-
-You may post a new item using this action. It takes multiple JSON objects.
-
-+ Request (application/json)
-
-         {
-            "category": "electronics",
-            "itemDescription": "brand new iPad2",
-            "manufacturer": "apple",
-            "manufactureYear": "2015",
-            "modelName": "iPad 2 2nd generation",
-            "condition": "brand new",
-            "otherComments": "electronics",
-            "loanDesired": "$250",
-            "finalLoanAmount": "nil"
-            "itemStatus": "posted for loan"
-            "itemPics": {
-                "server/img/01845_1/hockd.png",
-                "server/img/01845_2/hockd.png",
-                "server/img/01845_3/hockd.png"
-                }
-            
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /my_items/2
-
-    + Body
-
-            {
-                "publishedAt": "2015-08-05T08:40:51.620Z",
-                "itemId": 02385,
-                "category": "electronics",
-                "itemDescription": "brand new iPad2",
-                "manufacturer": "apple",
-                "manufactureYear": "2015",
-                "modelName": "iPad 2 2nd generation",
-                "condition": "brand new",
-                "otherComments": "electronics",
-                "loanDesired": "$250",
-                "finalLoanAmount": "nil"
-                "itemStatus": "posted for loan"
-                "itemPics": {
-                    "server/img/01845_1/hockd.png",
-                    "server/img/01845_2/hockd.png",
-                    "server/img/01845_3/hockd.png"
-                    }
-            }
-            
-## User Account Info [/user_account]
-
-### List All Info [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "id": 001000,
-                "username": "bossman1",
-                "email": "bossman1@gmail.com",
-                "profilePic": "server/img/corporate/hockd.png",
-                "interests": "electronics, instruments",
-                "addressLineOne": "101 Boss Lane",
-                "addressLineTwo": "Apt 420",
-                "city": "Oakland",
-                "state": "California",
-                "zip": "94621",
-            }
-        ]
-
-### Update User Account Info [POST]
-
-You may update your user_account info using this action. It takes multiple JSON
-objects containing a string and a JSON object containing data.
-
-+ Request (application/json)
-
-        {
-                "username": "bossman1",
-                "email": "bossman1@gmail.com",
-                "profilePic": "server/img/corporate/hockd.png",
-                "interests": "electronics, instruments",
-                "addressLineOne": "101 Boss Lane",
-                "addressLineTwo": "Apt 420",
-                "city": "Oakland",
-                "state": "California",
-                "zip": "94621",
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /user_account/2
-
-    + Body
-
-            {
-                "username": "bossman1",
-                "email": "bossman1@gmail.com",
-                "profilePic": "server/img/corporate/hockd.png",
-                "interests": "electronics, instruments",
-                "addressLineOne": "101 Boss Lane",
-                "addressLineTwo": "Apt 420",
-                "city": "Oakland",
-                "state": "California",
-                "zip": "94621",
-                "publishedAt": "2015-08-05T08:40:51.620Z"
-                
-            }
 
 
 ## Shipping Address [/address/{address_id}]
