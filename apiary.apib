@@ -146,3 +146,87 @@ You may post a new item using this action. It takes multiple JSON objects.
                     "server/img/01845_3/hockd.png"
                     }
             }
+            
+## User Account Info [/user_account]
+
+### List All Info [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 001000,
+                "username": "bossman1",
+                "email": "bossman1@gmail.com",
+                "profilePic": "server/img/corporate/hockd.png",
+                "interests": "electronics, instruments",
+                "addressLineOne": "101 Boss Lane",
+                "addressLineTwo": "Apt 420",
+                "city": "Oakland",
+                "state": "California",
+                "zip": "94621",
+            }
+        ]
+
+### Update User Account Info [POST]
+
+You may update your user_account info using this action. It takes multiple JSON
+objects containing a string and a JSON object containing data.
+
++ Request (application/json)
+
+        {
+                "username": "bossman1",
+                "email": "bossman1@gmail.com",
+                "profilePic": "server/img/corporate/hockd.png",
+                "interests": "electronics, instruments",
+                "addressLineOne": "101 Boss Lane",
+                "addressLineTwo": "Apt 420",
+                "city": "Oakland",
+                "state": "California",
+                "zip": "94621",
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /user_account/2
+
+    + Body
+
+            {
+                "username": "bossman1",
+                "email": "bossman1@gmail.com",
+                "profilePic": "server/img/corporate/hockd.png",
+                "interests": "electronics, instruments",
+                "addressLineOne": "101 Boss Lane",
+                "addressLineTwo": "Apt 420",
+                "city": "Oakland",
+                "state": "California",
+                "zip": "94621",
+                "publishedAt": "2015-08-05T08:40:51.620Z"
+                
+            }
+
+
+## Shipping Address [/address/{address_id}]
+
++ Parameters
+    + address_id (integer) - ID of a user address in the form of an integer
+    
+    
+### List User Address [GET]
+
++ Response 200 (application/json)
+
+        {
+            "user_account_id": 001000,
+            "publishedAt": "2014-11-11T08:40:51.620Z",
+            "addressLineOne": "101 Boss Lane",
+            "addressLineTwo": "Apt 420",
+            "city": "Oakland",
+            "state": "California",
+            "zip": "94621",
+            
+        }
