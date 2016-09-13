@@ -1,0 +1,148 @@
+FORMAT: 1A
+http://private-6d370-newpawnitem1.apiary-mock.com/
+
+# Hok Item
+
+Hok Item is a simple API allowing consumers to view all current hok items, hokd items from history, as well post new ones.
+
+## Item List [/my_items]
+
+### List All User Items [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "publishedAt": "2015-08-05T08:40:51.620Z",
+                "myItems": [
+                //Each status depicted below
+                    {
+                        "itemId": 02350,
+                        "itemStatus": "submitted for review"
+                    }, {
+                        "itemId": 02599,
+                        "itemStatus": "posted for loan"
+                    }, {
+                        "itemId": 02412,
+                        "itemStatus": "loan offered"
+                    }, {
+                        "itemId": 02689,
+                        "itemStatus": "loan accepted"
+                    }, {
+                        "itemId": 02856,
+                        "itemStatus": "loan repayed"
+                    }, {
+                        "itemId": 01689,
+                        "itemStatus": "loan faulted"
+                    }
+                ]
+            }
+        ]
+        
+        
+## Active Item List [/active_items/{active_items_id}]
+
++ Parameters
+    + active_items_id (integer) - ID of the user's active items in the form of an integer
+    
+    
+### View the user's active items [GET]
+
++ Response 200 (application/json)
+
+        {
+            "publishedAt": "2015-08-05T08:40:51.620Z",
+                "myItems": [
+                    {
+                        "itemId": 02350,
+                        "itemStatus": "submitted for review"
+                    }, {
+                        "itemId": 02599,
+                        "itemStatus": "posted for loan"
+                    }, {
+                        "itemId": 02412,
+                        "itemStatus": "loan offered"
+                    }, {
+                        "itemId": 02689,
+                        "itemStatus": "loan accepted"
+                    }
+            ]
+        }
+        
+
+## User Item History List [/history_items/{history_items_id}]
+
++ Parameters
+    + history_items_id (integer) - ID of the user's history items in the form of an integer
+    
+    
+### View the user's active items [GET]
+
++ Response 200 (application/json)
+
+        {
+            "publishedAt": "2015-08-05T08:40:51.620Z",
+                "myItems": [
+                    {
+                        "itemId": 02856,
+                        "itemStatus": "loan repayed"
+                    }, {
+                        "itemId": 01689,
+                        "itemStatus": "loan faulted"
+                    }
+            ]
+        }
+        
+
+### Create a New Item [POST]
+
+You may post a new item using this action. It takes multiple JSON objects.
+
++ Request (application/json)
+
+         {
+            "category": "electronics",
+            "itemDescription": "brand new iPad2",
+            "manufacturer": "apple",
+            "manufactureYear": "2015",
+            "modelName": "iPad 2 2nd generation",
+            "condition": "brand new",
+            "otherComments": "electronics",
+            "loanDesired": "$250",
+            "finalLoanAmount": "nil"
+            "itemStatus": "posted for loan"
+            "itemPics": {
+                "server/img/01845_1/hockd.png",
+                "server/img/01845_2/hockd.png",
+                "server/img/01845_3/hockd.png"
+                }
+            
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /my_items/2
+
+    + Body
+
+            {
+                "publishedAt": "2015-08-05T08:40:51.620Z",
+                "itemId": 02385,
+                "category": "electronics",
+                "itemDescription": "brand new iPad2",
+                "manufacturer": "apple",
+                "manufactureYear": "2015",
+                "modelName": "iPad 2 2nd generation",
+                "condition": "brand new",
+                "otherComments": "electronics",
+                "loanDesired": "$250",
+                "finalLoanAmount": "nil"
+                "itemStatus": "posted for loan"
+                "itemPics": {
+                    "server/img/01845_1/hockd.png",
+                    "server/img/01845_2/hockd.png",
+                    "server/img/01845_3/hockd.png"
+                    }
+            }
