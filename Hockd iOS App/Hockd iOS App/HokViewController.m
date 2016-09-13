@@ -11,9 +11,8 @@
 @interface HokViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
-
-//How do I make this a drop down choice???????
 @property (strong, nonatomic) IBOutlet UITextField *categoryTextField;
+
 @property (strong, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *manufactureLabel;
@@ -24,14 +23,12 @@
 @property (strong, nonatomic) IBOutlet UITextField *modelNameTextField;
 @property (strong, nonatomic) IBOutlet UILabel *conditionLabel;
 
-//How do I make this a drop down choice???????
 @property (strong, nonatomic) IBOutlet UITextField *conditionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *otherCommentsLabel;
 @property (strong, nonatomic) IBOutlet UITextField *otherCommentsTextField;
 @property (strong, nonatomic) IBOutlet UILabel *loanDesiredLabel;
 @property (strong, nonatomic) IBOutlet UITextField *loanDesiredTextField;
 @property (strong, nonatomic) IBOutlet UILabel *completeInfoLabel;
-
 
 
 @end
@@ -41,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Add the keyboards for each text field. **NOTE** I added keyboards for the category and condition text fields. However, I fully intend to make them drop downs!
     self.categoryTextField.delegate = self;
     self.itemDescriptionTextField.delegate = self;
     self.manufactureTextField.delegate = self;
@@ -50,12 +46,36 @@
     self.conditionTextField.delegate = self;
     self.otherCommentsTextField.delegate = self;
     self.loanDesiredTextField.delegate = self;
+    
+  //****PICKER CODE TO IMPLEMENT LATER
+//    //Initialize the picker data
+//    categoryPickerData = @[@"Jewelery", @"Gold/Precious Metals", @"Electronics", @"Instruments", @"Sports Memorabilia", @"Other"];
+//    
+//    //Connect Data
+//    self.categoryPicker.dataSource = self;
+//    self.categoryPicker.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//**PICKER CODE TO IMPLEMENT LATER
+////The number of columns of data for the picker
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+//    return 1;
+//}
+//
+////The number of rows of data
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+//    return categoryPickerData.count;
+//}
+//
+////The data to return for the row and component (column) that's being passed in
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    return categoryPickerData[row];
+//}
 
 //Implement the UITextFieldDelegate protocol method.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

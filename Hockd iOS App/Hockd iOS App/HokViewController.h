@@ -10,4 +10,11 @@
 
 @interface HokViewController : UIViewController <UITextFieldDelegate>
 
+//*** WOULD USE <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> FOR PICKER
+
+//**PICKER CODE TO IMPLEMENT LATER
+//{
+//    NSArray *categoryPickerData;
+//}
+
 @end
