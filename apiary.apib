@@ -5,9 +5,9 @@ http://private-6d370-newpawnitem1.apiary-mock.com/
 
 Hok Item is a simple API allowing consumers to view all current hok items, hokd items from history, as well post new ones.
 
-## Item List [/my_items]
+## Item List [/items]
 
-### List All User Items [GET]
+### List Item [GET]
 
 + Response 200 (application/json)
 
@@ -46,6 +46,7 @@ You may post a new item using this action. It takes multiple JSON objects.
 + Request (application/json)
 
          {
+            "user_account_id_poster": "001000",
             "itemId": "03452",
             "category": "electronics",
             "itemDescription": "brand new iPad2",
@@ -76,7 +77,8 @@ You may post a new item using this action. It takes multiple JSON objects.
 
             {
                 "publishedAt": "2015-08-05T08:40:51.620Z",
-                "itemId": 02385,
+                "user_account_id_poster": "001000",
+                "itemId": "03452",
                 "category": "electronics",
                 "itemDescription": "brand new iPad2",
                 "manufacturer": "apple",
@@ -94,6 +96,47 @@ You may post a new item using this action. It takes multiple JSON objects.
                     }
             }
         
+## Item List [/my_items/{my_items_id}]
+        
++ Parameters
+    + my_items_id (integer) - ID of the user's items in the form of an integer
+        
+## View the user's items [GET]
+
++ Response 200 (application/json)
+
+            {
+                "publishedAt": "2015-08-05T08:40:51.620Z",
+                "myItems": [
+                //Each status depicted below
+                    {
+                        "user_account_id_poster": "001000",
+                        "itemId": "02350",
+                        "itemStatus": "submitted for review"
+                    }, {
+                        "user_account_id_poster": "001000",
+                        "itemId": "02599",
+                        "itemStatus": "posted for loan"
+                    }, {
+                        "user_account_id_poster": "001000",
+                        "itemId": "02412",
+                        "itemStatus": "loan offered"
+                    }, {
+                        "user_account_id_poster": "001000",
+                        "itemId": "02689",
+                        "itemStatus": "loan accepted"
+                    }, {
+                        "user_account_id_poster": "001000",
+                        "itemId": "02856",
+                        "itemStatus": "loan repayed"
+                    }, {
+                        "user_account_id_poster": "001000",
+                        "itemId": "01689",
+                        "itemStatus": "loan faulted"
+                    }
+                ]
+            }
+        
         
 ## Active Item List [/active_items/{active_items_id}]
 
@@ -107,17 +150,21 @@ You may post a new item using this action. It takes multiple JSON objects.
 
         {
             "publishedAt": "2015-08-05T08:40:51.620Z",
-                "myItems": [
+                "activeItems": [
                     {
+                        "user_account_id_poster": "001000",
                         "itemId": "02350",
                         "itemStatus": "submitted for review"
                     }, {
+                        "user_account_id_poster": "001000",
                         "itemId": "02599",
                         "itemStatus": "posted for loan"
                     }, {
+                        "user_account_id_poster": "001000",
                         "itemId": "02412",
                         "itemStatus": "loan offered"
                     }, {
+                        "user_account_id_poster": "001000",
                         "itemId": "02689",
                         "itemStatus": "loan accepted"
                     }
@@ -137,11 +184,13 @@ You may post a new item using this action. It takes multiple JSON objects.
 
         {
             "publishedAt": "2015-08-05T08:40:51.620Z",
-                "myItems": [
+                "historyItems": [
                     {
+                        "user_account_id_poster": "001000",
                         "itemId": "02856",
                         "itemStatus": "loan repayed"
                     }, {
+                        "user_account_id_poster": "001000",
                         "itemId": "01689",
                         "itemStatus": "loan faulted"
                     }
@@ -149,7 +198,7 @@ You may post a new item using this action. It takes multiple JSON objects.
         }
         
         
-## User Account Info [/user_account]
+## User Info [/user_account]
 
 ### List All Info [GET]
 
@@ -157,16 +206,22 @@ You may post a new item using this action. It takes multiple JSON objects.
 
         [
             {
-                "id": "001000",
-                "username": "bossman1",
-                "email": "bossman1@gmail.com",
-                "profilePic": "server/img/corporate/hockd.png",
-                "interests": "electronics, instruments",
-                "addressLineOne": "101 Boss Lane",
-                "addressLineTwo": "Apt 420",
-                "city": "Oakland",
-                "state": "California",
-                "zip": "94621",
+            "publishedAt": "2015-08-05T08:40:51.620Z",
+                "historyItems": [
+                    {
+                    
+                        "id": "001000",
+                        "username": "bossman1",
+                        "email": "bossman1@gmail.com",
+                        "profilePic": "server/img/corporate/hockd.png",
+                        "interests": "electronics, instruments",
+                        "addressLineOne": "101 Boss Lane",
+                        "addressLineTwo": "Apt 420",
+                        "city": "Oakland",
+                        "state": "California",
+                        "zip": "94621",
+                    }
+                ]
             }
         ]
 
@@ -198,6 +253,7 @@ objects containing a string and a JSON object containing data.
     + Body
 
             {
+                "publishedAt": "2015-08-05T08:40:51.620Z",
                 "username": "bossman1",
                 "email": "bossman1@gmail.com",
                 "profilePic": "server/img/corporate/hockd.png",
@@ -223,12 +279,17 @@ objects containing a string and a JSON object containing data.
 + Response 200 (application/json)
 
         {
-            "user_account_id": "001000",
-            "publishedAt": "2014-11-11T08:40:51.620Z",
-            "addressLineOne": "101 Boss Lane",
-            "addressLineTwo": "Apt 420",
-            "city": "Oakland",
-            "state": "California",
-            "zip": "94621",
+            "publishedAt": "2015-08-05T08:40:51.620Z",
+                "historyItems": [
+                    {
+                    "user_account_id": "001000",
+                    "publishedAt": "2014-11-11T08:40:51.620Z",
+                    "addressLineOne": "101 Boss Lane",
+                    "addressLineTwo": "Apt 420",
+                    "city": "Oakland",
+                    "state": "California",
+                    "zip": "94621",
+                    }
+                ]    
             
         }
