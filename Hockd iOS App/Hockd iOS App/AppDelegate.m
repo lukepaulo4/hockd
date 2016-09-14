@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MyItemsViewController.h"
+
 
 @interface AppDelegate ()
 

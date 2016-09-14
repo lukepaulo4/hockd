@@ -7,6 +7,10 @@
 //
 
 #import "MyItemsViewController.h"
+#import "DataSource.h"
+#import "Item.h"
+#import "User.h"
+#import "ItemTVCell.h"
 
 @interface MyItemsViewController ()
 
@@ -14,36 +18,63 @@
 
 @implementation MyItemsViewController
 
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (self) {
+    
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerClass:[ItemTVCell class] forCellReuseIdentifier:@"itemCell"];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return [DataSource sharedInstance].items.count;
 }
+
+
+//cellage
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
+    cell.item = [DataSource sharedInstance].items[indexPath.row];
+    return cell;
+}
+
+
+//height of cells when we scroll
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Item *item = [DataSource sharedInstance].items[indexPath.row];
+    UIImage *image = item.imageOne;
+    return 300 + (image.size.height / image.size.width * CGRectGetWidth(self.view.frame));
+}
+
+//estimated height of cells when we scroll
+- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Item *item = [DataSource sharedInstance].items[indexPath.row];
+    UIImage *image = item.imageOne;
+    return 300 + (image.size.height / image.size.width * CGRectGetWidth(self.view.frame));
+}
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
     
