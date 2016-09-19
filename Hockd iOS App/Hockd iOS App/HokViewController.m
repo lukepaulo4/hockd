@@ -30,6 +30,20 @@
 @property (strong, nonatomic) IBOutlet UITextField *loanDesiredTextField;
 @property (strong, nonatomic) IBOutlet UILabel *completeInfoLabel;
 
+//initialize the strings
+@property (strong, nonatomic) NSString *categoryString;
+@property (strong, nonatomic) NSString *itemDescriptionString;
+@property (strong, nonatomic) NSString *manufacturerString;
+@property (strong, nonatomic) NSString *manufacturerYearString;
+@property (strong, nonatomic) NSString *modelNameString;
+@property (strong, nonatomic) NSString *conditionString;
+@property (strong, nonatomic) NSString *otherCommentsString;
+@property (strong, nonatomic) NSString *loanDesiredString;
+@property (strong, nonatomic) NSString *postedLoanAmountString;
+@property (strong, nonatomic) NSString *agreedLoanAmountString;
+@property (strong, nonatomic) NSString *itemStatusString;
+@property (strong, nonatomic) NSString *jsonMsg;
+
 
 @end
 
@@ -87,32 +101,76 @@
 }
 
 - (IBAction)categoryTextFieldDidChange:(UITextField *)sender {
+    self.categoryTextField.text = self.categoryString;
 }
 
 - (IBAction)itemDescriptionTextFieldDidChange:(UITextField *)sender {
+    self.itemDescriptionTextField.text = self.itemDescriptionString;
 }
 
 - (IBAction)manufactureTextFieldDidChange:(UITextField *)sender {
+    self.manufactureTextField.text = self.manufacturerString;
 }
 
 - (IBAction)manufactureYearTextFieldDidChange:(UITextField *)sender {
+    self.manufactureYearTextField.text = self.manufacturerYearString;
 }
 
 - (IBAction)modelNameTextFieldDidChange:(UITextField *)sender {
+    self.modelNameTextField.text = self.modelNameString;
 }
 
 - (IBAction)conditionTextFieldDidChange:(UITextField *)sender {
+    self.conditionTextField.text = self.conditionString;
 }
 
 - (IBAction)otherCommentsTextFieldDidChange:(UITextField *)sender {
+    self.otherCommentsTextField.text = self.otherCommentsString;
 }
 
 - (IBAction)loanDesiredTextFieldDidChange:(UITextField *)sender {
+    self.loanDesiredTextField.text = self.loanDesiredString;
 }
 
 - (IBAction)submitButton:(UIButton *)sender {
-}
+    //creates these as nils since they won't have values yet
+    NSString *postedLoanAmountString= nil;
+    NSString *agreedLoanAmountString= nil;
+    NSString *itemStatusString= nil;
+    
+    // Create the request.
+    NSURL *url = [NSURL URLWithString: @"http://private-6d370-newpawnitem1.apiary-mock.com/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    // Specify that it will be a POST request
+    request.HTTPMethod = @"POST";
+    
+    // This is how we set header fields
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    
+    // Convert your data and set your request's HTTPBody property
+    NSArray *objects = [[NSArray alloc] initWithObjects:@categoryString,@itemDescriptionString,@manufacturerString,@manufacturerYearString,@modelNameString,@conditionString, @otherCommentsString,@loanDesiredString,postedLoanAmountString, @agreedLoanAmountString, @itemStatusString, nil];
+    
+    NSArray *keys = [[NSArray alloc] initWithObjects:@"category",@"itemDescription",@"manufacturer",@"manufacturerYear",@"modelName",@"condition", @"otherComments",@"loanDesired",@"postedLoanAmount",@"agreedLoanAmount",@"itemStatus", nil];
+    
+    NSDictionary *tempJsonData = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    
+    NSDictionary *finalJsonData = [[NSDictionary alloc] initWithObjectsAndKeys:tempJsonData,@"customer", nil];
+    
+    NSData *temp = [NSJSONSerialization dataWithJSONObject:finalJsonData options:NSJSONWritingPrettyPrinted error:nil];
+    
+    request.HTTPBody = temp;
+    
+    // Create url connection and fire request
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+    NSError *error = nil; NSURLResponse *response = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 
+}
+    
 
 
 /*

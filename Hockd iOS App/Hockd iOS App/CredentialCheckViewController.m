@@ -19,10 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"logged_in"];;
     
     //Then eval if we have this BOOL or not. If we do, that means the user has launched this app before and gone through the login process. In which case we send they ass to the SearchViewController. If not, we send them to the LoginViewController.
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"]) {
+    if () {
         [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
     } else {
         //Segue to Login view controller
@@ -31,16 +30,7 @@
     
 }
 
-//Recheck this.. The tutorial implemented a PIN, but we are not using that. Comment out the PIN for now, revist later!?!?!?!?
-- (BOOL)credentialsValidated {
-    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
-    //BOOL pin = [[NSUserDefaults standardUserDefaults] boolForKey:PIN_SAVED];
-    if (name /*&& pin*/) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
+
 
 
 - (void)didReceiveMemoryWarning {

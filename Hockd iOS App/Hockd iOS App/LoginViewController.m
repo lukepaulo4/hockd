@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "KeychainWrapper.h"
 
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -41,22 +42,15 @@
 
 - (IBAction)usernameTextFieldDidChange:(UITextField *)sender {
     if ([self.usernameTextField.text length] > 0) {
-        [[NSUserDefaults standardUserDefaults] setValue:self.usernameTextField.text forKey:USERNAME];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        
     }
 }
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
     if ([self.passwordTextField.text length] > 0) {
-        NSUInteger fieldHash = [self.passwordTextField.text hash];
-        NSString *fieldString = [KeychainWrapper securedSHA256DigestHashForPIN:fieldHash];
-        NSLog(@"** Password Hash - %@", fieldString);
-    //Save PIN hash to the keychain NEVER store the direct PIN
-    if ([KeychainWrapper createKeychainValue:fieldString forIdentifier:PIN_SAVED]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PIN_SAVED];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"** Key saved successfully to Keychain!!");
-        }
+        
+   
+        
     }
 }
 

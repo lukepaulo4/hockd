@@ -10,6 +10,8 @@
 
 @interface HokViewController : UIViewController <UITextFieldDelegate>
 
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
+
 //*** WOULD USE <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> FOR PICKER
 
 //**PICKER CODE TO IMPLEMENT LATER

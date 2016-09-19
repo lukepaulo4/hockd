@@ -7,170 +7,213 @@
 
 
 #import "KeychainWrapper.h"
-#import "PinConstants.h"
 
+//Unique string to identify the keychain item
+static const UInt8 kKeychainItemIdentifier[] = "com.apple.dts.KeychainUI\0";
+
+@interface KeychainWrapper (PrivateMethods)
+
+//The following two methods translate dictionaries between the format used be the view controller (NSString *) and the keychain services API:
+- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert;
+- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert;
+//Method used to write data to the keychain:
+- (void)writeToKeychain;
+
+@end
 
 @implementation KeychainWrapper
 //**This class is ARC compliant - any references to CF classes must be paired with a "__bride" statement to cast between Obj-C and Core Foundation Classes. WWDC 2011 Video "Introduction to Automatic Reference Counting" explains this.
 
-//this sets up all the default parameters needed to easily reach keychain
-+ (NSMutableDictionary *)setupSearchDirectoryForIdentifier:(NSString *)identifier {
-    //setup dictionary to access keychain
-    NSMutableDictionary *searchDictionary = [[NSMutableDictionary alloc] init];
-    //specify we are using a password (rather than a certificate, internet password, etc)
-    [searchDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-    //Uniquely identify this keychain accessor.
-    [searchDictionary setObject:@"co.hokd.iOSSecurityFTW" forKey:(__bridge id)kSecAttrService];
+- (id)init {
     
-    //Uniquely identify the account who will be accessing the keychain
-    NSData *encodedIdentifier = [identifier dataUsingEncoding:NSUTF8StringEncoding];
-    [searchDictionary setObject:encodedIdentifier forKey:(__bridge id)kSecAttrGeneric];
-    [searchDictionary setObject:encodedIdentifier forKey:(__bridge id)kSecAttrAccount];
-    
-    return searchDictionary;
+    if ((self = [super init])) {
+        OSStatus keychainErr = noErr;
+        
+        //Set up the keychain search dictionary
+        passwordQuery = [[NSMutableDictionary alloc] init];
+        
+        //The keychain item is a generic password
+        [passwordQuery setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+        
+        //The kSecAttrGeneric attribute is used to store a unique string that is used to easily identify and find this keychain item. The string is first converted to an NSData
+        NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier length:strlen((const char *)kKeychainItemIdentifier)];
+        [passwordQuery setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
+        
+        //return the attributes of the first match only
+        [passwordQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
+        
+        //Return the attributes of the keychain item (the password is acquired in the secItemFormatToDictionary: method):
+        [passwordQuery setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnAttributes];
+        
+        //Initialize the dictionary used to hold return data from the keychain:
+        CFMutableDictionaryRef outDictionary = nil;
+        
+        
+        //If the keychain exists, return the attributes of the item:
+        keychainErr = SecItemCopyMatching((__bridge CFDictionaryRef)passwordQuery, (CFTypeRef *)&outDictionary);
+        
+        if (keychainErr == noErr) {
+            
+            //Convert the data dictionary into the format used by the view controller:
+            self.keychainData = [self secItemFormatToDictionary:(__bridge_transfer NSMutableDictionary *)outDictionary];
+        } else if (keychainErr == errSecItemNotFound) {
+            
+            //Put default values into the keychain if no matching keychain item is found:
+            [self resetKeychainItem];
+            
+            if (outDictionary) CFRelease(outDictionary);
+        } else {
+            
+            //Any other error is unexpected
+            NSAssert(NO, @"Serious error.\n");
+            if (outDictionary) CFRelease(outDictionary);
+        }
+    }
+        
+    return self;
 }
 
-//Raw data method. Searches keychain for the value we're requesting, but it returns it as an NSData object
-+ (NSData *)searchKeychainCopyMatchingIdentifier:(NSString *)identifier {
+//Implement the mySetObject:forKey method, which writes attributes to the keychain:
+- (void)mySetObject:(id)inObject forKey:(id)key {
     
-    NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
-    //Limit search results to one.
-    [searchDictionary setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
+    if (inObject == nil) return;
+    id currentObject = [keychainData objectForKey:key];
+    if (![currentObject isEqual:inObject]) {
+        [keychainData setObject:inObject forKey:key];
+        [self writeToKeychain];
+    }
+}
+
+//Implement the myObjectForKey: method, which reads an attribute value from a dictionary:
+- (id)myObjectForKey:(id)key {
+    return [keychainData objectForKey:key];
+}
+
+//Reset the values in the keychain item, or create a new item if it doesn't already exist
+- (void)resetKeychainItem {
+    if (!keychainData) {
+        
+        //Allocate the keychainData dictionary if it doesn't exist yet
+        self.keychainData = [[NSMutableDictionary alloc] init];
+    } else if (keychainData) {
+        
+        //Format the data in the keychainData dictionary into the format needed for a query and put it into tmpDictionary
+        NSMutableDictionary *tmpDictionary = [self dictionaryToSecItemFormat:keychainData];
+        
+        //Delete the keychain item in preparation for resetting the values:
+        OSStatus errorcode = SecItemDelete((__bridge CFDictionaryRef)tmpDictionary);
+        NSAssert(errorcode == noErr, @"Problem deleting current keychain item.");
+    }
     
-    //specify we want NSData/CFData returned
-    [searchDictionary setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+    //Default generic data for Keychain Item:
+    [keychainData setObject:@"Item label" forKey:(__bridge id)kSecAttrLabel];
+    [keychainData setObject:@"Item description" forKey:(__bridge id)kSecAttrDescription];
+    [keychainData setObject:@"Account" forKey:(__bridge id)kSecAttrAccount];
+    [keychainData setObject:@"Service" forKey:(__bridge id)kSecAttrService];
+    [keychainData setObject:@"Your comment here" forKey:(__bridge id)kSecAttrComment];
+    [keychainData setObject:@"password" forKey:(__bridge id)kSecValueData];
+}
+
+//Implement the dictionaryToSecItemFormat: method, which takes the attributes that you want to add to the keychain item and sets up a dictionary in the format needed by Keychain Services:
+- (NSMutableDictionary *)dictionaryToSecItemFormat:(NSDictionary *)dictionaryToConvert {
     
-    //search
-    NSData *result = nil;
-    CFTypeRef foundDict = NULL;
-    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)searchDictionary, (CFTypeRef *)&foundDict);
+    //This method must be called with a properly populated dictionary containing all the right key/value pairs for a keychain item search
     
-    if (status == noErr) {
-        result = (__bridge_transfer NSData *)foundDict;
+    //Create the return dictionary:
+    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
+    
+    //Add the keychain item class and the generic attribute:
+    NSData *keychainItemID = [NSData dataWithBytes:kKeychainItemIdentifier length:strlen((const char *)kKeychainItemIdentifier)];
+    [returnDictionary setObject:keychainItemID forKey:(__bridge id)kSecAttrGeneric];
+    [returnDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+    
+    //Convert the password NSString to NSData to fit the API paradigm:
+    NSString *passwordString = [dictionaryToConvert objectForKey:(__bridge id)kSecValueData];
+    [returnDictionary setObject:[passwordString dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
+    
+    return returnDictionary;
+}
+
+//Implement the secItemFormatToDictionary: method, which takes the attribute dictionary obtained from the keychain item, acquires the password from the keychain, and adds it to the attribute dictionary:
+- (NSMutableDictionary *)secItemFormatToDictionary:(NSDictionary *)dictionaryToConvert {
+    
+    //This method must be called with a properly populated dictionary containing all the right key/value pairs for the keychain item
+    
+    //Create a return dictionary populated with the attributes:
+    NSMutableDictionary *returnDictionary = [NSMutableDictionary dictionaryWithDictionary:dictionaryToConvert];
+    
+    //To acquire the password data from the keychain item, first add the search key and class attribute required to obtain the password:
+    [returnDictionary setObject:(__bridge id) kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+    [returnDictionary setObject:(__bridge id) kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+    
+    //Then call Keychain Services to get the password:
+    CFDataRef passwordData = NULL;
+    OSStatus keychainError = noErr;
+    keychainError = SecItemCopyMatching((__bridge CFDictionaryRef)returnDictionary, (CFTypeRef *)&passwordData);
+    
+    if (keychainError == noErr) {
+        
+        //Remove the kSecReturnData key; we don't need it anymore:
+        [returnDictionary removeObjectForKey:(__bridge id)kSecReturnData];
+        
+        //Convert the password to an NSString and add it to the return dictionary:
+        NSString *password = [[NSString alloc] initWithBytes:[(__bridge_transfer NSData *)passwordData bytes] length:[(__bridge NSData *)passwordData length] encoding:NSUTF8StringEncoding];
+        [returnDictionary setObject:password forKey:(__bridge id)kSecValueData];
+    
+    //Don't do anything if nothing is found...
+    } else if (keychainError == errSecItemNotFound) {
+        NSAssert(NO, @"Nothing was found in the keychain.\n");
+        if (passwordData) CFRelease(passwordData);
+    
+        //Any other error is unexpected
     } else {
-        result = nil;
+        NSAssert(NO, @"Serious error.\n");
+        if (passwordData) CFRelease(passwordData);
+        
     }
     
-    return result;
-    
+    return returnDictionary;
 }
 
-//Really the method want to use for searching keychain, because it returns the value found as an NSString, which is much easier to compare against another input value (such as the password entered by user)
-+ (NSString *)keychainStringFromMatchingIdentifier:(NSString *)identifier {
-    NSData *valueData = [self searchKeychainCopyMatchingIdentifier:identifier];
-    if (valueData) {
-        NSString *value = [[NSString alloc] initWithData:valueData
-                                                encoding:NSUTF8StringEncoding];
-        return value;
+//Implement the writeToKeychain method, which is called by the mySetObject routine, which in turn is called by the UI when there is new data for the keychain. This method modifies an existing keychain item, or --if the item does not already exist-- creates a new keychain item with the new attribute value plus default values for the other attributes.
+- (void)writeToKeychain {
+    CFDictionaryRef attributes = nil;
+    NSMutableDictionary *updateItem = nil;
+    
+    //If the keychain item already exists, modify it:
+    if (SecItemCopyMatching((__bridge CFDictionaryRef)passwordQuery, (CFTypeRef *)&attributes) == noErr) {
+        
+        //First, get the attributes returned from the keychain and add them to the dictionary that controls the update:
+        updateItem = [NSMutableDictionary dictionaryWithDictionary:(__bridge_transfer NSDictionary *)attributes];
+        
+        //Second, get the class value from the generic password query dictionary and add it to the updateItem dictionary:
+        [updateItem setObject:[passwordQuery objectForKey:(__bridge id)kSecClass]
+                                                   forKey:(__bridge id)kSecClass];
+        
+        //Finally, set up the dictionary that contains new values for the attributes:
+        NSMutableDictionary *tempCheck = [self dictionaryToSecItemFormat:keychainData];
+        
+        //Remove the class--it's not a keychain attribute:
+        [tempCheck removeObjectForKey:(__bridge id)kSecClass];
+        
+        //Can update only a single keychain item at a time
+        OSStatus errorcode = SecItemUpdate(
+            (__bridge CFDictionaryRef)updateItem,
+            (__bridge CFDictionaryRef)tempCheck);
+                                           
+        NSAssert(errorcode == noErr, @"Couldn't update the Keychain Item." );
+        
     } else {
-        return nil;
+        
+        //No previous item found, add the new item.     The new value was added to the keychain dictionary in the mySetObject routine, and the other values were added to the keychainData Dictionary previously. No pointer to the newly-added items is needed, so pass NULL for the second parameter:
+        OSStatus errorcode = SecItemAdd((__bridge CFDictionaryRef)[self dictionaryToSecItemFormat:keychainData],NULL);
+        NSAssert(errorcode == noErr, @"Couldn't add the Keychain Item." );
+        if (attributes) CFRelease(attributes);
     }
-}
-
-//This will write to the keychain. SecItemAdd physically writes to the keychain
-+ (BOOL)createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier {
-    NSMutableDictionary *dictionary = [self setupSearchDirectoryForIdentifier:identifier];
-    NSData *valueData = [value dataUsingEncoding:NSUTF8StringEncoding];
-    
-    //This is the actual data we are saving, which, in our case, is the hashed password from the user
-    [dictionary setObject:valueData forKey:(__bridge id)kSecValueData];
-    
-    //Protect the keychain entry so it's only valid when the device is unlocked
-    [dictionary setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
-    
-    //Add
-    OSStatus status = SecItemAdd((__bridge CFDictionaryRef)dictionary, NULL);
-    
-    //If the addition was successful, return. Otherwise, attempt to update exisitng key or quit (return NO)
-    if (status == errSecSuccess) {
-        return YES;
-    } else if (status == errSecDuplicateItem) {
-        return [self updateKeychainValue:value forIdentifier:identifier];
-    } else {
-        return NO;
-    }
-}
-
-//Similar to above but updates instead
-+ (BOOL)updateKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier {
-    NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
-    NSMutableDictionary *updateDictionary = [[NSMutableDictionary alloc] init];
-    NSData *valueData = [value dataUsingEncoding:NSUTF8StringEncoding];
-    [updateDictionary setObject:valueData forKey:(__bridge id)kSecValueData];
-    
-    //Update
-    OSStatus status = SecItemUpdate((__bridge CFDictionaryRef)searchDictionary,
-                                    (__bridge CFDictionaryRef)updateDictionary);
-    
-    if (status == errSecSuccess) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-//simple delete method
-+ (void)deleteItemFromKeychainWithIdentifier:(NSString *)identifier {
-    NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
-    CFDictionaryRef dictionary = (__bridge CFDictionaryRef)searchDictionary;
-    
-    //Delete
-    SecItemDelete(dictionary);
-}
-
-//Compares the input value in SHA256 encrypted format to the view in the keychain
-+(BOOL)compareKeychainValueForMatchingPIN:(NSUInteger)pinHash {
-    if ([[self keychainStringFromMatchingIdentifier:PIN_SAVED] isEqualToString:[self securedSHA256DigestHashForPIN:pinHash]]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-//This is where most of the magic happens (the rest happens in computeSHA256 method below
-//Here we are passing in the hash of the PIN that the user entered so that we can avoid manually handling the PIN itself.
-//Then we are extracting the username that the user supplied during setup, so that we can add another unique element to the hash
-//From there we mash the user name, the passed-in PIN hash, and the secret key (from PinConstants.h) together to create one long, unique string.
-//Then we send that entire hash mashup into the SHA256 method below to create a "Digital Digest," which is considered a one-way encryption algorithm. "one-way" means that it can never be reversed-engineered, only brute-force attacked.
-//The algorithm we are using is Hash = SHA256(Name + Salt + (Hash(PIN))). This is called "Digest Authentication"
-
-//This creates the value we are going to store in the keychain
-+ (NSString *)securedSHA256DigestHashForPIN:(NSUInteger)pinHash {
-    
-    //1 - Get the name the user has entered. This is going to be paired with other values to uniquely create our key and add some extra security to it. Then we Percent Encode the name to avoid any attempted attacks with special characters, etc. The iOS Keychain is UTF8 compliant (only), so we baseline everything to that.
-    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
-    NSCharacterSet *set = [NSCharacterSet URLFragmentAllowedCharacterSet];
-    name = [name stringByAddingPercentEncodingWithAllowedCharacters:set];
-    
-    //2 - We piece together the user's name, the hash of the value they entered for their password, and the SALT_HASH string from our PinConstants class. A "salt hash is just an additional hash (remember, a hash is a fixed-length number based on a number or string) that can be used to augment and enhance the security of the password. Will need to go back and add a random generator for this later.
-    NSString *computedHashString = [NSString stringWithFormat:@"%@%lu%@", name, (unsigned long)pinHash, SALT_HASH];
-    
-    //3 - Pass it over to our computeSHA256Digest method so that we can harden our password even more before storing it.
-    NSString *finalHash = [self computeSHA256DigestForString:computedHashString];
-    NSLog(@"** Computed hash: %@ for SHA256 Digest: %@", computedHashString, finalHash);
-    return finalHash;
-}
-
-//Here we are taking in our string hash, placing that inside of a C Char Array, then aprsing it through the SHA256 encryption method
-+ (NSString *)computeSHA256DigestForString:(NSString *)input {
-    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:input.length];
-    uint8_t digest[CC_SHA256_DIGEST_LENGTH];
-    
-    //This is an iOS5-specified method
-    //It takes in the data, how much data, and then output format, which in this case is an int array
-    CC_SHA256(data.bytes, (unsigned int)data.length, digest);
-    
-    //Setup our Objective-C output
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
-    
-    //Parse through the CC_SHA256 results (stored inside of digest[])
-    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
-        [output appendFormat:@"%02x", digest[i]];
-    }
-    return output;
     
 }
+
+
 
 @end
 

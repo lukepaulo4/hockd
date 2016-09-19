@@ -43,7 +43,7 @@
 
 
 - (void) loginUserDefaultPopulated {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"])
+    if ()
         [self populateDataWithParameters:nil];
 }
 
