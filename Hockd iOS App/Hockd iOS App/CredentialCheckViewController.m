@@ -21,12 +21,12 @@
     
     
     //Then eval if we have this BOOL or not. If we do, that means the user has launched this app before and gone through the login process. In which case we send they ass to the SearchViewController. If not, we send them to the LoginViewController.
-    if () {
+    //if () {
         [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
-    } else {
-        //Segue to Login view controller
-        [self performSegueWithIdentifier:@"GoToSearchViewController" sender:self];
-    }
+//    } else {
+//        //Segue to Login view controller
+//        [self performSegueWithIdentifier:@"GoToSearchViewController" sender:self];
+//    }
     
 }
 

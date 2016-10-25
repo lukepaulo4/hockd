@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Hok-->
+        <!--Hock-->
         <scene sceneID="9hA-qP-boq">
             <objects>
-                <viewController title="Hok" id="Ib1-ra-rju" customClass="HokViewController" sceneMemberID="viewController">
+                <viewController title="Hock" id="Ib1-ra-rju" customClass="HockViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lGz-Gw-MWb"/>
                         <viewControllerLayoutGuide type="bottom" id="Pwv-BB-S2Z"/>
@@ -229,7 +229,7 @@
                             <outletCollection property="gestureRecognizers" destination="8LY-cO-OSK" appends="YES" id="cOv-sn-pwU"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Hok" id="vRb-WO-apc"/>
+                    <navigationItem key="navigationItem" title="Hock" id="vRb-WO-apc"/>
                     <connections>
                         <outlet property="categoryLabel" destination="UH7-vA-NVH" id="4Wc-xT-Dbh"/>
                         <outlet property="categoryTextField" destination="hqO-ER-n1F" id="nZR-N6-4MX"/>
@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="4120" y="1238"/>
         </scene>
-        <!--Hok Posted View Controller-->
+        <!--Hock Posted View Controller-->
         <scene sceneID="bRf-JJ-W9h">
             <objects>
-                <viewController id="xk5-V6-hH1" customClass="HokPostedViewController" sceneMemberID="viewController">
+                <viewController id="xk5-V6-hH1" customClass="HockPostedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u6s-hX-LRD"/>
                         <viewControllerLayoutGuide type="bottom" id="7Lg-N6-Gzj"/>
@@ -355,11 +355,11 @@
             </objects>
             <point key="canvasLocation" x="3424" y="1991"/>
         </scene>
-        <!--HOK-->
+        <!--HOCK-->
         <scene sceneID="Bh5-g2-mRz">
             <objects>
-                <navigationController title="HOK" automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
+                <navigationController title="HOCK" automaticallyAdjustsScrollViewInsets="NO" id="45y-lb-fKc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="HOCK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZd-yG-VEp">

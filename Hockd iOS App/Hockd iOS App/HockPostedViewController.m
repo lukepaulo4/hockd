@@ -1,19 +1,19 @@
 //
-//  HokPostedViewController.m
+//  HockPostedViewController.m
 //  Hockd iOS App
 //
 //  Created by Luke Paulo on 9/8/16.
 //  Copyright © 2016 HOCKD. All rights reserved.
 //
 
-#import "HokPostedViewController.h"
+#import "HockPostedViewController.h"
 
-@interface HokPostedViewController ()
+@interface HockPostedViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *submissionCompleteLabel;
 
 @end
 
-@implementation HokPostedViewController
+@implementation HockPostedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

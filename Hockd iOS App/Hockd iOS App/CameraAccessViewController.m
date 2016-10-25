@@ -12,7 +12,7 @@
 
 @end
 
-//This is a pretty BAB way to do it. I like the way we set up the camera in Blocstagram better. So go back through and use that as it looks way better. But this should hold for now while you upload data and check to make sure APIs work to sign in and upload a HOK item. 9/9/16
+//This is a pretty BAB way to do it. I like the way we set up the camera in Blocstagram better. So go back through and use that as it looks way better. But this should hold for now while you upload data and check to make sure APIs work to sign in and upload a HOCK item. 9/9/16
 @implementation CameraAccessViewController
 
 - (void)viewDidLoad {
