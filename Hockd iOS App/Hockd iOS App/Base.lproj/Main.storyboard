@@ -19,6 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoginBG i6" translatesAutoresizingMaskIntoConstraints="NO" id="B4H-g6-A91">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uj-wN-uRE">
                                 <state key="normal" title="Forgot Password"/>
                                 <connections>
@@ -32,7 +36,8 @@
                                     <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azk-VR-jNp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="passwordTextField" label="passwordTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -42,9 +47,18 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-43-6oA">
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="usernameTextField" label="usernameTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="usernameTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="9RN-2Z-bJ8"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-NF-ItS">
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Submit"/>
@@ -53,14 +67,6 @@
                                     <segue destination="8JQ-a7-Vmb" kind="show" id="lDk-96-7wq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
-                                <accessibility key="accessibilityConfiguration" identifier="usernameTextField" label="usernameTextField"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="9RN-2Z-bJ8"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -74,7 +80,7 @@
                             <constraint firstItem="lBq-n6-j0C" firstAttribute="leading" secondItem="1Uj-wN-uRE" secondAttribute="leading" id="iil-1y-1hU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Uj-wN-uRE" secondAttribute="bottom" constant="20" id="pyX-1d-czY"/>
                             <constraint firstItem="1Uj-wN-uRE" firstAttribute="top" secondItem="lBq-n6-j0C" secondAttribute="bottom" constant="8" id="qbS-gD-81n"/>
-                            <constraint firstItem="WGg-NF-ItS" firstAttribute="trailing" secondItem="2k7-zO-zTF" secondAttribute="trailing" id="sEO-a2-lsp"/>
+                            <constraint firstItem="WGg-NF-ItS" firstAttribute="centerX" secondItem="2k7-zO-zTF" secondAttribute="centerX" id="uj9-P8-kAw"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="centerX" secondItem="vwP-43-6oA" secondAttribute="centerX" id="uzK-ne-neF"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="top" secondItem="vwP-43-6oA" secondAttribute="bottom" constant="68" id="vfu-3f-y9A"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="wG1-HC-R97"/>
@@ -99,7 +105,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="833" y="316"/>
+            <point key="canvasLocation" x="832.79999999999995" y="315.29235382308849"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="qnS-BC-k8c">
@@ -113,9 +119,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02f-AS-FNE">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-4i-A89">
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-Ck-0GD">
@@ -211,12 +221,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="833" y="1036"/>
+            <point key="canvasLocation" x="832.79999999999995" y="1035.832083958021"/>
         </scene>
         <!--Root Controller-->
         <scene sceneID="ylo-w2-myy">
             <objects>
-                <navigationController title="Root Controller" automaticallyAdjustsScrollViewInsets="NO" id="oBu-Rx-xG6" sceneMemberID="viewController">
+                <navigationController title="Root Controller" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oBu-Rx-xG6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EZW-Cd-Ncy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -263,8 +273,11 @@
             <point key="canvasLocation" x="1281.5" y="-466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LoginBG i6" width="375" height="667"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lDk-96-7wq"/>
-        <segue reference="8Pk-pE-zYF"/>
+        <segue reference="fwZ-Ez-ysw"/>
     </inferredMetricsTieBreakers>
 </document>
