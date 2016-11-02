@@ -19,10 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoginBG i6" translatesAutoresizingMaskIntoConstraints="NO" id="B4H-g6-A91">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uj-wN-uRE">
                                 <state key="normal" title="Forgot Password"/>
                                 <connections>
@@ -30,38 +26,38 @@
                                     <segue destination="yXH-0p-ysR" kind="show" id="LDf-Xl-G3Q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-43-6oA">
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-n6-j0C">
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azk-VR-jNp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-zO-zTF">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="passwordTextField" label="passwordTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="tbI-v9-cct"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-43-6oA">
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-Ub-jj4">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="usernameTextField" label="usernameTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="usernameTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="9RN-2Z-bJ8"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-NF-ItS">
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHo-tr-8HB"/>
                                     <segue destination="8JQ-a7-Vmb" kind="show" id="lDk-96-7wq"/>
@@ -73,17 +69,17 @@
                         <constraints>
                             <constraint firstItem="vwP-43-6oA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hb-1v-PPH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="1Uj-wN-uRE" secondAttribute="leading" id="GzD-JT-xzd"/>
-                            <constraint firstItem="2k7-zO-zTF" firstAttribute="top" secondItem="m3Y-Ub-jj4" secondAttribute="bottom" constant="50" id="IQx-xM-g1J"/>
+                            <constraint firstItem="2k7-zO-zTF" firstAttribute="top" secondItem="m3Y-Ub-jj4" secondAttribute="bottom" constant="5" id="IQx-xM-g1J"/>
                             <constraint firstItem="2k7-zO-zTF" firstAttribute="width" secondItem="m3Y-Ub-jj4" secondAttribute="width" id="Kra-qR-akc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m3Y-Ub-jj4" secondAttribute="trailing" constant="55" id="Zbi-fh-TVE"/>
-                            <constraint firstItem="WGg-NF-ItS" firstAttribute="top" secondItem="2k7-zO-zTF" secondAttribute="bottom" constant="50" id="aja-7s-jUJ"/>
-                            <constraint firstItem="lBq-n6-j0C" firstAttribute="leading" secondItem="1Uj-wN-uRE" secondAttribute="leading" id="iil-1y-1hU"/>
+                            <constraint firstItem="WGg-NF-ItS" firstAttribute="top" secondItem="2k7-zO-zTF" secondAttribute="bottom" constant="5" id="aja-7s-jUJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Uj-wN-uRE" secondAttribute="bottom" constant="20" id="pyX-1d-czY"/>
-                            <constraint firstItem="1Uj-wN-uRE" firstAttribute="top" secondItem="lBq-n6-j0C" secondAttribute="bottom" constant="8" id="qbS-gD-81n"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WGg-NF-ItS" secondAttribute="bottom" constant="100" id="r0P-pg-Rvq"/>
                             <constraint firstItem="WGg-NF-ItS" firstAttribute="centerX" secondItem="2k7-zO-zTF" secondAttribute="centerX" id="uj9-P8-kAw"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="centerX" secondItem="vwP-43-6oA" secondAttribute="centerX" id="uzK-ne-neF"/>
-                            <constraint firstItem="m3Y-Ub-jj4" firstAttribute="top" secondItem="vwP-43-6oA" secondAttribute="bottom" constant="68" id="vfu-3f-y9A"/>
+                            <constraint firstItem="lBq-n6-j0C" firstAttribute="centerY" secondItem="1Uj-wN-uRE" secondAttribute="centerY" id="w6X-GJ-6j4"/>
                             <constraint firstItem="m3Y-Ub-jj4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="wG1-HC-R97"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lBq-n6-j0C" secondAttribute="trailing" id="wOs-1t-cnG"/>
                             <constraint firstItem="2k7-zO-zTF" firstAttribute="centerX" secondItem="m3Y-Ub-jj4" secondAttribute="centerX" id="ybr-sa-XJv"/>
                             <constraint firstItem="vwP-43-6oA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="z2S-iY-yRS"/>
                         </constraints>
@@ -195,11 +191,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="jnv-2Z-2mg"/>
-                                <exclude reference="xG6-i1-3pF"/>
+                                <exclude reference="Q4k-5w-AhN"/>
                                 <exclude reference="omP-Sk-2k0"/>
                                 <exclude reference="xli-16-OiX"/>
-                                <exclude reference="Q4k-5w-AhN"/>
+                                <exclude reference="jnv-2Z-2mg"/>
+                                <exclude reference="xG6-i1-3pF"/>
                             </mask>
                         </variation>
                         <connections>
@@ -270,12 +266,9 @@
                 <viewControllerPlaceholder storyboardName="Search" id="8JQ-a7-Vmb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSE-7b-TsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281.5" y="-466"/>
+            <point key="canvasLocation" x="1263" y="-474"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LoginBG i6" width="375" height="667"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lDk-96-7wq"/>
         <segue reference="fwZ-Ez-ysw"/>
