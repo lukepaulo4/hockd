@@ -23,6 +23,7 @@
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
 		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
+		00DAA2FA1DCAA15500098ECC /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA2F91DCAA15400098ECC /* Login.m */; };
 		00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1031D7E914800297AAD /* Settings.storyboard */; };
 		00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1051D7E919A00297AAD /* Hock.storyboard */; };
 		00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1081D7E91CC00297AAD /* Messages.storyboard */; };
@@ -87,6 +88,8 @@
 		00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		00A100E21D6D971D00ADDBCF /* HockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HockViewController.h; sourceTree = "<group>"; };
 		00A100E31D6D971D00ADDBCF /* HockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HockViewController.m; sourceTree = "<group>"; };
+		00DAA2F81DCAA15400098ECC /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		00DAA2F91DCAA15400098ECC /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		00E7F1031D7E914800297AAD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		00E7F1061D7E919A00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hock.storyboard; sourceTree = "<group>"; };
 		00E7F1081D7E91CC00297AAD /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 			children = (
 				000E028E1D618CD800AD71BC /* AppDelegate.h */,
 				000E028F1D618CD800AD71BC /* AppDelegate.m */,
+				00DAA2F81DCAA15400098ECC /* Login.h */,
+				00DAA2F91DCAA15400098ECC /* Login.m */,
 				00F499541D76BBA600641ACE /* User.h */,
 				00F499551D76BBA600641ACE /* User.m */,
 				00F499571D76BD9400641ACE /* Item.h */,
@@ -384,6 +389,7 @@
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
 				00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */,
 				00845D101D865C5A00F3659B /* CredentialCheckViewController.m in Sources */,
+				00DAA2FA1DCAA15500098ECC /* Login.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

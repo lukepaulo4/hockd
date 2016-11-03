@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CredentialCheckViewController.h"
-#import "PinConstants.h"
+
 
 //Make sure conforming to the view delegate
 @interface LoginViewController : UIViewController <UITextFieldDelegate>

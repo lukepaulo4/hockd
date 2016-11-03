@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "KeychainWrapper.h"
+#import "Login.h"
 
 
 @interface LoginViewController ()
@@ -54,13 +55,39 @@
     }
 }
 
-
+//Press this button. If the username and password are found on the call, segue to next view. Otherwise, let them know to retry.
 - (IBAction)submitButtonPressed:(UIButton *)sender {
-    NSInteger success = 0;
     
-    @try {
+    //Below is the login api address and the PULL return
+//http://hockd.co/hockd/public/api/v1/auth/login
     
-    //If there is nothing for username and password...
+//POST returns
+//    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cL2hvY2tkLmNvXC9ob2NrZFwvcHVibGljXC9hcGlcL3YxXC9hdXRoXC9sb2dpbiIsImlhdCI6MTQ3ODExOTUwMiwiZXhwIjoxNDc4MTIzMTAyLCJuYmYiOjE0NzgxMTk1MDIsImp0aSI6ImJjZmQxZDA4YzY2NWIxODU2MWRiNDM4MTIwZTExZGI0In0.MkhzSKDqsE70XLyyEDC_VDv5yUSAPZpzgnY6k1swWyc",
+//    "user_details": {
+//        "id": 1,
+//        "username": "rahulsompura1",
+//        "email": "rahulsompura1@gmail.com",
+//        "token": null,
+//        "profile_image": null,
+//        "interests": "test1",
+//        "address_one": "test data",
+//        "address_two": "test data 2",
+//        "city": "ahmedabad",
+//        "state": "gujrat",
+//        "zip": "380015",
+//        "created_by": null,
+//        "updated_by": null,
+//        "created_at": null,
+//        "updated_at": null,
+//        "deleted_at": null,
+//        "random_password": "1"
+//    },
+//    "msg_code": "Successfully logged in",
+//    "status": true
+//}
+
+    
+    //If there is nothing for username and password text fields when hit login...
     if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
         
     //add an alert stating the need to add a username and password
@@ -73,7 +100,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
         
-    //Let's add some code so that what is posted is checked against what we have on the other end...
+    //Let's add some code so that when we POST we see what comes out on the other end...
     } else {
         NSString *post = [[NSString alloc] initWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text]];
         NSLog(@"PostData %@", post);
@@ -89,70 +116,35 @@
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
         [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         [request setHTTPBody:postData];
         
-        //NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+        //Send our request and read the reply by creating a new NSURLSession
+        NSError *err;
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"requestReply: %@", requestReply);
+        }] resume];
         
-        NSError *error = [[NSError alloc] init];
-        NSHTTPURLResponse *response = nil;
+        //Now that we have the data, let's do this. Write an if statement, so that if  "msg_code": "Successfully logged in" we then segue to the home page. Else if "msg_code": "Incorrect credentials" then error message displays and doesn't segue
         
-        //The below is deprecated. You need to figure out how to call this with the new actions!!!!
-        NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-                           
-        NSLog(@"Response code: %ld", (long)[response statusCode]);
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
+        NSString *messageCode = [jsonDict objectForKey:@"msg_code"];
         
-        //We want that that 200 response range
-        if ([response statusCode] >= 200 && [response statusCode] < 300) {
-            NSString *responseData = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-            NSLog(@"Response ==> %@", responseData);
-            
-            NSError *error = nil;
-            NSDictionary *jsonData = [NSJSONSerialization
-                                      JSONObjectWithData:urlData
-                                      options:NSJSONReadingMutableContainers
-                                      error:&error];
-            
-            success = [jsonData[@"success"] integerValue];
-            NSLog(@"Success: %ld", (long)success);
-            
-            if (success == 1) {
-                NSLog(@"Login Success");
-                
-                
-            } else {
-                NSString *message2 = [[NSString alloc] initWithFormat:@"Sign In Failed"];
-                UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Try Again" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction * action) {}];
-                [alert2 addAction:defaultAction2];
-                [self presentViewController:alert2 animated:YES completion:nil];
-            }
-            
-            } else {
-                //if (error) NSLog(@"Error: %@", error);
-                NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
-                UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Try Again"  preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+        if ([messageCode isEqualToString:@"Incorrect credentials"]) {
+            NSString *message2 = [[NSString alloc] initWithFormat:@"Sorry"];
+            UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Username and/or Password Are Incorrect" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             
-                [alert3 addAction:defaultAction3];
-                [self presentViewController:alert3 animated:YES completion:nil];
-
-            }
+            [alert2 addAction:defaultAction2];
+            [self presentViewController:alert2 animated:YES completion:nil];
+            
+        } else if ([messageCode isEqualToString:@"Successfully logged in"]) {
+            [self performSegueWithIdentifier:@"login_successful" sender:self];
         }
-    }
-    @catch (NSException * e) {
-        NSLog(@"Exception: %@", e);
-        NSString *message4 = [[NSString alloc] initWithFormat:@"Sorry"];
-        UIAlertController *alert4 = [UIAlertController alertControllerWithTitle:message4 message:@"Username and Password Incorrect"  preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* defaultAction4 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action) {}];
-        
-        [alert4 addAction:defaultAction4];
-        [self presentViewController:alert4 animated:YES completion:nil];
-    }
     
+    }
 }
 
 

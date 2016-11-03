@@ -69,7 +69,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHo-tr-8HB"/>
-                                    <segue destination="8JQ-a7-Vmb" kind="show" id="lDk-96-7wq"/>
+                                    <segue destination="8JQ-a7-Vmb" kind="presentation" identifier="login_successful" id="lDk-96-7wq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -286,7 +286,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lDk-96-7wq"/>
         <segue reference="fwZ-Ez-ysw"/>
+        <segue reference="lDk-96-7wq"/>
     </inferredMetricsTieBreakers>
 </document>
