@@ -1,5 +1,5 @@
 //
-//  HokPostedViewController.h
+//  HockPostedViewController.h
 //  Hockd iOS App
 //
 //  Created by Luke Paulo on 9/8/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HokPostedViewController : UIViewController
+@interface HockPostedViewController : UIViewController
 
 @end

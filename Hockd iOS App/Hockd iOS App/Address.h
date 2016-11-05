@@ -1,9 +1,9 @@
 //
 //  Address.h
-//  Hokd iOS App
+//  Hockd iOS App
 //
 //  Created by Luke Paulo on 8/31/16.
-//  Copyright © 2016 HOKD. All rights reserved.
+//  Copyright © 2016 HOCKD. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
