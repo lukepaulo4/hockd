@@ -24,6 +24,7 @@
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
 		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
 		00DAA2FA1DCAA15500098ECC /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA2F91DCAA15400098ECC /* Login.m */; };
+		00DAA2FE1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT in Resources */ = {isa = PBXBuildFile; fileRef = 00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */; };
 		00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1031D7E914800297AAD /* Settings.storyboard */; };
 		00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1051D7E919A00297AAD /* Hock.storyboard */; };
 		00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1081D7E91CC00297AAD /* Messages.storyboard */; };
@@ -90,6 +91,7 @@
 		00A100E31D6D971D00ADDBCF /* HockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HockViewController.m; sourceTree = "<group>"; };
 		00DAA2F81DCAA15400098ECC /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		00DAA2F91DCAA15400098ECC /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Orson Casual Heavy Reg FONT"; sourceTree = "<group>"; };
 		00E7F1031D7E914800297AAD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		00E7F1061D7E919A00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hock.storyboard; sourceTree = "<group>"; };
 		00E7F1081D7E91CC00297AAD /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		000E027F1D618CD700AD71BC = {
 			isa = PBXGroup;
 			children = (
+				00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */,
 				000E028A1D618CD800AD71BC /* Hockd iOS App */,
 				000E02A41D618CD800AD71BC /* Hockd iOS AppTests */,
 				000E02AF1D618CD800AD71BC /* Hockd iOS AppUITests */,
@@ -341,6 +344,7 @@
 			files = (
 				00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */,
 				00E7F10C1D7E920F00297AAD /* MyItems.storyboard in Resources */,
+				00DAA2FE1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT in Resources */,
 				000E029B1D618CD800AD71BC /* LaunchScreen.storyboard in Resources */,
 				000E02981D618CD800AD71BC /* Assets.xcassets in Resources */,
 				000E02961D618CD800AD71BC /* Main.storyboard in Resources */,

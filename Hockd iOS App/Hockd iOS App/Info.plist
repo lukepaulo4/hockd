@@ -27,6 +27,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF Orson Casual Heavy Oblique.ttf</string>
+		<string>SF Orson Casual Heavy.ttf</string>
+		<string>SF Orson Casual Light Oblique.ttf</string>
+		<string>SF Orson Casual Light.ttf</string>
+		<string>SF Orson Casual Medium Oblique.ttf</string>
+		<string>SF Orson Casual Medium.ttf</string>
+		<string>SF Orson Casual Shaded Oblique.ttf</string>
+		<string>SF Orson Casual Shaded.ttf</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

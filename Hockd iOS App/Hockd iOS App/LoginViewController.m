@@ -6,6 +6,21 @@
 //  Copyright © 2016 HOCKD. All rights reserved.
 //
 
+//Some general notes:
+//Logo Color = 3abb93 (looks to be a little off on the launch screen?)
+//Logo Font = SF Orson Casual Heavy
+//Fonts are added. Now run the following code to get the names of all the fonts and it should show what the name of the Orson Casual is
+/*
+ for (NSString* family in [UIFont familyNames]) {
+    NSLog(@"%@", family);
+    
+    for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+        NSLog(@" %@", name);
+    }
+}
+*/
+
+ 
 #import "LoginViewController.h"
 #import "KeychainWrapper.h"
 #import "Login.h"
@@ -22,12 +37,14 @@
 
 @implementation LoginViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,8 +66,6 @@
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
     if ([self.passwordTextField.text length] > 0) {
-        
-   
         
     }
 }
