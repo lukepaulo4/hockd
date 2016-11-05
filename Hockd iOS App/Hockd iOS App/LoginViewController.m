@@ -55,6 +55,7 @@
     }
 }
 
+
 //Press this button. If the username and password are found on the call, segue to next view. Otherwise, let them know to retry.
 - (IBAction)submitButtonPressed:(UIButton *)sender {
     
@@ -102,49 +103,62 @@
         
     //Let's add some code so that when we POST we see what comes out on the other end...
     } else {
-        NSString *post = [[NSString alloc] initWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text]];
-        NSLog(@"PostData %@", post);
         
-        NSURL *url = [NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"];
+        //Create the request
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
         
-        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        
-        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setURL:url];
         [request setHTTPMethod:@"POST"];
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-        [request setHTTPBody:postData];
         
-        //Send our request and read the reply by creating a new NSURLSession
+        //Pass the string to the server
+        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text], nil];
+        
+        //Check the value that was passed
+        NSLog(@"Data Details are =%@", userUpdate);
+        
+        //Conver to data
+        NSData *data = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
+        
+        //Apply the data to the body
+        [request setHTTPBody:data];
+        
+        //Create the response and error
         NSError *err;
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-            NSLog(@"requestReply: %@", requestReply);
-        }] resume];
+        NSURLResponse *response;
         
-        //Now that we have the data, let's do this. Write an if statement, so that if  "msg_code": "Successfully logged in" we then segue to the home page. Else if "msg_code": "Incorrect credentials" then error message displays and doesn't segue
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
         
-        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
-        NSString *messageCode = [jsonDict objectForKey:@"msg_code"];
+        NSString *resSrt = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
         
-        if ([messageCode isEqualToString:@"Incorrect credentials"]) {
+        //This is for Response
+        NSLog(@"got response==%@", resSrt);
+        
+        //Now turn the data into a dictionary so we can check the key/value pairs
+        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&err];
+        
+        //Extract the "msg_code" key's value.
+        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+        
+        //Check what that value is!
+        NSLog(@"message code ==%@", msgCodeValue);
+        
+        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+        if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
+            NSLog(@"got correct response");
+            [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            
+        } else {
+            NSLog(@"failed to connect");
+            
             NSString *message2 = [[NSString alloc] initWithFormat:@"Sorry"];
-            UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Username and/or Password Are Incorrect" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Username and/or Password Incorrect" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             
             [alert2 addAction:defaultAction2];
             [self presentViewController:alert2 animated:YES completion:nil];
-            
-        } else if ([messageCode isEqualToString:@"Successfully logged in"]) {
-            [self performSegueWithIdentifier:@"login_successful" sender:self];
         }
-    
     }
+    
 }
 
 

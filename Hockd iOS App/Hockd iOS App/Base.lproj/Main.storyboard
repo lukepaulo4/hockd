@@ -69,7 +69,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHo-tr-8HB"/>
-                                    <segue destination="8JQ-a7-Vmb" kind="presentation" identifier="login_successful" id="lDk-96-7wq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,6 +100,7 @@
                         <outlet property="loginLabel" destination="vwP-43-6oA" id="LIO-0x-aGq"/>
                         <outlet property="passwordTextField" destination="2k7-zO-zTF" id="sBS-S1-Asd"/>
                         <outlet property="usernameTextField" destination="m3Y-Ub-jj4" id="K9n-2A-XPj"/>
+                        <segue destination="8JQ-a7-Vmb" kind="show" identifier="loginSegue" id="VSd-Wz-93k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -287,6 +287,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fwZ-Ez-ysw"/>
-        <segue reference="lDk-96-7wq"/>
+        <segue reference="VSd-Wz-93k"/>
     </inferredMetricsTieBreakers>
 </document>
