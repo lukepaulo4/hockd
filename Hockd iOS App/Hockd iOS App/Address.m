@@ -11,4 +11,21 @@
 
 @implementation Address
 
+- (instancetype) initWithDictionary:(NSDictionary *)addressDictionary {
+    self = [super init];
+    
+    if (self) {
+        self.id_number = addressDictionary[@"id"];
+        self.state = addressDictionary[@"state"];
+        self.city = addressDictionary[@"city"];
+        self.zip = addressDictionary[@"zip"];
+        self.address_one = addressDictionary[@"addressOne"];
+        self.address_two = addressDictionary[@"addressTwo"];
+    
+    }
+    
+    return self;
+}
+
+
 @end

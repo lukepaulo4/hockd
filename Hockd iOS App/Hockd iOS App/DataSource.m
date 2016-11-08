@@ -48,7 +48,7 @@
 }
 
 
-//write a method to request the info for MyItem and turn the response from the API into a dictionary
+//write a method to request the info for My Items and turn the response from the API into a dictionary. Keys should be id_number and item_status
 - (void) populateDataWithParameters:(NSDictionary *)parameters {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"]) {
         
@@ -75,12 +75,12 @@
                 
                 if (responseData) {
                     NSError *jsonError;
-                    NSDictionary *feedDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&jsonError];
+                    NSDictionary *itemDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&jsonError];
                     
-                    if (feedDictionary) {
+                    if (itemDictionary) {
                         dispatch_async(dispatch_get_main_queue(), ^{
                             //done networking, go back on the main thread
-                            [self parseDataFromFeedDictionary:feedDictionary fromRequestWithParameters:parameters];
+                            [self parseDataFromFeedDictionary:itemDictionary fromRequestWithParameters:parameters];
             
 //Non Deprecated*****
 //            NSURL *url = [NSURL URLWithString:urlString];
@@ -171,6 +171,13 @@
         });
     }
 }
+
+
+
+
+
+
+//OK let's do two things. First - POST so that the sign up data gets parsed and uploaded to the server via the API.
 
 
 @end

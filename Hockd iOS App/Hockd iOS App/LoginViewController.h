@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CredentialCheckViewController.h"
 
 
 //Make sure conforming to the view delegate

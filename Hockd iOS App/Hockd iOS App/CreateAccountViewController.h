@@ -1,5 +1,5 @@
 //
-//  CredentialCheckViewController.h
+//  CreateAccountViewController.h
 //  Hockd iOS App
 //
 //  Created by Luke Paulo on 11/7/16.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CredentialCheckViewController : UIViewController <UITextFieldDelegate>
-
+@interface CreateAccountViewController : UIViewController <UITextFieldDelegate>
 
 @end

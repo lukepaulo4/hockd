@@ -14,16 +14,21 @@
     self = [super init];
     
     if (self) {
-        self.idNumber = userDictionary[@"id"];
+        self.id_number = userDictionary[@"id"];
         self.username = userDictionary[@"username"];
         self.email = userDictionary[@"email"];
         self.interests = userDictionary[@"interests"];
+        self.state = userDictionary[@"state"];
+        self.city = userDictionary[@"city"];
+        self.zip = userDictionary[@"zip"];
+        self.address_one = userDictionary[@"addressOne"];
+        self.address_two = userDictionary[@"addressTwo"];
         
-        NSString *profileURLString = userDictionary[@"profilePic"];
-        NSURL *profileURL = [NSURL URLWithString:profileURLString];
+        NSString *profile_picture_URL = userDictionary[@"profileImage"];
+        NSURL *profileURL = [NSURL URLWithString:profile_picture_URL];
         
         if (profileURL) {
-            self.profilePictureURL = profileURL;
+            self.profile_picture_URL = profileURL;
         }
         
     }
@@ -33,3 +38,19 @@
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
