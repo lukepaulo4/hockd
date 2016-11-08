@@ -9,11 +9,9 @@
 #import "ForgotPasswordViewController.h"
 
 @interface ForgotPasswordViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *forgotPasswordLabel;
 @property (weak, nonatomic) IBOutlet UITextField *securityQuestionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *enterEmailTextField;
-@property (weak, nonatomic) IBOutlet UILabel *securityQuestionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *enterEmailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *forgotPasswordLabel;
 
 
 @end

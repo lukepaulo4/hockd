@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *retypePasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UILabel *createAccountLabel;
 
 
 @end
@@ -52,19 +53,20 @@
 }
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
-    if ([self.usernameTextField.text length] > 0) {
+    if ([self.passwordTextField.text length] > 0) {
     }
 }
 
 - (IBAction)retypePasswordTextFieldDidChange:(UITextField *)sender {
-    if ([self.usernameTextField.text length] > 0) {
+    if ([self.retypePasswordTextField.text length] > 0) {
     }
 }
 
 - (IBAction)emailTextFieldDidChange:(UITextField *)sender {
-    if ([self.usernameTextField.text length] > 0) {
+    if ([self.emailTextField.text length] > 0) {
     }
 }
+
 
 
 /*
@@ -80,12 +82,14 @@
 - (IBAction)addPhotoButton:(UIButton *)sender {
 }
 
-- (IBAction)signUpButton:(UIButton *)sender {
+- (IBAction)createAccountButton:(UIButton *)sender {
 }
 
 - (IBAction)backButton:(UIButton *)sender {
 }
 
+- (IBAction)tapGestureRecognizer:(UITapGestureRecognizer *)sender {
+}
 
 
 @end
