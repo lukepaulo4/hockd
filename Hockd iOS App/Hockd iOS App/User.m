@@ -14,7 +14,8 @@
     self = [super init];
     
     if (self) {
-        self.id_number = userDictionary[@"id"];
+        self.user_id = userDictionary[@"id"];
+        self.user_type = userDictionary[@"userType"];
         self.username = userDictionary[@"username"];
         self.email = userDictionary[@"email"];
         self.interests = userDictionary[@"interests"];

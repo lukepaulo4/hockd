@@ -19,8 +19,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *retypePasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userTypeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addressOneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addressTwoTextField;
+@property (weak, nonatomic) IBOutlet UITextField *cityTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *zipTextField;
+@property (weak, nonatomic) IBOutlet UITextField *interestsTextField;
 @property (weak, nonatomic) IBOutlet UILabel *createAccountLabel;
-
 
 @end
 
@@ -34,6 +40,13 @@
     self.passwordTextField.delegate = self;
     self.retypePasswordTextField.delegate = self;
     self.emailTextField.delegate = self;
+    self.userTypeTextField.delegate = self;
+    self.addressOneTextField.delegate = self;
+    self.addressTwoTextField.delegate = self;
+    self.cityTextField.delegate = self;
+    self.stateTextField.delegate = self;
+    self.zipTextField.delegate = self;
+    self.interestsTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,10 +60,11 @@
     return YES;
 }
 
-- (IBAction)usernameTextFieldDidChange:(UITextField *)sender {
+- (IBAction)usernameTextField:(UITextField *)sender {
     if ([self.usernameTextField.text length] > 0) {
     }
 }
+
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
     if ([self.passwordTextField.text length] > 0) {
@@ -67,7 +81,40 @@
     }
 }
 
+- (IBAction)userTypeTextFieldDidChange:(UITextField *)sender {
+    if ([self.userTypeTextField.text length] > 0) {
+    }
+}
 
+- (IBAction)addressOneTextFieldDidChange:(UITextField *)sender {
+    if ([self.addressOneTextField.text length] > 0) {
+    }
+}
+
+- (IBAction)addressTwoTextFieldDidChange:(UITextField *)sender {
+    if ([self.addressTwoTextField.text length] > 0) {
+    }
+}
+
+- (IBAction)cityTextFieldDidChange:(UITextField *)sender {
+    if ([self.cityTextField.text length] > 0) {
+    }
+}
+
+- (IBAction)stateTextFieldDidChange:(UITextField *)sender {
+    if ([self.stateTextField.text length] > 0) {
+    }
+}
+
+- (IBAction)zipTextFieldDidChange:(UITextField *)sender {
+    if ([self.zipTextField.text length] > 0) {
+    }
+}
+
+- (IBAction)interestsTextFieldDidChage:(UITextField *)sender {
+    if ([self.interestsTextField.text length] > 0) {
+    }
+}
 
 /*
 #pragma mark - Navigation
@@ -83,7 +130,91 @@
 }
 
 - (IBAction)createAccountButton:(UIButton *)sender {
+    
+    //First, if any of the text fields aren't filled in, don't let them pass. Except address line 2. Don't need that one.
+    if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
+        
+        //add an alert stating the need to fill in the data
+        NSString *message = [[NSString alloc] initWithFormat:@"ATTN:"];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"All Data Fields Required Except Address 2" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        //Let's add some code so that when we POST we see what comes out on the other end...
+    } else if ([self.passwordTextField text] != [self.retypePasswordTextField text]) {
+        
+        //password retype doesn't equal password, let them know passwords don't match.  Look into a method later so that instead of a pop up, there is an indicator that shows a green check when the password in the retype box matches.
+        NSString *message2 = [[NSString alloc] initWithFormat:@"Try Again:"];
+        UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Passwords Did Not Match" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert2 addAction:defaultAction2];
+        [self presentViewController:alert2 animated:YES completion:nil];
+        
+    } else {
+    
+        //Create the request
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/signup"]];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        //Pass the string to the server
+        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@%zip=%@&interests=%@", [self.usernameTextField text], [self.passwordTextField text], [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
+        
+        //Check the value that was passed
+        NSLog(@"Data Details are =%@", userUpdate);
+        
+        //Conver to data
+        NSData *data = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
+        
+        //Apply the data to the body
+        [request setHTTPBody:data];
+        
+        //Create the response and error
+        NSError *err;
+        NSURLResponse *response;
+        
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+        
+        NSString *resSrt = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+        
+        //This is for Response
+        NSLog(@"got response==%@", resSrt);
+        
+        //Now turn the data into a dictionary so we can check the key/value pairs
+        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&err];
+        
+        //Extract the "msg_code" key's value.
+        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+        
+        //Check what that value is!
+        NSLog(@"message code ==%@", msgCodeValue);
+        
+        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+        if ([msgCodeValue  isEqual:@"Successfully signup"]) {
+            NSLog(@"got correct response");
+            [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
+            
+        } else if ([msgCodeValue  isEqual:@"Successfully signup"]) {
+            NSLog(@"failed to connect");
+            
+            NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
+            UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Email Already Exists On File" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction * action) {}];
+            
+            [alert3 addAction:defaultAction3];
+            [self presentViewController:alert3 animated:YES completion:nil];
+        }
+    }
+    
 }
+
 
 - (IBAction)backButton:(UIButton *)sender {
 }

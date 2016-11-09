@@ -14,9 +14,10 @@
 - (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 
 //List all of the data this class should store about the user. When doing the Blocstagram, we used NSString for idNumber. However, many data models I saw used 'int' for the id type? Receive as string.... 
-@property (nonatomic, strong) NSString *id_number;
+@property (nonatomic, strong) NSString *user_id;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *user_type;
 
 ////See 'category' property in Item.h for list of drop down options for 'interests'
 @property (nonatomic, strong) NSString *interests;
