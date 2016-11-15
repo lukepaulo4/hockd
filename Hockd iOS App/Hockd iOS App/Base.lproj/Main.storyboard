@@ -211,7 +211,7 @@
             <objects>
                 <navigationController title="Root Controller" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oBu-Rx-xG6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EZW-Cd-Ncy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EZW-Cd-Ncy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -267,27 +267,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFo-MT-02Y">
-                                <rect key="frame" x="71" y="212" width="234" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="securityQuestionTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="dgi-1U-6Ua"/>
-                                    <action selector="usernameTextField:" destination="bRH-UQ-bbw" eventType="editingChanged" id="NzN-Hz-aoX"/>
-                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Fq6-eK-2j9"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-ha-fb2">
-                                <rect key="frame" x="71" y="247" width="234" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="ctb-AI-Xyb"/>
-                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="OTF-lx-hEj"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJO-FD-fsD">
                                 <rect key="frame" x="16" y="617" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
@@ -296,26 +275,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="bsd-KG-iPn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="retype password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqf-aW-IZC">
-                                <rect key="frame" x="71.5" y="282" width="234" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="retypePasswordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="AYw-Wo-kdj"/>
-                                    <action selector="securityQuestionTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="xle-bS-CXa"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAV-Bg-G7p">
-                                <rect key="frame" x="71.5" y="317" width="234" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="ueQ-gd-PaF"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="nlc-Sr-nzX"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-6S-Tmg">
                                 <rect key="frame" x="123" y="92" width="130" height="90"/>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,166 +304,194 @@
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="investor or hockr?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-fn-tHP">
-                                <rect key="frame" x="71" y="352" width="234" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMf-z9-BIc">
+                                <rect key="frame" x="71" y="232" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="securityQuestionTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="XDl-et-1bD"/>
-                                    <action selector="userTypeTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="reO-7f-ecB"/>
-                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="YOz-Fi-fY4"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="FhI-Z5-kq8"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6u4-OE-AGZ">
-                                <rect key="frame" x="71" y="387" width="234" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ry-BX-Mwq">
+                                <rect key="frame" x="71" y="267" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="addressOneTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="wiu-9H-KLR"/>
-                                    <action selector="addressTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="3D3-ER-D4c"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="XTy-HS-uJw"/>
-                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="qh0-vB-WEa"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="pFW-b3-IOX"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="B16-Kh-xWe"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address line 2 (if needed)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ieg-Y1-Rhg">
-                                <rect key="frame" x="71" y="422" width="234" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="retype password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eof-EC-FGw">
+                                <rect key="frame" x="71" y="302" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="addressTwoTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="C52-td-VBi"/>
-                                    <action selector="retypePasswordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="D59-Qo-jLL"/>
-                                    <action selector="securityQuestionTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="GWp-u1-K8x"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Wyi-6h-OJK"/>
+                                    <action selector="retypePasswordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="GAM-2d-uHW"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="fV5-sX-tVy"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-dN-gcp">
-                                <rect key="frame" x="71" y="457" width="234" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-Gr-1Ed">
+                                <rect key="frame" x="71" y="337" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="cityTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="fM0-Ry-J4z"/>
-                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="QQ9-ZR-tfQ"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="5YT-rc-mWu"/>
+                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="c8M-qr-4Kl"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Pfx-BV-yFV"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="iNc-Gb-dbq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Peq-5X-Gq4">
-                                <rect key="frame" x="71" y="492" width="115" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="investor or hockr?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPi-kj-WI3">
+                                <rect key="frame" x="71" y="372" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="eHC-0B-41H"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="7Mz-Qx-ulY"/>
-                                    <action selector="stateTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="ovE-7A-Xy6"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="lkP-Ha-TdY"/>
+                                    <action selector="userTypeTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="i8A-jJ-lPL"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="bcI-Lo-YPT"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5l-xW-FiC">
-                                <rect key="frame" x="190" y="492" width="115" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="voA-vN-BoQ"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Gez-zN-R6b"/>
-                                    <action selector="zipTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="jeD-m9-fkJ"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="interests" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oO-yj-9pb">
-                                <rect key="frame" x="71" y="527" width="234" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="cityTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="X6b-eC-fTv"/>
-                                    <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="d16-z8-K9c"/>
-                                    <action selector="enterEmailTextDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="J8z-3H-fVg"/>
-                                    <action selector="interestsTextFieldDidChage:" destination="bRH-UQ-bbw" eventType="editingChanged" id="DVR-f3-kx3"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-8X-P1d">
-                                <rect key="frame" x="160" y="565" width="57" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-8X-P1d">
+                                <rect key="frame" x="160" y="585" width="57" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="createAccountButton:" destination="bRH-UQ-bbw" eventType="touchUpInside" id="RTI-40-GJ3"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="interests" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHA-Wx-5Oi">
+                                <rect key="frame" x="71" y="547" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="interestsTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="3ah-Zh-pKV"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="WL9-Pc-4yb"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="b0h-SZ-SjT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orR-88-AIT">
+                                <rect key="frame" x="71" y="512" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="8C7-B6-OMF"/>
+                                    <action selector="stateTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="lLk-ID-6co"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="6eS-dn-9N1"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1gE-EP-NgU">
+                                <rect key="frame" x="190" y="512" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="A0Y-0Z-0Jg"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="qAQ-UX-ofk"/>
+                                    <action selector="zipTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="DGQ-Eu-Ngg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2n-cM-EFZ">
+                                <rect key="frame" x="71" y="477" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cityTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="cR7-u7-AsH"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Kft-Nd-F0P"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="igQ-yF-1l2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address 2 (if necessary)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0U-iK-DTp">
+                                <rect key="frame" x="71" y="442" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addressTwoTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="XcM-yK-1d8"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="RZe-xZ-6mj"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="zKv-m5-P6u"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-m7-nuR">
+                                <rect key="frame" x="71" y="407" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addressOneTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="4Jz-NI-dFh"/>
+                                    <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="63L-gy-QpF"/>
+                                    <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Dg1-Ve-plC"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="eof-EC-FGw" firstAttribute="centerX" secondItem="8ry-BX-Mwq" secondAttribute="centerX" id="0lE-MS-u1p"/>
                             <constraint firstItem="FYl-6S-Tmg" firstAttribute="top" secondItem="R4d-pt-f26" secondAttribute="bottom" constant="15" id="1v5-HC-brC"/>
-                            <constraint firstItem="Cf5-dN-gcp" firstAttribute="width" secondItem="Ieg-Y1-Rhg" secondAttribute="width" id="24f-jQ-TAb"/>
-                            <constraint firstItem="4oO-yj-9pb" firstAttribute="centerX" secondItem="Cf5-dN-gcp" secondAttribute="centerX" id="2qa-IU-LaS"/>
-                            <constraint firstItem="bqf-aW-IZC" firstAttribute="top" secondItem="tuQ-ha-fb2" secondAttribute="bottom" constant="5" id="3ef-Oy-22a"/>
-                            <constraint firstItem="MAV-Bg-G7p" firstAttribute="width" secondItem="bqf-aW-IZC" secondAttribute="width" id="4lX-9E-s5m"/>
-                            <constraint firstItem="Ieg-Y1-Rhg" firstAttribute="centerX" secondItem="6u4-OE-AGZ" secondAttribute="centerX" id="8K5-ZP-F3O"/>
-                            <constraint firstItem="bqf-aW-IZC" firstAttribute="width" secondItem="tuQ-ha-fb2" secondAttribute="width" id="A6s-jF-lez"/>
-                            <constraint firstItem="eLD-fn-tHP" firstAttribute="width" secondItem="MAV-Bg-G7p" secondAttribute="width" id="Amp-GK-IAA"/>
-                            <constraint firstItem="MAV-Bg-G7p" firstAttribute="top" secondItem="bqf-aW-IZC" secondAttribute="bottom" constant="5" id="Btt-Nn-zDl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dFo-MT-02Y" secondAttribute="trailing" constant="55" id="CTK-Qz-Z7I"/>
-                            <constraint firstItem="dFo-MT-02Y" firstAttribute="top" secondItem="FYl-6S-Tmg" secondAttribute="bottom" constant="30" id="Ixf-nz-14G"/>
-                            <constraint firstItem="Peq-5X-Gq4" firstAttribute="width" secondItem="w5l-xW-FiC" secondAttribute="width" id="JB5-GP-23R"/>
-                            <constraint firstItem="Peq-5X-Gq4" firstAttribute="centerY" secondItem="w5l-xW-FiC" secondAttribute="centerY" id="NCw-rt-of2"/>
-                            <constraint firstItem="tuQ-ha-fb2" firstAttribute="centerX" secondItem="dFo-MT-02Y" secondAttribute="centerX" id="PAP-ps-N6j"/>
+                            <constraint firstItem="tMf-z9-BIc" firstAttribute="leading" secondItem="T4J-65-fY0" secondAttribute="leadingMargin" constant="55" id="3go-co-2fo"/>
+                            <constraint firstItem="8ry-BX-Mwq" firstAttribute="top" secondItem="tMf-z9-BIc" secondAttribute="bottom" constant="5" id="Bqr-LT-MDj"/>
+                            <constraint firstItem="WPi-kj-WI3" firstAttribute="top" secondItem="NXI-Gr-1Ed" secondAttribute="bottom" constant="5" id="CnB-NW-oXh"/>
+                            <constraint firstItem="WPi-kj-WI3" firstAttribute="width" secondItem="NXI-Gr-1Ed" secondAttribute="width" id="KL5-US-iED"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R4d-pt-f26" secondAttribute="trailing" constant="35" id="RgZ-f3-vR6"/>
-                            <constraint firstItem="Peq-5X-Gq4" firstAttribute="leading" secondItem="T4J-65-fY0" secondAttribute="leadingMargin" constant="55" id="RjH-3I-86i"/>
-                            <constraint firstItem="eYB-8X-P1d" firstAttribute="centerX" secondItem="MAV-Bg-G7p" secondAttribute="centerX" id="RtI-xU-T7j"/>
-                            <constraint firstItem="dFo-MT-02Y" firstAttribute="leading" secondItem="T4J-65-fY0" secondAttribute="leadingMargin" constant="55" id="S0e-E5-B92"/>
-                            <constraint firstItem="6u4-OE-AGZ" firstAttribute="width" secondItem="eLD-fn-tHP" secondAttribute="width" id="StD-Pp-WhS"/>
-                            <constraint firstItem="w5l-xW-FiC" firstAttribute="leading" secondItem="Peq-5X-Gq4" secondAttribute="trailing" constant="4" id="T56-RV-xDO"/>
-                            <constraint firstItem="Cf5-dN-gcp" firstAttribute="centerX" secondItem="Ieg-Y1-Rhg" secondAttribute="centerX" id="UKQ-I7-ERx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="w5l-xW-FiC" secondAttribute="trailing" constant="54" id="VHX-RA-IGm"/>
-                            <constraint firstItem="eYB-8X-P1d" firstAttribute="centerX" secondItem="4oO-yj-9pb" secondAttribute="centerX" id="Wuy-2r-e2D"/>
-                            <constraint firstItem="eLD-fn-tHP" firstAttribute="top" secondItem="MAV-Bg-G7p" secondAttribute="bottom" constant="5" id="X36-Mh-Zhk"/>
-                            <constraint firstItem="tuQ-ha-fb2" firstAttribute="top" secondItem="dFo-MT-02Y" secondAttribute="bottom" constant="5" id="YcE-5K-9MA"/>
-                            <constraint firstItem="6u4-OE-AGZ" firstAttribute="top" secondItem="eLD-fn-tHP" secondAttribute="bottom" constant="5" id="c26-4I-CfC"/>
-                            <constraint firstItem="MAV-Bg-G7p" firstAttribute="centerX" secondItem="bqf-aW-IZC" secondAttribute="centerX" id="cFp-5O-tGd"/>
+                            <constraint firstItem="8ry-BX-Mwq" firstAttribute="centerX" secondItem="tMf-z9-BIc" secondAttribute="centerX" id="Us4-Or-VRA"/>
+                            <constraint firstItem="NXI-Gr-1Ed" firstAttribute="centerX" secondItem="eof-EC-FGw" secondAttribute="centerX" id="Zvm-oo-paG"/>
+                            <constraint firstItem="eof-EC-FGw" firstAttribute="top" secondItem="8ry-BX-Mwq" secondAttribute="bottom" constant="5" id="ddA-kX-8Sm"/>
                             <constraint firstItem="R4d-pt-f26" firstAttribute="leading" secondItem="T4J-65-fY0" secondAttribute="leadingMargin" constant="36" id="dfY-m2-DgZ"/>
-                            <constraint firstItem="Ieg-Y1-Rhg" firstAttribute="top" secondItem="6u4-OE-AGZ" secondAttribute="bottom" constant="5" id="hUY-Vk-jvE"/>
-                            <constraint firstItem="4oO-yj-9pb" firstAttribute="top" secondItem="Peq-5X-Gq4" secondAttribute="bottom" constant="5" id="hgu-Ro-u6l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dFo-MT-02Y" secondAttribute="trailing" constant="54" id="iHW-Cn-cYi"/>
+                            <constraint firstItem="NXI-Gr-1Ed" firstAttribute="top" secondItem="eof-EC-FGw" secondAttribute="bottom" constant="5" id="f9q-q7-lTe"/>
+                            <constraint firstItem="eof-EC-FGw" firstAttribute="width" secondItem="8ry-BX-Mwq" secondAttribute="width" id="fjX-bv-grG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tMf-z9-BIc" secondAttribute="trailing" constant="55" id="hNu-aS-FWY"/>
                             <constraint firstItem="FYl-6S-Tmg" firstAttribute="centerX" secondItem="R4d-pt-f26" secondAttribute="centerX" id="k8H-N1-XQ7"/>
-                            <constraint firstItem="Ieg-Y1-Rhg" firstAttribute="width" secondItem="6u4-OE-AGZ" secondAttribute="width" id="l0k-L5-6yJ"/>
-                            <constraint firstItem="dFo-MT-02Y" firstAttribute="leading" secondItem="T4J-65-fY0" secondAttribute="leadingMargin" constant="55" id="lOo-Z1-ygG"/>
-                            <constraint firstItem="6u4-OE-AGZ" firstAttribute="centerX" secondItem="eLD-fn-tHP" secondAttribute="centerX" id="lU1-Zh-iIK"/>
-                            <constraint firstItem="eYB-8X-P1d" firstAttribute="top" secondItem="4oO-yj-9pb" secondAttribute="bottom" constant="8" id="m08-Tc-PZp"/>
+                            <constraint firstItem="NXI-Gr-1Ed" firstAttribute="width" secondItem="eof-EC-FGw" secondAttribute="width" id="kPG-QO-THr"/>
                             <constraint firstItem="qbK-X6-TQ2" firstAttribute="top" secondItem="CJO-FD-fsD" secondAttribute="bottom" constant="20" id="mLf-bk-url"/>
-                            <constraint firstItem="bqf-aW-IZC" firstAttribute="centerX" secondItem="tuQ-ha-fb2" secondAttribute="centerX" id="mnb-LK-by8"/>
-                            <constraint firstItem="tuQ-ha-fb2" firstAttribute="width" secondItem="dFo-MT-02Y" secondAttribute="width" id="p8c-gr-vSy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="CJO-FD-fsD" secondAttribute="leading" id="qlg-iZ-sDB"/>
-                            <constraint firstItem="4oO-yj-9pb" firstAttribute="width" secondItem="Cf5-dN-gcp" secondAttribute="width" id="r0Z-V1-YsB"/>
                             <constraint firstItem="R4d-pt-f26" firstAttribute="top" secondItem="IEg-Jv-Gf1" secondAttribute="bottom" id="rph-Ci-fG1"/>
-                            <constraint firstItem="eLD-fn-tHP" firstAttribute="centerX" secondItem="MAV-Bg-G7p" secondAttribute="centerX" id="tFd-Ds-H2s"/>
-                            <constraint firstItem="Cf5-dN-gcp" firstAttribute="top" secondItem="Ieg-Y1-Rhg" secondAttribute="bottom" constant="5" id="zSJ-tS-H1F"/>
-                            <constraint firstItem="Peq-5X-Gq4" firstAttribute="top" secondItem="Cf5-dN-gcp" secondAttribute="bottom" constant="5" id="zvg-YH-m8N"/>
+                            <constraint firstItem="tMf-z9-BIc" firstAttribute="top" secondItem="FYl-6S-Tmg" secondAttribute="bottom" constant="50" id="u1P-Mk-24K"/>
+                            <constraint firstItem="WPi-kj-WI3" firstAttribute="centerX" secondItem="NXI-Gr-1Ed" secondAttribute="centerX" id="vP9-80-y2y"/>
+                            <constraint firstItem="8ry-BX-Mwq" firstAttribute="width" secondItem="tMf-z9-BIc" secondAttribute="width" id="woJ-fb-jBj"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="CTK-Qz-Z7I"/>
-                                <exclude reference="S0e-E5-B92"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DDb-Ch-Las" appends="YES" id="lfM-bf-h6N"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="addressOneTextField" destination="6u4-OE-AGZ" id="e6i-hx-A1C"/>
-                        <outlet property="addressTwoTextField" destination="Ieg-Y1-Rhg" id="X8Y-SP-Wc7"/>
-                        <outlet property="cityTextField" destination="Cf5-dN-gcp" id="u0f-mn-iPT"/>
+                        <outlet property="addressOneTextField" destination="PSp-m7-nuR" id="bov-8x-wFZ"/>
+                        <outlet property="addressTwoTextField" destination="b0U-iK-DTp" id="oBP-c1-lY5"/>
+                        <outlet property="cityTextField" destination="J2n-cM-EFZ" id="Epm-TW-bdN"/>
                         <outlet property="createAccountLabel" destination="R4d-pt-f26" id="NJ7-0X-fXh"/>
-                        <outlet property="emailTextField" destination="MAV-Bg-G7p" id="27h-0u-kpH"/>
-                        <outlet property="interestsTextField" destination="4oO-yj-9pb" id="OTm-Xv-7ts"/>
-                        <outlet property="passwordTextField" destination="tuQ-ha-fb2" id="7as-X2-9Of"/>
-                        <outlet property="retypePasswordTextField" destination="bqf-aW-IZC" id="fAI-rl-iah"/>
-                        <outlet property="stateTextField" destination="Peq-5X-Gq4" id="zye-4S-KcO"/>
-                        <outlet property="userTypeTextField" destination="eLD-fn-tHP" id="2fw-V6-1e1"/>
-                        <outlet property="usernameTextField" destination="dFo-MT-02Y" id="uCS-L2-LyP"/>
-                        <outlet property="zipTextField" destination="w5l-xW-FiC" id="ibZ-8y-GBS"/>
+                        <outlet property="emailTextField" destination="NXI-Gr-1Ed" id="iYP-8u-Odz"/>
+                        <outlet property="interestsTextField" destination="GHA-Wx-5Oi" id="30q-0e-ZbP"/>
+                        <outlet property="passwordTextField" destination="8ry-BX-Mwq" id="Mhk-L7-2Bj"/>
+                        <outlet property="retypePasswordTextField" destination="eof-EC-FGw" id="RrG-8J-86Y"/>
+                        <outlet property="stateTextField" destination="orR-88-AIT" id="GqF-mo-UWx"/>
+                        <outlet property="userTypeTextField" destination="WPi-kj-WI3" id="t2H-WO-pVe"/>
+                        <outlet property="usernameTextField" destination="tMf-z9-BIc" id="4Bx-jo-XRS"/>
+                        <outlet property="zipTextField" destination="1gE-EP-NgU" id="DvV-sE-hlx"/>
                         <segue destination="8JQ-a7-Vmb" kind="show" identifier="createAccountSegue" id="Uje-g5-Sko"/>
                     </connections>
                 </viewController>
@@ -515,7 +502,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1548" y="1055"/>
+            <point key="canvasLocation" x="1548" y="1054.7226386806597"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

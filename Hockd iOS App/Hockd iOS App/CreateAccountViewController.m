@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *stateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *zipTextField;
 @property (weak, nonatomic) IBOutlet UITextField *interestsTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *createAccountLabel;
 
 @end
@@ -60,11 +61,11 @@
     return YES;
 }
 
-- (IBAction)usernameTextField:(UITextField *)sender {
+
+- (IBAction)usernameTextFieldDidChange:(UITextField *)sender {
     if ([self.usernameTextField.text length] > 0) {
     }
 }
-
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
     if ([self.passwordTextField.text length] > 0) {
@@ -111,11 +112,13 @@
     }
 }
 
-- (IBAction)interestsTextFieldDidChage:(UITextField *)sender {
+- (IBAction)interestsTextFieldDidChange:(UITextField *)sender {
     if ([self.interestsTextField.text length] > 0) {
     }
 }
 
+
+ 
 /*
 #pragma mark - Navigation
 
@@ -132,7 +135,7 @@
 - (IBAction)createAccountButton:(UIButton *)sender {
     
     //First, if any of the text fields aren't filled in, don't let them pass. Except address line 2. Don't need that one.
-    if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
+    if ([[self.usernameTextField text] isEqualToString:@""]  || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
         
         //add an alert stating the need to fill in the data
         NSString *message = [[NSString alloc] initWithFormat:@"ATTN:"];
@@ -164,7 +167,7 @@
         [request setHTTPMethod:@"POST"];
         
         //Pass the string to the server
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@%zip=%@&interests=%@", [self.usernameTextField text], [self.passwordTextField text], [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
+        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], [self.passwordTextField text], [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
         
         //Check the value that was passed
         NSLog(@"Data Details are =%@", userUpdate);
@@ -200,7 +203,7 @@
             NSLog(@"got correct response");
             [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
             
-        } else if ([msgCodeValue  isEqual:@"Successfully signup"]) {
+        } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"]))*/ {
             NSLog(@"failed to connect");
             
             NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
