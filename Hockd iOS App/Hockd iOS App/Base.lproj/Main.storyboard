@@ -211,7 +211,7 @@
             <objects>
                 <navigationController title="Root Controller" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="oBu-Rx-xG6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EZW-Cd-Ncy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EZW-Cd-Ncy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

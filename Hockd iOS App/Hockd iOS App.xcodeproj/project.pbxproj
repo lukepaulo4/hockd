@@ -17,6 +17,10 @@
 		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
 		000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */; };
 		001E81581D892F7000DE27EA /* ItemTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E81571D892F7000DE27EA /* ItemTVCell.m */; };
+		002DA68A1DDB24CB00E3FD6F /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */; };
+		002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */; };
+		002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */; };
+		002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6931DDB250200E3FD6F /* AESCrypt.m */; };
 		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
@@ -79,6 +83,14 @@
 		000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		001E81561D892F7000DE27EA /* ItemTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTVCell.h; sourceTree = "<group>"; };
 		001E81571D892F7000DE27EA /* ItemTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTVCell.m; sourceTree = "<group>"; };
+		002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		002DA68B1DDB24E000E3FD6F /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		002DA68C1DDB24EB00E3FD6F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		002DA68F1DDB24F700E3FD6F /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		002DA6921DDB250200E3FD6F /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		002DA6931DDB250200E3FD6F /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
@@ -178,6 +190,14 @@
 				00F499581D76BD9400641ACE /* Item.m */,
 				00F4995A1D76C71700641ACE /* Address.h */,
 				00F4995B1D76C71700641ACE /* Address.m */,
+				002DA6921DDB250200E3FD6F /* AESCrypt.h */,
+				002DA6931DDB250200E3FD6F /* AESCrypt.m */,
+				002DA68F1DDB24F700E3FD6F /* NSData+CommonCrypto.h */,
+				002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */,
+				002DA68C1DDB24EB00E3FD6F /* NSData+Base64.h */,
+				002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */,
+				002DA68B1DDB24E000E3FD6F /* NSString+Base64.h */,
+				002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */,
 				00DAA2FF1DD17B5D00098ECC /* KeychainWrapper.h */,
 				00DAA3001DD17B5D00098ECC /* KeychainWrapper.m */,
 				00F499601D76D0D700641ACE /* AutomatedMessages.h */,
@@ -391,7 +411,9 @@
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
 				001E81581D892F7000DE27EA /* ItemTVCell.m in Sources */,
 				00FBCB3F1D829142002DD04D /* HockPostedViewController.m in Sources */,
+				002DA68A1DDB24CB00E3FD6F /* NSString+Base64.m in Sources */,
 				00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */,
+				002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
 				00DAA3011DD17B5E00098ECC /* KeychainWrapper.m in Sources */,
@@ -402,8 +424,10 @@
 				00F499591D76BD9400641ACE /* Item.m in Sources */,
 				00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
+				002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */,
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
 				00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */,
+				002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */,
 				00DAA3071DD1A1AA00098ECC /* CredentialCheckViewController.m in Sources */,
 				00DAA2FA1DCAA15500098ECC /* Login.m in Sources */,
 			);

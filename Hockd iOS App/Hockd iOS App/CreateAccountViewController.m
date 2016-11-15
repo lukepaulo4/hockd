@@ -8,7 +8,7 @@
 
 #import "CreateAccountViewController.h"
 #import "DataSource.h"
-
+#import "AESCrypt.h"
 
 //Create below class then implement here
 //#import "CreateAccount.h"
@@ -134,6 +134,17 @@
 
 - (IBAction)createAccountButton:(UIButton *)sender {
     
+    //let's salt and hash that password text box
+    //NSString *salt = [AESCrypt genRandStringLength:25];
+    NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
+    NSString *protectedPass = encryptedPass;
+    
+    NSString *encryptedRetypePass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.retypePasswordTextField text]];
+    NSString *protectedRetypePass = encryptedRetypePass;
+    
+    NSLog(@"Pass = %@", protectedPass);
+    NSLog(@"Pas2 = %@", protectedRetypePass);
+    
     //First, if any of the text fields aren't filled in, don't let them pass. Except address line 2. Don't need that one.
     if ([[self.usernameTextField text] isEqualToString:@""]  || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
         
@@ -148,7 +159,7 @@
         
         
         //Let's add some code so that when we POST we see what comes out on the other end...
-    } else if ([self.passwordTextField text] != [self.retypePasswordTextField text]) {
+    } else if (![protectedPass isEqualToString:(protectedRetypePass)]) {
         
         //password retype doesn't equal password, let them know passwords don't match.  Look into a method later so that instead of a pop up, there is an indicator that shows a green check when the password in the retype box matches.
         NSString *message2 = [[NSString alloc] initWithFormat:@"Try Again:"];
@@ -167,7 +178,7 @@
         [request setHTTPMethod:@"POST"];
         
         //Pass the string to the server
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], [self.passwordTextField text], [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
+        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], protectedPass, [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
         
         //Check the value that was passed
         NSLog(@"Data Details are =%@", userUpdate);

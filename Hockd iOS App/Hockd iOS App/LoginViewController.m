@@ -24,7 +24,7 @@
 #import "LoginViewController.h"
 #import "KeychainWrapper.h"
 #import "Login.h"
-
+#import "AESCrypt.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -100,7 +100,15 @@
 //    "msg_code": "Successfully logged in",
 //    "status": true
 //}
-
+    
+    
+    //lets encrypt the password with the following:     NSString *encryptedData = [AESCrypt encrypt:message password:password];
+    //and decrypt with the following:                   NSString *message = [AESCrypt decrypt:encryptedData password:password];
+    //plus you've added salt. blah dah dah
+    //NSString *salt = [AESCrypt genRandStringLength:25];
+    //NSString *encryptedPass = [AESCrypt encrypt:salt password:[self.passwordTextField text]];
+    
+    
     
     //If there is nothing for username and password text fields when hit login...
     if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
@@ -117,6 +125,10 @@
         
     //Let's add some code so that when we POST we see what comes out on the other end...
     } else {
+        
+        /*NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
+        NSLog(@"%@", encryptedPass);*/
+        
         
         //Create the request
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
@@ -187,3 +199,5 @@
 }
 
 @end
+
+
