@@ -174,13 +174,13 @@
     
         
         // *****************************Try the NSURLSession
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], protectedPass, [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
+        NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], protectedPass, [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
         
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
         NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/signup"]];
-        request.HTTPBody = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
         request.HTTPMethod = @"POST";
         NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

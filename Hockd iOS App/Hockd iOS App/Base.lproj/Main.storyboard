@@ -309,7 +309,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="FhI-Z5-kq8"/>
                                 </connections>
@@ -319,7 +319,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="pFW-b3-IOX"/>
                                     <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="B16-Kh-xWe"/>
@@ -330,7 +330,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Wyi-6h-OJK"/>
                                     <action selector="retypePasswordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="GAM-2d-uHW"/>
@@ -342,7 +342,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="emailTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="c8M-qr-4Kl"/>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Pfx-BV-yFV"/>
@@ -354,7 +354,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="lkP-Ha-TdY"/>
                                     <action selector="userTypeTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="i8A-jJ-lPL"/>
@@ -376,7 +376,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="interestsTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="3ah-Zh-pKV"/>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="WL9-Pc-4yb"/>
@@ -389,7 +389,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="8C7-B6-OMF"/>
                                     <action selector="stateTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="lLk-ID-6co"/>
@@ -402,7 +402,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="A0Y-0Z-0Jg"/>
                                     <action selector="usernameTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="qAQ-UX-ofk"/>
@@ -415,7 +415,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="cityTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="cR7-u7-AsH"/>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="Kft-Nd-F0P"/>
@@ -441,7 +441,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="addressOneTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="4Jz-NI-dFh"/>
                                     <action selector="passwordTextFieldDidChange:" destination="bRH-UQ-bbw" eventType="editingChanged" id="63L-gy-QpF"/>

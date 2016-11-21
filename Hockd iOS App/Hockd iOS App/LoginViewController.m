@@ -25,6 +25,7 @@
 #import "KeychainWrapper.h"
 #import "Login.h"
 #import "AESCrypt.h"
+#import "DataSource.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -126,49 +127,20 @@
     //Let's add some code so that when we POST we see what comes out on the other end...
     } else {
         
-        /*NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
-        NSLog(@"%@", encryptedPass);*/
+        NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
+        NSString *protectedPass = encryptedPass;
+        NSLog(@"Pass = %@", protectedPass);
+        
+        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], protectedPass, nil];
+        NSLog(@"Username = %@", self.usernameTextField);
         
         
-        //Create the request
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
+        NSString *loginSuccess = [DataSource postCallToSegue:@"http://hockd.co/hockd/public/api/v1/auth/login" msgCode:@"Successfully logged in" userInput:userUpdate];
         
-        [request setHTTPMethod:@"POST"];
+        NSLog(@"This call msg_code = %@", loginSuccess);
         
-        //Pass the string to the server
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text], nil];
         
-        //Check the value that was passed
-        NSLog(@"Data Details are =%@", userUpdate);
-        
-        //Conver to data
-        NSData *data = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
-        
-        //Apply the data to the body
-        [request setHTTPBody:data];
-        
-        //Create the response and error
-        NSError *err;
-        NSURLResponse *response;
-        
-        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-        
-        NSString *resSrt = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-        
-        //This is for Response
-        NSLog(@"got response==%@", resSrt);
-        
-        //Now turn the data into a dictionary so we can check the key/value pairs
-        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&err];
-        
-        //Extract the "msg_code" key's value.
-        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
-        
-        //Check what that value is!
-        NSLog(@"message code ==%@", msgCodeValue);
-        
-        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
-        if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
+        if ([loginSuccess isEqual:@"Successfully logged in"]) {
             NSLog(@"got correct response");
             [self performSegueWithIdentifier:@"loginSegue" sender:self];
             

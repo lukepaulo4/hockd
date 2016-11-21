@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *items;
 
-
++ (NSString *)postCallToSegue:(NSString *)api msgCode:(NSString *)msgCode userInput:(NSString *)userInput;
 
 @end
