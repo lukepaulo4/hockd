@@ -172,61 +172,50 @@
         
     } else {
     
-        //Create the request
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/signup"]];
         
-        [request setHTTPMethod:@"POST"];
-        
-        //Pass the string to the server
+        // *****************************Try the NSURLSession
         NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], protectedPass, [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
         
-        //Check the value that was passed
-        NSLog(@"Data Details are =%@", userUpdate);
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        //Conver to data
-        NSData *data = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
-        
-        //Apply the data to the body
-        [request setHTTPBody:data];
-        
-        //Create the response and error
-        NSError *err;
-        NSURLResponse *response;
-        
-        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-        
-        NSString *resSrt = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-        
-        //This is for Response
-        NSLog(@"got response==%@", resSrt);
-        
-        //Now turn the data into a dictionary so we can check the key/value pairs
-        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&err];
-        
-        //Extract the "msg_code" key's value.
-        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
-        
-        //Check what that value is!
-        NSLog(@"message code ==%@", msgCodeValue);
-        
-        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
-        if ([msgCodeValue  isEqual:@"Successfully signup"]) {
-            NSLog(@"got correct response");
-            [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/signup"]];
+        request.HTTPBody = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPMethod = @"POST";
+        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            //NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
+            NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
             
-        } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"]))*/ {
-            NSLog(@"failed to connect");
+            //This is for Response
+            NSLog(@"got response==%@", resSrt);
             
-            NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
-            UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Email Already Exists On File" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                   handler:^(UIAlertAction * action) {}];
+            //Extract the "msg_code" key's value.
+            NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
             
-            [alert3 addAction:defaultAction3];
-            [self presentViewController:alert3 animated:YES completion:nil];
-        }
+            //Check what that value is!
+            NSLog(@"message code ==%@", msgCodeValue);
+            
+            //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+            if ([msgCodeValue  isEqual:@"Successfully signup"]) {
+                NSLog(@"got correct response");
+                [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
+                
+            } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"])) */ {
+                NSLog(@"failed to connect");
+                
+                NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
+                UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Email Already Exists On File" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {}];
+                
+                [alert3 addAction:defaultAction3];
+                [self presentViewController:alert3 animated:YES completion:nil];
+            }
+        }];
+        
+        [postDataTask resume];
     }
-    
 }
 
 
