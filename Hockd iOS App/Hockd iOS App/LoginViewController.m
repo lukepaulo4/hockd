@@ -135,7 +135,10 @@
         NSLog(@"Username = %@", self.usernameTextField);
         
         
-        NSString *loginSuccess = [DataSource postCallToSegue:@"http://hockd.co/hockd/public/api/v1/auth/login" msgCode:@"Successfully logged in" userInput:userUpdate];
+        NSString *loginSuccess = [DataSource postCallToSegue:@"http://hockd.co/hockd/public/api/v1/auth/login" userInput:userUpdate];
+        
+        //implement the segue here until can figure out how to connect and make the right code work
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
         
         NSLog(@"This call msg_code = %@", loginSuccess);
         

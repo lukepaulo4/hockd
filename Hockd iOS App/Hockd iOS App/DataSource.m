@@ -23,7 +23,7 @@
 
     //create a method POST ing data
 
-+ (NSString *)postCallToSegue:(NSString *)api msgCode:(NSString *)msgCode userInput:(NSString *)userInput {
++ (NSString *)postCallToSegue:(NSString *)api userInput:(NSString *)userInput {
     
     __block NSString *msgCodeValueKey;
     
@@ -50,27 +50,6 @@
         
         NSLog(@"msgCodeValue key == %@", msgCodeValueKey);
         
-        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
-        if ([msgCodeValue  isEqual:msgCode]) {
-            NSLog(@"got correct response");
-            
-            
-            //Do this in the view controller since this is a NSObject class
-            //[self performSegueWithIdentifier:segue sender:self];
-        
-        } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"])) */ {
-            NSLog(@"failed to connect");
-            
-            //Do this in the view controller since this is a NSObject class
-            //NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
-            //UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Email Already Exists On File" preferredStyle:UIAlertControllerStyleAlert];
-            //UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-            //                                                   handler:^(UIAlertAction * action) {}];
-        
-            //[alert3 addAction:defaultAction3];
-            //[self presentViewController:alert3 animated:YES completion:nil];
-        }
-        
        
     }];
 
@@ -80,6 +59,8 @@
     return msgCodeValueKey;
     
 }
+
+//
 
 @end
 

@@ -39,7 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//None of this is right. Copied from blocstagram. Need to redo.
+/*
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -69,7 +70,7 @@
     UIImage *image = item.imageOne;
     return 300 + (image.size.height / image.size.width * CGRectGetWidth(self.view.frame));
 }
-
+*/
 
 
 /*
