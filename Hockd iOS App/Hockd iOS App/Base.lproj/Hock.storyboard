@@ -259,60 +259,10 @@
             </objects>
             <point key="canvasLocation" x="3424" y="1238"/>
         </scene>
-        <!--Camera Access View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="usm-6w-2b4">
             <objects>
-                <viewController id="4vC-De-nin" customClass="CameraAccessViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="l9n-qu-RIl"/>
-                        <viewControllerLayoutGuide type="bottom" id="6ob-CU-SII"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9kn-yd-F6n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NbG-od-8Tt">
-                                <rect key="frame" x="-4" y="72" width="383" height="431"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oir-qL-IP7">
-                                <rect key="frame" x="138.5" y="511" width="98" height="41"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhotoButton:" destination="4vC-De-nin" eventType="touchUpInside" id="F6e-Xq-3Jn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPs-E2-RiJ">
-                                <rect key="frame" x="130.5" y="569" width="114" height="41"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <state key="normal" title="Select Photo">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.3927565978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectPhotoButton:" destination="4vC-De-nin" eventType="touchUpInside" id="cxe-jQ-ACP"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="yPs-E2-RiJ" firstAttribute="centerX" secondItem="9kn-yd-F6n" secondAttribute="centerX" id="0rI-fh-fES"/>
-                            <constraint firstItem="NbG-od-8Tt" firstAttribute="top" secondItem="l9n-qu-RIl" secondAttribute="bottom" constant="8" id="5vQ-fP-7dV"/>
-                            <constraint firstItem="oir-qL-IP7" firstAttribute="top" secondItem="NbG-od-8Tt" secondAttribute="bottom" constant="8" id="6eF-d3-kq4"/>
-                            <constraint firstItem="yPs-E2-RiJ" firstAttribute="top" secondItem="oir-qL-IP7" secondAttribute="bottom" constant="17" id="G60-IF-ldg"/>
-                            <constraint firstItem="6ob-CU-SII" firstAttribute="top" secondItem="yPs-E2-RiJ" secondAttribute="bottom" constant="8" id="QPY-FK-rjU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NbG-od-8Tt" secondAttribute="trailing" constant="-20" id="SI9-Ty-gDA"/>
-                            <constraint firstItem="NbG-od-8Tt" firstAttribute="leading" secondItem="9kn-yd-F6n" secondAttribute="leadingMargin" constant="-20" id="dRw-L6-Qcp"/>
-                            <constraint firstItem="oir-qL-IP7" firstAttribute="centerX" secondItem="yPs-E2-RiJ" secondAttribute="centerX" id="gdH-Bz-Wam"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="NbG-od-8Tt" id="Nhe-FR-kML"/>
-                    </connections>
-                </viewController>
+                <viewController id="4vC-De-nin" customClass="CameraViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfi-Ch-eRW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4120" y="1238"/>
@@ -366,7 +316,7 @@
                     <tabBarItem key="tabBarItem" title="HOCK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZd-yG-VEp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QZd-yG-VEp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

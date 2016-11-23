@@ -21,6 +21,8 @@
 		002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */; };
 		002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */; };
 		002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6931DDB250200E3FD6F /* AESCrypt.m */; };
+		002DA6971DE42E7200E3FD6F /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6961DE42E7200E3FD6F /* CameraToolbar.m */; };
+		002DA69A1DE42E9B00E3FD6F /* UIImage+ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6991DE42E9B00E3FD6F /* UIImage+ImageUtilities.m */; };
 		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
@@ -42,7 +44,7 @@
 		00F4995F1D76CA2000641ACE /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4995E1D76CA2000641ACE /* DataSource.m */; };
 		00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499611D76D0D700641ACE /* AutomatedMessages.m */; };
 		00FBCB3F1D829142002DD04D /* HockPostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB3E1D829142002DD04D /* HockPostedViewController.m */; };
-		00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */; };
+		00FBCB421D82A23F002DD04D /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBCB411D82A23F002DD04D /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		002DA6921DDB250200E3FD6F /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		002DA6931DDB250200E3FD6F /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		002DA6951DE42E7200E3FD6F /* CameraToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToolbar.h; sourceTree = "<group>"; };
+		002DA6961DE42E7200E3FD6F /* CameraToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToolbar.m; sourceTree = "<group>"; };
+		002DA6981DE42E9B00E3FD6F /* UIImage+ImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageUtilities.h"; sourceTree = "<group>"; };
+		002DA6991DE42E9B00E3FD6F /* UIImage+ImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageUtilities.m"; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
@@ -127,8 +133,8 @@
 		00F499611D76D0D700641ACE /* AutomatedMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomatedMessages.m; sourceTree = "<group>"; };
 		00FBCB3D1D829142002DD04D /* HockPostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HockPostedViewController.h; sourceTree = "<group>"; };
 		00FBCB3E1D829142002DD04D /* HockPostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HockPostedViewController.m; sourceTree = "<group>"; };
-		00FBCB401D82A23F002DD04D /* CameraAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraAccessViewController.h; sourceTree = "<group>"; };
-		00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraAccessViewController.m; sourceTree = "<group>"; };
+		00FBCB401D82A23F002DD04D /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		00FBCB411D82A23F002DD04D /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +230,12 @@
 				00A100E31D6D971D00ADDBCF /* HockViewController.m */,
 				00FBCB3D1D829142002DD04D /* HockPostedViewController.h */,
 				00FBCB3E1D829142002DD04D /* HockPostedViewController.m */,
-				00FBCB401D82A23F002DD04D /* CameraAccessViewController.h */,
-				00FBCB411D82A23F002DD04D /* CameraAccessViewController.m */,
+				00FBCB401D82A23F002DD04D /* CameraViewController.h */,
+				00FBCB411D82A23F002DD04D /* CameraViewController.m */,
+				002DA6951DE42E7200E3FD6F /* CameraToolbar.h */,
+				002DA6961DE42E7200E3FD6F /* CameraToolbar.m */,
+				002DA6981DE42E9B00E3FD6F /* UIImage+ImageUtilities.h */,
+				002DA6991DE42E9B00E3FD6F /* UIImage+ImageUtilities.m */,
 				00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */,
 				00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
@@ -408,6 +418,7 @@
 				00F499561D76BBA600641ACE /* User.m in Sources */,
 				000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */,
 				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
+				002DA69A1DE42E9B00E3FD6F /* UIImage+ImageUtilities.m in Sources */,
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
 				001E81581D892F7000DE27EA /* ItemTVCell.m in Sources */,
 				00FBCB3F1D829142002DD04D /* HockPostedViewController.m in Sources */,
@@ -426,9 +437,10 @@
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
 				002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */,
 				00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */,
-				00FBCB421D82A23F002DD04D /* CameraAccessViewController.m in Sources */,
+				00FBCB421D82A23F002DD04D /* CameraViewController.m in Sources */,
 				002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */,
 				00DAA3071DD1A1AA00098ECC /* CredentialCheckViewController.m in Sources */,
+				002DA6971DE42E7200E3FD6F /* CameraToolbar.m in Sources */,
 				00DAA2FA1DCAA15500098ECC /* Login.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
