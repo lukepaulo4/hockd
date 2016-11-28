@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef void (^NewItemCompletionBlock)(NSError *error);
+
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *items;
 
-+ (NSString *)postCallToSegue:(NSString *)api userInput:(NSString *)userInput;
+- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
 
 @end

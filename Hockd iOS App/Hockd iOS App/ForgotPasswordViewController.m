@@ -9,7 +9,6 @@
 #import "ForgotPasswordViewController.h"
 
 @interface ForgotPasswordViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *securityQuestionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *enterEmailTextField;
 @property (weak, nonatomic) IBOutlet UILabel *forgotPasswordLabel;
 
@@ -21,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.securityQuestionTextField.delegate = self;
     self.enterEmailTextField.delegate = self;
 }
 
@@ -34,9 +32,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder]; //dismisses the keyboard
     return YES;
-}
-
-- (IBAction)securityQuestionTextDidChange:(UITextField *)sender {
 }
 
 - (IBAction)enterEmailTextDidChange:(UITextField *)sender {

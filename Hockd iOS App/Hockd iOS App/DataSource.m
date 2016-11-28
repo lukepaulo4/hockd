@@ -23,44 +23,41 @@
 
     //create a method POST ing data
 
-+ (NSString *)postCallToSegue:(NSString *)api userInput:(NSString *)userInput {
-    
-    __block NSString *msgCodeValueKey;
+- (void)getJsonResponse:(NSString *)apiStr input:(NSString *)userInput success:(void (^)(NSDictionary *responseDict))success failure:(void(^)(NSError* error))failure {
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:api]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:apiStr]];
     request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPMethod = @"POST";
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        //NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
-        NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    
-        //This is for Response
-        NSLog(@"got response==%@", resSrt);
-    
-        //Extract the "msg_code" key's value.
-        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
         
-        //Check what that value is!
-        NSLog(@"message code ==%@", msgCodeValue);
-        msgCodeValueKey = msgCodeValue;
-        
-        NSLog(@"msgCodeValue key == %@", msgCodeValueKey);
-        
-       
+        NSLog(@"%@", data);
+            
+            if (error) {
+                failure(error);
+                NSLog(@"Error parsing JSON: %@", error);
+            } else {
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+                NSLog(@"message code ==%@", msgCodeValue);
+                success(jsonDict);
+            }
+                //NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     }];
-
     [postDataTask resume];
-
-    NSLog(@"what will be returned ==%@", msgCodeValueKey);
-    return msgCodeValueKey;
-    
 }
 
-//
+- (void) requestJsonResponseWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
+    
+    /*  [self getJsonResponse:apiStr input:userUpdate success:^(NSDictionary *responseDict) {
+        NSLog(@"%@", responseDict);
+    } failure:^(NSError *error) {
+    
+    }];  */
+}
+
 
 @end
 
