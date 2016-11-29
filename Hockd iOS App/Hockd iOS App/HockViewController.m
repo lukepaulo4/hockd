@@ -7,8 +7,10 @@
 //
 
 #import "HockViewController.h"
+#import "TGCameraViewController.h"
 
-@interface HockViewController ()
+@interface HockViewController () 
+
 
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UITextField *categoryTextField;
@@ -98,6 +100,9 @@
 }
 
 - (IBAction)addPhotoButton:(UIButton *)sender {
+    
+    
+    
 }
 
 - (IBAction)categoryTextFieldDidChange:(UITextField *)sender {
