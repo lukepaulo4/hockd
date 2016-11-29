@@ -131,11 +131,53 @@
         NSString *protectedPass = encryptedPass;
         NSLog(@"Pass = %@", protectedPass);
         
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], protectedPass, nil];
+        NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], protectedPass, nil];
         NSLog(@"Username = %@", self.usernameTextField);
         
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        //NSString *loginSuccess = [DataSource postCallToSegue:@"http://hockd.co/hockd/public/api/v1/auth/login" userInput:userUpdate];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
+        request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPMethod = @"POST";
+        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            //NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
+            NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            
+            //This is for Response
+            NSLog(@"got response==%@", resSrt);
+            
+            //Extract the "msg_code" key's value.
+            NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+            
+            //Check what that value is!
+            NSLog(@"message code ==%@", msgCodeValue);
+            
+            //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+            if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
+                NSLog(@"got correct response");
+                [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                
+            } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"])) */ {
+                NSLog(@"failed to connect");
+                
+                NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
+                UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Incorrect username or password" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {}];
+                
+                [alert3 addAction:defaultAction3];
+                [self presentViewController:alert3 animated:YES completion:nil];
+            }
+        }];
+        
+        [postDataTask resume];
+    }
+}
+
+        /* The below is for use when the global method comes online.
+        
         
         //implement the segue here until can figure out how to connect and make the right code work
         [self performSegueWithIdentifier:@"loginSegue" sender:self];
@@ -163,7 +205,7 @@
     
 }
 
-
+*/
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
 }
