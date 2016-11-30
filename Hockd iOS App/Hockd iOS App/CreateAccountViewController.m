@@ -14,7 +14,7 @@
 //Create below class then implement here
 //#import "CreateAccount.h"
 
-@interface CreateAccountViewController () <TGCameraDelegate>
+@interface CreateAccountViewController () <TGCameraDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -68,8 +68,7 @@
     //[TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
     
     // hide filter button
-    //[TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
-    
+    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
     
     _photoView.clipsToBounds = YES;
     
@@ -85,6 +84,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark -
 #pragma mark - TGCameraDelegate required
@@ -140,6 +140,31 @@
 {
     _photoView.image = nil;
 }
+
+
+//Choose pic stuff. Need to initialize and set the Camera Navigation Controller though... It is not in window hierarchy....
+- (IBAction)chooseExistingPhotoTapped
+{
+    UIImagePickerController *pickerController =
+    [TGAlbum imagePickerControllerWithDelegate:self];
+    
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    _photoView.image = [TGAlbum imageWithMediaInfo:info];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 
