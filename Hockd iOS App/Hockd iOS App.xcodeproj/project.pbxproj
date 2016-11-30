@@ -21,6 +21,7 @@
 		002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */; };
 		002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */; };
 		002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6931DDB250200E3FD6F /* AESCrypt.m */; };
+		0037156C1DEEABB200C13A97 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0037156A1DEEABB200C13A97 /* CreateAccount.storyboard */; };
 		0049158C1DED97D100892B8D /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049158B1DED97D100892B8D /* UIImage+CameraFilters.m */; };
 		004915951DED97DB00892B8D /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049158E1DED97DB00892B8D /* TGCameraAuthorizationViewController.m */; };
 		004915961DED97DB00892B8D /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004915901DED97DB00892B8D /* TGCameraNavigationController.m */; };
@@ -118,6 +119,7 @@
 		002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		002DA6921DDB250200E3FD6F /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		002DA6931DDB250200E3FD6F /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		0037156B1DEEABB200C13A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateAccount.storyboard; sourceTree = "<group>"; };
 		0049158A1DED97D100892B8D /* UIImage+CameraFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CameraFilters.h"; sourceTree = "<group>"; };
 		0049158B1DED97D100892B8D /* UIImage+CameraFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CameraFilters.m"; sourceTree = "<group>"; };
 		0049158D1DED97DB00892B8D /* TGCameraAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraAuthorizationViewController.h; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				004915DC1DED98A400892B8D /* TGCameraResources */,
 				004915DF1DED98D400892B8D /* TGCameraViewController.xcassets */,
 				000E02941D618CD800AD71BC /* Main.storyboard */,
+				0037156A1DEEABB200C13A97 /* CreateAccount.storyboard */,
 				00E7F10D1D7E92B300297AAD /* Search.storyboard */,
 				00E7F10A1D7E920F00297AAD /* MyItems.storyboard */,
 				00E7F1081D7E91CC00297AAD /* Messages.storyboard */,
@@ -535,6 +538,7 @@
 				000E02961D618CD800AD71BC /* Main.storyboard in Resources */,
 				00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */,
 				00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */,
+				0037156C1DEEABB200C13A97 /* CreateAccount.storyboard in Resources */,
 				00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +661,14 @@
 				000E029A1D618CD800AD71BC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0037156A1DEEABB200C13A97 /* CreateAccount.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0037156B1DEEABB200C13A97 /* Base */,
+			);
+			name = CreateAccount.storyboard;
 			sourceTree = "<group>";
 		};
 		00E7F1051D7E919A00297AAD /* Hock.storyboard */ = {
