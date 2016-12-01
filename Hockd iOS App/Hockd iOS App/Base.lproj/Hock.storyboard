@@ -44,7 +44,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="addPhotoButton:" destination="Ib1-ra-rju" eventType="touchUpInside" id="ySs-GY-GYp"/>
-                                    <segue destination="4vC-De-nin" kind="show" id="W90-Ue-LC4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH7-vA-NVH">
@@ -258,14 +257,6 @@
                 <tapGestureRecognizer id="8LY-cO-OSK"/>
             </objects>
             <point key="canvasLocation" x="3424" y="1238"/>
-        </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="usm-6w-2b4">
-            <objects>
-                <viewController id="4vC-De-nin" customClass="CameraViewController" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfi-Ch-eRW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4120" y="1238"/>
         </scene>
         <!--Hock Posted View Controller-->
         <scene sceneID="bRf-JJ-W9h">
