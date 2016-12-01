@@ -18,14 +18,18 @@
 
 @interface NSString (automatedMessages)
 
-//+(NSString*)messageNamed:(NSString*)name {
-//    NSString *message = @"";
-//    
-//    if (name isEqualToString:@"wrongPassword") {
-//        message = @"Sorry, you put in the wrong password";
-//    }
-//    
-//    return message;
-//}
+/*
++(NSString*)messageNamed:(NSString*)name {
+    NSString *message = @"";
+
+    if (name isEqualToString:@"wrongPassword") {
+        message = @"Sorry, you put in the wrong password";
+    }
+
+    return message;
+}
+*/
+
+- (void)messageAlert:(NSString *)message alert:(NSString*)alert;
 
 @end

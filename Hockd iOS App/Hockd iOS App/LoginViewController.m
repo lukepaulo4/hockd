@@ -6,21 +6,37 @@
 //  Copyright © 2016 HOCKD. All rights reserved.
 //
 
+//Some general notes:
+//Logo Color = 3abb93 (looks to be a little off on the launch screen?)
+//Logo Font = SF Orson Casual Heavy
+//Fonts are added. Now run the following code to get the names of all the fonts and it should show what the name of the Orson Casual is
+/*
+ for (NSString* family in [UIFont familyNames]) {
+    NSLog(@"%@", family);
+    
+    for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+        NSLog(@" %@", name);
+    }
+}
+*/
+
+ 
 #import "LoginViewController.h"
 #import "KeychainWrapper.h"
 #import "Login.h"
-
+#import "AESCrypt.h"
+#import "DataSource.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+
 
 @end
 
 @implementation LoginViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +44,7 @@
     //
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,8 +66,6 @@
 
 - (IBAction)passwordTextFieldDidChange:(UITextField *)sender {
     if ([self.passwordTextField.text length] > 0) {
-        
-   
         
     }
 }
@@ -86,7 +101,8 @@
 //    "msg_code": "Successfully logged in",
 //    "status": true
 //}
-
+    
+    
     
     //If there is nothing for username and password text fields when hit login...
     if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
@@ -104,64 +120,61 @@
     //Let's add some code so that when we POST we see what comes out on the other end...
     } else {
         
-        //Create the request
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
+        NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
+        NSString *protectedPass = encryptedPass;
+        NSLog(@"Pass = %@", protectedPass);
+        NSLog(@"Username = %@", self.usernameTextField);
         
-        [request setHTTPMethod:@"POST"];
+        //NSDictionary *outputDict = @{};
+        [[DataSource sharedInstance] loginWithUsername:self.usernameTextField.text password:protectedPass completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+            NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
+
+            [self loginCompletedWithDict:returnedDict];
         
-        //Pass the string to the server
-        NSString *userUpdate = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], [self.passwordTextField text], nil];
-        
-        //Check the value that was passed
-        NSLog(@"Data Details are =%@", userUpdate);
-        
-        //Conver to data
-        NSData *data = [userUpdate dataUsingEncoding:NSUTF8StringEncoding];
-        
-        //Apply the data to the body
-        [request setHTTPBody:data];
-        
-        //Create the response and error
-        NSError *err;
-        NSURLResponse *response;
-        
-        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-        
-        NSString *resSrt = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-        
-        //This is for Response
-        NSLog(@"got response==%@", resSrt);
-        
-        //Now turn the data into a dictionary so we can check the key/value pairs
-        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&err];
+        // this is where the non-global shit went
         
         //Extract the "msg_code" key's value.
-        NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+        NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
         
         //Check what that value is!
-        NSLog(@"message code ==%@", msgCodeValue);
+        NSLog(@"message code in required area ==%@", msgCodeValue);
         
-        //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
-        if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
-            NSLog(@"got correct response");
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
-            
-        } else {
-            NSLog(@"failed to connect");
-            
-            NSString *message2 = [[NSString alloc] initWithFormat:@"Sorry"];
-            UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Username and/or Password Incorrect" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert2 addAction:defaultAction2];
-            [self presentViewController:alert2 animated:YES completion:nil];
-        }
+            //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+            if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
+                NSLog(@"got correct response");
+                
+                
+                //add a dispatch async to get rid of bug message
+                dispatch_async(dispatch_get_main_queue(),   ^{
+                
+                    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                
+                });
+                
+                
+            } else {
+                NSLog(@"failed to connect");
+                
+                dispatch_async(dispatch_get_main_queue(),   ^{
+                
+                NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
+                UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Incorrect username or password" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* defaultAction3 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {}];
+                
+                [alert3 addAction:defaultAction3];
+                [self presentViewController:alert3 animated:YES completion:nil];
+                    
+                });
+            }
+        }];
     }
-    
 }
 
 
+- (void)loginCompletedWithDict:(NSDictionary*)dict {
+    NSLog(@"got response in method==%@", dict);
+}
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
 }
@@ -173,3 +186,5 @@
 }
 
 @end
+
+

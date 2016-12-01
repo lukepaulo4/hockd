@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TGCameraViewController.h"
 
 @interface HockViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
+
+
 
 //*** WOULD USE <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> FOR PICKER
 

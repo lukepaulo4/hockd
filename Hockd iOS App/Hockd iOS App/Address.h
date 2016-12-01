@@ -12,14 +12,38 @@
 
 @interface Address : NSObject
 
+- (instancetype) initWithDictionary:(NSDictionary *)addressDictionary;
+
 //Does it make sense to separate out the address? OR shoulld this just be included with the user class?
-@property (nonatomic, strong) NSString *idNumber;
+@property (nonatomic, strong) NSString *id_number;
 @property (nonatomic, strong) User *user;
 
-@property (nonatomic, strong) NSString *addressLineOne;
-@property (nonatomic, strong) NSString *addressLineTwo;
+@property (nonatomic, strong) NSString *address_one;
+@property (nonatomic, strong) NSString *address_two;
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *zip;
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

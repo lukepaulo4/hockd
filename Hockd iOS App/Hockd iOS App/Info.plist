@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Enable Photos access to import photos from your library.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Enable Camera to take photos.</string>
+    
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>NSAppTransportSecurity</key>
@@ -27,6 +32,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF Orson Casual Heavy Oblique.ttf</string>
+		<string>SF Orson Casual Heavy.ttf</string>
+		<string>SF Orson Casual Light Oblique.ttf</string>
+		<string>SF Orson Casual Light.ttf</string>
+		<string>SF Orson Casual Medium Oblique.ttf</string>
+		<string>SF Orson Casual Medium.ttf</string>
+		<string>SF Orson Casual Shaded Oblique.ttf</string>
+		<string>SF Orson Casual Shaded.ttf</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

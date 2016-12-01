@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CredentialCheckViewController.h"
 
 
 //Make sure conforming to the view delegate
@@ -16,6 +15,8 @@
 
 //Add an access string. Any object that needs to be notified when an access token is obtained will use this string.
 //extern NSString *const LoginViewControllerDidGetAccessTokenNotifications;
+
+
 
 @end
 
