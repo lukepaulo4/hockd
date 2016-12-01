@@ -103,13 +103,6 @@
 //}
     
     
-    //lets encrypt the password with the following:     NSString *encryptedData = [AESCrypt encrypt:message password:password];
-    //and decrypt with the following:                   NSString *message = [AESCrypt decrypt:encryptedData password:password];
-    //plus you've added salt. blah dah dah
-    //NSString *salt = [AESCrypt genRandStringLength:25];
-    //NSString *encryptedPass = [AESCrypt encrypt:salt password:[self.passwordTextField text]];
-    
-    
     
     //If there is nothing for username and password text fields when hit login...
     if ([[self.usernameTextField text] isEqualToString:@""] || [[self.passwordTextField text] isEqualToString:@""]) {
@@ -130,37 +123,39 @@
         NSString *encryptedPass = [AESCrypt encrypt:[self.usernameTextField text] password:[self.passwordTextField text]];
         NSString *protectedPass = encryptedPass;
         NSLog(@"Pass = %@", protectedPass);
-        
-        NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@", [self.usernameTextField text], protectedPass, nil];
         NSLog(@"Username = %@", self.usernameTextField);
         
-        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        //NSDictionary *outputDict = @{};
+        [[DataSource sharedInstance] loginWithUsername:self.usernameTextField.text password:protectedPass completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+            NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
+
+            [self loginCompletedWithDict:returnedDict];
         
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/login"]];
-        request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
-        request.HTTPMethod = @"POST";
-        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            //NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
-            NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-            
-            //This is for Response
-            NSLog(@"got response==%@", resSrt);
-            
-            //Extract the "msg_code" key's value.
-            NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
-            
-            //Check what that value is!
-            NSLog(@"message code ==%@", msgCodeValue);
-            
+        // this is where the non-global shit went
+        
+        //Extract the "msg_code" key's value.
+        NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
+        
+        //Check what that value is!
+        NSLog(@"message code in required area ==%@", msgCodeValue);
+        
             //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
             if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
                 NSLog(@"got correct response");
-                [self performSegueWithIdentifier:@"loginSegue" sender:self];
                 
-            } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"])) */ {
+                
+                //add a dispatch async to get rid of bug message
+                dispatch_async(dispatch_get_main_queue(),   ^{
+                
+                    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                
+                });
+                
+                
+            } else {
                 NSLog(@"failed to connect");
+                
+                dispatch_async(dispatch_get_main_queue(),   ^{
                 
                 NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
                 UIAlertController *alert3 = [UIAlertController alertControllerWithTitle:message3 message:@"Incorrect username or password" preferredStyle:UIAlertControllerStyleAlert];
@@ -169,43 +164,17 @@
                 
                 [alert3 addAction:defaultAction3];
                 [self presentViewController:alert3 animated:YES completion:nil];
+                    
+                });
             }
         }];
-        
-        [postDataTask resume];
     }
 }
 
-        /* The below is for use when the global method comes online.
-        
-        
-        //implement the segue here until can figure out how to connect and make the right code work
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-        
-        //NSLog(@"This call msg_code = %@", loginSuccess);
-        
-        
-        //encryptedPass should be loginSuccess. Just changed so it isn't red. Need to change back when ready to do method
-        if ([encryptedPass isEqual:@"Successfully logged in"]) {
-            NSLog(@"got correct response");
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
-            
-        } else {
-            NSLog(@"failed to connect");
-            
-            NSString *message2 = [[NSString alloc] initWithFormat:@"Sorry"];
-            UIAlertController *alert2 = [UIAlertController alertControllerWithTitle:message2 message:@"Username and/or Password Incorrect" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* defaultAction2 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert2 addAction:defaultAction2];
-            [self presentViewController:alert2 animated:YES completion:nil];
-        }
-    }
-    
-}
 
-*/
+- (void)loginCompletedWithDict:(NSDictionary*)dict {
+    NSLog(@"got response in method==%@", dict);
+}
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
 }

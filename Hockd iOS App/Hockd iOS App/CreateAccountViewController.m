@@ -97,12 +97,24 @@
 - (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
+
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSLog(@"Taken photo string is = %@", encodedImageString);
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)cameraDidSelectAlbumPhoto:(UIImage *)image
 {
     _photoView.image = image;
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSLog(@"Selected photo string is = %@", encodedImageString);
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -139,6 +151,7 @@
 - (void)clearTapped
 {
     _photoView.image = nil;
+    NSLog(@"Image is nil");
 }
 
 
@@ -157,11 +170,18 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     _photoView.image = [TGAlbum imageWithMediaInfo:info];
+    
+    NSData *imageData = UIImageJPEGRepresentation(_photoView.image, 1.0);
+    NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSLog(@"Image Picker string is = %@", encodedImageString);
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    NSLog(@"Image picker cancelled");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -263,7 +283,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     if ([[self.usernameTextField text] isEqualToString:@""]  || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
         
         //add an alert stating the need to fill in the data
-        NSString *message = [[NSString alloc] initWithFormat:@"ATTN:"];
+        NSString *message = [[NSString alloc] initWithFormat:@"Sorry:"];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"All Data Fields Required Except Address 2" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
@@ -285,37 +305,34 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         [self presentViewController:alert2 animated:YES completion:nil];
         
     } else {
-    
         
-        // *****************************Try the NSURLSession
-        NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", [self.usernameTextField text], protectedPass, [self.emailTextField text], [self.userTypeTextField text], [self.addressOneTextField text], [self.addressTwoTextField text], [self.cityTextField text], [self.stateTextField text], [self.zipTextField text], [self.interestsTextField text], nil];
+        [[DataSource sharedInstance] createAccountWithUsername:self.usernameTextField.text password:protectedPass email:self.emailTextField.text userType:self.userTypeTextField.text addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
         
-        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://hockd.co/hockd/public/api/v1/auth/signup"]];
-        request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
-        request.HTTPMethod = @"POST";
-        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            //NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:jsonDict];
-            NSString *resSrt = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             
-            //This is for Response
-            NSLog(@"got response==%@", resSrt);
+            [self createAccountCompletedWithDict:returnedDict];
             
             //Extract the "msg_code" key's value.
-            NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+            NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
             
             //Check what that value is!
-            NSLog(@"message code ==%@", msgCodeValue);
+            NSLog(@"message code in required area ==%@", msgCodeValue);
             
             //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
             if ([msgCodeValue  isEqual:@"Successfully signup"]) {
                 NSLog(@"got correct response");
-                [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
                 
-            } else /*if ((![msgCodeValue  isEqual: @"Successfully signup"])) */ {
+                //add a dispatch async to get rid of bug message
+                dispatch_async(dispatch_get_main_queue(),   ^{
+                    
+                    [self performSegueWithIdentifier:@"createAccountSegue" sender:self];
+                    
+                });
+                
+            } else {
+                
+                dispatch_async(dispatch_get_main_queue(),   ^{
+                
                 NSLog(@"failed to connect");
                 
                 NSString *message3 = [[NSString alloc] initWithFormat:@"Sorry"];
@@ -325,11 +342,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                 
                 [alert3 addAction:defaultAction3];
                 [self presentViewController:alert3 animated:YES completion:nil];
+                    
+                });
             }
         }];
-        
-        [postDataTask resume];
     }
+}
+
+
+- (void)createAccountCompletedWithDict:(NSDictionary*)dict {
+    NSLog(@"got response in method==%@", dict);
 }
 
 

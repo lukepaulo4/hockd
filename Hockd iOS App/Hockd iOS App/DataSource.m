@@ -21,8 +21,18 @@
 @implementation DataSource
 
 
-    //create a method POST ing data
++(instancetype) sharedInstance {
+    static dispatch_once_t once;     //dispatch_once ensures we only create a single instance of this class
+    static id sharedInstance;        //holds our shared instance
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+    
+}
 
+
+//create a method POST ing data
 - (void)getJsonResponse:(NSString *)apiStr input:(NSString *)userInput success:(void (^)(NSDictionary *responseDict))success failure:(void(^)(NSError* error))failure {
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -49,15 +59,44 @@
     [postDataTask resume];
 }
 
-- (void) requestJsonResponseWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
+- (void) loginWithUsername:(NSString*)username password:(NSString*)password completionHandler:(NewItemCompletionBlock)completionHandler {
     
-    /*  [self getJsonResponse:apiStr input:userUpdate success:^(NSDictionary *responseDict) {
-        NSLog(@"%@", responseDict);
+    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/login";
+    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@", username, password, nil];
+    
+    [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"loginWithUsername in DS dict = %@", responseDict);
+        completionHandler(nil,responseDict);
     } failure:^(NSError *error) {
     
-    }];  */
+    }];
 }
 
+- (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
+    
+    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/signup";
+    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", username, password, email, userType, addressOne, addressTwo, city, state, zip, interests, nil];
+    
+    [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"createAccountWithUsername in DS dict = %@", responseDict);
+        completionHandler(nil,responseDict);
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void) forgotPasswordWithEmail:(NSString*)email completionHandler:(NewItemCompletionBlock)completionHandler {
+    
+    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/forgotpassword";
+    NSString *userInput = [NSString stringWithFormat:@"username=%@", email, nil];
+    
+    [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"forgotPasswordWithEmail in DS dict = %@", responseDict);
+        completionHandler(nil,responseDict);
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 @end
 
