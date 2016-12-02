@@ -131,8 +131,17 @@
 
             [self loginCompletedWithDict:returnedDict];
         
-        // this is where the non-global shit went
+        //Extract the token value
+            NSString *token = [returnedDict objectForKey:@"token"];
         
+            //Store the token in the keychain. Look into how to call this. Once it is called and set in the key chain you can extract for calling the later API calls
+            
+        //Extract the user_id
+            NSString *userId = [returnedDict objectForKey:@"id"];
+            
+            //Store the id in the keychain. Look into how to call this. Once it is called called,
+            
+            
         //Extract the "msg_code" key's value.
         NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
         

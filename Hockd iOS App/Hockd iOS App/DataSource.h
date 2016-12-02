@@ -17,12 +17,18 @@ typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict)
 
 @property (nonatomic, strong, readonly) NSArray *items;
 
-//- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
+
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password completionHandler:(NewItemCompletionBlock)completionHandler;
 
 - (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler;
 
 - (void) forgotPasswordWithEmail:(NSString*)email completionHandler:(NewItemCompletionBlock)completionHandler;
+
+- (void) updateUserDetailsWithToken:(NSString *)token AddressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler;
+
+- (void) updateUserPasswordWithToken:(NSString *)token userId:(NSString*)userId oldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword completionHandler:(NewItemCompletionBlock)completionHandler;
+
+- (void) myProfileWithUserId:(NSString*)userId token:(NSString*)token completionHandler:(NewItemCompletionBlock)completionHandler;
 
 
 @end
