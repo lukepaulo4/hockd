@@ -22,6 +22,8 @@
 		002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */; };
 		002DA6941DDB250200E3FD6F /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6931DDB250200E3FD6F /* AESCrypt.m */; };
 		0037156C1DEEABB200C13A97 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0037156A1DEEABB200C13A97 /* CreateAccount.storyboard */; };
+		003715721DF7F89500C13A97 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 003715711DF7F89500C13A97 /* SAMKeychain.m */; };
+		003715751DF7F91100C13A97 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 003715741DF7F91100C13A97 /* SAMKeychainQuery.m */; };
 		0049158C1DED97D100892B8D /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049158B1DED97D100892B8D /* UIImage+CameraFilters.m */; };
 		004915951DED97DB00892B8D /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049158E1DED97DB00892B8D /* TGCameraAuthorizationViewController.m */; };
 		004915961DED97DB00892B8D /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004915901DED97DB00892B8D /* TGCameraNavigationController.m */; };
@@ -57,7 +59,6 @@
 		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
 		00DAA2FA1DCAA15500098ECC /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA2F91DCAA15400098ECC /* Login.m */; };
 		00DAA2FE1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT in Resources */ = {isa = PBXBuildFile; fileRef = 00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */; };
-		00DAA3011DD17B5E00098ECC /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA3001DD17B5D00098ECC /* KeychainWrapper.m */; };
 		00DAA3041DD19D2400098ECC /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA3031DD19D2400098ECC /* CreateAccountViewController.m */; };
 		00DAA3071DD1A1AA00098ECC /* CredentialCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA3061DD1A1AA00098ECC /* CredentialCheckViewController.m */; };
 		00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1031D7E914800297AAD /* Settings.storyboard */; };
@@ -120,6 +121,10 @@
 		002DA6921DDB250200E3FD6F /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		002DA6931DDB250200E3FD6F /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		0037156B1DEEABB200C13A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateAccount.storyboard; sourceTree = "<group>"; };
+		003715701DF7F89500C13A97 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		003715711DF7F89500C13A97 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		003715731DF7F91100C13A97 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		003715741DF7F91100C13A97 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		0049158A1DED97D100892B8D /* UIImage+CameraFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CameraFilters.h"; sourceTree = "<group>"; };
 		0049158B1DED97D100892B8D /* UIImage+CameraFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CameraFilters.m"; sourceTree = "<group>"; };
 		0049158D1DED97DB00892B8D /* TGCameraAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraAuthorizationViewController.h; sourceTree = "<group>"; };
@@ -185,8 +190,6 @@
 		00DAA2F81DCAA15400098ECC /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		00DAA2F91DCAA15400098ECC /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Orson Casual Heavy Reg FONT"; sourceTree = "<group>"; };
-		00DAA2FF1DD17B5D00098ECC /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
-		00DAA3001DD17B5D00098ECC /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		00DAA3021DD19D2400098ECC /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
 		00DAA3031DD19D2400098ECC /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		00DAA3051DD1A1AA00098ECC /* CredentialCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialCheckViewController.h; sourceTree = "<group>"; };
@@ -277,12 +280,14 @@
 				002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */,
 				002DA68B1DDB24E000E3FD6F /* NSString+Base64.h */,
 				002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */,
-				00DAA2FF1DD17B5D00098ECC /* KeychainWrapper.h */,
-				00DAA3001DD17B5D00098ECC /* KeychainWrapper.m */,
 				00F499601D76D0D700641ACE /* AutomatedMessages.h */,
 				00F499611D76D0D700641ACE /* AutomatedMessages.m */,
 				00F4995D1D76CA2000641ACE /* DataSource.h */,
 				00F4995E1D76CA2000641ACE /* DataSource.m */,
+				003715701DF7F89500C13A97 /* SAMKeychain.h */,
+				003715711DF7F89500C13A97 /* SAMKeychain.m */,
+				003715731DF7F91100C13A97 /* SAMKeychainQuery.h */,
+				003715741DF7F91100C13A97 /* SAMKeychainQuery.m */,
 				000E02911D618CD800AD71BC /* LoginViewController.h */,
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
 				00DAA3051DD1A1AA00098ECC /* CredentialCheckViewController.h */,
@@ -583,6 +588,7 @@
 				004915CF1DED980100892B8D /* TGCameraSlideView.m in Sources */,
 				004915CE1DED980100892B8D /* TGCameraSlideUpView.m in Sources */,
 				004915CB1DED980100892B8D /* TGCameraFocusView.m in Sources */,
+				003715751DF7F91100C13A97 /* SAMKeychainQuery.m in Sources */,
 				00FBCB3F1D829142002DD04D /* HockPostedViewController.m in Sources */,
 				004915CD1DED980100892B8D /* TGCameraSlideDownView.m in Sources */,
 				004915AD1DED97E800892B8D /* TGAlbum.m in Sources */,
@@ -595,13 +601,13 @@
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				004915D01DED980100892B8D /* TGTintedButton.m in Sources */,
 				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
-				00DAA3011DD17B5E00098ECC /* KeychainWrapper.m in Sources */,
 				00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */,
 				00F4995C1D76C71700641ACE /* Address.m in Sources */,
 				004915CA1DED980100892B8D /* TGCameraFilterView.m in Sources */,
 				00DAA3041DD19D2400098ECC /* CreateAccountViewController.m in Sources */,
 				000E02901D618CD800AD71BC /* AppDelegate.m in Sources */,
 				00F499591D76BD9400641ACE /* Item.m in Sources */,
+				003715721DF7F89500C13A97 /* SAMKeychain.m in Sources */,
 				00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */,
 				000E028D1D618CD800AD71BC /* main.m in Sources */,
 				0049158C1DED97D100892B8D /* UIImage+CameraFilters.m in Sources */,

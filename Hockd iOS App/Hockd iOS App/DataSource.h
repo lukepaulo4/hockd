@@ -31,4 +31,5 @@ typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict)
 - (void) myProfileWithUserId:(NSString*)userId token:(NSString*)token completionHandler:(NewItemCompletionBlock)completionHandler;
 
 
+
 @end

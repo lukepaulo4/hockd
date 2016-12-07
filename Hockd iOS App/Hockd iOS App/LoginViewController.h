@@ -14,7 +14,7 @@
 
 
 //Add an access string. Any object that needs to be notified when an access token is obtained will use this string.
-//extern NSString *const LoginViewControllerDidGetAccessTokenNotifications;
+extern NSString *const LoginViewControllerDidGetAccessTokenNotifications;
 
 
 
