@@ -9,6 +9,7 @@
 #import "Item.h"
 #import "User.h"
 
+
 @implementation Item
 
 - (instancetype) initWithDictionary:(NSDictionary *)itemDictionary {
@@ -16,7 +17,7 @@
     
     if (self) {
         self.idNumber = itemDictionary[@"itemId"];
-        self.user = [[User alloc] initWithDictionary:itemDictionary[@"user"]];
+        //self.user = [[User alloc] initWithDictionary:itemDictionary[@"user"]];
         self.itemDescription = itemDictionary[@"itemDescription"];
         self.manufacturer = itemDictionary[@"manufacturer"];
         self.manufactureYear = itemDictionary[@"manufactureYear"];

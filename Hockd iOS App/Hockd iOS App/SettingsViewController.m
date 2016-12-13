@@ -28,7 +28,7 @@
     //meh about the above to. Set your array of possible settings
 
     self.settingsLabels =  [NSArray arrayWithObjects:@"HELP & SUPPORT",
-                                @"PROFILE",
+                                @"EDIT PROFILE",
                                 @"FUN HOCKD FACTS",
                                 @"GIVE US FEEDBACK",
                                 @"INVITE YOUR FRIENDS",
@@ -108,7 +108,20 @@
 
 //Output for when we do select something. Makes a little pop up screen son.
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSString *rowValue = self.settingsLabels[indexPath.row];
+    
+    if ([rowValue isEqualToString:@"EDIT PROFILE"]) {
+        
+        dispatch_async(dispatch_get_main_queue(),   ^{
+
+            [self performSegueWithIdentifier:@"updateAccountSegue" sender:self];
+            
+        });
+
+    } else {
+    
+    
     NSString *message = [[NSString alloc] initWithFormat:@"You selected %@", rowValue];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"HELL YEAH" preferredStyle:UIAlertControllerStyleAlert];
@@ -117,6 +130,8 @@
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+        
+    }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 

@@ -17,6 +17,8 @@
 extern NSString *const LoginViewControllerDidGetAccessTokenNotifications;
 
 
+@property (nonatomic, strong) NSDictionary *userDict;
+
 
 @end
 

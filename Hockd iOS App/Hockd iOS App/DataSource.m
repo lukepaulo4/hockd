@@ -104,7 +104,7 @@
 }
 
 //method to extract create account dictionary response. This one is a bit funky.. I think actually it is OK to require all text boxes save for the address two and interests. *******If a text box is empty, the value for the key should not change (shouldn't become nil, or does it matter?). Look into this bitch a little more. ****THIS ALSO NEEDS THE TOKEN VALUE********
-- (void) updateUserDetailsWithToken:(NSString *)token AddressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
+- (void) updateUserDetailsWithToken:(NSString *)token addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
     
     NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/updateuserdetails";
     NSString *userInput = [NSString stringWithFormat:@"token=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", token, addressOne, addressTwo, city, state, zip, interests, nil];

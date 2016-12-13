@@ -26,6 +26,7 @@
 #import "Login.h"
 #import "AESCrypt.h"
 #import "DataSource.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -175,25 +176,11 @@
     }
 }
 
-//Try to put the token in the wrapper with the BOOL method prescribed...
+
+
 - (void)loginCompletedWithDict:(NSDictionary*)dict {
     NSLog(@"got response in method==%@", dict);
     
-    [SAMKeychain setAccessibilityType:kSecAttrAccessibleWhenUnlocked];
-    
-    //NSError *error;
-    NSString *randStr = [AESCrypt genRandStringLength:(12)];
-    //Extract the token value
-    NSString *encryptedToken = [AESCrypt encrypt:[dict objectForKey:@"token"] password:randStr];
-    NSString *userId = [dict objectForKey:@"id"];
-
-    NSString *service = @"token";
-    
-    BOOL tokenAddSuccess = [SAMKeychain setPassword:encryptedToken forService:service account:userId];
-    NSLog(@"Was token added => %d", tokenAddSuccess);
-    
-    NSString *password = [SAMKeychain passwordForService:service account:userId];
-    NSLog(@"token password == %@", password);
 }
 
 

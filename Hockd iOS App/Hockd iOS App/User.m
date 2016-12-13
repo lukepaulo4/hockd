@@ -7,23 +7,26 @@
 //
 
 #import "User.h"
+#import "LoginViewController.h"
 
 @implementation User
+
 
 - (instancetype) initWithDictionary:(NSDictionary *)userDictionary {
     self = [super init];
     
     if (self) {
-        self.user_id = userDictionary[@"id"];
-        self.user_type = userDictionary[@"userType"];
+        self.token = userDictionary[@"token"];
+        self.ID = userDictionary[@"id"];
+        self.user_type = userDictionary[@"user_type"];
         self.username = userDictionary[@"username"];
         self.email = userDictionary[@"email"];
         self.interests = userDictionary[@"interests"];
         self.state = userDictionary[@"state"];
         self.city = userDictionary[@"city"];
         self.zip = userDictionary[@"zip"];
-        self.address_one = userDictionary[@"addressOne"];
-        self.address_two = userDictionary[@"addressTwo"];
+        self.address_one = userDictionary[@"address_one"];
+        self.address_two = userDictionary[@"address_two"];
         
         NSString *profile_picture_URL = userDictionary[@"profileImage"];
         NSURL *profileURL = [NSURL URLWithString:profile_picture_URL];
@@ -33,9 +36,12 @@
         }
         
     }
-    
+   
     return self;
 }
+
+
+
 
 
 

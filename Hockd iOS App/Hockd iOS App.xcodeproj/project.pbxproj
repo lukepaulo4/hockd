@@ -52,6 +52,8 @@
 		004915D61DED981A00892B8D /* TGCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004915D31DED981A00892B8D /* TGCameraViewController.xib */; };
 		004915D71DED981A00892B8D /* TGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004915D41DED981A00892B8D /* TGPhotoViewController.xib */; };
 		004915DE1DED98C600892B8D /* TGCameraViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 004915DD1DED98C600892B8D /* TGCameraViewController.bundle */; };
+		0056F9FF1DF8A3350059475E /* UpdateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056F9FE1DF8A3350059475E /* UpdateAccountViewController.m */; };
+		0056FA021DF8E33C0059475E /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */; };
 		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
@@ -177,6 +179,10 @@
 		004915D31DED981A00892B8D /* TGCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGCameraViewController.xib; sourceTree = "<group>"; };
 		004915D41DED981A00892B8D /* TGPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPhotoViewController.xib; sourceTree = "<group>"; };
 		004915DD1DED98C600892B8D /* TGCameraViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TGCameraViewController.bundle; sourceTree = "<group>"; };
+		0056F9FD1DF8A3350059475E /* UpdateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateAccountViewController.h; sourceTree = "<group>"; };
+		0056F9FE1DF8A3350059475E /* UpdateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateAccountViewController.m; sourceTree = "<group>"; };
+		0056FA001DF8E33C0059475E /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
+		0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
@@ -294,6 +300,10 @@
 				00DAA3061DD1A1AA00098ECC /* CredentialCheckViewController.m */,
 				00DAA3021DD19D2400098ECC /* CreateAccountViewController.h */,
 				00DAA3031DD19D2400098ECC /* CreateAccountViewController.m */,
+				0056F9FD1DF8A3350059475E /* UpdateAccountViewController.h */,
+				0056F9FE1DF8A3350059475E /* UpdateAccountViewController.m */,
+				0056FA001DF8E33C0059475E /* UpdatePasswordViewController.h */,
+				0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
 				00A100D31D6D954700ADDBCF /* SearchViewController.h */,
@@ -594,8 +604,10 @@
 				004915AD1DED97E800892B8D /* TGAlbum.m in Sources */,
 				004915B41DED97E800892B8D /* TGCameraGrid.m in Sources */,
 				004915B01DED97E800892B8D /* TGCameraColor.m in Sources */,
+				0056FA021DF8E33C0059475E /* UpdatePasswordViewController.m in Sources */,
 				004915B91DED97F400892B8D /* TGAssetImageFile.m in Sources */,
 				002DA68A1DDB24CB00E3FD6F /* NSString+Base64.m in Sources */,
+				0056F9FF1DF8A3350059475E /* UpdateAccountViewController.m in Sources */,
 				00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */,
 				002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
