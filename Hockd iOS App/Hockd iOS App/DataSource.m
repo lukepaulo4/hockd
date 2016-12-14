@@ -12,8 +12,13 @@
 #import "Address.h"
 
 
-@interface DataSource ()
+@interface DataSource () {
+    NSMutableArray *_items;
+    NSMutableArray *_userData;
+}
 
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *userData;
 
 @end
 
@@ -30,6 +35,8 @@
     
 }
 
+
+#pragma mark - POST
 
 //create a method POST ing data
 - (void)getJsonResponse:(NSString *)apiStr input:(NSString *)userInput success:(void (^)(NSDictionary *responseDict))success failure:(void(^)(NSError* error))failure {
@@ -59,6 +66,8 @@
 }
 
 
+#pragma mark Login Stuff
+
 //method to extract login dictionary response
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password completionHandler:(NewItemCompletionBlock)completionHandler {
     
@@ -71,6 +80,26 @@
     } failure:^(NSError *error) {
     
     }];
+}
+
+//PARSE the login response dictionary into User
+- (void) parseDataFromLoginDictionary:(NSDictionary *) loginDictionary fromRequestWithParameters:(NSDictionary *)parameters {
+    
+    NSArray *userArray = loginDictionary[@"data"];
+    NSMutableArray *tmpUserData = [NSMutableArray array];
+    
+    for (NSDictionary *userDictionary in userArray) {
+        User *userData = [[User alloc] initWithDictionary:userDictionary];
+        
+        if (userData) {
+            [tmpUserData addObject:userData];
+        }
+    }
+    
+    [self willChangeValueForKey:@"userData"];
+    self.userData = tmpUserData;
+    [self didChangeValueForKey:@"userData"];
+    
 }
 
 
@@ -132,6 +161,12 @@
     }];
 }
 
+
+
+
+
+
+#pragma mark - GET
 
 //Create a GET call method similar to the POST
 - (void)getGETJsonResponse:(NSString *)apiStr input:(NSString *)userData success:(void (^)(NSDictionary *responseDict))success failure:(void(^)(NSError* error))failure {

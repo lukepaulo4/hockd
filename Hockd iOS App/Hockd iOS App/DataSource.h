@@ -16,6 +16,7 @@ typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict)
 +(instancetype) sharedInstance;
 
 @property (nonatomic, strong, readonly) NSArray *items;
+@property (nonatomic, strong, readonly) NSArray *userData;
 
 
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password completionHandler:(NewItemCompletionBlock)completionHandler;

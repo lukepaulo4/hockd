@@ -46,6 +46,13 @@
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
     
+    
+    //tell LoginViewController that User is its delegate, otherwise get an error
+    /*
+    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginVC.delegate = self;
+    [[self navigationController] pushViewController:loginVC animated:YES];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -137,6 +144,8 @@
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
 
             [self loginCompletedWithDict:returnedDict];
+            
+            //
         
         //Extract the "msg_code" key's value.
         NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
@@ -180,6 +189,20 @@
 
 - (void)loginCompletedWithDict:(NSDictionary*)dict {
     NSLog(@"got response in method==%@", dict);
+    
+    
+    /* This is a way to pass data back to other view controllers
+    self.token = [dict objectForKey:@"token"];
+    self.userID = [dict objectForKey:@"id"];
+    
+    NSString *tokenToPassBack = self.token;
+    [self.delegate addTokenItem:self didFinishEnteringItem:tokenToPassBack];
+    
+    NSString *idToPassBack = self.userID;
+    [self.delegate addIdItem:self didFinishEnteringItem:idToPassBack];
+     */
+    
+    //Add the info to the keychain... Then can extract from there
     
 }
 
