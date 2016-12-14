@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+project '/Users/lukepaulo/bloc/hockd/Hockd iOS App/Hockd iOS App.xcodeproj'
+
+target 'Hockd iOS App' do
+pod 'UICKeyChainStore'
+pod 'AFNetworking', '~> 2.6'
+end
