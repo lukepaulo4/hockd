@@ -9,6 +9,7 @@
 #import "UpdateAccountViewController.h"
 #import "DataSource.h"
 #import "TGCameraViewController.h"
+#import <UICKeyChainStore.h>
 
 @interface UpdateAccountViewController () <TGCameraDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -218,18 +219,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)updateAccountButtonPressed:(UIButton *)sender {
-}
-
-- (IBAction)updatePasswordButtonPressed:(UIButton *)sender {
-}
-
-- (IBAction)backButtonPressed:(UIButton *)sender {
-}
-
-
-/*
-- (IBAction)updateAccountButton:(UIButton *)sender {
-    
     if ([[self.addressOneTextField text] isEqualToString:@""] && [[self.addressTwoTextField text] isEqualToString:@""] &&
         [[self.cityTextField text] isEqualToString:@""] && [[self.stateTextField text] isEqualToString:@""] && [[self.zipTextField text] isEqualToString:@""] && [[self.interestsTextField text] isEqualToString:@""]) {
         
@@ -247,7 +236,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         //Need to do 2 things: First, get the values that these are currently at. If the text boxes aren't changed, then the values submitted should equal the existing values... Second, see below for the token access.
         
         //In here, extract the token value from the keychain
-        NSString *token = @"some value";
+        NSString *token = [UICKeyChainStore stringForKey:@"access token"];
+        NSLog(@"access token from keychain is = %@", token);
         
         [[DataSource sharedInstance] updateUserDetailsWithToken:token addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
             
@@ -291,13 +281,23 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
                 });
             }
         }];
-
+        
         
         
     }
     
 }
-*/
+
+- (void)updateAccountCompletedWithDict:(NSDictionary*)dict {
+    NSLog(@"got response in method==%@", dict);
+}
+
+
+- (IBAction)updatePasswordButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)backButtonPressed:(UIButton *)sender {
+}
 
 
 - (IBAction)tapGestureRecognizer:(UITapGestureRecognizer *)sender {

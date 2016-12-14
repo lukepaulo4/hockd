@@ -22,7 +22,7 @@
 
  
 #import "LoginViewController.h"
-#import "SAMKeychain.h"
+#import <UICKeyChainStore.h>
 #import "Login.h"
 #import "AESCrypt.h"
 #import "DataSource.h"
@@ -202,8 +202,37 @@
     [self.delegate addIdItem:self didFinishEnteringItem:idToPassBack];
      */
     
-    //Add the info to the keychain... Then can extract from there
+    NSString *token = [dict objectForKey:@"token"];
+    NSLog(@"token =%@", token);
     
+    NSNumber *userIDNum = dict[@"user_details"][@"id"];
+    NSString *userID = [userIDNum stringValue];
+    NSLog(@"user id =%@", userID);
+    
+    //Add the info to the keychain...
+    /* This is returning null when trying to pull out
+    [UICKeyChainStore setString:token forKey:@"access token"];
+    [UICKeyChainStore setString:userID forKey:@"user id"];
+     
+     NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
+     NSLog(@"access token from keychain is = %@", tokenKC);
+     NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
+     NSLog(@"access token from keychain is = %@", userIdKC);
+     */
+    
+    
+    //Try instantiating the store object
+    UICKeyChainStore *store = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
+    
+    //Now add the items
+    [store setString:token forKey:@"access token"];
+    [store setString:userID forKey:@"user id"];
+    
+    UICKeyChainStore *storeData = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
+    NSLog(@"store print = %@", store);
+    NSLog(@"storeData print = %@", storeData);
+    
+   
 }
 
 
