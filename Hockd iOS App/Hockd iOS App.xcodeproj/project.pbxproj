@@ -178,6 +178,7 @@
 		0056F9FE1DF8A3350059475E /* UpdateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateAccountViewController.m; sourceTree = "<group>"; };
 		0056FA001DF8E33C0059475E /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
+		005A553A1E0209E700E461CA /* Hockd iOS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hockd iOS App.entitlements"; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 		000E028A1D618CD800AD71BC /* Hockd iOS App */ = {
 			isa = PBXGroup;
 			children = (
+				005A553A1E0209E700E461CA /* Hockd iOS App.entitlements */,
 				000E028E1D618CD800AD71BC /* AppDelegate.h */,
 				000E028F1D618CD800AD71BC /* AppDelegate.m */,
 				00DAA2F81DCAA15400098ECC /* Login.h */,
@@ -522,6 +524,12 @@
 					000E02871D618CD700AD71BC = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = U5L5YPF9GQ;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					000E02A01D618CD800AD71BC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -864,12 +872,15 @@
 			baseConfigurationReference = 1A2CA18693A014142F9F0902 /* Pods-Hockd iOS App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Hockd iOS App/Hockd iOS App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U5L5YPF9GQ;
 				INFOPLIST_FILE = "Hockd iOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -878,12 +889,15 @@
 			baseConfigurationReference = CA15EA60AD0BAA6B847FF3B6 /* Pods-Hockd iOS App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Hockd iOS App/Hockd iOS App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U5L5YPF9GQ;
 				INFOPLIST_FILE = "Hockd iOS App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Hockd.Hockd-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

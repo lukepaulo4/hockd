@@ -210,17 +210,16 @@
     NSLog(@"user id =%@", userID);
     
     //Add the info to the keychain...
-    /* This is returning null when trying to pull out
     [UICKeyChainStore setString:token forKey:@"access token"];
     [UICKeyChainStore setString:userID forKey:@"user id"];
      
      NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
      NSLog(@"access token from keychain is = %@", tokenKC);
      NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
-     NSLog(@"access token from keychain is = %@", userIdKC);
-     */
+     NSLog(@"user id from keychain is = %@", userIdKC);
+     
     
-    
+    /*
     //Try instantiating the store object
     UICKeyChainStore *store = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
     
@@ -231,7 +230,7 @@
     UICKeyChainStore *storeData = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
     NSLog(@"store print = %@", store);
     NSLog(@"storeData print = %@", storeData);
-    
+    */
    
 }
 

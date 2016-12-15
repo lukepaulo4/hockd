@@ -63,6 +63,10 @@
     
     self.navigationItem.rightBarButtonItem = clearButton;
     
+    
+    NSString *tokenUploadedFromKC = [UICKeyChainStore stringForKey:@"access token"];
+    NSLog(@"access token from keychain is = %@", tokenUploadedFromKC);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -237,9 +241,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         
         //In here, extract the token value from the keychain
         NSString *token = [UICKeyChainStore stringForKey:@"access token"];
+        NSString *userID = [UICKeyChainStore stringForKey:@"user id"];
         NSLog(@"access token from keychain is = %@", token);
+        NSLog(@"user id from keychain is = %@", userID);
         
-        [[DataSource sharedInstance] updateUserDetailsWithToken:token addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        [[DataSource sharedInstance] updateUserDetailsWithToken:token userId:(NSString*)userID addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
             
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             
