@@ -206,7 +206,6 @@
      NSLog(@"access token from keychain is = %@", tokenKC);
      NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
      NSLog(@"user id from keychain is = %@", userIdKC);
-     
     
    
 }
