@@ -191,17 +191,6 @@
     NSLog(@"got response in method==%@", dict);
     
     
-    /* This is a way to pass data back to other view controllers
-    self.token = [dict objectForKey:@"token"];
-    self.userID = [dict objectForKey:@"id"];
-    
-    NSString *tokenToPassBack = self.token;
-    [self.delegate addTokenItem:self didFinishEnteringItem:tokenToPassBack];
-    
-    NSString *idToPassBack = self.userID;
-    [self.delegate addIdItem:self didFinishEnteringItem:idToPassBack];
-     */
-    
     NSString *token = [dict objectForKey:@"token"];
     NSLog(@"token =%@", token);
     
@@ -219,18 +208,6 @@
      NSLog(@"user id from keychain is = %@", userIdKC);
      
     
-    /*
-    //Try instantiating the store object
-    UICKeyChainStore *store = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
-    
-    //Now add the items
-    [store setString:token forKey:@"access token"];
-    [store setString:userID forKey:@"user id"];
-    
-    UICKeyChainStore *storeData = [UICKeyChainStore keyChainStoreWithService:@"com.hockd"];
-    NSLog(@"store print = %@", store);
-    NSLog(@"storeData print = %@", storeData);
-    */
    
 }
 
