@@ -11,8 +11,6 @@
 #import "AESCrypt.h"
 #import "TGCameraViewController.h"
 
-//Create below class then implement here
-//#import "CreateAccount.h"
 
 @interface CreateAccountViewController () <TGCameraDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -84,6 +82,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 #pragma mark -

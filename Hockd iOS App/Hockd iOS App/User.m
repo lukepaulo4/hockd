@@ -7,35 +7,50 @@
 //
 
 #import "User.h"
+#import "DataSource.h"
 
 @implementation User
+
 
 - (instancetype) initWithDictionary:(NSDictionary *)userDictionary {
     self = [super init];
     
     if (self) {
-        self.user_id = userDictionary[@"id"];
-        self.user_type = userDictionary[@"userType"];
+        self.token = userDictionary[@"token"];
+        self.ID = userDictionary[@"id"];
+        self.userType = userDictionary[@"user_type"];
         self.username = userDictionary[@"username"];
         self.email = userDictionary[@"email"];
         self.interests = userDictionary[@"interests"];
         self.state = userDictionary[@"state"];
         self.city = userDictionary[@"city"];
         self.zip = userDictionary[@"zip"];
-        self.address_one = userDictionary[@"addressOne"];
-        self.address_two = userDictionary[@"addressTwo"];
+        self.addressOne = userDictionary[@"address_one"];
+        self.addressTwo = userDictionary[@"address_two"];
         
-        NSString *profile_picture_URL = userDictionary[@"profileImage"];
-        NSURL *profileURL = [NSURL URLWithString:profile_picture_URL];
+        NSString *profilePictureURL = userDictionary[@"profileImage"];
+        NSURL *profileURL = [NSURL URLWithString:profilePictureURL];
         
         if (profileURL) {
-            self.profile_picture_URL = profileURL;
+            self.profilePictureURL = profileURL;
         }
         
     }
-    
+   
     return self;
 }
+
+/*these were if you make User a delegate
+- (void)addIdItem:(LoginViewController *)controller didFinishEnteringItem:(NSString *)userId {
+    NSLog(@"Returned user ID from LoginVC is = %@", userId);
+}
+
+- (void)addTokenItem:(LoginViewController *)controller didFinishEnteringItem:(NSString *)token {
+    NSLog(@"Returned token from LoginVC is = %@", token);
+}
+*/
+
+
 
 
 @end

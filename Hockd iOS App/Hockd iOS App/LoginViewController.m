@@ -22,10 +22,11 @@
 
  
 #import "LoginViewController.h"
-#import "KeychainWrapper.h"
+#import <UICKeyChainStore.h>
 #import "Login.h"
 #import "AESCrypt.h"
 #import "DataSource.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -45,6 +46,13 @@
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
     
+    
+    //tell LoginViewController that User is its delegate, otherwise get an error
+    /*
+    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginVC.delegate = self;
+    [[self navigationController] pushViewController:loginVC animated:YES];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +76,12 @@
     if ([self.passwordTextField.text length] > 0) {
         
     }
+}
+
+
+//set accessibility type
++ (void)setAccessibilityType:kSecAttrAccessibleWhenUnlocked {
+    
 }
 
 
@@ -130,8 +144,8 @@
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
 
             [self loginCompletedWithDict:returnedDict];
-        
-        // this is where the non-global shit went
+            
+            //
         
         //Extract the "msg_code" key's value.
         NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
@@ -172,9 +186,30 @@
 }
 
 
+
 - (void)loginCompletedWithDict:(NSDictionary*)dict {
     NSLog(@"got response in method==%@", dict);
+    
+    
+    NSString *token = [dict objectForKey:@"token"];
+    NSLog(@"token =%@", token);
+    
+    NSNumber *userIDNum = dict[@"user_details"][@"id"];
+    NSString *userID = [userIDNum stringValue];
+    NSLog(@"user id =%@", userID);
+    
+    //Add the info to the keychain...
+    [UICKeyChainStore setString:token forKey:@"access token"];
+    [UICKeyChainStore setString:userID forKey:@"user id"];
+     
+     NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
+     NSLog(@"access token from keychain is = %@", tokenKC);
+     NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
+     NSLog(@"user id from keychain is = %@", userIdKC);
+    
+   
 }
+
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
 }
