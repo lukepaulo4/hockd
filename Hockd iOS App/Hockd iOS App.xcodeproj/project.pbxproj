@@ -52,8 +52,18 @@
 		004915DE1DED98C600892B8D /* TGCameraViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 004915DD1DED98C600892B8D /* TGCameraViewController.bundle */; };
 		0056F9FF1DF8A3350059475E /* UpdateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056F9FE1DF8A3350059475E /* UpdateAccountViewController.m */; };
 		0056FA021DF8E33C0059475E /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */; };
+		0060802A1E0A6564007F0CC9 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006080201E0A6564007F0CC9 /* 1.jpg */; };
+		0060802B1E0A6564007F0CC9 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006080211E0A6564007F0CC9 /* 2.jpg */; };
+		0060802C1E0A6564007F0CC9 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006080221E0A6564007F0CC9 /* 3.jpg */; };
+		0060802D1E0A6564007F0CC9 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006080231E0A6564007F0CC9 /* 4.jpg */; };
+		0060802E1E0A6564007F0CC9 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 006080241E0A6564007F0CC9 /* 5.jpg */; };
+		0060802F1E0A6564007F0CC9 /* 6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080251E0A6564007F0CC9 /* 6.JPG */; };
+		006080301E0A6564007F0CC9 /* 7.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080261E0A6564007F0CC9 /* 7.JPG */; };
+		006080311E0A6564007F0CC9 /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080271E0A6564007F0CC9 /* 8.JPG */; };
+		006080321E0A6564007F0CC9 /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080281E0A6564007F0CC9 /* 9.JPG */; };
+		006080331E0A6564007F0CC9 /* 10.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080291E0A6564007F0CC9 /* 10.JPG */; };
 		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
-		00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */; };
+		00A100D81D6D960D00ADDBCF /* MyItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
 		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
@@ -179,10 +189,20 @@
 		0056FA001DF8E33C0059475E /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		005A553A1E0209E700E461CA /* Hockd iOS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hockd iOS App.entitlements"; sourceTree = "<group>"; };
+		006080201E0A6564007F0CC9 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		006080211E0A6564007F0CC9 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		006080221E0A6564007F0CC9 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		006080231E0A6564007F0CC9 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		006080241E0A6564007F0CC9 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		006080251E0A6564007F0CC9 /* 6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.JPG; sourceTree = "<group>"; };
+		006080261E0A6564007F0CC9 /* 7.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.JPG; sourceTree = "<group>"; };
+		006080271E0A6564007F0CC9 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
+		006080281E0A6564007F0CC9 /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
+		006080291E0A6564007F0CC9 /* 10.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.JPG; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsViewController.h; sourceTree = "<group>"; };
-		00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemsViewController.m; sourceTree = "<group>"; };
+		00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsTableViewController.h; sourceTree = "<group>"; };
+		00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemsTableViewController.m; sourceTree = "<group>"; };
 		00A100D91D6D968200ADDBCF /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		00A100DA1D6D968200ADDBCF /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		00A100DC1D6D96D000ADDBCF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -270,6 +290,7 @@
 		000E028A1D618CD800AD71BC /* Hockd iOS App */ = {
 			isa = PBXGroup;
 			children = (
+				0060801F1E0A64F0007F0CC9 /* Images */,
 				005A553A1E0209E700E461CA /* Hockd iOS App.entitlements */,
 				000E028E1D618CD800AD71BC /* AppDelegate.h */,
 				000E028F1D618CD800AD71BC /* AppDelegate.m */,
@@ -281,6 +302,8 @@
 				00F499581D76BD9400641ACE /* Item.m */,
 				00F4995A1D76C71700641ACE /* Address.h */,
 				00F4995B1D76C71700641ACE /* Address.m */,
+				00F4995D1D76CA2000641ACE /* DataSource.h */,
+				00F4995E1D76CA2000641ACE /* DataSource.m */,
 				002DA6921DDB250200E3FD6F /* AESCrypt.h */,
 				002DA6931DDB250200E3FD6F /* AESCrypt.m */,
 				002DA68F1DDB24F700E3FD6F /* NSData+CommonCrypto.h */,
@@ -291,8 +314,6 @@
 				002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */,
 				00F499601D76D0D700641ACE /* AutomatedMessages.h */,
 				00F499611D76D0D700641ACE /* AutomatedMessages.m */,
-				00F4995D1D76CA2000641ACE /* DataSource.h */,
-				00F4995E1D76CA2000641ACE /* DataSource.m */,
 				000E02911D618CD800AD71BC /* LoginViewController.h */,
 				000E02921D618CD800AD71BC /* LoginViewController.m */,
 				00DAA3051DD1A1AA00098ECC /* CredentialCheckViewController.h */,
@@ -307,8 +328,8 @@
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
 				00A100D31D6D954700ADDBCF /* SearchViewController.h */,
 				00A100D41D6D954700ADDBCF /* SearchViewController.m */,
-				00A100D61D6D960D00ADDBCF /* MyItemsViewController.h */,
-				00A100D71D6D960D00ADDBCF /* MyItemsViewController.m */,
+				00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */,
+				00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */,
 				001E81561D892F7000DE27EA /* ItemTVCell.h */,
 				001E81571D892F7000DE27EA /* ItemTVCell.m */,
 				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
@@ -434,6 +455,23 @@
 			children = (
 			);
 			name = TGCameraViewController.xcassets;
+			sourceTree = "<group>";
+		};
+		0060801F1E0A64F0007F0CC9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				006080201E0A6564007F0CC9 /* 1.jpg */,
+				006080211E0A6564007F0CC9 /* 2.jpg */,
+				006080221E0A6564007F0CC9 /* 3.jpg */,
+				006080231E0A6564007F0CC9 /* 4.jpg */,
+				006080241E0A6564007F0CC9 /* 5.jpg */,
+				006080251E0A6564007F0CC9 /* 6.JPG */,
+				006080261E0A6564007F0CC9 /* 7.JPG */,
+				006080271E0A6564007F0CC9 /* 8.JPG */,
+				006080281E0A6564007F0CC9 /* 9.JPG */,
+				006080291E0A6564007F0CC9 /* 10.JPG */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		DB5E372825425F0F62E44E9A /* Frameworks */ = {
@@ -566,18 +604,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006080311E0A6564007F0CC9 /* 8.JPG in Resources */,
 				004915D51DED981A00892B8D /* TGCameraAuthorizationViewController.xib in Resources */,
 				004915D61DED981A00892B8D /* TGCameraViewController.xib in Resources */,
+				0060802F1E0A6564007F0CC9 /* 6.JPG in Resources */,
 				004915D71DED981A00892B8D /* TGPhotoViewController.xib in Resources */,
 				00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */,
+				006080331E0A6564007F0CC9 /* 10.JPG in Resources */,
 				00E7F10C1D7E920F00297AAD /* MyItems.storyboard in Resources */,
+				006080301E0A6564007F0CC9 /* 7.JPG in Resources */,
 				00DAA2FE1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT in Resources */,
+				0060802D1E0A6564007F0CC9 /* 4.jpg in Resources */,
+				0060802C1E0A6564007F0CC9 /* 3.jpg in Resources */,
+				0060802B1E0A6564007F0CC9 /* 2.jpg in Resources */,
 				000E029B1D618CD800AD71BC /* LaunchScreen.storyboard in Resources */,
 				004915DE1DED98C600892B8D /* TGCameraViewController.bundle in Resources */,
 				000E02981D618CD800AD71BC /* Assets.xcassets in Resources */,
+				0060802A1E0A6564007F0CC9 /* 1.jpg in Resources */,
 				000E02961D618CD800AD71BC /* Main.storyboard in Resources */,
+				0060802E1E0A6564007F0CC9 /* 5.jpg in Resources */,
 				00E7F1041D7E914800297AAD /* Settings.storyboard in Resources */,
 				00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */,
+				006080321E0A6564007F0CC9 /* 9.JPG in Resources */,
 				0037156C1DEEABB200C13A97 /* CreateAccount.storyboard in Resources */,
 				00E7F1071D7E919A00297AAD /* Hock.storyboard in Resources */,
 			);
@@ -660,7 +708,7 @@
 				004915961DED97DB00892B8D /* TGCameraNavigationController.m in Sources */,
 				004915951DED97DB00892B8D /* TGCameraAuthorizationViewController.m in Sources */,
 				004915981DED97DB00892B8D /* TGPhotoViewController.m in Sources */,
-				00A100D81D6D960D00ADDBCF /* MyItemsViewController.m in Sources */,
+				00A100D81D6D960D00ADDBCF /* MyItemsTableViewController.m in Sources */,
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
 				004915B51DED97E800892B8D /* TGCameraShot.m in Sources */,
 				004915B21DED97E800892B8D /* TGCameraFocus.m in Sources */,

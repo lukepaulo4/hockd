@@ -29,13 +29,12 @@
         //These next three nil values when first posted.. Need special stuff for?
         self.otherComments = itemDictionary[@"otherComments"];
         self.postedLoanAmount = itemDictionary[@"postedLoanAmount"];
-        self.agreedLoanAmount = itemDictionary[@"agreedLoanAmount"];
         
         NSString *standardResolutionImageURLString = itemDictionary[@"images"][@"standard_resolution"][@"url"];
         NSURL *standardResolutionImageURL = [NSURL URLWithString:standardResolutionImageURLString];
         
         if (standardResolutionImageURL) {
-            self.imageOneURL = standardResolutionImageURL;
+            self.imageURL = standardResolutionImageURL;
         }
     }
     

@@ -15,7 +15,9 @@ typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict)
 
 +(instancetype) sharedInstance;
 
+//Create array to store our array of items
 @property (nonatomic, strong, readonly) NSArray *items;
+
 @property (nonatomic, strong, readonly) NSArray *userData;
 
 
@@ -30,6 +32,7 @@ typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict)
 - (void) updateUserPasswordWithToken:(NSString *)token userId:(NSString*)userId oldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword completionHandler:(NewItemCompletionBlock)completionHandler;
 
 - (void) myProfileWithUserId:(NSString*)userId token:(NSString*)token completionHandler:(NewItemCompletionBlock)completionHandler;
+
 
 
 

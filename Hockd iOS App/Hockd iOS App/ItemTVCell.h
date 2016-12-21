@@ -14,4 +14,9 @@
 
 @property (nonatomic, strong) Item *item;
 
+@property (strong, nonatomic) IBOutlet UIImageView *itemImage;
+@property (strong, nonatomic) IBOutlet UILabel *loanDesiredLabel;
+@property (strong, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
+
+
 @end

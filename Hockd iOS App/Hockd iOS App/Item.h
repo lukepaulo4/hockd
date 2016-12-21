@@ -14,10 +14,10 @@
 typedef NS_ENUM(NSUInteger, ItemStatus) {
     submittedForReview,
     postedForLoan,
-    loanedOffered,
-    loanAccepted,
+    loanInitiated,
     loanRepayed,
-    loanFaulted
+    loanFaulted,
+    postedForSale
 };
 
 @interface Item : NSObject
@@ -30,8 +30,8 @@ typedef NS_ENUM(NSUInteger, ItemStatus) {
 @property (nonatomic, strong) User *user;
 
 //For the media, should there be multiple media NSURLs or can it hold arrays of multiple NSURLs?
-@property (nonatomic, strong) NSURL *imageOneURL;
-@property (nonatomic, strong) UIImage *imageOne;
+@property (nonatomic, strong) NSURL *imageURL;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *itemDescription;
 @property (nonatomic, strong) NSString *manufacturer;
 @property (nonatomic, strong) NSString *manufactureYear;
@@ -69,7 +69,6 @@ typedef NS_ENUM(NSUInteger, ItemStatus) {
 
 //There should be 2 loan properties, as if the desired loan amount ends up changing, the amount will change. This make sense to have all 3 in this class? Then depending on the situation, only 1 will ever show? Squad
 @property (nonatomic, strong) NSString *postedLoanAmount;
-@property (nonatomic, strong) NSString *agreedLoanAmount;
 @property (nonatomic, strong) NSString *itemStatus;
 
 //How call this from the dictionary if it's enum?

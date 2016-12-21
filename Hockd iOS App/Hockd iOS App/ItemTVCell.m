@@ -12,48 +12,84 @@
 
 @interface ItemTVCell ()
 
-@property (nonatomic, strong) UIImageView *itemImageView;
-@property (nonatomic, strong) UILabel *itemDescriptionLabel;
-@property (nonatomic, strong) UILabel *postedLoanAmountLabel;
+
 
 @end
 
+
+/* Added these when did the cell programmatically...
 static UIFont *lightFont;
 static UIFont *boldFont;
 static UIColor *itemDescriptionLabelGray;
 static UIColor *postedLoanAmountLabelGray;
 static UIColor *linkColor;
 static NSParagraphStyle *paragraphStyle;
+ */
 
 @implementation ItemTVCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-        self.itemImageView = [[UIImageView alloc] init];
-        self.itemDescriptionLabel = [[UILabel alloc] init];
-        self.itemDescriptionLabel.numberOfLines = 0;
-        self.itemDescriptionLabel.backgroundColor = itemDescriptionLabelGray;
-        
-        self.postedLoanAmountLabel = [[UILabel alloc] init];
-        self.postedLoanAmountLabel.numberOfLines = 0;
-        self.postedLoanAmountLabel.backgroundColor = postedLoanAmountLabelGray;
-        
-        for (UIView *view in @[self.itemImageView, self.itemDescriptionLabel, self.postedLoanAmountLabel]) {
-            [self.contentView addSubview:view];
-        }
-    }
-    return self;
+//Use this if build from storyboard. 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
 }
+
+- (NSString *) itemDescriptionString {
+    NSString *baseString = [NSString stringWithFormat:@"%@", self.item.itemDescription];
+    
+    return baseString;
+}
+
+- (NSString *) loanDesiredString {
+    NSString *baseString = [NSString stringWithFormat:@"%@", self.item.loanDesired];
+    
+    return baseString;
+}
+
+
+- (void) setItem:(Item *)item {
+    _item = item;
+    self.itemImage.image = _item.image;
+    self.itemDescriptionLabel.text = [self itemDescriptionString];
+    self.loanDesiredLabel.text = [self loanDesiredString];
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Added all of this when did the cell programmatically. Try doing it through storyboard and can maybe delete :)
+ 
+ 
+ - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+ 
+ self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+ if (self) {
+ // Initialization code
+ self.itemImage = [[UIImageView alloc] init];
+ self.itemDescriptionLabel = [[UILabel alloc] init];
+ self.loanDesiredLabel = [[UILabel alloc] init];
+ 
+ for (UIView *view in @[self.itemImage, self.itemDescriptionLabel, self.loanDesiredLabel]) {
+ [self.contentView addSubview:view];
+ }
+ }
+ return self;
+ }
+
 
 + (void)load {
     lightFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:11];
     boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
-    itemDescriptionLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
-    postedLoanAmountLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1]; /*#e5e5e5*/
-    linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1]; /*#58506d*/
+    itemDescriptionLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; //#eeeeee
+    postedLoanAmountLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1]; //#e5e5e5
+    linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1]; //#58506d
     
     NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle alloc] init];
     mutableParagraphStyle.headIndent = 20.0;
@@ -156,5 +192,7 @@ static NSParagraphStyle *paragraphStyle;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:NO animated:animated];
 }
+ 
+ */
 
 @end

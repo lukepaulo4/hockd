@@ -17,6 +17,7 @@
     NSMutableArray *_userData;
 }
 
+
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSArray *userData;
 
@@ -34,6 +35,107 @@
     return sharedInstance;
     
 }
+
+
+#pragma mark - Random Data Add To Test Table View
+
+//Add some placeholder data to store.
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        [self addRandomData];
+    }
+    
+    return self;
+}
+
+- (void) addRandomData {
+    NSMutableArray *randomItems = [NSMutableArray array];
+    
+    for (int i = 1; i <= 10; i++) {
+        NSString *imageName = [NSString  stringWithFormat:@"%d.jpg", i];
+        UIImage *image = [UIImage imageNamed:imageName];
+        
+        if (image) {
+            Item *item = [[Item alloc] init];
+            item.user = [self randomUser];
+            item.image = image;
+            item.itemDescription = [self randomSentence];
+            item.loanDesired = [self randomValue];
+            
+            [randomItems addObject:item];
+        }
+    }
+    
+    self.items = randomItems;
+}
+
+- (User *) randomUser {
+    User *user = [[User alloc] init];
+    
+    user.username = [self randomStringOfLength:arc4random_uniform(10) + 2];
+    
+    return user;
+}
+
+- (NSString *) randomSentence {
+    NSUInteger wordCount = arc4random_uniform(20) + 2;
+    
+    NSMutableString *randomSentence = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i <= wordCount; i++) {
+        NSString *randomWord = [self randomStringOfLength:arc4random_uniform(12) + 2];
+        [randomSentence appendFormat:@"%@ ", randomWord];
+    }
+    
+    return randomSentence;
+}
+
+- (NSString *) randomValue {
+    NSUInteger numberCount = arc4random_uniform(10);
+    
+    NSMutableString *randomValue = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i <= 2; i++) {
+        NSString *randomNumber = [self randomNumOfLength:arc4random_uniform(10)];
+        [randomValue appendFormat:@"$ %@ ", randomNumber];
+    }
+    
+    return randomValue;
+}
+
+- (NSString *) randomNumOfLength:(NSUInteger) len {
+    NSString *numbers = @"0123456789";
+    
+    NSMutableString *s = [NSMutableString string];
+    for (NSUInteger i = 0U; i < len; i++) {
+        u_int32_t r = arc4random_uniform((u_int32_t)[numbers length]);
+        unichar c = [numbers characterAtIndex:r];
+        [s appendFormat:@"%C", c];
+    }
+    
+    return [NSString stringWithString:s];
+}
+
+- (NSString *) randomStringOfLength:(NSUInteger) len {
+    NSString *alphabet = @"abcdefghijklmnopqrstuvwxyz";
+    
+    NSMutableString *s = [NSMutableString string];
+    for (NSUInteger i = 0U; i < len; i++) {
+        u_int32_t r = arc4random_uniform((u_int32_t)[alphabet length]);
+        unichar c = [alphabet characterAtIndex:r];
+        [s appendFormat:@"%C", c];
+    }
+    
+    return [NSString stringWithString:s];
+}
+
+
+
+
+
+
 
 
 #pragma mark - POST
