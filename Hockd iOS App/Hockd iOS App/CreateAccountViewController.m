@@ -110,10 +110,12 @@
 {
     _photoView.image = image;
     
+    /*why do you have this?
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     
     NSLog(@"Selected photo string is = %@", encodedImageString);
+     */
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -172,9 +174,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     _photoView.image = [TGAlbum imageWithMediaInfo:info];
     
     NSData *imageData = UIImageJPEGRepresentation(_photoView.image, 1.0);
+    
+    /*why do you have this?
     NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     
     NSLog(@"Image Picker string is = %@", encodedImageString);
+     */
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -279,7 +284,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSLog(@"Pass = %@", protectedPass);
     NSLog(@"Pas2 = %@", protectedRetypePass);
     
-    //First, if any of the text fields aren't filled in, don't let them pass. Except address line 2. Don't need that one.
+    
+    //let's get this image into a URL and ready for transfer.  Per Patrick, the web side is
+    //"For images we're using http form data and storing the url path in the database."
+    
+    //Do I need to store this URL on a hockd path somewhere?
+    //NSURL *hockdURL = [NSURL URLWithString:@"hockd://location?id=1"];
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.photoView.image, 0.9f);
+    
+    NSURL *tmpDirURL = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+    NSURL *fileURL = [[tmpDirURL URLByAppendingPathComponent:@"hockd"] URLByAppendingPathExtension:@"ho"];
+    
+    BOOL success = [imageData writeToURL:fileURL atomically:YES];
+    
+    if (!success) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Couldn't save image", nil) message:NSLocalizedString(@"Your cropped and filtered photo couldn't be saved. Make sure you have enough disk space and try again.", nil) preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertVC animated:YES completion:nil];
+        return;
+    }
+    
+    
+    
+    
+    //First, if any of the text fields aren't filled in, don't let them pass. Except address line 2. Don't need that one. Or profile image.
     if ([[self.usernameTextField text] isEqualToString:@""]  || [[self.passwordTextField text] isEqualToString:@""] || [[self.retypePasswordTextField text] isEqualToString:@""] || [[self.emailTextField text] isEqualToString:@""] || [[self.userTypeTextField text] isEqualToString:@""] || [[self.addressOneTextField text] isEqualToString:@""] || [[self.cityTextField text] isEqualToString:@""] || [[self.stateTextField text] isEqualToString:@""] || [[self.zipTextField text] isEqualToString:@""] || [[self.interestsTextField text] isEqualToString:@""]) {
         
         //add an alert stating the need to fill in the data
@@ -306,7 +335,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         
     } else {
         
-        [[DataSource sharedInstance] createAccountWithUsername:self.usernameTextField.text password:protectedPass email:self.emailTextField.text userType:self.userTypeTextField.text addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        [[DataSource sharedInstance] createAccountWithUsername:self.usernameTextField.text password:protectedPass email:self.emailTextField.text userType:self.userTypeTextField.text addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text imageURL:fileURL completionHandler:^(NSError *error, NSDictionary *returnedDict) {
         
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             

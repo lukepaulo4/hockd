@@ -168,6 +168,35 @@
 }
 
 
+//POST with authorization
+- (void)getJsonResponseWithAuthorization:(NSString *)apiStr authorization:(NSString *)authValue input:(NSString *)userInput success:(void (^)(NSDictionary *responseDict))success failure:(void(^)(NSError* error))failure {
+  
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.HTTPAdditionalHeaders = @{@"Authorization": authValue};
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:apiStr]];
+    request.HTTPBody = [userInput dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSLog(@"%@", data);
+        
+        if (error) {
+            failure(error);
+            NSLog(@"Error parsing JSON: %@", error);
+        } else {
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            NSString *msgCodeValue = [jsonDict objectForKey:@"msg_code"];
+            NSLog(@"message code ==%@", msgCodeValue);
+            success(jsonDict);
+        }
+     
+    }];
+    [postDataTask resume];
+}
+
+
 #pragma mark Login Stuff
 
 //method to extract login dictionary response
@@ -206,10 +235,10 @@
 
 
 //method to extract create account dictionary response
-- (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
+- (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests imageURL:(NSURL*)imageURL completionHandler:(NewItemCompletionBlock)completionHandler {
     
     NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/signup";
-    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", username, password, email, userType, addressOne, addressTwo, city, state, zip, interests, nil];
+    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@&profile_image=%@", username, password, email, userType, addressOne, addressTwo, city, state, zip, interests, [imageURL absoluteURL], nil];
     
     [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
         NSLog(@"createAccountWithUsername in DS dict = %@", responseDict);
@@ -234,14 +263,15 @@
     }];
 }
 
-//method to extract create account dictionary response. This one is a bit funky.. I think actually it is OK to require all text boxes save for the address two and interests. *******If a text box is empty, the value for the key should not change (shouldn't become nil, or does it matter?). Look into this bitch a little more. ****THIS ALSO NEEDS THE TOKEN VALUE********
-- (void) updateUserDetailsWithToken:(NSString *)token userId:(NSString*)userId addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
+//method to update account info...  Add all the account info to keychain like you did with the username, token, and user id. Then if someone goes to update account and some of the textfields are empty, can populate them with the existing values so they don't become null.
+- (void) updateUserDetailsWithToken:(NSString *)authValue userId:(NSString*)userId addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests completionHandler:(NewItemCompletionBlock)completionHandler {
+    
     
     NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/updateuserdetails";
-    NSString *userInput = [NSString stringWithFormat:@"Authorization=Bearer%@&id=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", token, userId, addressOne, addressTwo, city, state, zip, interests, nil];
+    NSString *userInput = [NSString stringWithFormat:@"id=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@", userId, addressOne, addressTwo, city, state, zip, interests, nil];
     
-    [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
-        NSLog(@"updateAccountWithAddressOne dict = %@", responseDict);
+    [self getJsonResponseWithAuthorization:apiStr authorization:authValue input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"updateAccount in DataSource.m dict = %@", responseDict);
         completionHandler(nil,responseDict);
     } failure:^(NSError *error) {
         
@@ -250,13 +280,13 @@
 
 
 //method to update the user password.. Need to get the access token
-- (void) updateUserPasswordWithToken:(NSString *)token userId:(NSString*)userId oldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword completionHandler:(NewItemCompletionBlock)completionHandler {
+- (void) updateUserPasswordWithToken:(NSString *)authValue userId:(NSString*)userId oldPassword:(NSString*)oldPassword newPassword:(NSString*)newPassword completionHandler:(NewItemCompletionBlock)completionHandler {
     
-    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/updateuserdetails";
-    NSString *userInput = [NSString stringWithFormat:@"token=%@&user_id=%@&old_password=%@&new_password=%@", token, userId, oldPassword, newPassword, nil];
+    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/updatepassword";
+    NSString *userInput = [NSString stringWithFormat:@"user_id=%@&old_password=%@&new_password=%@", userId, oldPassword, newPassword, nil];
     
-    [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
-        NSLog(@"updateAccountWithAddressOne dict = %@", responseDict);
+    [self getJsonResponseWithAuthorization:apiStr authorization:authValue input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"updatePassword in DataSource.m dict = %@", responseDict);
         completionHandler(nil,responseDict);
     } failure:^(NSError *error) {
         

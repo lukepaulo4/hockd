@@ -245,7 +245,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         NSLog(@"access token from keychain is = %@", token);
         NSLog(@"user id from keychain is = %@", userID);
         
-        [[DataSource sharedInstance] updateUserDetailsWithToken:token userId:(NSString*)userID addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        NSString *authValue = [NSString stringWithFormat:@"Bearer %@", token];
+        
+        [[DataSource sharedInstance] updateUserDetailsWithToken:authValue userId:(NSString*)userID addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
             
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             
@@ -259,14 +261,24 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             
             //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
             if ([msgCodeValue  isEqual:@"successfully updated"]) {
-                NSLog(@"got correct response");
-                
-                //add a dispatch async to get rid of bug message
-                dispatch_async(dispatch_get_main_queue(),   ^{
-                    
-                    
+
+                /*
                     //After an account updates, probably just needs to stay on the page. No real need to go anywhere else?
-                    //[self performSegueWithIdentifier:@"createAccountSegue" sender:self];
+                    NSString *message4 = [[NSString alloc] initWithFormat:@"Success"];
+                    UIAlertController *alert4 = [UIAlertController alertControllerWithTitle:message4 message:@"Account Info Successfully Updated" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* defaultAction4 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                           handler:^(UIAlertAction * action) {}];
+                    
+                    [alert4 addAction:defaultAction4];
+                    [self presentViewController:alert4 animated:YES completion:nil];
+                */
+                    
+                    //add a dispatch async to get rid of bug message
+                    dispatch_async(dispatch_get_main_queue(),   ^{
+                    
+                    NSLog(@"got correct response");
+                        
+                    [self performSegueWithIdentifier:@"updateAccountCompleteSegue" sender:self];
                     
                 });
                 

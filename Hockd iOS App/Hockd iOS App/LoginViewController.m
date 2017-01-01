@@ -157,6 +157,28 @@
             if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
                 NSLog(@"got correct response");
                 
+                NSString *token = [returnedDict objectForKey:@"token"];
+                NSLog(@"token =%@", token);
+                
+                NSString *username = returnedDict[@"user_details"][@"username"];
+                NSLog(@"username = %@", username);
+                
+                NSNumber *userIDNum = returnedDict[@"user_details"][@"id"];
+                NSString *userID = [userIDNum stringValue];
+                NSLog(@"user id =%@", userID);
+                
+                //Add the info to the keychain...
+                [UICKeyChainStore setString:token forKey:@"access token"];
+                [UICKeyChainStore setString:username forKey:@"username"];
+                [UICKeyChainStore setString:userID forKey:@"user id"];
+                
+                NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
+                NSLog(@"access token from keychain is = %@", tokenKC);
+                NSString *usernameKC = [UICKeyChainStore stringForKey:@"username"];
+                NSLog(@"username from keychain is = %@", usernameKC);
+                NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
+                NSLog(@"user id from keychain is = %@", userIdKC);
+                
                 
                 //add a dispatch async to get rid of bug message
                 dispatch_async(dispatch_get_main_queue(),   ^{
@@ -190,9 +212,12 @@
 - (void)loginCompletedWithDict:(NSDictionary*)dict {
     NSLog(@"got response in method==%@", dict);
     
-    
+    /* IF logs in wrong I think this causes a crash
     NSString *token = [dict objectForKey:@"token"];
     NSLog(@"token =%@", token);
+    
+    NSString *username = dict[@"user_details"][@"username"];
+    NSLog(@"username = %@", username);
     
     NSNumber *userIDNum = dict[@"user_details"][@"id"];
     NSString *userID = [userIDNum stringValue];
@@ -200,13 +225,16 @@
     
     //Add the info to the keychain...
     [UICKeyChainStore setString:token forKey:@"access token"];
+    [UICKeyChainStore setString:username forKey:@"username"];
     [UICKeyChainStore setString:userID forKey:@"user id"];
      
      NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
      NSLog(@"access token from keychain is = %@", tokenKC);
+     NSString *usernameKC = [UICKeyChainStore stringForKey:@"username"];
+     NSLog(@"username from keychain is = %@", usernameKC);
      NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
      NSLog(@"user id from keychain is = %@", userIdKC);
-    
+    */
    
 }
 
