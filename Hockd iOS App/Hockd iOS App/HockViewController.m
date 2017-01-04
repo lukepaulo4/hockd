@@ -8,44 +8,26 @@
 
 #import "HockViewController.h"
 #import "TGCameraViewController.h"
+#import "DataSource.h"
 
-@interface HockViewController () 
+
+@interface HockViewController () <TGCameraDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 
-@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
+
 @property (strong, nonatomic) IBOutlet UITextField *categoryTextField;
-
-@property (strong, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *itemDescriptionTextField;
-@property (strong, nonatomic) IBOutlet UILabel *manufactureLabel;
 @property (strong, nonatomic) IBOutlet UITextField *manufactureTextField;
-@property (strong, nonatomic) IBOutlet UILabel *manufactureYearLabel;
 @property (strong, nonatomic) IBOutlet UITextField *manufactureYearTextField;
-@property (strong, nonatomic) IBOutlet UILabel *modelNameLabel;
 @property (strong, nonatomic) IBOutlet UITextField *modelNameTextField;
-@property (strong, nonatomic) IBOutlet UILabel *conditionLabel;
-
 @property (strong, nonatomic) IBOutlet UITextField *conditionTextField;
-@property (strong, nonatomic) IBOutlet UILabel *otherCommentsLabel;
 @property (strong, nonatomic) IBOutlet UITextField *otherCommentsTextField;
-@property (strong, nonatomic) IBOutlet UILabel *loanDesiredLabel;
 @property (strong, nonatomic) IBOutlet UITextField *loanDesiredTextField;
 @property (strong, nonatomic) IBOutlet UILabel *completeInfoLabel;
 
-//initialize the strings
-@property (strong, nonatomic) NSString *categoryString;
-@property (strong, nonatomic) NSString *itemDescriptionString;
-@property (strong, nonatomic) NSString *manufacturerString;
-@property (strong, nonatomic) NSString *manufacturerYearString;
-@property (strong, nonatomic) NSString *modelNameString;
-@property (strong, nonatomic) NSString *conditionString;
-@property (strong, nonatomic) NSString *otherCommentsString;
-@property (strong, nonatomic) NSString *loanDesiredString;
-@property (strong, nonatomic) NSString *postedLoanAmountString;
-@property (strong, nonatomic) NSString *agreedLoanAmountString;
-@property (strong, nonatomic) NSString *itemStatusString;
-@property (strong, nonatomic) NSString *jsonMsg;
 
+
+- (void)clearTapped;
 
 @end
 
@@ -106,35 +88,43 @@
 }
 
 - (IBAction)categoryTextFieldDidChange:(UITextField *)sender {
-    self.categoryTextField.text = self.categoryString;
+    if ([self.categoryTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)itemDescriptionTextFieldDidChange:(UITextField *)sender {
-    self.itemDescriptionTextField.text = self.itemDescriptionString;
+    if ([self.itemDescriptionTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)manufactureTextFieldDidChange:(UITextField *)sender {
-    self.manufactureTextField.text = self.manufacturerString;
+    if ([self.manufactureTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)manufactureYearTextFieldDidChange:(UITextField *)sender {
-    self.manufactureYearTextField.text = self.manufacturerYearString;
+    if ([self.manufactureYearTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)modelNameTextFieldDidChange:(UITextField *)sender {
-    self.modelNameTextField.text = self.modelNameString;
+    if ([self.modelNameTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)conditionTextFieldDidChange:(UITextField *)sender {
-    self.conditionTextField.text = self.conditionString;
+    if ([self.conditionTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)otherCommentsTextFieldDidChange:(UITextField *)sender {
-    self.otherCommentsTextField.text = self.otherCommentsString;
+    if ([self.otherCommentsTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)loanDesiredTextFieldDidChange:(UITextField *)sender {
-    self.loanDesiredTextField.text = self.loanDesiredString;
+    if ([self.loanDesiredTextField.text length] > 0) {
+    }
 }
 
 - (IBAction)submitButton:(UIButton *)sender {

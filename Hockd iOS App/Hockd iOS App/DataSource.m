@@ -294,6 +294,20 @@
 }
 
 
+//add new item to hock
+- (void) hockItemWithToken:(NSString *)authValue userId:(NSString*)userId itemPic:(NSData*)itemPic category:(NSString*)category itemDescription:(NSString*)itemDescription manufacturer:(NSString*)manufacturer manufactureYear:(NSString*)manufactureYear modelName:(NSString*)modelName condition:(NSString*)condition otherComments:(NSString*)otherComments loanDesired:(NSString*)loanDesired completionHandler:(NewItemCompletionBlock)completionHandler {
+    
+    
+    NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/add-request-loan";
+    NSString *userInput = [NSString stringWithFormat:@"user_id=%@&item_pics=%@&category=%@&item_description=%@&menufacturer=%@&menufacturer_year=%@&model_name=%@&condition=%@&other_comments=%@&loan_desired=%@", userId, itemPic, category, itemDescription, manufacturer, manufactureYear, modelName, condition, otherComments, loanDesired, nil];
+    
+    [self getJsonResponseWithAuthorization:apiStr authorization:authValue input:userInput success:^(NSDictionary *responseDict) {
+        NSLog(@"hock item response dict in DataSource.m dict = %@", responseDict);
+        completionHandler(nil,responseDict);
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 
 
