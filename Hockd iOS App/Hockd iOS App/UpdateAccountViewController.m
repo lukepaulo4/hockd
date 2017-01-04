@@ -242,12 +242,56 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         //In here, extract the token value from the keychain
         NSString *token = [UICKeyChainStore stringForKey:@"access token"];
         NSString *userID = [UICKeyChainStore stringForKey:@"user id"];
-        NSLog(@"access token from keychain is = %@", token);
-        NSLog(@"user id from keychain is = %@", userID);
+        NSLog(@"update account access token from keychain is = %@", token);
+        NSLog(@"update accout user id from keychain is = %@", userID);
+        
+        NSString *addressOneKC = [UICKeyChainStore stringForKey:@"address one"];
+        NSLog(@"update account address one from keychain is = %@", addressOneKC);
+        NSString *addressTwoKC = [UICKeyChainStore stringForKey:@"address two"];
+        NSLog(@"update account address two from keychain is = %@", addressTwoKC);
+        NSString *cityKC = [UICKeyChainStore stringForKey:@"city"];
+        NSLog(@"update account city from keychain is = %@", cityKC);
+        NSString *stateKC = [UICKeyChainStore stringForKey:@"state"];
+        NSLog(@"udpate account state from keychain is = %@", stateKC);
+        NSString *zipKC = [UICKeyChainStore stringForKey:@"zip"];
+        NSLog(@"update account zip from keychain is = %@", zipKC);
+        NSString *interestsKC = [UICKeyChainStore stringForKey:@"interests"];
+        NSLog(@"update account interests from keychain is = %@", interestsKC);
         
         NSString *authValue = [NSString stringWithFormat:@"Bearer %@", token];
         
-        [[DataSource sharedInstance] updateUserDetailsWithToken:authValue userId:(NSString*)userID addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        NSString *addressOne = self.addressOneTextField.text;
+        if ([[self.addressOneTextField text] isEqualToString:@""]) {
+            addressOne = addressOneKC;
+        }
+        
+        NSString *addressTwo = self.addressTwoTextField.text;
+        if ([[self.addressTwoTextField text] isEqualToString:@""]) {
+            addressTwo = addressTwoKC;
+        }
+        
+        NSString *city = self.cityTextField.text;
+        if ([[self.cityTextField text] isEqualToString:@""]) {
+            city = cityKC;
+        }
+        
+        NSString *state = self.stateTextField.text;
+        if ([[self.stateTextField text] isEqualToString:@""]) {
+            state = stateKC;
+        }
+        
+        NSString *zip = self.zipTextField.text;
+        if ([[self.zipTextField text] isEqualToString:@""]) {
+            zip = zipKC;
+        }
+        
+        NSString *interests = self.interestsTextField.text;
+        if ([[self.interestsTextField text] isEqualToString:@""]) {
+            interests = interestsKC;
+        }
+        
+        
+        [[DataSource sharedInstance] updateUserDetailsWithToken:authValue userId:(NSString*)userID addressOne:addressOne addressTwo:addressTwo city:city state:state zip:zip interests:interests completionHandler:^(NSError *error, NSDictionary *returnedDict) {
             
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             
@@ -259,7 +303,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             //Check what that value is!
             NSLog(@"message code in required area ==%@", msgCodeValue);
             
-            //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
+        
             if ([msgCodeValue  isEqual:@"successfully updated"]) {
 
                 /*

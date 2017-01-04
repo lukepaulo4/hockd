@@ -167,10 +167,25 @@
                 NSString *userID = [userIDNum stringValue];
                 NSLog(@"user id =%@", userID);
                 
+                NSString *dictAddressUno = returnedDict[@"user_details"][@"address_one"];
+                NSString *dictAddressDos = returnedDict[@"user_details"][@"address_two"];
+                NSString *dictCity = returnedDict[@"user_details"][@"city"];
+                NSString *dictState = returnedDict[@"user_details"][@"state"];
+                NSString *dictZip = returnedDict[@"user_details"][@"zip"];
+                NSString *dictInterests = returnedDict[@"user_details"][@"interests"];
+                
                 //Add the info to the keychain...
                 [UICKeyChainStore setString:token forKey:@"access token"];
                 [UICKeyChainStore setString:username forKey:@"username"];
                 [UICKeyChainStore setString:userID forKey:@"user id"];
+                
+                [UICKeyChainStore setString:dictAddressUno forKey:@"address one"];
+                [UICKeyChainStore setString:dictAddressDos forKey:@"address two"];
+                [UICKeyChainStore setString:dictCity forKey:@"city"];
+                [UICKeyChainStore setString:dictState forKey:@"state"];
+                [UICKeyChainStore setString:dictZip forKey:@"zip"];
+                [UICKeyChainStore setString:dictInterests forKey:@"interests"];
+                
                 
                 NSString *tokenKC = [UICKeyChainStore stringForKey:@"access token"];
                 NSLog(@"access token from keychain is = %@", tokenKC);
@@ -178,6 +193,20 @@
                 NSLog(@"username from keychain is = %@", usernameKC);
                 NSString *userIdKC = [UICKeyChainStore stringForKey:@"user id"];
                 NSLog(@"user id from keychain is = %@", userIdKC);
+                
+                NSString *addressOneKC = [UICKeyChainStore stringForKey:@"address one"];
+                NSLog(@"address one from keychain is = %@", addressOneKC);
+                NSString *addressTwoKC = [UICKeyChainStore stringForKey:@"address two"];
+                NSLog(@"address two from keychain is = %@", addressTwoKC);
+                NSString *cityKC = [UICKeyChainStore stringForKey:@"city"];
+                NSLog(@"city from keychain is = %@", cityKC);
+                NSString *stateKC = [UICKeyChainStore stringForKey:@"state"];
+                NSLog(@"state from keychain is = %@", stateKC);
+                NSString *zipKC = [UICKeyChainStore stringForKey:@"zip"];
+                NSLog(@"zip from keychain is = %@", zipKC);
+                NSString *interestsKC = [UICKeyChainStore stringForKey:@"interests"];
+                NSLog(@"interests from keychain is = %@", interestsKC);
+                
                 
                 
                 //add a dispatch async to get rid of bug message
