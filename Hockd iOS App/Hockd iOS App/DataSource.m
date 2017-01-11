@@ -9,7 +9,7 @@
 #import "DataSource.h"
 #import "User.h"
 #import "Item.h"
-#import "Address.h"
+
 
 
 @interface DataSource () {
@@ -93,7 +93,6 @@
 }
 
 - (NSString *) randomValue {
-    NSUInteger numberCount = arc4random_uniform(10);
     
     NSMutableString *randomValue = [[NSMutableString alloc] init];
     
@@ -130,6 +129,9 @@
     
     return [NSString stringWithString:s];
 }
+
+
+
 
 
 

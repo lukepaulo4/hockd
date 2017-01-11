@@ -28,8 +28,8 @@
 @property (nonatomic, strong) UIImage *profileImage;
 
 
-
-//Not sure if supposed to keep address in keychain? Make it all part of this dictionary now, if need to change you already set up the address class.
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *addressOne;
 @property (nonatomic, strong) NSString *addressTwo;
 @property (nonatomic, strong) NSString *city;

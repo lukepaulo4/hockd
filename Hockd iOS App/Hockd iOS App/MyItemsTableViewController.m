@@ -24,9 +24,12 @@
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
+        
+        /*removing per Lesson 28
         //create the empty array for the images
         self.images = [NSMutableArray array];
         self.testArray = [NSMutableArray array];
+         */
     }
     return self;
 }
@@ -36,14 +39,7 @@
     [super viewDidLoad];
     
     
-    /* THIS WASN'T ADDING ANYTHING TO THE ARRAY!!!
-    for (int n = 1; n <=10; n++) {
-        NSString *lineName = [NSString stringWithFormat:@"%d", n];
-        if (lineName) {
-            [self.testArray addObject:lineName];
-        }
-    }
-     */
+    /*removing per Lesson 28
     
     //USING THIS IN THE TESTARRAY ARRAY BECAUSE MY LOOP AIN'T WORKING :(
     UIImage *imageOne = [UIImage imageNamed:@"1.jpg"];
@@ -56,11 +52,11 @@
     UIImage *imageEight = [UIImage imageNamed:@"8.jpg"];
     UIImage *imageNine = [UIImage imageNamed:@"9.jpg"];
     UIImage *imageTen = [UIImage imageNamed:@"10.jpg"];
-    self.testArray = [NSMutableArray arrayWithObjects:imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageEight, imageNine, imageTen, nil];
+    self.testArray = [NSMutableArray arrayWithObjects:imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine, imageTen, nil];
     
     
     
-    //add the images to the array. THIS IS ADDING NOTHING. NOTHING!!!!!!!! 
+    //add the images to the array. THIS IS ADDING NOTHING. NOTHING!!!!!!!!
     for (int i = 1; i <= 10; i++) {
         NSString *imageName = [NSString stringWithFormat:@"%d.jpg", i];
         UIImage *image = [UIImage imageNamed:imageName];
@@ -71,6 +67,9 @@
     
     NSLog(@"test array from table vc view did load is %@", self.testArray);
     NSLog(@"array from table vc view did load is %@", self.images);
+     */
+    
+    NSLog(@"array from DataSource view did load is %@", [DataSource sharedInstance].items);
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
     
@@ -88,9 +87,12 @@
 //Need to present all of our images as rows in this table.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //return [DataSource sharedInstance].items.count;
+    //added this per 28
+    return [DataSource sharedInstance].items.count;
     
+    /*removing per Lesson 28
     return self.testArray.count;
+     */
 }
 
 
@@ -117,25 +119,15 @@
         [cell.contentView addSubview:imageView];
     }
     
+    /*removing per Lesson 28
     UIImage *image = self.testArray[indexPath.row];
     imageView.image = image;
-    
-    
-    
-    /*
-    ItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemTableCell" forIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = [[ItemTVCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"itemTableCell"];
-    }
-    
-    //Now configure the cell
-    cell.loanDesiredLabel.text =  objectAtIndex:[indexPath row]];
-    cell.itemDescriptionLabel.text = [self.item.itemDescription objectAtIndex:[indexPath row]];
-    
-    cell.item = [DataSource sharedInstance].items[indexPath.row];
     */
     
+    //adding this per 28
+    Item *item = [DataSource sharedInstance].items[indexPath.row];
+    imageView.image = item.image;
+    
     
     return cell;
 }
@@ -143,31 +135,31 @@
 
 
 
-//None of this is right. Copied from blocstagram. Need to redo.
-/*
-#pragma mark - Table view data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [DataSource sharedInstance].items.count;
-}
 
-
-//cellage
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    ItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemCell" forIndexPath:indexPath];
-    cell.item = [DataSource sharedInstance].items[indexPath.row];
-    return cell;
-}
 
 
 //height of cells when we scroll
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Added per 28
     Item *item = [DataSource sharedInstance].items[indexPath.row];
-    UIImage *image = item.imageOne;
-    return 300 + (image.size.height / image.size.width * CGRectGetWidth(self.view.frame));
+    UIImage *image = item.image;
+    
+    /*removing per Lesson 28
+    UIImage *image = self.testArray[indexPath.row];
+     */
+     
+     /*removing per Lesson 28
+    return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
+      */
+    
+    //added per 28
+    return image.size.height / image.size.width * CGRectGetWidth(self.view.frame);
 }
 
+
+
+/*
 //estimated height of cells when we scroll
 - (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Item *item = [DataSource sharedInstance].items[indexPath.row];
@@ -177,15 +169,7 @@
 */
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
