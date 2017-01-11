@@ -15,6 +15,7 @@
 @interface MyItemsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSMutableArray *testArray;
 
 @end
 
@@ -25,6 +26,7 @@
     if (self) {
         //create the empty array for the images
         self.images = [NSMutableArray array];
+        self.testArray = [NSMutableArray array];
     }
     return self;
 }
@@ -33,7 +35,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //add the images to the array
+    
+    /* THIS WASN'T ADDING ANYTHING TO THE ARRAY!!!
+    for (int n = 1; n <=10; n++) {
+        NSString *lineName = [NSString stringWithFormat:@"%d", n];
+        if (lineName) {
+            [self.testArray addObject:lineName];
+        }
+    }
+     */
+    
+    //USING THIS IN THE TESTARRAY ARRAY BECAUSE MY LOOP AIN'T WORKING :(
+    UIImage *imageOne = [UIImage imageNamed:@"1.jpg"];
+    UIImage *imageTwo = [UIImage imageNamed:@"2.jpg"];
+    UIImage *imageThree = [UIImage imageNamed:@"3.jpg"];
+    UIImage *imageFour = [UIImage imageNamed:@"4.jpg"];
+    UIImage *imageFive = [UIImage imageNamed:@"5.jpg"];
+    UIImage *imageSix = [UIImage imageNamed:@"6.jpg"];
+    UIImage *imageSeven = [UIImage imageNamed:@"7.jpg"];
+    UIImage *imageEight = [UIImage imageNamed:@"8.jpg"];
+    UIImage *imageNine = [UIImage imageNamed:@"9.jpg"];
+    UIImage *imageTen = [UIImage imageNamed:@"10.jpg"];
+    self.testArray = [NSMutableArray arrayWithObjects:imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageEight, imageNine, imageTen, nil];
+    
+    
+    
+    //add the images to the array. THIS IS ADDING NOTHING. NOTHING!!!!!!!! 
     for (int i = 1; i <= 10; i++) {
         NSString *imageName = [NSString stringWithFormat:@"%d.jpg", i];
         UIImage *image = [UIImage imageNamed:imageName];
@@ -42,6 +69,7 @@
         }
     }
     
+    NSLog(@"test array from table vc view did load is %@", self.testArray);
     NSLog(@"array from table vc view did load is %@", self.images);
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
@@ -62,7 +90,7 @@
     
     //return [DataSource sharedInstance].items.count;
     
-    return self.images.count;
+    return self.testArray.count;
 }
 
 
@@ -89,7 +117,7 @@
         [cell.contentView addSubview:imageView];
     }
     
-    UIImage *image = self.images[indexPath.row];
+    UIImage *image = self.testArray[indexPath.row];
     imageView.image = image;
     
     
