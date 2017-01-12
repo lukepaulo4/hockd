@@ -7,7 +7,7 @@
 //
 
 #import "MyItemTVCell.h"
-#import "Item.h"
+#import "MyItem.h"
 #import "User.h"
 
 @interface MyItemTVCell ()
@@ -143,7 +143,7 @@ static NSParagraphStyle *paragraphStyle;
 
 
 //override auto-generated methods. We want to update the image and text labels whenever a new item is set
-- (void) setItem:(Item *)item {
+- (void) setItem:(MyItem *)item {
     _item = item;
     self.itemOneImageView.image = _item.imageOne;
     self.itemDescriptionLabel.attributedText = [self itemDescriptionString];
@@ -152,7 +152,7 @@ static NSParagraphStyle *paragraphStyle;
 
 
 //This method will fake a layout event to return the full height of a completed cell as if it were actually being placed in the table
-+ (CGFloat) heightForItem:(Item *)item width:(CGFloat)width {
++ (CGFloat) heightForItem:(MyItem *)item width:(CGFloat)width {
     
     //make a cell
     MyItemTVCell *layoutCell = [[MyItemTVCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"layoutCell"];

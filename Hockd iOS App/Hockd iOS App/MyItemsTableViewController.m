@@ -8,7 +8,7 @@
 
 #import "MyItemsTableViewController.h"
 #import "DataSource.h"
-#import "Item.h"
+#import "MyItem.h"
 #import "User.h"
 #import "MyItemTVCell.h"
 
@@ -74,7 +74,7 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Added per 28
-    Item *item = [DataSource sharedInstance].items[indexPath.row];
+    MyItem *item = [DataSource sharedInstance].items[indexPath.row];
     
     return [MyItemTVCell heightForItem:item width:CGRectGetWidth(self.view.frame)];
 }

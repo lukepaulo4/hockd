@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class Item;
+@class MyItem;
 
 @interface MyItemTVCell : UITableViewCell
 
-@property (nonatomic, strong) Item *item;
+@property (nonatomic, strong) MyItem *item;
 
 //since doesn't belong to an instance of this object, we use +. Namaste
-+ (CGFloat) heightForItem:(Item *)item width:(CGFloat)width;
++ (CGFloat) heightForItem:(MyItem *)item width:(CGFloat)width;
 
 
 @end

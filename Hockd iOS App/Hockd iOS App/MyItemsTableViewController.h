@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class Item;
+@class MyItem;
 
 @interface MyItemsTableViewController : UITableViewController
 
-@property (nonatomic, strong) Item *item;
+@property (nonatomic, strong) MyItem *item;
 
 @property (nonatomic, strong) NSArray *itemImages;
 @property (nonatomic, strong) NSArray *itemLoans;

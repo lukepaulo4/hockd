@@ -8,7 +8,7 @@
 
 #import "DataSource.h"
 #import "User.h"
-#import "Item.h"
+#import "MyItem.h"
 
 
 
@@ -58,7 +58,7 @@
         UIImage *image = [UIImage imageNamed:imageName];
         
         if (image) {
-            Item *item = [[Item alloc] init];
+            MyItem *item = [[MyItem alloc] init];
             item.user = [self randomUser];
             item.imageOne = image;
             item.itemDescription = [self randomSentence];
