@@ -16,7 +16,7 @@
 		000E02A61D618CD800AD71BC /* Hockd_iOS_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02A51D618CD800AD71BC /* Hockd_iOS_AppTests.m */; };
 		000E02B11D618CD800AD71BC /* Hockd_iOS_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02B01D618CD800AD71BC /* Hockd_iOS_AppUITests.m */; };
 		000E02C91D6AB89C00AD71BC /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */; };
-		001E81581D892F7000DE27EA /* ItemTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E81571D892F7000DE27EA /* ItemTVCell.m */; };
+		001E81581D892F7000DE27EA /* MyItemTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E81571D892F7000DE27EA /* MyItemTVCell.m */; };
 		002DA68A1DDB24CB00E3FD6F /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */; };
 		002DA68E1DDB24EB00E3FD6F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA68D1DDB24EB00E3FD6F /* NSData+Base64.m */; };
 		002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DA6901DDB24F700E3FD6F /* NSData+CommonCrypto.m */; };
@@ -121,8 +121,8 @@
 		000E02B21D618CD800AD71BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		001E81561D892F7000DE27EA /* ItemTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTVCell.h; sourceTree = "<group>"; };
-		001E81571D892F7000DE27EA /* ItemTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTVCell.m; sourceTree = "<group>"; };
+		001E81561D892F7000DE27EA /* MyItemTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemTVCell.h; sourceTree = "<group>"; };
+		001E81571D892F7000DE27EA /* MyItemTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemTVCell.m; sourceTree = "<group>"; };
 		002DA6891DDB24CB00E3FD6F /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		002DA68B1DDB24E000E3FD6F /* NSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		002DA68C1DDB24EB00E3FD6F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -322,8 +322,8 @@
 				00A100D41D6D954700ADDBCF /* SearchViewController.m */,
 				00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */,
 				00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */,
-				001E81561D892F7000DE27EA /* ItemTVCell.h */,
-				001E81571D892F7000DE27EA /* ItemTVCell.m */,
+				001E81561D892F7000DE27EA /* MyItemTVCell.h */,
+				001E81571D892F7000DE27EA /* MyItemTVCell.m */,
 				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
 				00A100DA1D6D968200ADDBCF /* MessagesViewController.m */,
 				00A100E21D6D971D00ADDBCF /* HockViewController.h */,
@@ -715,7 +715,7 @@
 				004915AE1DED97E800892B8D /* TGAssetsLibrary.m in Sources */,
 				004915971DED97DB00892B8D /* TGCameraViewController.m in Sources */,
 				004915AF1DED97E800892B8D /* TGCamera.m in Sources */,
-				001E81581D892F7000DE27EA /* ItemTVCell.m in Sources */,
+				001E81581D892F7000DE27EA /* MyItemTVCell.m in Sources */,
 				004915CF1DED980100892B8D /* TGCameraSlideView.m in Sources */,
 				004915CE1DED980100892B8D /* TGCameraSlideUpView.m in Sources */,
 				004915CB1DED980100892B8D /* TGCameraFocusView.m in Sources */,

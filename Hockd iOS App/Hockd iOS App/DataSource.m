@@ -60,7 +60,7 @@
         if (image) {
             Item *item = [[Item alloc] init];
             item.user = [self randomUser];
-            item.image = image;
+            item.imageOne = image;
             item.itemDescription = [self randomSentence];
             item.loanDesired = [self randomValue];
             
@@ -86,7 +86,7 @@
     
     for (int i = 0; i <= wordCount; i++) {
         NSString *randomWord = [self randomStringOfLength:arc4random_uniform(12) + 2];
-        [randomSentence appendFormat:@"%@ ", randomWord];
+        [randomSentence appendFormat:@"Item Description: %@ ", randomWord];
     }
     
     return randomSentence;
@@ -96,9 +96,9 @@
     
     NSMutableString *randomValue = [[NSMutableString alloc] init];
     
-    for (int i = 0; i <= 2; i++) {
+    for (int i = 0; i < 1; i++) {
         NSString *randomNumber = [self randomNumOfLength:arc4random_uniform(10)];
-        [randomValue appendFormat:@"$ %@ ", randomNumber];
+        [randomValue appendFormat:@"Loan Desired: $%@ ", randomNumber];
     }
     
     return randomValue;

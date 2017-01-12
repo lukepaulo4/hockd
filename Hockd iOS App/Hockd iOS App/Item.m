@@ -34,7 +34,7 @@
         NSURL *standardResolutionImageURL = [NSURL URLWithString:standardResolutionImageURLString];
         
         if (standardResolutionImageURL) {
-            self.imageURL = standardResolutionImageURL;
+            self.imageOneURL = standardResolutionImageURL;
         }
     }
     

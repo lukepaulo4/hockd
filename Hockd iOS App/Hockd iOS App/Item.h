@@ -30,8 +30,8 @@ typedef NS_ENUM(NSUInteger, ItemStatus) {
 @property (nonatomic, strong) User *user;
 
 //For the media, should there be multiple media NSURLs or can it hold arrays of multiple NSURLs?
-@property (nonatomic, strong) NSURL *imageURL;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSURL *imageOneURL;
+@property (nonatomic, strong) UIImage *imageOne;
 @property (nonatomic, strong) NSString *itemDescription;
 @property (nonatomic, strong) NSString *manufacturer;
 @property (nonatomic, strong) NSString *manufactureYear;
