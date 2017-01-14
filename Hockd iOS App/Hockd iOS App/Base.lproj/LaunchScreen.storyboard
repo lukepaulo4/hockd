@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,15 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteLogoTransBG-60" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Tx-DNZ">
-                                <rect key="frame" x="157" y="120" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteLogoTransBG-120" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Tx-DNZ">
+                                <rect key="frame" x="127" y="120" width="120" height="120"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="UZr-Tx-DNZ" secondAttribute="trailing" constant="142" id="8Dl-PN-pcv"/>
+                            <constraint firstItem="UZr-Tx-DNZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3kK-bB-I4x"/>
                             <constraint firstItem="UZr-Tx-DNZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="fKi-ve-RNg"/>
-                            <constraint firstItem="UZr-Tx-DNZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="141" id="uXl-5R-PVz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhiteLogoTransBG-60" width="60" height="60"/>
+        <image name="WhiteLogoTransBG-120" width="120" height="120"/>
     </resources>
 </document>
