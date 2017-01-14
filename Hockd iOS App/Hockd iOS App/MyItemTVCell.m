@@ -16,6 +16,10 @@
 @property (nonatomic, strong) UILabel *itemDescriptionLabel;
 @property (nonatomic, strong) UILabel *loanDesiredLabel;
 
+@property (nonatomic, strong) NSLayoutConstraint *imageHeightConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *itemDescriptionLabelHeightConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *loanDesiredLabelHeightConstraint;
+
 @end
 
 
@@ -70,7 +74,51 @@ static NSParagraphStyle *paragraphStyle;
         
         for (UIView *view in @[self.itemOneImageView, self.itemDescriptionLabel, self.loanDesiredLabel]) {
             [self.contentView addSubview:view];
+            
+            view.translatesAutoresizingMaskIntoConstraints = NO;
         }
+        
+        NSDictionary *viewDictionary = NSDictionaryOfVariableBindings(_itemOneImageView, _itemDescriptionLabel, _loanDesiredLabel);
+        
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_itemOneImageView]|" options:kNilOptions metrics:nil views:viewDictionary]];
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_itemDescriptionLabel]|" options:kNilOptions metrics:nil views:viewDictionary]];
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_loanDesiredLabel]|" options:kNilOptions metrics:nil views:viewDictionary]];
+        
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_itemOneImageView][_itemDescriptionLabel][_loanDesiredLabel]"
+                                                                                 options:kNilOptions
+                                                                                 metrics:nil
+                                                                                   views:viewDictionary]];
+        
+        self.imageHeightConstraint = [NSLayoutConstraint constraintWithItem:_itemOneImageView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:nil
+                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                 multiplier:1
+                                                                   constant:100];
+        self.imageHeightConstraint.identifier = @"Image height constraint";
+        
+        self.itemDescriptionLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_itemDescriptionLabel
+                                                                                    attribute:NSLayoutAttributeHeight
+                                                                                    relatedBy:NSLayoutRelationEqual
+                                                                                       toItem:nil
+                                                                                    attribute:NSLayoutAttributeNotAnAttribute
+                                                                                   multiplier:1
+                                                                                     constant:100];
+        self.itemDescriptionLabelHeightConstraint.identifier = @"Item description label height constraint";
+        
+        self.loanDesiredLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_loanDesiredLabel
+                                                                         attribute:NSLayoutAttributeHeight
+                                                                         relatedBy:NSLayoutRelationEqual
+                                                                            toItem:nil
+                                                                         attribute:NSLayoutAttributeNotAnAttribute
+                                                                        multiplier:1
+                                                                          constant:100];
+        self.loanDesiredLabelHeightConstraint.identifier = @"Loan desired label height constraint";
+        
+        [self.contentView addConstraints:@[self.imageHeightConstraint, self.itemDescriptionLabelHeightConstraint, self.loanDesiredLabelHeightConstraint]];
+        
+        
     }
     return self;
 }
@@ -111,14 +159,6 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 
-//Calculates how tall the labels need to be.
-- (CGSize) sizeOfString:(NSAttributedString *)string {
-    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.contentView.bounds) - 40, 0.0);
-    CGRect sizeRect = [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
-    sizeRect.size.height += 20;
-    sizeRect = CGRectIntegral(sizeRect);
-    return sizeRect.size;
-}
 
 
 - (void) layoutSubviews {
@@ -128,14 +168,14 @@ static NSParagraphStyle *paragraphStyle;
         return;
     }
     
-    CGFloat imageOneHeight = self.item.imageOne.size.height / self.item.imageOne.size.width * CGRectGetWidth(self.contentView.bounds);
-    self.itemOneImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), imageOneHeight);
+    // Before layout, calculate the intrinsic size of the labels (the size they "want" to be), and add 20 to the height for some vertical padding.
+    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.bounds), CGFLOAT_MAX);
+    CGSize itemDescriptionLabelSize = [self.itemDescriptionLabel sizeThatFits:maxSize];
+    CGSize loanDesiredLabelSize = [self.loanDesiredLabel sizeThatFits:maxSize];
     
-    CGSize sizeOfItemDescriptionLabel = [self sizeOfString:self.itemDescriptionLabel.attributedText];
-    self.itemDescriptionLabel.frame = CGRectMake(0, CGRectGetMaxY(self.itemOneImageView.frame), CGRectGetWidth(self.contentView.bounds), sizeOfItemDescriptionLabel.height);
-    
-    CGSize sizeOfLoanAmountLabel = [self sizeOfString:self.loanDesiredLabel.attributedText];
-    self.loanDesiredLabel.frame = CGRectMake(0, CGRectGetMaxY(self.itemDescriptionLabel.frame), CGRectGetWidth(self.bounds), sizeOfLoanAmountLabel.height);
+    self.itemDescriptionLabelHeightConstraint.constant = itemDescriptionLabelSize.height + 20;
+    self.loanDesiredLabelHeightConstraint.constant = loanDesiredLabelSize.height + 20;
+    self.imageHeightConstraint.constant = self.item.imageOne.size.height / self.item.imageOne.size.width * CGRectGetWidth(self.contentView.bounds);
     
     // Hide the line between cells.. If we want this line later we can remove this code snippet. However, the picture should be a clear indicator that the new cell starts
     self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(self.bounds)/2.0, 0, CGRectGetWidth(self.bounds)/2.0);
@@ -157,16 +197,15 @@ static NSParagraphStyle *paragraphStyle;
     //make a cell
     MyItemTVCell *layoutCell = [[MyItemTVCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"layoutCell"];
     
-    //Set it to the fiven width, and the maximum possible height
-    layoutCell.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
     
-    //Give it the item
     layoutCell.item = item;
     
-    //make it adjust the image view and labels
-    [layoutCell layoutSubviews];
+    layoutCell.frame = CGRectMake(0, 0, width, CGRectGetHeight(layoutCell.frame));
     
-    //the height will be wherever the bottom of the loan desired label is
+    [layoutCell setNeedsLayout];
+    [layoutCell layoutIfNeeded];
+    
+    // Get the actual height required for the cell
     return CGRectGetMaxY(layoutCell.loanDesiredLabel.frame);
 }
 
