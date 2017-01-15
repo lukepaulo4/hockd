@@ -9,16 +9,24 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class MyItem;
+
 typedef void (^NewItemCompletionBlock)(NSError *error, NSDictionary *returnDict);
+typedef void (^NewItemCompletionBlockPTR)(NSError *error);
 
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 
 //Create array to store our array of items
-@property (nonatomic, strong, readonly) NSArray *items;
+@property (nonatomic, strong, readonly) NSArray *myItems;
 
-@property (nonatomic, strong, readonly) NSArray *userData;
+
+
+//method for table view to call when user executes a pull-to-refresh gesture. Asynchronous so require the caller pass a version of our completion handler
+- (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
+- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
+
 
 
 - (void) loginWithUsername:(NSString*)username password:(NSString*)password completionHandler:(NewItemCompletionBlock)completionHandler;

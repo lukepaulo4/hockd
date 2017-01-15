@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteLogoTransBG-120" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Tx-DNZ">
-                                <rect key="frame" x="127" y="120" width="120" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteLogoTransBG-60" translatesAutoresizingMaskIntoConstraints="NO" id="UZr-Tx-DNZ">
+                                <rect key="frame" x="157" y="120" width="60" height="60"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhiteLogoTransBG-120" width="120" height="120"/>
+        <image name="WhiteLogoTransBG-60" width="60" height="60"/>
     </resources>
 </document>

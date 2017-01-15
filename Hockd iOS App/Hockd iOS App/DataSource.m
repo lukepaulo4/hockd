@@ -13,15 +13,22 @@
 
 
 @interface DataSource () {
-    NSMutableArray *_items;
+    NSMutableArray *_myItems;
     NSMutableArray *_userData;
 }
 
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *myItems;
 @property (nonatomic, strong) NSArray *userData;
 
+
+//track whether refresh is already in progress. don't want to fetch multiple times while waiting for a result from the server
+@property (nonatomic, assign) BOOL isRefreshing;
+@property (nonatomic, assign) BOOL isLoadingOlderItems;
+
 @end
+
+
 
 @implementation DataSource
 
@@ -35,6 +42,37 @@
     return sharedInstance;
     
 }
+
+
+#pragma mark - Add required KVC accessor methods 
+
+//The array must be accessible
+- (NSUInteger) countOfItems {
+    return self.myItems.count;
+}
+
+- (id) objectInItemsAtIndex:(NSUInteger)index {
+    return [self.myItems objectAtIndex:index];
+}
+
+- (NSArray *) itemsAtIndexes:(NSIndexSet *)indexes {
+    return [self.myItems objectsAtIndexes:indexes];
+}
+
+//add mutable accessor methods. These are KVC methods that allow insertion and deletion of elements from MyItems. Need to be _myItems not self.myItems because in header file myItems is declared as readonly
+- (void) insertObject:(MyItem *)object inMyItemsAtIndex:(NSUInteger)index {
+    [_myItems insertObject:object atIndex:index];
+}
+
+- (void) removeObjectFromMyItemsAtIndex:(NSUInteger)index {
+    [_myItems removeObjectAtIndex:index];
+}
+
+- (void) replaceObjectInMyItemsAtIndex:(NSUInteger)index withObject:(id)object {
+    [_myItems replaceObjectAtIndex:index withObject:object];
+}
+
+
 
 
 #pragma mark - Random Data Add To Test Table View
@@ -68,7 +106,7 @@
         }
     }
     
-    self.items = randomItems;
+    self.myItems = randomItems;
 }
 
 - (User *) randomUser {
@@ -131,6 +169,51 @@
 }
 
 
+
+
+//implement the pull to refresh completion handler
+- (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler {
+    
+    // #1 check if request for recovering new item is already in progress. If so, return immedidately, otherwise set to YES.
+    if (self.isRefreshing == NO) {
+        self.isRefreshing = YES;
+        
+        // #2 create a new random media object and append it to the front of the KVC array. Place at top-most table cell.
+        MyItem *item = [[MyItem alloc] init];
+        item.user = [self randomUser];
+        item.imageOne = [UIImage imageNamed:@"10.jpg"];
+        item.itemDescription = [self randomSentence];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"myItems"];
+        [mutableArrayWithKVO insertObject:item atIndex:0];
+        
+        self.isRefreshing = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
+//implement the infinite scroll method/completion handler
+- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler {
+    if (self.isLoadingOlderItems == NO) {
+        self.isLoadingOlderItems = YES;
+        MyItem *item = [[MyItem alloc] init];
+        item.user = [self randomUser];
+        item.imageOne = [UIImage imageNamed:@"1.jpg"];
+        item.itemDescription = [self randomSentence];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"myItems"];
+        [mutableArrayWithKVO addObject:item];
+        
+        self.isLoadingOlderItems = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
 
 
 
@@ -209,31 +292,13 @@
     
     [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
         NSLog(@"loginWithUsername in DS dict = %@", responseDict);
-        completionHandler(nil,responseDict);
+        completionHandler(nil, responseDict);
     } failure:^(NSError *error) {
     
     }];
 }
 
-//PARSE the login response dictionary into User
-- (void) parseDataFromLoginDictionary:(NSDictionary *) loginDictionary fromRequestWithParameters:(NSDictionary *)parameters {
-    
-    NSArray *userArray = loginDictionary[@"data"];
-    NSMutableArray *tmpUserData = [NSMutableArray array];
-    
-    for (NSDictionary *userDictionary in userArray) {
-        User *userData = [[User alloc] initWithDictionary:userDictionary];
-        
-        if (userData) {
-            [tmpUserData addObject:userData];
-        }
-    }
-    
-    [self willChangeValueForKey:@"userData"];
-    self.userData = tmpUserData;
-    [self didChangeValueForKey:@"userData"];
-    
-}
+
 
 
 //method to extract create account dictionary response

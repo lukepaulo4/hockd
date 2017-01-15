@@ -12,7 +12,7 @@
 
 @interface MyItemsTableViewController : UITableViewController
 
-@property (nonatomic, strong) MyItem *item;
+@property (nonatomic, strong) MyItem *myItem;
 
 @property (nonatomic, strong) NSArray *itemImages;
 @property (nonatomic, strong) NSArray *itemLoans;

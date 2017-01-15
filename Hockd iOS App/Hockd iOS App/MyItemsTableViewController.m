@@ -33,11 +33,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"array from DataSource view did load is %@", [DataSource sharedInstance].items);
+    NSLog(@"array from DataSource view did load is %@", [DataSource sharedInstance].myItems);
+    
+    //register for KVO of myItems
+    [[DataSource sharedInstance] addObserver:self forKeyPath:@"myItems" options:0 context:nil];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView registerClass:[MyItemTVCell class] forCellReuseIdentifier:@"imageCell"];
 
 }
+
+//method for above refreshControlDidFire
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[DataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
+}
+
+
+//observers must be removed when they're no longer needed. dealloc method best place to do this
+- (void) dealloc {
+    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"myItems"];
+}
+
+//all KVOs must be sent to precisely one method. add code to handle it
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    //check if update is coming from DataSource object we registered with & is myItems the updated key?
+    if (object == [DataSource sharedInstance] && [keyPath isEqualToString:@"myItems"]) {
+        //We know myItems changed. Let's see what kind of change it is.
+        NSKeyValueChange kindOfChange = [change[NSKeyValueChangeKindKey] unsignedIntegerValue];
+        
+        if (kindOfChange == NSKeyValueChangeSetting) {
+            
+            //someone set a brand new image array
+            [self.tableView reloadData];
+            
+        } else if (kindOfChange == NSKeyValueChangeInsertion ||
+                  kindOfChange == NSKeyValueChangeRemoval ||
+                  kindOfChange == NSKeyValueChangeReplacement) {
+            // We have an incremental change: inserted, deleted, or replaced images
+            
+            // Get a list of the index (or indices) that changed
+            NSIndexSet *indexSetOfChanges = change[NSKeyValueChangeIndexesKey];
+            
+            // #1 - Convert this NSIndexSet to an NSArray of NSIndexPaths (which is what the table view animation methods require)
+            NSMutableArray *indexPathsThatChanged = [NSMutableArray array];
+            [indexSetOfChanges enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+                NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+                [indexPathsThatChanged addObject:newIndexPath];
+            }];
+            
+            // #2 - Call `beginUpdates` to tell the table view we're about to make changes
+            [self.tableView beginUpdates];
+            
+            // Tell the table view what the changes are
+            if (kindOfChange == NSKeyValueChangeInsertion) {
+                [self.tableView insertRowsAtIndexPaths:indexPathsThatChanged withRowAnimation:UITableViewRowAnimationAutomatic];
+            } else if (kindOfChange == NSKeyValueChangeRemoval) {
+                [self.tableView deleteRowsAtIndexPaths:indexPathsThatChanged withRowAnimation:UITableViewRowAnimationAutomatic];
+            } else if (kindOfChange == NSKeyValueChangeReplacement) {
+                [self.tableView reloadRowsAtIndexPaths:indexPathsThatChanged withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            
+            // Tell the table view that we're done telling it about changes, and to complete the animation
+            [self.tableView endUpdates];
+        }
+    
+    }
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +118,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     //added this per 28
-    return [DataSource sharedInstance].items.count;
+    return [DataSource sharedInstance].myItems.count;
     
 }
 
@@ -59,7 +127,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MyItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
-    cell.item = [DataSource sharedInstance].items[indexPath.row];
+    cell.item = [DataSource sharedInstance].myItems[indexPath.row];
     
     return cell;
 }
@@ -74,9 +142,31 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Added per 28
-    MyItem *item = [DataSource sharedInstance].items[indexPath.row];
+    MyItem *item = [DataSource sharedInstance].myItems[indexPath.row];
     
     return [MyItemTVCell heightForItem:item width:CGRectGetWidth(self.view.frame)];
+}
+
+
+
+#pragma mark - Infinite Scroll Methods
+
+- (void) infiniteScrollIfNecessary {
+    
+    // #3 - Check if user has scrolled to the last photo.
+    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexPath && bottomIndexPath.row == [DataSource sharedInstance].myItems.count - 1) {
+        // The very last cell is on screen
+        [[DataSource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+// #4 UITableView is a subclass of UIScrollView. When content size is larger than its frame a pan gesture moves its content. Scroll view can be scrolled horizontally or vertically. (Table view locked into vertical scrolling though)
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
 }
 
 
