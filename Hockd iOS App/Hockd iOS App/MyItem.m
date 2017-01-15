@@ -16,19 +16,19 @@
     self = [super init];
     
     if (self) {
-        self.idNumber = itemDictionary[@"itemId"];
+        self.idNumber = itemDictionary[@"id"];
         self.user = [[User alloc] initWithDictionary:itemDictionary[@"user"]];
-        self.itemDescription = itemDictionary[@"itemDescription"];
+        self.itemDescription = itemDictionary[@"item_description"];
         self.manufacturer = itemDictionary[@"manufacturer"];
-        self.manufactureYear = itemDictionary[@"manufactureYear"];
-        self.modelName = itemDictionary[@"modelName"];
+        self.manufactureYear = itemDictionary[@"manufacture_year"];
+        self.modelName = itemDictionary[@"model_name"];
         self.condition = itemDictionary[@"condition"];
-        self.loanDesired = itemDictionary[@"loanDesired"];
-        self.itemStatus = itemDictionary[@"itemStatus"];
+        self.loanDesired = itemDictionary[@"loan_desired"];
+        self.itemStatus = itemDictionary[@"item_status"];
         
         //These next three nil values when first posted.. Need special stuff for?
-        self.otherComments = itemDictionary[@"otherComments"];
-        self.postedLoanAmount = itemDictionary[@"postedLoanAmount"];
+        self.otherComments = itemDictionary[@"other_comments"];
+        self.postedLoanAmount = itemDictionary[@"loan_amount"];
         
         NSString *standardResolutionImageURLString = itemDictionary[@"images"][@"standard_resolution"][@"url"];
         NSURL *standardResolutionImageURL = [NSURL URLWithString:standardResolutionImageURLString];

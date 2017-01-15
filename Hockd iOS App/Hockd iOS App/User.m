@@ -28,7 +28,8 @@
         self.addressOne = userDictionary[@"address_one"];
         self.addressTwo = userDictionary[@"address_two"];
         
-        NSString *profilePictureURL = userDictionary[@"profileImage"];
+        //HOW IS THE DAMN PROFILE_IMAGE STORED!!!!?!?!?!?!?!?!!?
+        NSString *profilePictureURL = userDictionary[@"profile_image"];
         NSURL *profileURL = [NSURL URLWithString:profilePictureURL];
         
         if (profileURL) {

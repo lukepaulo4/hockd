@@ -19,8 +19,8 @@
         self.state = addressDictionary[@"state"];
         self.city = addressDictionary[@"city"];
         self.zip = addressDictionary[@"zip"];
-        self.address_one = addressDictionary[@"addressOne"];
-        self.address_two = addressDictionary[@"addressTwo"];
+        self.address_one = addressDictionary[@"address_one"];
+        self.address_two = addressDictionary[@"address_two"];
     
     }
     
