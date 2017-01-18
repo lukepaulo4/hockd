@@ -31,15 +31,34 @@
             </objects>
             <point key="canvasLocation" x="1800" y="316"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="sTr-qb-tQb">
+        <!--Search Table View Controller-->
+        <scene sceneID="86x-3W-d5c">
             <objects>
-                <tableViewController id="WjF-XW-dKT" customClass="SearchViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Search" id="Nb7-vA-Gsa"/>
+                <tableViewController id="ZWl-dU-PSW" customClass="SearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YUj-JA-6be">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCellTwo" id="p0g-Ba-M4R" customClass="AllItemTVCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p0g-Ba-M4R" id="uWT-T7-L9t">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZWl-dU-PSW" id="ZSD-4k-qis"/>
+                            <outlet property="delegate" destination="ZWl-dU-PSW" id="jla-fF-FNP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Tbd-H6-Ntp"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8us-rz-7Er" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwq-JV-uep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472" y="316"/>
+            <point key="canvasLocation" x="3625" y="315"/>
         </scene>
         <!--SEARCH-->
         <scene sceneID="yT0-OF-OxS">
@@ -47,13 +66,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LZU-YG-eg1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SEARCH" image="Search" selectedImage="Search" id="Sxf-W8-ri5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sdM-3I-gOC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sdM-3I-gOC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WjF-XW-dKT" kind="relationship" relationship="rootViewController" id="8qE-wj-zZD"/>
+                        <segue destination="ZWl-dU-PSW" kind="relationship" relationship="rootViewController" id="Fqj-EZ-KHl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cey-nU-QUc" userLabel="First Responder" sceneMemberID="firstResponder"/>

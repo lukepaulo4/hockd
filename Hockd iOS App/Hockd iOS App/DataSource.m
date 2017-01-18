@@ -9,16 +9,19 @@
 #import "DataSource.h"
 #import "User.h"
 #import "MyItem.h"
+#import "AllItem.h"
 
 
 
 @interface DataSource () {
     NSMutableArray *_myItems;
+    NSMutableArray *_allItems;
     NSMutableArray *_userData;
 }
 
 
 @property (nonatomic, strong) NSArray *myItems;
+@property (nonatomic, strong) NSArray *allItems;
 @property (nonatomic, strong) NSArray *userData;
 
 
@@ -46,7 +49,8 @@
 
 #pragma mark - Add required KVC accessor methods 
 
-//The array must be accessible
+//for MyItems Table VC
+//The myItems array must be accessible
 - (NSUInteger) countOfItems {
     return self.myItems.count;
 }
@@ -74,6 +78,38 @@
 
 
 
+//for AllItems Table VC
+//The allItems array must be accessible
+- (NSUInteger) countOfAllItems {
+    return self.allItems.count;
+}
+
+- (id) objectInAllItemsAtIndex:(NSUInteger)index {
+    return [self.allItems objectAtIndex:index];
+}
+
+- (NSArray *) allItemsAtIndexes:(NSIndexSet *)indexes {
+    return [self.allItems objectsAtIndexes:indexes];
+}
+
+//add mutable accessor methods. These are KVC methods that allow insertion and deletion of elements from MyItems. Need to be _myItems not self.myItems because in header file myItems is declared as readonly
+- (void) insertObject:(AllItem *)object inAllItemsAtIndex:(NSUInteger)index {
+    [_allItems insertObject:object atIndex:index];
+}
+
+- (void) removeObjectFromAllItemsAtIndex:(NSUInteger)index {
+    [_allItems removeObjectAtIndex:index];
+}
+
+- (void) replaceObjectInAllItemsAtIndex:(NSUInteger)index withObject:(id)object {
+    [_allItems replaceObjectAtIndex:index withObject:object];
+}
+
+
+
+
+
+
 
 #pragma mark - Random Data Add To Test Table View
 
@@ -88,8 +124,10 @@
     return self;
 }
 
+
 - (void) addRandomData {
     NSMutableArray *randomItems = [NSMutableArray array];
+    NSMutableArray *randomAllItems = [NSMutableArray array];
     
     for (int i = 1; i <= 10; i++) {
         NSString *imageName = [NSString  stringWithFormat:@"%d.jpg", i];
@@ -103,11 +141,23 @@
             item.loanDesired = [self randomValue];
             
             [randomItems addObject:item];
+            
+            AllItem *item2 = [[AllItem alloc] init];
+            item2.user = [self randomUser];
+            item2.imageOne = image;
+            item2.itemDescription = [self randomSentence];
+            item2.loanDesired = [self randomValue];
+            
+            [randomAllItems addObject:item2];
         }
     }
     
     self.myItems = randomItems;
+    
+    self.allItems = randomAllItems;
 }
+
+
 
 - (User *) randomUser {
     User *user = [[User alloc] init];
@@ -171,6 +221,11 @@
 
 
 
+
+
+# pragma mark - Pull to Refresh and Infinite Scroll Completion Handlers
+
+//for My Items Table VC
 //implement the pull to refresh completion handler
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler {
     
@@ -183,6 +238,7 @@
         item.user = [self randomUser];
         item.imageOne = [UIImage imageNamed:@"10.jpg"];
         item.itemDescription = [self randomSentence];
+        item.loanDesired = [self randomValue];
         
         NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"myItems"];
         [mutableArrayWithKVO insertObject:item atIndex:0];
@@ -203,6 +259,7 @@
         item.user = [self randomUser];
         item.imageOne = [UIImage imageNamed:@"1.jpg"];
         item.itemDescription = [self randomSentence];
+        item.loanDesired = [self randomValue];
         
         NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"myItems"];
         [mutableArrayWithKVO addObject:item];
@@ -214,6 +271,57 @@
         }
     }
 }
+
+
+//for All Items Table VC
+//implement the pull to refresh completion handler
+- (void) requestNewAllItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler {
+    
+    // #1 check if request for recovering new item is already in progress. If so, return immedidately, otherwise set to YES.
+    if (self.isRefreshing == NO) {
+        self.isRefreshing = YES;
+        
+        // #2 create a new random media object and append it to the front of the KVC array. Place at top-most table cell.
+        AllItem *item = [[AllItem alloc] init];
+        item.user = [self randomUser];
+        item.imageOne = [UIImage imageNamed:@"10.jpg"];
+        item.itemDescription = [self randomSentence];
+        item.loanDesired = [self randomValue];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"allItems"];
+        [mutableArrayWithKVO insertObject:item atIndex:0];
+        
+        self.isRefreshing = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
+//implement the infinite scroll method/completion handler
+- (void) requestOldAllItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler {
+    if (self.isLoadingOlderItems == NO) {
+        self.isLoadingOlderItems = YES;
+        
+        AllItem *item = [[AllItem alloc] init];
+        item.user = [self randomUser];
+        item.imageOne = [UIImage imageNamed:@"1.jpg"];
+        item.itemDescription = [self randomSentence];
+        item.loanDesired = [self randomValue];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"allItems"];
+        [mutableArrayWithKVO addObject:item];
+        
+        self.isLoadingOlderItems = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
+
 
 
 

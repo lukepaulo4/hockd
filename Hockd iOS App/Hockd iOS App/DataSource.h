@@ -18,14 +18,20 @@ typedef void (^NewItemCompletionBlockPTR)(NSError *error);
 
 +(instancetype) sharedInstance;
 
-//Create array to store our array of items
+//Create array to store our array of my items for the my items table VC
 @property (nonatomic, strong, readonly) NSArray *myItems;
+
+//Create array to store our array of all items for the searchable table VC
+@property (nonatomic, strong, readonly) NSArray *allItems;
 
 
 
 //method for table view to call when user executes a pull-to-refresh gesture. Asynchronous so require the caller pass a version of our completion handler
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
+- (void) requestNewAllItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
+- (void) requestOldAllItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
+
 
 
 

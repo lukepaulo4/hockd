@@ -62,7 +62,7 @@
 		006080311E0A6564007F0CC9 /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080271E0A6564007F0CC9 /* 8.JPG */; };
 		006080321E0A6564007F0CC9 /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080281E0A6564007F0CC9 /* 9.JPG */; };
 		006080331E0A6564007F0CC9 /* 10.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080291E0A6564007F0CC9 /* 10.JPG */; };
-		00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchViewController.m */; };
+		00A100D51D6D954700ADDBCF /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchTableViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
@@ -76,6 +76,8 @@
 		00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1081D7E91CC00297AAD /* Messages.storyboard */; };
 		00E7F10C1D7E920F00297AAD /* MyItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10A1D7E920F00297AAD /* MyItems.storyboard */; };
 		00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10D1D7E92B300297AAD /* Search.storyboard */; };
+		00EE3F291E2F44C700BE3E59 /* AllItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE3F281E2F44C700BE3E59 /* AllItem.m */; };
+		00EE3F2C1E2F543300BE3E59 /* AllItemTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE3F2B1E2F543300BE3E59 /* AllItemTVCell.m */; };
 		00F499561D76BBA600641ACE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499551D76BBA600641ACE /* User.m */; };
 		00F499591D76BD9400641ACE /* MyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499581D76BD9400641ACE /* MyItem.m */; };
 		00F4995C1D76C71700641ACE /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F4995B1D76C71700641ACE /* Address.m */; };
@@ -199,8 +201,8 @@
 		006080271E0A6564007F0CC9 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
 		006080281E0A6564007F0CC9 /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
 		006080291E0A6564007F0CC9 /* 10.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.JPG; sourceTree = "<group>"; };
-		00A100D31D6D954700ADDBCF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		00A100D41D6D954700ADDBCF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		00A100D31D6D954700ADDBCF /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
+		00A100D41D6D954700ADDBCF /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsTableViewController.h; sourceTree = "<group>"; };
 		00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemsTableViewController.m; sourceTree = "<group>"; };
 		00A100D91D6D968200ADDBCF /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
@@ -221,6 +223,10 @@
 		00E7F1081D7E91CC00297AAD /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		00E7F10B1D7E920F00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyItems.storyboard; sourceTree = "<group>"; };
 		00E7F10D1D7E92B300297AAD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		00EE3F271E2F44C700BE3E59 /* AllItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItem.h; sourceTree = "<group>"; };
+		00EE3F281E2F44C700BE3E59 /* AllItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItem.m; sourceTree = "<group>"; };
+		00EE3F2A1E2F543300BE3E59 /* AllItemTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItemTVCell.h; sourceTree = "<group>"; };
+		00EE3F2B1E2F543300BE3E59 /* AllItemTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItemTVCell.m; sourceTree = "<group>"; };
 		00F499541D76BBA600641ACE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		00F499551D76BBA600641ACE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		00F499571D76BD9400641ACE /* MyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItem.h; sourceTree = "<group>"; };
@@ -300,6 +306,8 @@
 				00F499551D76BBA600641ACE /* User.m */,
 				00F499571D76BD9400641ACE /* MyItem.h */,
 				00F499581D76BD9400641ACE /* MyItem.m */,
+				00EE3F271E2F44C700BE3E59 /* AllItem.h */,
+				00EE3F281E2F44C700BE3E59 /* AllItem.m */,
 				00F4995A1D76C71700641ACE /* Address.h */,
 				00F4995B1D76C71700641ACE /* Address.m */,
 				00F4995D1D76CA2000641ACE /* DataSource.h */,
@@ -318,8 +326,10 @@
 				0056FA011DF8E33C0059475E /* UpdatePasswordViewController.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
-				00A100D31D6D954700ADDBCF /* SearchViewController.h */,
-				00A100D41D6D954700ADDBCF /* SearchViewController.m */,
+				00A100D31D6D954700ADDBCF /* SearchTableViewController.h */,
+				00A100D41D6D954700ADDBCF /* SearchTableViewController.m */,
+				00EE3F2A1E2F543300BE3E59 /* AllItemTVCell.h */,
+				00EE3F2B1E2F543300BE3E59 /* AllItemTVCell.m */,
 				00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */,
 				00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */,
 				001E81561D892F7000DE27EA /* MyItemTVCell.h */,
@@ -710,8 +720,10 @@
 				004915981DED97DB00892B8D /* TGPhotoViewController.m in Sources */,
 				00A100D81D6D960D00ADDBCF /* MyItemsTableViewController.m in Sources */,
 				00F4995F1D76CA2000641ACE /* DataSource.m in Sources */,
+				00EE3F291E2F44C700BE3E59 /* AllItem.m in Sources */,
 				004915B51DED97E800892B8D /* TGCameraShot.m in Sources */,
 				004915B21DED97E800892B8D /* TGCameraFocus.m in Sources */,
+				00EE3F2C1E2F543300BE3E59 /* AllItemTVCell.m in Sources */,
 				004915AE1DED97E800892B8D /* TGAssetsLibrary.m in Sources */,
 				004915971DED97DB00892B8D /* TGCameraViewController.m in Sources */,
 				004915AF1DED97E800892B8D /* TGCamera.m in Sources */,
@@ -733,7 +745,7 @@
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				004915D01DED980100892B8D /* TGTintedButton.m in Sources */,
 				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
-				00A100D51D6D954700ADDBCF /* SearchViewController.m in Sources */,
+				00A100D51D6D954700ADDBCF /* SearchTableViewController.m in Sources */,
 				00F4995C1D76C71700641ACE /* Address.m in Sources */,
 				004915CA1DED980100892B8D /* TGCameraFilterView.m in Sources */,
 				00DAA3041DD19D2400098ECC /* CreateAccountViewController.m in Sources */,
