@@ -43,11 +43,9 @@
 /*Category will be a dropdown menu of
  {
  Jewelery,
- Gold/Gems,
+ Gold
  Electronics,
- Instruments,
- Antiques,
- Sports Memorabilia,
+ Metal,
  Other
  }
  It must be one of these. These will be the same options for Interests in the user profile.
