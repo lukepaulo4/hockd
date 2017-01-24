@@ -62,6 +62,7 @@
 		006080311E0A6564007F0CC9 /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080271E0A6564007F0CC9 /* 8.JPG */; };
 		006080321E0A6564007F0CC9 /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080281E0A6564007F0CC9 /* 9.JPG */; };
 		006080331E0A6564007F0CC9 /* 10.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080291E0A6564007F0CC9 /* 10.JPG */; };
+		0061445A1E3731ED00E98A2B /* MyItemFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006144591E3731ED00E98A2B /* MyItemFullScreenViewController.m */; };
 		00A100D51D6D954700ADDBCF /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D41D6D954700ADDBCF /* SearchTableViewController.m */; };
 		00A100D81D6D960D00ADDBCF /* MyItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */; };
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
@@ -201,6 +202,8 @@
 		006080271E0A6564007F0CC9 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
 		006080281E0A6564007F0CC9 /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
 		006080291E0A6564007F0CC9 /* 10.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.JPG; sourceTree = "<group>"; };
+		006144581E3731ED00E98A2B /* MyItemFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemFullScreenViewController.h; sourceTree = "<group>"; };
+		006144591E3731ED00E98A2B /* MyItemFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemFullScreenViewController.m; sourceTree = "<group>"; };
 		00A100D31D6D954700ADDBCF /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		00A100D41D6D954700ADDBCF /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		00A100D61D6D960D00ADDBCF /* MyItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemsTableViewController.h; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				00A100D71D6D960D00ADDBCF /* MyItemsTableViewController.m */,
 				001E81561D892F7000DE27EA /* MyItemTVCell.h */,
 				001E81571D892F7000DE27EA /* MyItemTVCell.m */,
+				006144581E3731ED00E98A2B /* MyItemFullScreenViewController.h */,
+				006144591E3731ED00E98A2B /* MyItemFullScreenViewController.m */,
 				00A100D91D6D968200ADDBCF /* MessagesViewController.h */,
 				00A100DA1D6D968200ADDBCF /* MessagesViewController.m */,
 				00A100E21D6D971D00ADDBCF /* HockViewController.h */,
@@ -738,6 +743,7 @@
 				004915B01DED97E800892B8D /* TGCameraColor.m in Sources */,
 				0056FA021DF8E33C0059475E /* UpdatePasswordViewController.m in Sources */,
 				004915B91DED97F400892B8D /* TGAssetImageFile.m in Sources */,
+				0061445A1E3731ED00E98A2B /* MyItemFullScreenViewController.m in Sources */,
 				002DA68A1DDB24CB00E3FD6F /* NSString+Base64.m in Sources */,
 				0056F9FF1DF8A3350059475E /* UpdateAccountViewController.m in Sources */,
 				00F499621D76D0D700641ACE /* AutomatedMessages.m in Sources */,

@@ -98,10 +98,7 @@
 {
     _photoView.image = image;
 
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-    NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSLog(@"Taken photo string is = %@", encodedImageString);
+    //NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -109,13 +106,7 @@
 - (void)cameraDidSelectAlbumPhoto:(UIImage *)image
 {
     _photoView.image = image;
-    
-    /*why do you have this?
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-    NSString *encodedImageString = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSLog(@"Selected photo string is = %@", encodedImageString);
-     */
+
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -291,6 +282,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     //Do I need to store this URL on a hockd path somewhere?
     //NSURL *hockdURL = [NSURL URLWithString:@"hockd://location?id=1"];
     
+    /*Comment this out until you know what you are doing with the images
     NSData *imageData = UIImageJPEGRepresentation(self.photoView.image, 0.9f);
     
     NSURL *tmpDirURL = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
@@ -304,6 +296,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         [self presentViewController:alertVC animated:YES completion:nil];
         return;
     }
+     */
     
     
     
@@ -335,7 +328,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         
     } else {
         
-        [[DataSource sharedInstance] createAccountWithUsername:self.usernameTextField.text password:protectedPass email:self.emailTextField.text userType:self.userTypeTextField.text addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text imageURL:fileURL completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        [[DataSource sharedInstance] createAccountWithUsername:self.usernameTextField.text password:protectedPass email:self.emailTextField.text userType:self.userTypeTextField.text addressOne:self.addressOneTextField.text addressTwo:self.addressTwoTextField.text city:self.cityTextField.text state:self.stateTextField.text zip:self.zipTextField.text interests:self.interestsTextField.text /*imageURL:fileURL*/ completionHandler:^(NSError *error, NSDictionary *returnedDict) {
         
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             

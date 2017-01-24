@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class MyItem;
+@class MyItem, MyItemTVCell;
+
+@protocol MyItemTVCellDelegate <NSObject>
+
+- (void) cell:(MyItemTVCell *)cell didTapImageView:(UIImageView *)imageView;
+
+@end
 
 @interface MyItemTVCell : UITableViewCell
 
 @property (nonatomic, strong) MyItem *item;
+@property (nonatomic, weak) id <MyItemTVCellDelegate> delegate;
 
 //since doesn't belong to an instance of this object, we use +. Namaste
 + (CGFloat) heightForItem:(MyItem *)item width:(CGFloat)width;

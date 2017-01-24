@@ -50,15 +50,13 @@ typedef NS_ENUM(NSUInteger, ItemStatus) {
 @property (nonatomic, strong) NSString *condition;
 
 /*Category will be a dropdown menu of
-{
-    Jewelery,
-    Gold/Gems,
-    Electronics,
-    Instruments,
-    Antiques,
-    Sports Memorabilia,
-    Other
-}
+ {
+ Jewelery,
+ Gold
+ Electronics,
+ Metal,
+ Other
+ }
   It must be one of these. These will be the same options for Interests in the user profile.
  */
 @property (nonatomic, strong) NSString *category;

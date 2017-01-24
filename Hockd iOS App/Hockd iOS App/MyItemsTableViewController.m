@@ -11,8 +11,9 @@
 #import "MyItem.h"
 #import "User.h"
 #import "MyItemTVCell.h"
+#import "MyItemFullScreenViewController.h"
 
-@interface MyItemsTableViewController ()
+@interface MyItemsTableViewController () <MyItemTVCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, strong) NSMutableArray *testArray;
@@ -126,11 +127,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MyItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
+    cell.delegate = self;
     cell.item = [DataSource sharedInstance].myItems[indexPath.row];
     
     return cell;
 }
 
+
+#pragma mark - MyItemsTableViewCellDelegate
+
+- (void) cell:(MyItemTVCell *)cell didTapImageView:(UIImageView *)imageView {
+    MyItemFullScreenViewController *fullScreenVC = [[MyItemFullScreenViewController alloc] initWithMyItem:cell.item];
+    
+    [self presentViewController:fullScreenVC animated:YES completion:nil];
+}
 
 
 

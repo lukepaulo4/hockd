@@ -410,10 +410,10 @@
 
 
 //method to extract create account dictionary response
-- (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests imageURL:(NSURL*)imageURL completionHandler:(NewItemCompletionBlock)completionHandler {
+- (void) createAccountWithUsername:(NSString*)username password:(NSString*)password email:(NSString*)email userType:(NSString*)userType addressOne:(NSString*)addressOne addressTwo:(NSString*)addressTwo city:(NSString*)city state:(NSString*)state zip:(NSString*)zip interests:(NSString*)interests /*imageURL:(NSURL*)imageURL*/ completionHandler:(NewItemCompletionBlock)completionHandler {
     
     NSString *apiStr = @"http://hockd.co/hockd/public/api/v1/auth/signup";
-    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@&profile_image=%@", username, password, email, userType, addressOne, addressTwo, city, state, zip, interests, [imageURL absoluteURL], nil];
+    NSString *userInput = [NSString stringWithFormat:@"username=%@&password=%@&email=%@&user_type=%@&address_one=%@&address_two=%@&city=%@&state=%@&zip=%@&interests=%@" /*&profile_image=%@"*/, username, password, email, userType, addressOne, addressTwo, city, state, zip, interests, /*[imageURL absoluteURL],*/ nil];
     
     [self getJsonResponse:apiStr input:userInput success:^(NSDictionary *responseDict) {
         NSLog(@"createAccountWithUsername in DS dict = %@", responseDict);
