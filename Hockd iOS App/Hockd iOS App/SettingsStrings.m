@@ -1,0 +1,13 @@
+//
+//  SettingsStrings.m
+//  Hockd iOS App
+//
+//  Created by Luke Paulo on 1/24/17.
+//  Copyright © 2017 HOCKD. All rights reserved.
+//
+
+#import "SettingsStrings.h"
+
+@implementation SettingsStrings
+
+@end

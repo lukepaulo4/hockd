@@ -27,11 +27,11 @@
     
     //meh about the above to. Set your array of possible settings
 
-    self.settingsLabels =  [NSArray arrayWithObjects:@"HELP & SUPPORT",
-                                @"EDIT PROFILE",
-                                @"FUN HOCKD FACTS",
-                                @"GIVE US FEEDBACK",
-                                @"INVITE YOUR FRIENDS",
+    self.settingsLabels =  [NSArray arrayWithObjects:@"VIEW & EDIT PROFILE",
+                                @"ASSETS ACCEPTED",
+                                @"HOW IT WORKS",
+                                @"FAQ",
+                                @"CONTACT US",
                                 nil];
 }
 
@@ -111,7 +111,7 @@
     
     NSString *rowValue = self.settingsLabels[indexPath.row];
     
-    if ([rowValue isEqualToString:@"EDIT PROFILE"]) {
+    if ([rowValue isEqualToString:@"VIEW & EDIT PROFILE"]) {
         
         dispatch_async(dispatch_get_main_queue(),   ^{
 
@@ -119,17 +119,14 @@
             
         });
 
-    } else {
+    } else if ([rowValue isEqualToString:@"FAQ"]) {
     
+        dispatch_async(dispatch_get_main_queue(),   ^{
+            
+            [self performSegueWithIdentifier:@"faqSegue" sender:self];
+            
+        });
     
-    NSString *message = [[NSString alloc] initWithFormat:@"You selected %@", rowValue];
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"HELL YEAH" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
         
     }
     
