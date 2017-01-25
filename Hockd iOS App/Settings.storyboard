@@ -405,18 +405,41 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tools/Industrial Equipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBk-52-WYP">
+                                <rect key="frame" x="95.5" y="370" width="183" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why We Can't Accept These" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-1S-StV">
+                                <rect key="frame" x="51" y="448" width="272" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="rMs-Tf-aEW">
+                                <rect key="frame" x="16" y="480" width="343" height="90"/>
+                                <string key="text">Most of the items we don't accept are either illegal or too big to ship. Not sure if your item fits our list? Contact one of our representatives and we'll work with you to guide you through the process or help make special accomodations.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jyt-0G-upo" firstAttribute="top" secondItem="yNj-MG-CGL" secondAttribute="bottom" constant="8" id="00Z-sB-oLt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rMs-Tf-aEW" secondAttribute="trailing" id="5m2-vm-oM0"/>
                             <constraint firstItem="2jm-Vf-g9r" firstAttribute="top" secondItem="eEr-1K-fDD" secondAttribute="bottom" constant="8" id="7iL-qw-0e0"/>
+                            <constraint firstItem="mBk-52-WYP" firstAttribute="centerX" secondItem="JW0-oc-Xjq" secondAttribute="centerX" id="7sT-wR-erm"/>
                             <constraint firstItem="0r3-ft-mOW" firstAttribute="centerX" secondItem="xR5-yi-9SH" secondAttribute="centerX" id="96d-zW-5ei"/>
                             <constraint firstItem="xR5-yi-9SH" firstAttribute="top" secondItem="7tu-Tb-Wn6" secondAttribute="bottom" constant="8" id="AAx-BG-VRT"/>
+                            <constraint firstItem="LIs-1S-StV" firstAttribute="top" secondItem="mBk-52-WYP" secondAttribute="bottom" constant="60" id="CJj-OF-k8s"/>
                             <constraint firstItem="42Z-kh-we1" firstAttribute="centerX" secondItem="0r3-ft-mOW" secondAttribute="centerX" id="GCN-LQ-w8t"/>
                             <constraint firstItem="yNj-MG-CGL" firstAttribute="top" secondItem="d9i-WO-ncS" secondAttribute="bottom" constant="60" id="IcE-UN-25Z"/>
                             <constraint firstItem="JW0-oc-Xjq" firstAttribute="centerX" secondItem="yNj-MG-CGL" secondAttribute="centerX" id="KMa-Yt-91Q"/>
                             <constraint firstItem="eEr-1K-fDD" firstAttribute="top" secondItem="T7k-PZ-ejz" secondAttribute="bottom" id="LpB-wv-Ux8"/>
                             <constraint firstItem="2jm-Vf-g9r" firstAttribute="centerX" secondItem="eEr-1K-fDD" secondAttribute="centerX" id="OmX-fQ-k2K"/>
+                            <constraint firstItem="rMs-Tf-aEW" firstAttribute="top" secondItem="LIs-1S-StV" secondAttribute="bottom" constant="8" id="PyC-dg-ciw"/>
                             <constraint firstItem="42Z-kh-we1" firstAttribute="top" secondItem="0r3-ft-mOW" secondAttribute="bottom" constant="8" id="QeV-1D-lWu"/>
                             <constraint firstItem="wiB-hh-5Q0" firstAttribute="top" secondItem="2jm-Vf-g9r" secondAttribute="bottom" constant="8" id="Rlq-bm-wnA"/>
                             <constraint firstItem="JW0-oc-Xjq" firstAttribute="top" secondItem="Jyt-0G-upo" secondAttribute="bottom" constant="8" id="Skj-f9-gNr"/>
@@ -428,7 +451,10 @@ We will work on an individual basis to help ship larger or more fragile items. O
                             <constraint firstAttribute="trailingMargin" secondItem="eEr-1K-fDD" secondAttribute="trailing" constant="82" id="dVj-61-Evh"/>
                             <constraint firstItem="xR5-yi-9SH" firstAttribute="centerX" secondItem="7tu-Tb-Wn6" secondAttribute="centerX" id="pOU-gd-VI4"/>
                             <constraint firstItem="yNj-MG-CGL" firstAttribute="centerX" secondItem="eEr-1K-fDD" secondAttribute="centerX" id="pSD-FS-KCm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rMs-Tf-aEW" secondAttribute="leading" id="t0d-Y5-f8U"/>
                             <constraint firstItem="0r3-ft-mOW" firstAttribute="top" secondItem="xR5-yi-9SH" secondAttribute="bottom" constant="8" id="wvG-9O-0eq"/>
+                            <constraint firstItem="LIs-1S-StV" firstAttribute="centerX" secondItem="eEr-1K-fDD" secondAttribute="centerX" id="x6l-Ef-0wg"/>
+                            <constraint firstItem="mBk-52-WYP" firstAttribute="top" secondItem="JW0-oc-Xjq" secondAttribute="bottom" constant="8" id="x9W-ie-RKC"/>
                             <constraint firstItem="d9i-WO-ncS" firstAttribute="top" secondItem="42Z-kh-we1" secondAttribute="bottom" constant="8" id="xex-32-Btd"/>
                             <constraint firstItem="d9i-WO-ncS" firstAttribute="centerX" secondItem="42Z-kh-we1" secondAttribute="centerX" id="zMz-h9-zIj"/>
                         </constraints>
