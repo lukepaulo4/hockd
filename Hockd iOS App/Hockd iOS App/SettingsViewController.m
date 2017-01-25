@@ -128,6 +128,15 @@
         });
     
         
+    } else if ([rowValue isEqualToString:@"ASSETS ACCEPTED"]) {
+        
+        dispatch_async(dispatch_get_main_queue(),   ^{
+            
+            [self performSegueWithIdentifier:@"assetsAcceptedSegue" sender:self];
+            
+        });
+        
+        
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
