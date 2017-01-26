@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="25g-rV-m0H" id="f4U-M4-bqw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -87,49 +87,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zlt-el-yIp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlt-el-yIp">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you and how does it work?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGs-4t-Rt4">
-                                        <rect key="frame" x="81" y="8" width="216" height="14.5"/>
+                                        <rect key="frame" x="81" y="8" width="216" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much can I borrow?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-4T-VTN">
-                                        <rect key="frame" x="113" y="111.5" width="153" height="14.5"/>
+                                        <rect key="frame" x="113" y="113" width="153" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="xLP-ZA-QK2">
-                                        <rect key="frame" x="19" y="209" width="341" height="57.5"/>
+                                        <rect key="frame" x="19" y="212" width="341" height="58"/>
                                         <string key="text">A loan is made for a minimum of one month and can last for years, as long as each monthly interest charge is paid. We give you the freedom and flexibility to choose your loan terms. Most loans are typically repaid within six months.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you determine the interest rates?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-g1-FY0">
-                                        <rect key="frame" x="63" y="290.5" width="253.5" height="14.5"/>
+                                        <rect key="frame" x="63" y="294" width="253.5" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-2L-tky">
-                                        <rect key="frame" x="19" y="313" width="341" height="72"/>
+                                        <rect key="frame" x="19" y="317" width="341" height="72"/>
                                         <string key="text">The interest rate is based solely off the size of the loan. There are no hidden charges and all the details are fully explained before any commitments are made. We believe in a fully tranparent service to help maximize the value for both parties.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do I ship my items to you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzM-UL-3di">
-                                        <rect key="frame" x="94" y="409" width="190" height="14.5"/>
+                                        <rect key="frame" x="94" y="413" width="190" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="341" translatesAutoresizingMaskIntoConstraints="NO" id="COL-Dt-38g">
-                                        <rect key="frame" x="19" y="431" width="341" height="143.5"/>
+                                        <rect key="frame" x="19" y="436" width="341" height="144"/>
                                         <string key="text">All small items can be shipped immediately. We work with multiple mail couriers, and in most cases, a box is delivered directly to your home. All you have to do is print the shipping label, safely package your valuable(s), and put it in your mailbox.
  
 We will work on an individual basis to help ship larger or more fragile items. Our top priority is to ensure the safe delivery of your precious valuables, so we take extra precautions when necessary.</string>
@@ -138,96 +138,96 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do I need a bank account to use your services?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nga-2G-xOG">
-                                        <rect key="frame" x="46" y="598.5" width="286" height="14.5"/>
+                                        <rect key="frame" x="46" y="604" width="286" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="lLM-wH-qtj">
-                                        <rect key="frame" x="19" y="30" width="341" height="57.5"/>
+                                        <rect key="frame" x="19" y="31" width="341" height="58"/>
                                         <string key="text">Simply put, HOCKD connects individuals with money to those who are seeking immediate financing. You can think of us as the middleman that deals with all the boring paperwork and legal jargon so you don't have to.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The minimum loan amount must be at least $250, with no limit to the amount you can borrow." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="vMQ-Kr-EAX">
-                                        <rect key="frame" x="19" y="134" width="341" height="29"/>
+                                        <rect key="frame" x="19" y="136" width="341" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long can I borrow for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80i-zw-7Yj">
-                                        <rect key="frame" x="106" y="187" width="166" height="14.5"/>
+                                        <rect key="frame" x="106" y="189" width="166" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes. This is required by law as all payments are sent/recevied electronically. We cannot accept credit/debit card payments." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-lN-gAD">
-                                        <rect key="frame" x="19" y="621" width="341" height="43"/>
+                                        <rect key="frame" x="19" y="627" width="341" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do I repay my loan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cu6-Vj-yxm">
-                                        <rect key="frame" x="114" y="688" width="151" height="15"/>
+                                        <rect key="frame" x="114" y="694" width="151" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="u0P-ga-XBR">
-                                        <rect key="frame" x="19" y="711" width="341" height="43"/>
+                                        <rect key="frame" x="19" y="717" width="341" height="43"/>
                                         <string key="text">All payments are directly deposited to and from your bank account. You can choose to repay the loan monthly or in full at the end of the loan.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can I extend my loan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1a-wj-L6B">
-                                        <rect key="frame" x="119" y="778" width="140" height="15"/>
+                                        <rect key="frame" x="119" y="784" width="140" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="tgQ-mr-Bu0">
-                                        <rect key="frame" x="19" y="801" width="341" height="43"/>
+                                        <rect key="frame" x="19" y="807" width="341" height="43"/>
                                         <string key="text">Yes, a loan can be extended as long as all current interest charges have been paid. There are no additional fees to extend the loan.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What happens if I cannot repay my loan?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-CR-AKx">
-                                        <rect key="frame" x="64" y="868" width="251" height="15"/>
+                                        <rect key="frame" x="64" y="874" width="251" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="heU-j8-5g0">
-                                        <rect key="frame" x="19" y="891" width="341" height="57.5"/>
+                                        <rect key="frame" x="19" y="897" width="341" height="58"/>
                                         <string key="text">If you are unable to pay the loan and accrued interest we will sell the asset on behalf of our investors to help them recover their costs, or we will ship the item to them as they are the contractual owner of the pledged asset.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When will I receive my money?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fF-Fx-EMs">
-                                        <rect key="frame" x="94" y="972.5" width="190" height="15"/>
+                                        <rect key="frame" x="94" y="979" width="190" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-Jg-tjk">
-                                        <rect key="frame" x="19" y="995" width="341" height="72"/>
+                                        <rect key="frame" x="19" y="1002" width="341" height="72"/>
                                         <string key="text">Once the item has been shipped to us and and both parties agree on the terms, your cash will be electronically sent within minutes. We have streamlined the process to ensure funds are sent as quickly as possible so you can get the financing you need, exactly when you need it.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What if my item isn't listed in the accepted assets?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeJ-d0-pDb">
-                                        <rect key="frame" x="33" y="1091" width="312" height="14.5"/>
+                                        <rect key="frame" x="33" y="1098" width="312" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="339" translatesAutoresizingMaskIntoConstraints="NO" id="8Oz-Od-ZPp">
-                                        <rect key="frame" x="19" y="1113.5" width="341" height="57.5"/>
+                                        <rect key="frame" x="19" y="1121" width="341" height="58"/>
                                         <string key="text">We work with a wide range of assets and cannot list everything easily. If you are ever unsure about whether we will accept your item or not, please contact us and we'll work with you directly to help come up with a solution.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -301,6 +301,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                     <constraint firstItem="BjA-lN-gAD" firstAttribute="top" secondItem="Nga-2G-xOG" secondAttribute="bottom" constant="8" id="ueB-LA-ACj"/>
                                     <constraint firstItem="BjA-lN-gAD" firstAttribute="leading" secondItem="zlt-el-yIp" secondAttribute="leading" constant="19" id="xGj-uK-5uf"/>
                                     <constraint firstItem="tgQ-mr-Bu0" firstAttribute="top" secondItem="i1a-wj-L6B" secondAttribute="bottom" constant="8" id="xGn-kY-B04"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Oz-Od-ZPp" secondAttribute="bottom" constant="78" id="xmi-z9-gLE"/>
                                     <constraint firstAttribute="trailing" secondItem="tgQ-mr-Bu0" secondAttribute="trailing" constant="19" id="yfT-AV-tvj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
