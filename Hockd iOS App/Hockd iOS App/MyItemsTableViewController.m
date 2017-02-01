@@ -137,12 +137,14 @@
 #pragma mark - MyItemsTableViewCellDelegate
 
 - (void) cell:(MyItemTVCell *)cell didTapImageView:(UIImageView *)imageView {
-    MyItemFullScreenViewController *fullScreenVC = [[MyItemFullScreenViewController alloc] initWithMyItem:cell.item];
+    //MyItemFullScreenViewController *fullScreenVC = [[MyItemFullScreenViewController alloc] initWithMyItem:cell.item];
     
-    [self presentViewController:fullScreenVC animated:YES completion:nil];
+    //[self presentViewController:fullScreenVC animated:YES completion:nil];
+    dispatch_async(dispatch_get_main_queue(),   ^{
+        
+        [self performSegueWithIdentifier:@"myItemSingleViewSegue" sender:self];
+    });
 }
-
-
 
 
 
