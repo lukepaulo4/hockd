@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oBu-Rx-xG6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oBu-Rx-xG6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-43-6oA">
-                                <rect key="frame" x="127.5" y="28" width="120" height="33.5"/>
+                                <rect key="frame" x="128" y="28" width="120" height="33.5"/>
                                 <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
                                 <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -70,9 +70,11 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGg-NF-ItS">
-                                <rect key="frame" x="165.5" y="231.5" width="44" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="167" y="231.5" width="42" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KHo-tr-8HB"/>
                                 </connections>
@@ -131,13 +133,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-4i-A89">
-                                <rect key="frame" x="41.5" y="28" width="293" height="57"/>
+                                <rect key="frame" x="41" y="28" width="293" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-Ac-nDC">
-                                <rect key="frame" x="71" y="185" width="233.5" height="30"/>
+                                <rect key="frame" x="71" y="185" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -154,9 +156,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqM-dM-zjq">
-                                <rect key="frame" x="75" y="220" width="225" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Send Temporary Password"/>
+                                <rect key="frame" x="75" y="220" width="225" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Send Temporary Password">
+                                    <color key="titleColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="sendTempPassButton:" destination="yXH-0p-ysR" eventType="touchUpInside" id="8r0-PU-BxA"/>
                                 </connections>
@@ -193,12 +197,13 @@
                     <connections>
                         <outlet property="enterEmailTextField" destination="kLc-Ac-nDC" id="wv9-2V-cF6"/>
                         <outlet property="forgotPasswordLabel" destination="o4T-4i-A89" id="lEd-LL-pid"/>
+                        <segue destination="9MQ-fd-PC2" kind="show" identifier="tempPassLoginSegue" id="F51-Ev-c0T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzw-H7-sra" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="hae-1d-J14">
                     <connections>
-                        <action selector="tapGestureDidFire:" destination="yXH-0p-ysR" id="Rfx-Bx-3Lw"/>
+                        <action selector="tapGestureDidFire:" destination="yXH-0p-ysR" id="wAx-AA-7Y7"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -261,9 +266,101 @@
             </objects>
             <point key="canvasLocation" x="1615" y="759"/>
         </scene>
+        <!--Temp Pass Login Page-->
+        <scene sceneID="VfW-qA-HS7">
+            <objects>
+                <viewController title="Temp Pass Login Page" id="9MQ-fd-PC2" customClass="TempPassLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jr4-47-r0m"/>
+                        <viewControllerLayoutGuide type="bottom" id="MZw-TG-lhW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XNC-Nc-kaP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk4-jf-98E">
+                                <rect key="frame" x="128" y="28" width="120" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-x2-klC">
+                                <rect key="frame" x="71" y="196.5" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="passwordTextField" label="passwordTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordTextFieldDidChange:" destination="9MQ-fd-PC2" eventType="editingChanged" id="IMu-2s-fkM"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWM-D0-GZo">
+                                <rect key="frame" x="71" y="161.5" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="usernameTextField" label="usernameTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="usernameTextFieldDidChange:" destination="9MQ-fd-PC2" eventType="editingChanged" id="uZX-io-LE0"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-MP-gkw">
+                                <rect key="frame" x="167" y="231.5" width="42" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="9MQ-fd-PC2" eventType="touchUpInside" id="wfc-k3-X7n"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XII-IH-rMK">
+                                <rect key="frame" x="127" y="273" width="120" height="34"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="kk4-jf-98E" firstAttribute="top" secondItem="jr4-47-r0m" secondAttribute="bottom" constant="8" id="9d9-Zy-61J"/>
+                            <constraint firstItem="Yiw-x2-klC" firstAttribute="centerX" secondItem="AWM-D0-GZo" secondAttribute="centerX" id="HiW-fr-MCb"/>
+                            <constraint firstItem="AWM-D0-GZo" firstAttribute="top" secondItem="kk4-jf-98E" secondAttribute="bottom" constant="100" id="KMx-H4-LfM"/>
+                            <constraint firstItem="XII-IH-rMK" firstAttribute="top" secondItem="h0o-MP-gkw" secondAttribute="bottom" constant="8" id="Oi7-9a-eH0"/>
+                            <constraint firstItem="kk4-jf-98E" firstAttribute="centerX" secondItem="XNC-Nc-kaP" secondAttribute="centerX" id="Twb-zr-pYn"/>
+                            <constraint firstItem="AWM-D0-GZo" firstAttribute="centerX" secondItem="kk4-jf-98E" secondAttribute="centerX" id="aLG-4T-1DE"/>
+                            <constraint firstItem="h0o-MP-gkw" firstAttribute="centerX" secondItem="Yiw-x2-klC" secondAttribute="centerX" id="bTH-1u-QGC"/>
+                            <constraint firstItem="Yiw-x2-klC" firstAttribute="width" secondItem="AWM-D0-GZo" secondAttribute="width" id="clW-Lt-CC8"/>
+                            <constraint firstItem="h0o-MP-gkw" firstAttribute="top" secondItem="Yiw-x2-klC" secondAttribute="bottom" constant="5" id="kQU-2j-vqB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AWM-D0-GZo" secondAttribute="trailing" constant="55" id="pfr-Ud-K8t"/>
+                            <constraint firstItem="AWM-D0-GZo" firstAttribute="leading" secondItem="XNC-Nc-kaP" secondAttribute="leadingMargin" constant="55" id="uM0-gM-eem"/>
+                            <constraint firstItem="Yiw-x2-klC" firstAttribute="top" secondItem="AWM-D0-GZo" secondAttribute="bottom" constant="5" id="zey-8V-BTB"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gso-XL-HEc" appends="YES" id="wjO-Du-OC7"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login Page" id="Sfv-dQ-WXc"/>
+                    <connections>
+                        <outlet property="loginLabel" destination="kk4-jf-98E" id="C11-Sm-c0X"/>
+                        <outlet property="passwordTextField" destination="Yiw-x2-klC" id="A9P-5S-4gG"/>
+                        <outlet property="titleLabel" destination="kk4-jf-98E" id="2ZI-Df-qBs"/>
+                        <outlet property="usernameTextField" destination="AWM-D0-GZo" id="dyu-4Q-GG1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpk-Kx-9jS" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gso-XL-HEc">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="9MQ-fd-PC2" id="eZl-h8-vbF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="833" y="1908"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="VSd-Wz-93k"/>
         <segue reference="fwZ-Ez-ysw"/>
-        <segue reference="tfj-fV-dYj"/>
     </inferredMetricsTieBreakers>
 </document>

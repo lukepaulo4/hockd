@@ -62,7 +62,7 @@
                     <tabBarItem key="tabBarItem" title="SETTINGS" image="Settings" selectedImage="Settings" id="w9D-4p-BKm"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kZI-Fc-V1e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kZI-Fc-V1e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -110,7 +110,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you determine the interest rates?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-g1-FY0">
-                                        <rect key="frame" x="63" y="294" width="254" height="15"/>
+                                        <rect key="frame" x="63" y="294" width="253.5" height="15"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

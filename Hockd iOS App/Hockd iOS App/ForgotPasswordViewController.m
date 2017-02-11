@@ -69,15 +69,20 @@
             NSLog(@"message code in required area ==%@", msgCodeValue);
             
             //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
-            if ([msgCodeValue  isEqual:@"Successfully logged in"]) {
+            if ([msgCodeValue  isEqual:@"forget_psw_msg"]) {
                 NSLog(@"got correct response");
                 
                 
                 //add a dispatch async to get rid of bug message
                 dispatch_async(dispatch_get_main_queue(),   ^{
                     
-                    //Once API working, maybe make a new login page where you can log in with the new password.
-                    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                    NSString *message4 = [[NSString alloc] initWithFormat:@"Correct Email"];
+                    UIAlertController *alert4 = [UIAlertController alertControllerWithTitle:message4 message:@"You will receive an email shortly with a temporary password. Use this password to log in. Once in, reset your password in the update account settings page." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* defaultAction4 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                           handler:^(UIAlertAction * action) {}];
+                    
+                    [alert4 addAction:defaultAction4];
+                    [self presentViewController:alert4 animated:YES completion:nil];
                     
                 });
                 
@@ -108,5 +113,9 @@
 
 - (IBAction)backButton:(UIButton *)sender {
 }
+
+- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
+}
+
 
 @end

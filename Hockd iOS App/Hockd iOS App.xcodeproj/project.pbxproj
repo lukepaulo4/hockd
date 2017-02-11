@@ -82,6 +82,7 @@
 		00E7F1091D7E91CC00297AAD /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F1081D7E91CC00297AAD /* Messages.storyboard */; };
 		00E7F10C1D7E920F00297AAD /* MyItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10A1D7E920F00297AAD /* MyItems.storyboard */; };
 		00E7F10E1D7E92B300297AAD /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7F10D1D7E92B300297AAD /* Search.storyboard */; };
+		00ECEC531E4FA83D005697B5 /* TempPassLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ECEC521E4FA83D005697B5 /* TempPassLoginViewController.m */; };
 		00EE3F291E2F44C700BE3E59 /* AllItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE3F281E2F44C700BE3E59 /* AllItem.m */; };
 		00EE3F2C1E2F543300BE3E59 /* AllItemTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE3F2B1E2F543300BE3E59 /* AllItemTVCell.m */; };
 		00F499561D76BBA600641ACE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F499551D76BBA600641ACE /* User.m */; };
@@ -240,6 +241,8 @@
 		00E7F1081D7E91CC00297AAD /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		00E7F10B1D7E920F00297AAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyItems.storyboard; sourceTree = "<group>"; };
 		00E7F10D1D7E92B300297AAD /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		00ECEC511E4FA83C005697B5 /* TempPassLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempPassLoginViewController.h; sourceTree = "<group>"; };
+		00ECEC521E4FA83D005697B5 /* TempPassLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempPassLoginViewController.m; sourceTree = "<group>"; };
 		00EE3F271E2F44C700BE3E59 /* AllItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItem.h; sourceTree = "<group>"; };
 		00EE3F281E2F44C700BE3E59 /* AllItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItem.m; sourceTree = "<group>"; };
 		00EE3F2A1E2F543300BE3E59 /* AllItemTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItemTVCell.h; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 				00DAA3031DD19D2400098ECC /* CreateAccountViewController.m */,
 				000E02C71D6AB89C00AD71BC /* ForgotPasswordViewController.h */,
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
+				00ECEC511E4FA83C005697B5 /* TempPassLoginViewController.h */,
+				00ECEC521E4FA83D005697B5 /* TempPassLoginViewController.m */,
 			);
 			name = "Login VCs";
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 				002DA6911DDB24F700E3FD6F /* NSData+CommonCrypto.m in Sources */,
 				000E02931D618CD800AD71BC /* LoginViewController.m in Sources */,
 				004915D01DED980100892B8D /* TGTintedButton.m in Sources */,
+				00ECEC531E4FA83D005697B5 /* TempPassLoginViewController.m in Sources */,
 				00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */,
 				008844801E3883DE0042ACF5 /* HowItWorksViewController.m in Sources */,
 				00A100D51D6D954700ADDBCF /* SearchTableViewController.m in Sources */,

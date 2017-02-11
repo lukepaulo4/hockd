@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="45y-lb-fKc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="45y-lb-fKc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4R-Wn-nKy">
-                                <rect key="frame" x="122.5" y="72" width="130" height="90"/>
+                                <rect key="frame" x="123" y="72" width="130" height="90"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="FAB-nG-CgI"/>
@@ -46,7 +46,7 @@
                                     <action selector="addPhotoButton:" destination="Ib1-ra-rju" eventType="touchUpInside" id="ySs-GY-GYp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="loan desired" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-j8-cfx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="loan desired" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-j8-cfx">
                                 <rect key="frame" x="71" y="415" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -55,7 +55,7 @@
                                     <action selector="loanDesiredTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="vIb-Qb-vZI"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="other comments" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-rf-mGm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="other comments" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-rf-mGm">
                                 <rect key="frame" x="71" y="380" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -64,7 +64,7 @@
                                     <action selector="otherCommentsTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="kdS-eX-IfQ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="model name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-bk-jKR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="model name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-bk-jKR">
                                 <rect key="frame" x="71" y="310" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -73,7 +73,7 @@
                                     <action selector="modelNameTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="Uam-O8-yum"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="manufacture year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-hg-jvG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="manufacture year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-hg-jvG">
                                 <rect key="frame" x="71" y="275" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,7 +82,7 @@
                                     <action selector="manufactureYearTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="EVV-VY-9ht"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="manufacturer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-ep-d2c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="manufacturer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-ep-d2c">
                                 <rect key="frame" x="71" y="240" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -91,7 +91,7 @@
                                     <action selector="manufactureTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="Z9D-VX-wV4"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kx-sr-6kU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kx-sr-6kU">
                                 <rect key="frame" x="149.5" y="576" width="76" height="34"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <state key="normal" title="SUBMIT!">
@@ -102,14 +102,7 @@
                                     <segue destination="xk5-V6-hH1" kind="show" id="WDw-vY-Jfp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-zz-Biv">
-                                <rect key="frame" x="26" y="455" width="323" height="54"/>
-                                <string key="text">Filling out as much of these as possible will lead to the quickest and most accurate listing. Please enter unknown if the value is not known.</string>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
-                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="condition" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LvO-XL-Smm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="condition" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LvO-XL-Smm">
                                 <rect key="frame" x="71" y="345" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -118,7 +111,7 @@
                                     <action selector="otherCommentsTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="YlO-ez-uif"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqO-ER-n1F">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqO-ER-n1F">
                                 <rect key="frame" x="71" y="170" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -128,7 +121,7 @@
                                     <action selector="otherCommentsTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="DTl-vZ-LgA"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-eD-RPv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZT-eD-RPv">
                                 <rect key="frame" x="71" y="205" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -137,6 +130,13 @@
                                     <action selector="itemDescriptionTextFieldDidChange:" destination="Ib1-ra-rju" eventType="editingChanged" id="B7V-T7-GLj"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-zz-Biv">
+                                <rect key="frame" x="16" y="455" width="343" height="102"/>
+                                <string key="text">If you don't know all of the information that is OK, but providing the most information with a picture here will lead to the most accurate loan quote. If your item doesn't require the use of all the boxes, like gold or other precious metals, just provide all the necessary info about your item in the description box.</string>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -147,17 +147,16 @@
                             <constraint firstItem="dCB-rf-mGm" firstAttribute="centerX" secondItem="LvO-XL-Smm" secondAttribute="centerX" id="8Z2-N3-SNP"/>
                             <constraint firstItem="5jD-hg-jvG" firstAttribute="centerX" secondItem="tvR-ep-d2c" secondAttribute="centerX" id="AFP-iP-hbC"/>
                             <constraint firstItem="L4R-Wn-nKy" firstAttribute="top" secondItem="lGz-Gw-MWb" secondAttribute="bottom" constant="8" id="AJB-uD-TzQ"/>
-                            <constraint firstItem="ppd-zz-Biv" firstAttribute="leading" secondItem="NeI-16-rSC" secondAttribute="leadingMargin" constant="10" id="Cxx-RB-ZCZ"/>
                             <constraint firstItem="LvO-XL-Smm" firstAttribute="top" secondItem="Bfp-bk-jKR" secondAttribute="bottom" constant="5" id="EPK-GM-E9P"/>
                             <constraint firstItem="dCB-rf-mGm" firstAttribute="width" secondItem="LvO-XL-Smm" secondAttribute="width" id="FPb-0B-cj3"/>
                             <constraint firstItem="hqO-ER-n1F" firstAttribute="top" secondItem="L4R-Wn-nKy" secondAttribute="bottom" constant="8" id="HUX-lf-PHl"/>
                             <constraint firstItem="hOP-j8-cfx" firstAttribute="centerX" secondItem="dCB-rf-mGm" secondAttribute="centerX" id="IX2-PQ-bxL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ppd-zz-Biv" secondAttribute="trailing" id="JMD-M0-Iij"/>
                             <constraint firstItem="pZT-eD-RPv" firstAttribute="width" secondItem="hqO-ER-n1F" secondAttribute="width" id="JX7-Uu-fBt"/>
                             <constraint firstItem="LvO-XL-Smm" firstAttribute="centerX" secondItem="Bfp-bk-jKR" secondAttribute="centerX" id="QEJ-56-Ntu"/>
                             <constraint firstItem="Pwv-BB-S2Z" firstAttribute="top" secondItem="2kx-sr-6kU" secondAttribute="bottom" constant="8" id="R4K-bu-WGV"/>
                             <constraint firstItem="LvO-XL-Smm" firstAttribute="width" secondItem="Bfp-bk-jKR" secondAttribute="width" id="VYh-De-KIk"/>
                             <constraint firstItem="tvR-ep-d2c" firstAttribute="centerX" secondItem="pZT-eD-RPv" secondAttribute="centerX" id="VbW-Mz-n1P"/>
-                            <constraint firstItem="2kx-sr-6kU" firstAttribute="top" secondItem="ppd-zz-Biv" secondAttribute="bottom" constant="67" id="Wmo-kB-B7g"/>
                             <constraint firstItem="hqO-ER-n1F" firstAttribute="leading" secondItem="NeI-16-rSC" secondAttribute="leadingMargin" constant="55" id="bSY-J7-CRL"/>
                             <constraint firstItem="Bfp-bk-jKR" firstAttribute="top" secondItem="5jD-hg-jvG" secondAttribute="bottom" constant="5" id="c6b-OS-La9"/>
                             <constraint firstItem="Bfp-bk-jKR" firstAttribute="width" secondItem="5jD-hg-jvG" secondAttribute="width" id="d0V-7o-7Jy"/>
@@ -167,9 +166,9 @@
                             <constraint firstItem="pZT-eD-RPv" firstAttribute="top" secondItem="hqO-ER-n1F" secondAttribute="bottom" constant="5" id="gPe-7P-3oj"/>
                             <constraint firstItem="hOP-j8-cfx" firstAttribute="width" secondItem="dCB-rf-mGm" secondAttribute="width" id="mhe-od-kyI"/>
                             <constraint firstItem="pZT-eD-RPv" firstAttribute="centerX" secondItem="hqO-ER-n1F" secondAttribute="centerX" id="nsy-hI-jSg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ppd-zz-Biv" secondAttribute="trailing" constant="10" id="pyY-27-qnb"/>
                             <constraint firstItem="tvR-ep-d2c" firstAttribute="width" secondItem="pZT-eD-RPv" secondAttribute="width" id="q0S-pQ-Tpm"/>
                             <constraint firstItem="ppd-zz-Biv" firstAttribute="top" secondItem="hOP-j8-cfx" secondAttribute="bottom" constant="10" id="rkr-pO-QfD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ppd-zz-Biv" secondAttribute="leading" id="sGb-Vz-vkL"/>
                             <constraint firstItem="Bfp-bk-jKR" firstAttribute="centerX" secondItem="5jD-hg-jvG" secondAttribute="centerX" id="uAt-Y7-6gj"/>
                             <constraint firstItem="dCB-rf-mGm" firstAttribute="top" secondItem="LvO-XL-Smm" secondAttribute="bottom" constant="5" id="vn6-iw-NVT"/>
                             <constraint firstItem="L4R-Wn-nKy" firstAttribute="centerX" secondItem="NeI-16-rSC" secondAttribute="centerX" id="y0e-CO-vGX"/>
@@ -245,7 +244,7 @@
                     <tabBarItem key="tabBarItem" title="HOCK" image="Money" selectedImage="Money" id="UYc-FW-GxA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QZd-yG-VEp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZd-yG-VEp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
