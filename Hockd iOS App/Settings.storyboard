@@ -49,6 +49,7 @@
                         <segue destination="j08-oH-psi" kind="show" identifier="updateAccountSegue" id="nuQ-hz-WLC"/>
                         <segue destination="Lbe-e1-Ms9" kind="show" identifier="faqSegue" id="xb1-hi-JMv"/>
                         <segue destination="TIa-Fb-GvJ" kind="show" identifier="assetsAcceptedSegue" id="C93-pP-nSd"/>
+                        <segue destination="yK6-Wn-a8C" kind="show" identifier="howItWorksSegue" id="Wo9-7o-tif"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKK-3j-KPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlt-el-yIp">
-                                <rect key="frame" x="0.0" y="-20" width="375" height="1240"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="1147"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you and how does it work?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGs-4t-Rt4">
                                         <rect key="frame" x="81" y="8" width="216" height="15"/>
@@ -341,85 +342,85 @@ We will work on an individual basis to help ship larger or more fragile items. O
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assets We Accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEr-1K-fDD">
-                                <rect key="frame" x="97" y="20" width="180" height="24"/>
+                                <rect key="frame" x="97" y="72" width="180" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jewelery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jm-Vf-g9r">
-                                <rect key="frame" x="157" y="52" width="61" height="18"/>
+                                <rect key="frame" x="157" y="104" width="61" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diamonds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiB-hh-5Q0">
-                                <rect key="frame" x="153" y="78" width="69" height="18"/>
+                                <rect key="frame" x="153" y="130" width="69" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precious Metals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tu-Tb-Wn6">
-                                <rect key="frame" x="133" y="104" width="109" height="18"/>
+                                <rect key="frame" x="133" y="156" width="109" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luxury Watches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR5-yi-9SH">
-                                <rect key="frame" x="133" y="130" width="110" height="18"/>
+                                <rect key="frame" x="133" y="182" width="110" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electronics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r3-ft-mOW">
-                                <rect key="frame" x="150" y="156" width="76" height="18"/>
+                                <rect key="frame" x="150" y="208" width="76" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handbags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42Z-kh-we1">
-                                <rect key="frame" x="153" y="182" width="70" height="18"/>
+                                <rect key="frame" x="153" y="234" width="70" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designer Shoes (Unworn)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-WO-ncS">
-                                <rect key="frame" x="100" y="208" width="176" height="18"/>
+                                <rect key="frame" x="100" y="260" width="176" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assets We Don't Accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-MG-CGL">
-                                <rect key="frame" x="72" y="286" width="231" height="24"/>
+                                <rect key="frame" x="72" y="330" width="231" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Household Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-oc-Xjq">
-                                <rect key="frame" x="129" y="344" width="116" height="18"/>
+                                <rect key="frame" x="129" y="388" width="116" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firearms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-0G-upo">
-                                <rect key="frame" x="157" y="318" width="60" height="18"/>
+                                <rect key="frame" x="157" y="362" width="60" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tools/Industrial Equipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBk-52-WYP">
-                                <rect key="frame" x="96" y="370" width="183" height="18"/>
+                                <rect key="frame" x="96" y="414" width="183" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why We Can't Accept These" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-1S-StV">
-                                <rect key="frame" x="51" y="448" width="272" height="24"/>
+                                <rect key="frame" x="51" y="484" width="272" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="rMs-Tf-aEW">
-                                <rect key="frame" x="16" y="480" width="343" height="90"/>
+                                <rect key="frame" x="16" y="516" width="343" height="90"/>
                                 <string key="text">Most of the items we don't accept are either illegal or too big to ship. Not sure if your item fits our list? Contact one of our representatives and we'll work with you to guide you through the process or help make special accomodations.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -434,11 +435,11 @@ We will work on an individual basis to help ship larger or more fragile items. O
                             <constraint firstItem="mBk-52-WYP" firstAttribute="centerX" secondItem="JW0-oc-Xjq" secondAttribute="centerX" id="7sT-wR-erm"/>
                             <constraint firstItem="0r3-ft-mOW" firstAttribute="centerX" secondItem="xR5-yi-9SH" secondAttribute="centerX" id="96d-zW-5ei"/>
                             <constraint firstItem="xR5-yi-9SH" firstAttribute="top" secondItem="7tu-Tb-Wn6" secondAttribute="bottom" constant="8" id="AAx-BG-VRT"/>
-                            <constraint firstItem="LIs-1S-StV" firstAttribute="top" secondItem="mBk-52-WYP" secondAttribute="bottom" constant="60" id="CJj-OF-k8s"/>
+                            <constraint firstItem="LIs-1S-StV" firstAttribute="top" secondItem="mBk-52-WYP" secondAttribute="bottom" constant="52" id="CJj-OF-k8s"/>
                             <constraint firstItem="42Z-kh-we1" firstAttribute="centerX" secondItem="0r3-ft-mOW" secondAttribute="centerX" id="GCN-LQ-w8t"/>
-                            <constraint firstItem="yNj-MG-CGL" firstAttribute="top" secondItem="d9i-WO-ncS" secondAttribute="bottom" constant="60" id="IcE-UN-25Z"/>
+                            <constraint firstItem="yNj-MG-CGL" firstAttribute="top" secondItem="d9i-WO-ncS" secondAttribute="bottom" constant="52" id="IcE-UN-25Z"/>
                             <constraint firstItem="JW0-oc-Xjq" firstAttribute="centerX" secondItem="yNj-MG-CGL" secondAttribute="centerX" id="KMa-Yt-91Q"/>
-                            <constraint firstItem="eEr-1K-fDD" firstAttribute="top" secondItem="T7k-PZ-ejz" secondAttribute="bottom" id="LpB-wv-Ux8"/>
+                            <constraint firstItem="eEr-1K-fDD" firstAttribute="top" secondItem="T7k-PZ-ejz" secondAttribute="bottom" constant="8" id="LpB-wv-Ux8"/>
                             <constraint firstItem="2jm-Vf-g9r" firstAttribute="centerX" secondItem="eEr-1K-fDD" secondAttribute="centerX" id="OmX-fQ-k2K"/>
                             <constraint firstItem="rMs-Tf-aEW" firstAttribute="top" secondItem="LIs-1S-StV" secondAttribute="bottom" constant="8" id="PyC-dg-ciw"/>
                             <constraint firstItem="42Z-kh-we1" firstAttribute="top" secondItem="0r3-ft-mOW" secondAttribute="bottom" constant="8" id="QeV-1D-lWu"/>
@@ -466,6 +467,109 @@ We will work on an individual basis to help ship larger or more fragile items. O
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="2865.5172413793107"/>
         </scene>
+        <!--How It Works-->
+        <scene sceneID="NHs-5S-eke">
+            <objects>
+                <viewController id="yK6-Wn-a8C" customClass="HowItWorksViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PgG-uk-Zp6"/>
+                        <viewControllerLayoutGuide type="bottom" id="bEM-xf-OfY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2mV-Jh-YfH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd Philosophy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acZ-5P-dhe">
+                                <rect key="frame" x="97" y="72" width="180" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="1Vw-te-Z5z">
+                                <rect key="frame" x="16" y="104" width="343" height="108"/>
+                                <string key="text">We understand life can get complicated pretty quickly, especially when it comes to personal finances. At Hockd, we believe in one thing: relieving the financial stress in your life so you can get back to doing the things you love. We are your trusted partner in asset-backed loan services.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1 - Apply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-2V-Rsl">
+                                <rect key="frame" x="116" y="272" width="142" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="0Xe-9X-1OE">
+                                <rect key="frame" x="16" y="304" width="343" height="90"/>
+                                <string key="text">Upload photos of your asset and receive an offer within 24 hours. If you like the offered amount, we will provide you with a shipping label to send us your item so we can validate it. As always, shipping is 100% free and fully insured.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2 - Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkY-Z5-E0o">
+                                <rect key="frame" x="120" y="419" width="135" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="va5-kD-aU8">
+                                <rect key="frame" x="16" y="451" width="343" height="72"/>
+                                <string key="text">Once confirmed, your asset will be viewable to our host of investors. Any investor can offer the loan, creating a healthy competition that allows us to provide you with the highest loan possible.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 3 - Receive Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKj-nX-C6o">
+                                <rect key="frame" x="74" y="548" width="227" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once your asset is selected by an investor, receive your money within minutes." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="5We-a0-Fdc">
+                                <rect key="frame" x="16" y="580" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="5We-a0-Fdc" secondAttribute="leading" id="3wh-Qf-sPF"/>
+                            <constraint firstItem="fP0-2V-Rsl" firstAttribute="top" secondItem="1Vw-te-Z5z" secondAttribute="bottom" constant="60" id="40g-GB-qyJ"/>
+                            <constraint firstItem="GkY-Z5-E0o" firstAttribute="leading" secondItem="2mV-Jh-YfH" secondAttribute="leadingMargin" constant="104" id="Dew-JJ-HJl"/>
+                            <constraint firstItem="aKj-nX-C6o" firstAttribute="top" secondItem="va5-kD-aU8" secondAttribute="bottom" constant="25" id="EIG-z7-tJE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aKj-nX-C6o" secondAttribute="trailing" constant="58" id="JMb-Dt-3Em"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Vw-te-Z5z" secondAttribute="trailing" id="KsP-px-L4n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GkY-Z5-E0o" secondAttribute="trailing" constant="104" id="Lp7-zN-cCi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="va5-kD-aU8" secondAttribute="trailing" id="NT9-Nr-2kd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="acZ-5P-dhe" secondAttribute="trailing" constant="82" id="Z4D-e4-CJx"/>
+                            <constraint firstItem="1Vw-te-Z5z" firstAttribute="top" secondItem="acZ-5P-dhe" secondAttribute="bottom" constant="8" id="bSe-Nl-XVI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="va5-kD-aU8" secondAttribute="leading" id="fiK-a6-Nmx"/>
+                            <constraint firstItem="5We-a0-Fdc" firstAttribute="top" secondItem="aKj-nX-C6o" secondAttribute="bottom" constant="8" id="fxV-xD-wNi"/>
+                            <constraint firstItem="acZ-5P-dhe" firstAttribute="leading" secondItem="2mV-Jh-YfH" secondAttribute="leadingMargin" constant="81" id="gTQ-OU-g40"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1Vw-te-Z5z" secondAttribute="leading" id="ivq-sh-v17"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0Xe-9X-1OE" secondAttribute="leading" id="k77-I0-djK"/>
+                            <constraint firstItem="fP0-2V-Rsl" firstAttribute="leading" secondItem="2mV-Jh-YfH" secondAttribute="leadingMargin" constant="100" id="lRp-Qc-otV"/>
+                            <constraint firstItem="GkY-Z5-E0o" firstAttribute="top" secondItem="0Xe-9X-1OE" secondAttribute="bottom" constant="25" id="nN1-PT-24t"/>
+                            <constraint firstItem="va5-kD-aU8" firstAttribute="top" secondItem="GkY-Z5-E0o" secondAttribute="bottom" constant="8" id="oe7-hB-Vmh"/>
+                            <constraint firstItem="acZ-5P-dhe" firstAttribute="top" secondItem="PgG-uk-Zp6" secondAttribute="bottom" constant="8" id="pGu-Bi-Fgj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Xe-9X-1OE" secondAttribute="trailing" id="rU1-sH-cIm"/>
+                            <constraint firstItem="0Xe-9X-1OE" firstAttribute="top" secondItem="fP0-2V-Rsl" secondAttribute="bottom" constant="8" id="vR0-7i-qQC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5We-a0-Fdc" secondAttribute="trailing" id="vRa-J4-Jes"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fP0-2V-Rsl" secondAttribute="trailing" constant="101" id="wU0-lS-A8j"/>
+                            <constraint firstItem="aKj-nX-C6o" firstAttribute="leading" secondItem="2mV-Jh-YfH" secondAttribute="leadingMargin" constant="58" id="yqC-oc-Scm"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="55p-Sb-uiU" appends="YES" id="Ffc-BM-Nuv"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="How It Works" id="eKG-G2-Yxv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxg-xz-CNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="55p-Sb-uiU"/>
+            </objects>
+            <point key="canvasLocation" x="3382" y="2866"/>
+        </scene>
         <!--Update Account View Controller-->
         <scene sceneID="mWV-Uz-tWz">
             <objects>
@@ -479,20 +583,20 @@ We will work on an individual basis to help ship larger or more fragile items. O
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExT-x4-jkw">
-                                <rect key="frame" x="46" y="20" width="283" height="57"/>
+                                <rect key="frame" x="46" y="64" width="283" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2RC-qb-Y55">
-                                <rect key="frame" x="46" y="85" width="139" height="139"/>
+                                <rect key="frame" x="46" y="129" width="139" height="139"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="TcI-Tn-4Q2"/>
                                     <constraint firstAttribute="height" constant="139" id="Y1u-Jw-Kym"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-dV-pNi">
-                                <rect key="frame" x="193" y="85" width="109" height="40"/>
+                                <rect key="frame" x="193" y="129" width="109" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I0h-7m-m3F"/>
@@ -514,7 +618,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uet-HY-MJF">
-                                <rect key="frame" x="193" y="134" width="109" height="40"/>
+                                <rect key="frame" x="193" y="178" width="109" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ggH-OA-bNV"/>
@@ -536,7 +640,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Z3-Vd-w4G">
-                                <rect key="frame" x="71" y="232" width="233" height="30"/>
+                                <rect key="frame" x="71" y="276" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -546,7 +650,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address 2 (if necessary)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBk-WN-em8">
-                                <rect key="frame" x="71" y="267" width="233" height="30"/>
+                                <rect key="frame" x="71" y="311" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -556,7 +660,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-q1-mOT">
-                                <rect key="frame" x="71" y="302" width="233" height="30"/>
+                                <rect key="frame" x="71" y="346" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -566,7 +670,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPs-mJ-4ht">
-                                <rect key="frame" x="71" y="337" width="114" height="30"/>
+                                <rect key="frame" x="71" y="381" width="114" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -576,7 +680,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-7O-wSx">
-                                <rect key="frame" x="190" y="337" width="114" height="30"/>
+                                <rect key="frame" x="190" y="381" width="114" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -586,7 +690,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="interests" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-jg-oUm">
-                                <rect key="frame" x="71" y="372" width="233" height="30"/>
+                                <rect key="frame" x="71" y="416" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -596,7 +700,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Wg-BSV">
-                                <rect key="frame" x="159" y="410" width="57" height="33"/>
+                                <rect key="frame" x="159" y="454" width="57" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -604,7 +708,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJS-H9-jJI">
-                                <rect key="frame" x="127" y="451" width="121" height="30"/>
+                                <rect key="frame" x="127" y="495" width="121" height="30"/>
                                 <state key="normal" title="Update Password"/>
                                 <connections>
                                     <action selector="updatePasswordButtonPressed:" destination="j08-oH-psi" eventType="touchUpInside" id="1jM-n9-Hf6"/>
@@ -612,7 +716,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTy-VG-yzB">
-                                <rect key="frame" x="16" y="629" width="34" height="30"/>
+                                <rect key="frame" x="16" y="580" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="j08-oH-psi" eventType="touchUpInside" id="RU5-Uo-m9R"/>
@@ -697,7 +801,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC6-UK-LeD">
-                                <rect key="frame" x="71" y="93" width="233" height="30"/>
+                                <rect key="frame" x="71" y="137" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -707,11 +811,11 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM5-wp-Znp">
-                                <rect key="frame" x="16" y="629" width="34" height="30"/>
+                                <rect key="frame" x="16" y="580" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuo-ud-Vxw">
-                                <rect key="frame" x="159" y="169" width="57" height="33"/>
+                                <rect key="frame" x="159" y="213" width="57" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -719,7 +823,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tVz-VQ-oj5">
-                                <rect key="frame" x="71" y="131" width="233" height="30"/>
+                                <rect key="frame" x="71" y="175" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -729,7 +833,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6m-g3-WbX">
-                                <rect key="frame" x="35" y="28" width="304" height="57"/>
+                                <rect key="frame" x="35" y="72" width="304" height="57"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -777,6 +881,6 @@ We will work on an individual basis to help ship larger or more fragile items. O
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VcJ-sW-oAN"/>
+        <segue reference="oqL-ky-o8F"/>
     </inferredMetricsTieBreakers>
 </document>
