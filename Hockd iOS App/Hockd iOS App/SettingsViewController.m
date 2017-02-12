@@ -144,6 +144,13 @@
             
         });
         
+    } else if ([rowValue isEqualToString:@"CONTACT US"]) {
+        
+        dispatch_async(dispatch_get_main_queue(),   ^{
+            
+            [self performSegueWithIdentifier:@"contactUsSegue" sender:self];
+            
+        });
         
     }
     

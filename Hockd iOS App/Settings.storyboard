@@ -50,6 +50,7 @@
                         <segue destination="Lbe-e1-Ms9" kind="show" identifier="faqSegue" id="xb1-hi-JMv"/>
                         <segue destination="TIa-Fb-GvJ" kind="show" identifier="assetsAcceptedSegue" id="C93-pP-nSd"/>
                         <segue destination="yK6-Wn-a8C" kind="show" identifier="howItWorksSegue" id="Wo9-7o-tif"/>
+                        <segue destination="TFQ-u7-zaN" kind="show" identifier="contactUsSegue" id="KB4-GT-z8j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKK-3j-KPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,39 +494,39 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1 - Apply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-2V-Rsl">
-                                <rect key="frame" x="116" y="272" width="142" height="24"/>
+                                <rect key="frame" x="116" y="262" width="142" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="0Xe-9X-1OE">
-                                <rect key="frame" x="16" y="304" width="343" height="90"/>
+                                <rect key="frame" x="16" y="294" width="343" height="90"/>
                                 <string key="text">Upload photos of your asset and receive an offer within 24 hours. If you like the offered amount, we will provide you with a shipping label to send us your item so we can validate it. As always, shipping is 100% free and fully insured.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2 - Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkY-Z5-E0o">
-                                <rect key="frame" x="120" y="419" width="135" height="24"/>
+                                <rect key="frame" x="120" y="409" width="135" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="va5-kD-aU8">
-                                <rect key="frame" x="16" y="451" width="343" height="72"/>
+                                <rect key="frame" x="16" y="441" width="343" height="72"/>
                                 <string key="text">Once confirmed, your asset will be viewable to our host of investors. Any investor can offer the loan, creating a healthy competition that allows us to provide you with the highest loan possible.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 3 - Receive Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKj-nX-C6o">
-                                <rect key="frame" x="74" y="548" width="227" height="24"/>
+                                <rect key="frame" x="74" y="538" width="227" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once your asset is selected by an investor, receive your money within minutes." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="5We-a0-Fdc">
-                                <rect key="frame" x="16" y="580" width="343" height="36"/>
+                                <rect key="frame" x="16" y="570" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -535,7 +536,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="5We-a0-Fdc" secondAttribute="leading" id="3wh-Qf-sPF"/>
-                            <constraint firstItem="fP0-2V-Rsl" firstAttribute="top" secondItem="1Vw-te-Z5z" secondAttribute="bottom" constant="60" id="40g-GB-qyJ"/>
+                            <constraint firstItem="fP0-2V-Rsl" firstAttribute="top" secondItem="1Vw-te-Z5z" secondAttribute="bottom" constant="50" id="40g-GB-qyJ"/>
                             <constraint firstItem="GkY-Z5-E0o" firstAttribute="leading" secondItem="2mV-Jh-YfH" secondAttribute="leadingMargin" constant="104" id="Dew-JJ-HJl"/>
                             <constraint firstItem="aKj-nX-C6o" firstAttribute="top" secondItem="va5-kD-aU8" secondAttribute="bottom" constant="25" id="EIG-z7-tJE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aKj-nX-C6o" secondAttribute="trailing" constant="58" id="JMb-Dt-3Em"/>
@@ -569,6 +570,35 @@ We will work on an individual basis to help ship larger or more fragile items. O
                 <tapGestureRecognizer id="55p-Sb-uiU"/>
             </objects>
             <point key="canvasLocation" x="3382" y="2866"/>
+        </scene>
+        <!--Contact Us-->
+        <scene sceneID="izO-Yi-JbK">
+            <objects>
+                <viewController id="TFQ-u7-zaN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FjY-Al-3Qo"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdD-cO-gQU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sez-Ka-scO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-9C-L0A">
+                                <rect key="frame" x="16" y="112" width="343" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">At Hockd, we are continually striving to make our process as simple and user-friendly as possible. If you have any questions or would like to provide feedback, good or bad, please feel free to contact us at support@hockd.com.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact Us" id="dOF-lh-aEx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hr3-TF-z1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4286" y="2866"/>
         </scene>
         <!--Update Account View Controller-->
         <scene sceneID="mWV-Uz-tWz">
