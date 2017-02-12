@@ -10,7 +10,7 @@
 #import "AllItem.h"
 #import "User.h"
 
-@interface AllItemTVCell ()
+@interface AllItemTVCell () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIImageView *itemOneImageView;
 @property (nonatomic, strong) UILabel *itemDescriptionLabel;
@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSLayoutConstraint *imageHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *itemDescriptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *loanDesiredLabelHeightConstraint;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -64,6 +66,13 @@ static NSParagraphStyle *paragraphStyle;
     if (self) {
         // Initialization code
         self.itemOneImageView = [[UIImageView alloc] init];
+        self.itemOneImageView.userInteractionEnabled = YES;
+        
+        self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+        self.tapGestureRecognizer.delegate = self;
+        [self.itemOneImageView addGestureRecognizer:self.tapGestureRecognizer];
+        
+        
         self.itemDescriptionLabel = [[UILabel alloc] init];
         self.itemDescriptionLabel.numberOfLines = 0;
         self.itemDescriptionLabel.backgroundColor = itemDescriptionLabelGray;
@@ -122,6 +131,25 @@ static NSParagraphStyle *paragraphStyle;
     }
     return self;
 }
+
+
+
+#pragma mark - Image View
+//add the target method for the tapFired call
+- (void) tapFired:(UITapGestureRecognizer *)sender {
+    [self.delegate cell:self didTapImageView:self.itemOneImageView];
+}
+
+
+#pragma mark - UIGestureRecognizerDelegate
+
+//not that there are any other active editors currently operating on the image view, but in case they are implemented later... we want to make sure the gesture recognizer only fires while the cell isn't in editing mode
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return self.isEditing == NO;
+}
+
+
+
 
 
 //create the attributed strings

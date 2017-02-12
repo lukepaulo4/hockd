@@ -11,6 +11,10 @@
 @class User;
 
 
+//*******NOTE NOTE NOTE - This should only have items with an item status of 2. Which are posted for loan!
+
+
+
 @interface AllItem : NSObject
 
 //Declare the initializer
