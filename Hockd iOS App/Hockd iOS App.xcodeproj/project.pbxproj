@@ -63,6 +63,7 @@
 		006080321E0A6564007F0CC9 /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080281E0A6564007F0CC9 /* 9.JPG */; };
 		006080331E0A6564007F0CC9 /* 10.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 006080291E0A6564007F0CC9 /* 10.JPG */; };
 		0061445A1E3731ED00E98A2B /* MyItemFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006144591E3731ED00E98A2B /* MyItemFullScreenViewController.m */; };
+		00807C8C1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00807C8B1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.m */; };
 		0088447D1E3883C30042ACF5 /* AssetsAcceptedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0088447C1E3883C30042ACF5 /* AssetsAcceptedViewController.m */; };
 		008844801E3883DE0042ACF5 /* HowItWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0088447F1E3883DE0042ACF5 /* HowItWorksViewController.m */; };
 		008844831E3884040042ACF5 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008844821E3884040042ACF5 /* FAQViewController.m */; };
@@ -209,6 +210,8 @@
 		006080291E0A6564007F0CC9 /* 10.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.JPG; sourceTree = "<group>"; };
 		006144581E3731ED00E98A2B /* MyItemFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyItemFullScreenViewController.h; sourceTree = "<group>"; };
 		006144591E3731ED00E98A2B /* MyItemFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyItemFullScreenViewController.m; sourceTree = "<group>"; };
+		00807C8A1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempPassUpdatePasswordViewController.h; sourceTree = "<group>"; };
+		00807C8B1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempPassUpdatePasswordViewController.m; sourceTree = "<group>"; };
 		0088447B1E3883C30042ACF5 /* AssetsAcceptedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsAcceptedViewController.h; sourceTree = "<group>"; };
 		0088447C1E3883C30042ACF5 /* AssetsAcceptedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsAcceptedViewController.m; sourceTree = "<group>"; };
 		0088447E1E3883DE0042ACF5 /* HowItWorksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowItWorksViewController.h; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 				000E02C81D6AB89C00AD71BC /* ForgotPasswordViewController.m */,
 				00ECEC511E4FA83C005697B5 /* TempPassLoginViewController.h */,
 				00ECEC521E4FA83D005697B5 /* TempPassLoginViewController.m */,
+				00807C8A1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.h */,
+				00807C8B1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.m */,
 			);
 			name = "Login VCs";
 			sourceTree = "<group>";
@@ -861,6 +866,7 @@
 				004915D11DED980100892B8D /* TGTintedLabel.m in Sources */,
 				00DAA3071DD1A1AA00098ECC /* CredentialCheckViewController.m in Sources */,
 				00DAA2FA1DCAA15500098ECC /* Login.m in Sources */,
+				00807C8C1E4FC8E200095C3D /* TempPassUpdatePasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

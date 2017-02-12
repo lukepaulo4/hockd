@@ -702,6 +702,9 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="oldPasswordTextFieldDidChange:" destination="9QF-9c-r2T" eventType="editingChanged" id="fcf-Ku-ZNh"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM5-wp-Znp">
                                 <rect key="frame" x="16" y="629" width="34" height="30"/>
@@ -721,6 +724,9 @@ We will work on an individual basis to help ship larger or more fragile items. O
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="newPasswordTextFieldDidChange:" destination="9QF-9c-r2T" eventType="editingChanged" id="jh4-eT-x9k"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6m-g3-WbX">
                                 <rect key="frame" x="35" y="28" width="304" height="57"/>
@@ -730,6 +736,7 @@ We will work on an individual basis to help ship larger or more fragile items. O
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tVz-VQ-oj5" firstAttribute="top" secondItem="gC6-UK-LeD" secondAttribute="bottom" constant="8" id="1NL-Pl-fUj"/>
                             <constraint firstItem="Uuo-ud-Vxw" firstAttribute="top" secondItem="tVz-VQ-oj5" secondAttribute="bottom" constant="8" id="4V1-b6-Div"/>
@@ -745,6 +752,9 @@ We will work on an individual basis to help ship larger or more fragile items. O
                             <constraint firstItem="Uuo-ud-Vxw" firstAttribute="centerX" secondItem="tVz-VQ-oj5" secondAttribute="centerX" id="yUy-kk-P3T"/>
                             <constraint firstItem="tVz-VQ-oj5" firstAttribute="centerX" secondItem="gC6-UK-LeD" secondAttribute="centerX" id="yyl-Ej-qKM"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="esa-hU-xwA" appends="YES" id="EH7-TH-3Jm"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="oldPasswordTextField" destination="gC6-UK-LeD" id="PZC-9A-hxf"/>
@@ -754,6 +764,11 @@ We will work on an individual basis to help ship larger or more fragile items. O
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ef-6h-88Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="esa-hU-xwA">
+                    <connections>
+                        <action selector="tapGestureFired:" destination="9QF-9c-r2T" id="4yf-To-gOx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4798" y="2025"/>
         </scene>

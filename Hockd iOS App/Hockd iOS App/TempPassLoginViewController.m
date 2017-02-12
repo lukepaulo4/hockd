@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *directionLabel;
 
 
 
@@ -156,7 +157,7 @@
                 //add a dispatch async to get rid of bug message
                 dispatch_async(dispatch_get_main_queue(),   ^{
  
-                    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                    [self performSegueWithIdentifier:@"tempUpdatePassSegue" sender:self];
  
                 });
  

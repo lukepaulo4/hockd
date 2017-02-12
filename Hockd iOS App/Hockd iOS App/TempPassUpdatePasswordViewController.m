@@ -1,40 +1,43 @@
 //
-//  UpdatePasswordViewController.m
+//  TempPassUpdatePasswordViewController.m
 //  Hockd iOS App
 //
-//  Created by Luke Paulo on 12/7/16.
-//  Copyright © 2016 HOCKD. All rights reserved.
+//  Created by Luke Paulo on 2/11/17.
+//  Copyright © 2017 HOCKD. All rights reserved.
 //
 
-#import "UpdatePasswordViewController.h"
-#import "Login.h"
-#import "AESCrypt.h"
+#import "TempPassUpdatePasswordViewController.h"
 #import "DataSource.h"
+#import "User.h"
+#import "AESCrypt.h"
 #import <UICKeyChainStore.h>
 
-@interface UpdatePasswordViewController ()
+@interface TempPassUpdatePasswordViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *updatePasswordLabel;
-@property (weak, nonatomic) IBOutlet UITextField *oldPasswordTextField;
+//4 properties
+@property (strong, nonatomic) IBOutlet UITextField *tempPasswordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *updatedPasswordTextField;
-
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *directionLabel;
 
 
 @end
 
-@implementation UpdatePasswordViewController
+@implementation TempPassUpdatePasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.oldPasswordTextField.delegate = self;
+    self.tempPasswordTextField.delegate = self;
     self.updatedPasswordTextField.delegate = self;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 //Implement the UITextFieldDelegate protocol method.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -42,12 +45,10 @@
     return YES;
 }
 
-
-- (IBAction)oldPasswordTextFieldDidChange:(UITextField *)sender {
-    if ([self.oldPasswordTextField.text length] > 0) {
+- (IBAction)tempPasswordTextFieldDidChange:(UITextField *)sender {
+    if ([self.tempPasswordTextField.text length] > 0) {
     }
 }
-
 
 - (IBAction)newPasswordTextFieldDidChange:(UITextField *)sender {
     if ([self.updatedPasswordTextField.text length] > 0) {
@@ -55,17 +56,10 @@
 }
 
 
-- (IBAction)tapGestureFired:(UITapGestureRecognizer *)sender {
-}
-
-
-
-
-
-
-- (IBAction)updatePasswordButton:(UIButton *)sender {
+//updatePasswordButton
+- (IBAction)submitButtonPressed:(UIButton *)sender {
     
-    if ([[self.oldPasswordTextField text] isEqualToString:@""] || [[self.updatedPasswordTextField text] isEqualToString:@""]) {
+    if ([[self.tempPasswordTextField text] isEqualToString:@""] || [[self.updatedPasswordTextField text] isEqualToString:@""]) {
         
         //add an alert stating the need to add a username and password
         NSString *message = [[NSString alloc] initWithFormat:@"Sorry"];
@@ -75,9 +69,8 @@
         
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
-        
-        
-        
+    
+    
     } else {
         
         //In here, extract the token value from the keychain
@@ -90,19 +83,20 @@
         
         NSString *authValue = [NSString stringWithFormat:@"Bearer %@", token];
         
-        NSString *oldPassword = [AESCrypt encrypt:username password:[self.oldPasswordTextField text]];
-        NSLog(@"old password going into this = %@", oldPassword);
+        //[[AESCrypt encrypt:username password:[self.tempPasswordTextField text]]; took this out because the temp pass won't be encrypted
+        NSString *tempPassword = [self.tempPasswordTextField text];
+        NSLog(@"temp password going into this = %@", tempPassword);
         
         NSString *encryptedNewPass = [AESCrypt encrypt:username password:[self.updatedPasswordTextField text]];
-       
-        NSLog(@"authorization token = %@ and user ID = %@ and old password = %@ and new password = %@", authValue, userID, oldPassword, encryptedNewPass);
+        
+        NSLog(@"authorization token = %@ and user ID = %@ and old password = %@ and new password = %@", authValue, userID, tempPassword, encryptedNewPass);
         
         
-        [[DataSource sharedInstance] updateUserPasswordWithToken:authValue userId:userID oldPassword:oldPassword newPassword:encryptedNewPass completionHandler:^(NSError *error, NSDictionary *returnedDict) {
+        [[DataSource sharedInstance] updateUserPasswordWithToken:authValue userId:userID oldPassword:tempPassword newPassword:encryptedNewPass completionHandler:^(NSError *error, NSDictionary *returnedDict) {
             
             NSLog(@"DataSource Shared Instance got response==%@", returnedDict);
             
-            [self updatePasswordCompletedWithDict:returnedDict];
+            [self tempPassUpdatePasswordCompletedWithDict:returnedDict];
             
             //Extract the "msg_code" key's value.
             NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
@@ -118,7 +112,10 @@
                 //add a dispatch async to get rid of bug message
                 dispatch_async(dispatch_get_main_queue(),   ^{
                     
-                    [self performSegueWithIdentifier:@"updatePasswordCompleteSegue" sender:self];
+                    
+                    [self performSegueWithIdentifier:@"tempUpdateCompleteSegue" sender:self];
+                     
+                    
                     
                 });
                 
@@ -139,21 +136,23 @@
                 });
             }
         }];
-         
-         
+        
+        
     }
-         
-
     
 }
 
 
 
 
-- (void)updatePasswordCompletedWithDict:(NSDictionary*)dict {
+
+- (void)tempPassUpdatePasswordCompletedWithDict:(NSDictionary*)dict {
     NSLog(@"got response in method==%@", dict);
 }
 
+
+- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
+}
 
 
 /*

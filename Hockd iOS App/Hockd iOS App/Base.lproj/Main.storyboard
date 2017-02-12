@@ -133,13 +133,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-4i-A89">
-                                <rect key="frame" x="41" y="28" width="293" height="57"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <rect key="frame" x="32.5" y="28" width="310" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
                                 <color key="textColor" red="0.22745098039215686" green="0.73333333333333328" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-Ac-nDC">
-                                <rect key="frame" x="71" y="185" width="233" height="30"/>
+                                <rect key="frame" x="71" y="161.5" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -156,7 +156,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqM-dM-zjq">
-                                <rect key="frame" x="75" y="220" width="225" height="37"/>
+                                <rect key="frame" x="75" y="196.5" width="225" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                 <state key="normal" title="Send Temporary Password">
                                     <color key="titleColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="enterEmailTextField" destination="kLc-Ac-nDC" id="wv9-2V-cF6"/>
-                        <outlet property="forgotPasswordLabel" destination="o4T-4i-A89" id="lEd-LL-pid"/>
+                        <outlet property="forgotPasswordLabel" destination="o4T-4i-A89" id="Xep-Mg-3BL"/>
                         <segue destination="9MQ-fd-PC2" kind="show" identifier="tempPassLoginSegue" id="F51-Ev-c0T"/>
                     </connections>
                 </viewController>
@@ -256,7 +256,7 @@
                 <viewControllerPlaceholder storyboardName="Search" id="8JQ-a7-Vmb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSE-7b-TsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="-387"/>
+            <point key="canvasLocation" x="1862" y="-155"/>
         </scene>
         <!--CreateAccount-->
         <scene sceneID="c7g-WV-NjA">
@@ -264,7 +264,7 @@
                 <viewControllerPlaceholder storyboardName="CreateAccount" id="KeV-CD-6Pb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0H-Su-2EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="759"/>
+            <point key="canvasLocation" x="1441" y="756"/>
         </scene>
         <!--Temp Pass Login Page-->
         <scene sceneID="VfW-qA-HS7">
@@ -278,12 +278,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk4-jf-98E">
-                                <rect key="frame" x="128" y="28" width="120" height="33.5"/>
-                                <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
-                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-x2-klC">
                                 <rect key="frame" x="71" y="196.5" width="233" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -314,9 +308,16 @@
                                     <action selector="submitButtonPressed:" destination="9MQ-fd-PC2" eventType="touchUpInside" id="wfc-k3-X7n"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XII-IH-rMK">
-                                <rect key="frame" x="127" y="273" width="120" height="34"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XII-IH-rMK">
+                                <rect key="frame" x="16" y="273" width="343" height="106.5"/>
+                                <string key="text">Use the temporary password sent to your email here. Once logged in, you will be able to reset your password. If you did not receive an email with your temporary password, contact us at support@hockd.com.</string>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-m7-QEF">
+                                <rect key="frame" x="127" y="20" width="120" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -324,18 +325,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="kk4-jf-98E" firstAttribute="top" secondItem="jr4-47-r0m" secondAttribute="bottom" constant="8" id="9d9-Zy-61J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mXq-m7-QEF" secondAttribute="trailing" constant="112" id="GKn-0u-YEG"/>
                             <constraint firstItem="Yiw-x2-klC" firstAttribute="centerX" secondItem="AWM-D0-GZo" secondAttribute="centerX" id="HiW-fr-MCb"/>
-                            <constraint firstItem="AWM-D0-GZo" firstAttribute="top" secondItem="kk4-jf-98E" secondAttribute="bottom" constant="100" id="KMx-H4-LfM"/>
-                            <constraint firstItem="XII-IH-rMK" firstAttribute="top" secondItem="h0o-MP-gkw" secondAttribute="bottom" constant="8" id="Oi7-9a-eH0"/>
-                            <constraint firstItem="kk4-jf-98E" firstAttribute="centerX" secondItem="XNC-Nc-kaP" secondAttribute="centerX" id="Twb-zr-pYn"/>
-                            <constraint firstItem="AWM-D0-GZo" firstAttribute="centerX" secondItem="kk4-jf-98E" secondAttribute="centerX" id="aLG-4T-1DE"/>
+                            <constraint firstItem="XII-IH-rMK" firstAttribute="top" secondItem="h0o-MP-gkw" secondAttribute="bottom" constant="4.5" id="Oi7-9a-eH0"/>
+                            <constraint firstItem="mXq-m7-QEF" firstAttribute="top" secondItem="jr4-47-r0m" secondAttribute="bottom" id="QOG-Mw-6aZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XII-IH-rMK" secondAttribute="leading" id="TSL-L8-HTN"/>
                             <constraint firstItem="h0o-MP-gkw" firstAttribute="centerX" secondItem="Yiw-x2-klC" secondAttribute="centerX" id="bTH-1u-QGC"/>
                             <constraint firstItem="Yiw-x2-klC" firstAttribute="width" secondItem="AWM-D0-GZo" secondAttribute="width" id="clW-Lt-CC8"/>
                             <constraint firstItem="h0o-MP-gkw" firstAttribute="top" secondItem="Yiw-x2-klC" secondAttribute="bottom" constant="5" id="kQU-2j-vqB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AWM-D0-GZo" secondAttribute="trailing" constant="55" id="pfr-Ud-K8t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XII-IH-rMK" secondAttribute="trailing" id="tvy-K1-flc"/>
                             <constraint firstItem="AWM-D0-GZo" firstAttribute="leading" secondItem="XNC-Nc-kaP" secondAttribute="leadingMargin" constant="55" id="uM0-gM-eem"/>
+                            <constraint firstItem="mXq-m7-QEF" firstAttribute="leading" secondItem="XNC-Nc-kaP" secondAttribute="leadingMargin" constant="111" id="yZN-Ld-b5V"/>
                             <constraint firstItem="Yiw-x2-klC" firstAttribute="top" secondItem="AWM-D0-GZo" secondAttribute="bottom" constant="5" id="zey-8V-BTB"/>
+                            <constraint firstItem="AWM-D0-GZo" firstAttribute="top" secondItem="mXq-m7-QEF" secondAttribute="bottom" constant="108" id="zoE-8P-VYD"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gso-XL-HEc" appends="YES" id="wjO-Du-OC7"/>
@@ -343,10 +346,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login Page" id="Sfv-dQ-WXc"/>
                     <connections>
-                        <outlet property="loginLabel" destination="kk4-jf-98E" id="C11-Sm-c0X"/>
+                        <outlet property="directionLabel" destination="XII-IH-rMK" id="3Ak-0H-Kng"/>
                         <outlet property="passwordTextField" destination="Yiw-x2-klC" id="A9P-5S-4gG"/>
-                        <outlet property="titleLabel" destination="kk4-jf-98E" id="2ZI-Df-qBs"/>
+                        <outlet property="titleLabel" destination="mXq-m7-QEF" id="chL-zE-g8O"/>
                         <outlet property="usernameTextField" destination="AWM-D0-GZo" id="dyu-4Q-GG1"/>
+                        <segue destination="Yta-hE-hUC" kind="show" identifier="tempUpdatePassSegue" id="efq-bZ-RNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpk-Kx-9jS" sceneMemberID="firstResponder"/>
@@ -356,11 +360,106 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="833" y="1908"/>
+            <point key="canvasLocation" x="832.79999999999995" y="1907.4962518740631"/>
+        </scene>
+        <!--Temp Pass Update Password View Controller-->
+        <scene sceneID="1Jj-nB-Vvi">
+            <objects>
+                <viewController id="Yta-hE-hUC" customClass="TempPassUpdatePasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4K5-LH-N8M"/>
+                        <viewControllerLayoutGuide type="bottom" id="5pz-Vw-gtw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C5n-Zp-kg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGo-qu-cux">
+                                <rect key="frame" x="23" y="28" width="329" height="34"/>
+                                <fontDescription key="fontDescription" name="SFOrsonCasualMedium" family="SF Orson Casual Medium" pointSize="40"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="temporary password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-Y6-rbw">
+                                <rect key="frame" x="71" y="162" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="tempPasswordTextFieldDidChange:" destination="Yta-hE-hUC" eventType="editingDidEnd" id="RIV-16-J69"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcc-h7-N34">
+                                <rect key="frame" x="71" y="200" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="newPasswordTextFieldDidChange:" destination="Yta-hE-hUC" eventType="editingDidEnd" id="Ovz-9d-iwf"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8G-v2-1QG">
+                                <rect key="frame" x="160" y="238" width="55" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="Yta-hE-hUC" eventType="touchUpInside" id="4Za-6c-XlS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the same temporary password sent to your email here and enter the new password you would like to set for your profile." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEx-Qr-pVK">
+                                <rect key="frame" x="16" y="283" width="343" height="64"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="N8G-v2-1QG" firstAttribute="top" secondItem="lcc-h7-N34" secondAttribute="bottom" constant="8" id="88g-tP-GjD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eYf-Y6-rbw" secondAttribute="trailing" constant="55" id="B06-aU-I64"/>
+                            <constraint firstItem="pGo-qu-cux" firstAttribute="top" secondItem="4K5-LH-N8M" secondAttribute="bottom" constant="8" id="FRX-8g-fGq"/>
+                            <constraint firstItem="N8G-v2-1QG" firstAttribute="centerX" secondItem="lcc-h7-N34" secondAttribute="centerX" id="HEW-Xw-mbD"/>
+                            <constraint firstItem="pGo-qu-cux" firstAttribute="leading" secondItem="C5n-Zp-kg2" secondAttribute="leadingMargin" constant="7" id="JDa-z0-U52"/>
+                            <constraint firstItem="eYf-Y6-rbw" firstAttribute="leading" secondItem="C5n-Zp-kg2" secondAttribute="leadingMargin" constant="55" id="JYy-oP-VJk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wEx-Qr-pVK" secondAttribute="leading" id="Kdy-7z-dNl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pGo-qu-cux" secondAttribute="trailing" constant="7" id="P1Z-K8-Rlv"/>
+                            <constraint firstItem="lcc-h7-N34" firstAttribute="width" secondItem="eYf-Y6-rbw" secondAttribute="width" id="RbV-PV-3jR"/>
+                            <constraint firstItem="eYf-Y6-rbw" firstAttribute="top" secondItem="pGo-qu-cux" secondAttribute="bottom" constant="100" id="UMH-i8-khm"/>
+                            <constraint firstItem="eYf-Y6-rbw" firstAttribute="centerX" secondItem="pGo-qu-cux" secondAttribute="centerX" id="aOn-m6-Mr2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wEx-Qr-pVK" secondAttribute="trailing" id="fGe-gZ-B94"/>
+                            <constraint firstItem="lcc-h7-N34" firstAttribute="centerX" secondItem="eYf-Y6-rbw" secondAttribute="centerX" id="i2Y-k8-0OE"/>
+                            <constraint firstItem="wEx-Qr-pVK" firstAttribute="top" secondItem="N8G-v2-1QG" secondAttribute="bottom" constant="8" id="oR0-hy-5y2"/>
+                            <constraint firstItem="lcc-h7-N34" firstAttribute="top" secondItem="eYf-Y6-rbw" secondAttribute="bottom" constant="8" id="paf-J2-Zww"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yaB-mf-822" appends="YES" id="pVq-9i-rNi"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="directionLabel" destination="wEx-Qr-pVK" id="E3u-MR-PD0"/>
+                        <outlet property="tempPasswordTextField" destination="eYf-Y6-rbw" id="5ZZ-0G-xbE"/>
+                        <outlet property="titleLabel" destination="pGo-qu-cux" id="rm6-7S-kl8"/>
+                        <outlet property="updatedPasswordTextField" destination="lcc-h7-N34" id="TN0-yO-s1A"/>
+                        <segue destination="8JQ-a7-Vmb" kind="show" identifier="tempUpdateCompleteSegue" id="kV5-Bi-qHA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qb4-v4-6q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yaB-mf-822">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="Yta-hE-hUC" id="gUX-IQ-hhO"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1682" y="1907"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VSd-Wz-93k"/>
         <segue reference="fwZ-Ez-ysw"/>
+        <segue reference="kV5-Bi-qHA"/>
     </inferredMetricsTieBreakers>
 </document>

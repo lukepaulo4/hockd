@@ -65,7 +65,6 @@
             NSString *msgCodeValue = [returnedDict objectForKey:@"msg_code"];
             
             //Check what that value is!
-            //NOTE******** Need to get the API working so I know what it's suppsoed to say..
             NSLog(@"message code in required area ==%@", msgCodeValue);
             
             //Now, if the message code reads "Successfully logged in" then segue to Home. Otherwise have them retry.
@@ -76,13 +75,7 @@
                 //add a dispatch async to get rid of bug message
                 dispatch_async(dispatch_get_main_queue(),   ^{
                     
-                    NSString *message4 = [[NSString alloc] initWithFormat:@"Correct Email"];
-                    UIAlertController *alert4 = [UIAlertController alertControllerWithTitle:message4 message:@"You will receive an email shortly with a temporary password. Use this password to log in. Once in, reset your password in the update account settings page." preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction* defaultAction4 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                           handler:^(UIAlertAction * action) {}];
-                    
-                    [alert4 addAction:defaultAction4];
-                    [self presentViewController:alert4 animated:YES completion:nil];
+                    [self performSegueWithIdentifier:@"tempPassLoginSegue" sender:self];
                     
                 });
                 
