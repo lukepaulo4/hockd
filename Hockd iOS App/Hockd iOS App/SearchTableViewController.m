@@ -11,8 +11,9 @@
 #import "AllItem.h"
 #import "User.h"
 #import "AllItemTVCell.h"
+#import "AllItemFullScreenViewController.h"
 
-@interface SearchTableViewController ()
+@interface SearchTableViewController () <AllItemTVCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, strong) NSMutableArray *testArray;
@@ -128,10 +129,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AllItemTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCellTwo" forIndexPath:indexPath];
+    cell.delegate = self;
     cell.item = [DataSource sharedInstance].allItems[indexPath.row];
     
     return cell;
 }
+
+
+
+# pragma mark - Delegate Method
+
+- (void) cell:(AllItemTVCell *)cell didTapImageView:(UIImageView *)imageView {
+    
+    dispatch_async(dispatch_get_main_queue(),  ^{
+        [self performSegueWithIdentifier:@"allItemsSingleViewSegue" sender:self];
+    });
+}
+
+
+
 
 
 //height of cells when we scroll

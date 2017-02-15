@@ -55,63 +55,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hol-Ft-gUT">
-                                <rect key="frame" x="16" y="248" width="343" height="28"/>
+                                <rect key="frame" x="16" y="268" width="343" height="28"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3jC-NQ-Qll">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="cDF-GO-ovz"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-XG-pUj">
+                                <rect key="frame" x="16" y="304" width="343" height="28"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
+                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-qP-jSS">
-                                <rect key="frame" x="16" y="405.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="425.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufacturer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k13-ug-RFs">
-                                <rect key="frame" x="16" y="348.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="368.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Made" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-hm-3LT">
-                                <rect key="frame" x="16" y="377" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="397" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2P-gf-cO7">
-                                <rect key="frame" x="16" y="434" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="454" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moa-f5-YKQ">
-                                <rect key="frame" x="16" y="320" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="340" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                 <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-XG-pUj">
-                                <rect key="frame" x="16" y="284" width="343" height="28"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
-                                <color key="textColor" red="0.2274509804" green="0.73333333329999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3jC-NQ-Qll">
+                                <rect key="frame" x="0.0" y="20" width="375" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="cDF-GO-ovz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3jC-NQ-Qll" firstAttribute="leading" secondItem="Cq3-Ge-nPS" secondAttribute="leading" id="1Xg-l4-a7z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="moa-f5-YKQ" secondAttribute="trailing" id="6fl-zb-oMj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3jC-NQ-Qll" secondAttribute="trailing" constant="-16" id="7Xr-JZ-aZW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Hol-Ft-gUT" secondAttribute="leading" id="DHl-HK-020"/>
                             <constraint firstAttribute="trailingMargin" secondItem="azv-qP-jSS" secondAttribute="trailing" id="Fb5-rx-W3h"/>
+                            <constraint firstItem="Hol-Ft-gUT" firstAttribute="top" secondItem="3jC-NQ-Qll" secondAttribute="bottom" constant="8" id="FsH-EF-pg1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k13-ug-RFs" secondAttribute="trailing" id="Ic9-6N-p1M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7tq-hm-3LT" secondAttribute="trailing" id="NqO-An-1iN"/>
-                            <constraint firstItem="Hol-Ft-gUT" firstAttribute="centerX" secondItem="Cq3-Ge-nPS" secondAttribute="centerX" id="Oq2-i2-hvT"/>
+                            <constraint firstItem="3jC-NQ-Qll" firstAttribute="top" secondItem="7O4-KQ-BNT" secondAttribute="bottom" constant="-44" id="QyL-82-e9A"/>
                             <constraint firstAttribute="leadingMargin" secondItem="VJf-XG-pUj" secondAttribute="leading" id="T32-SH-oR4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VJf-XG-pUj" secondAttribute="trailing" id="T8W-Nx-tUV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="azv-qP-jSS" secondAttribute="leading" id="UVt-UH-zzX"/>
@@ -121,14 +123,12 @@
                             <constraint firstItem="7tq-hm-3LT" firstAttribute="top" secondItem="k13-ug-RFs" secondAttribute="bottom" constant="8" id="g2X-BJ-pgw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="k13-ug-RFs" secondAttribute="leading" id="hsZ-Q5-qiS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="moa-f5-YKQ" secondAttribute="leading" id="mJM-lJ-s82"/>
-                            <constraint firstItem="3jC-NQ-Qll" firstAttribute="centerX" secondItem="Hol-Ft-gUT" secondAttribute="centerX" id="mX5-KE-psm"/>
                             <constraint firstItem="k13-ug-RFs" firstAttribute="top" secondItem="moa-f5-YKQ" secondAttribute="bottom" constant="8" id="nyN-gR-eko"/>
-                            <constraint firstItem="3jC-NQ-Qll" firstAttribute="top" secondItem="Cq3-Ge-nPS" secondAttribute="top" id="sNd-Ia-28K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hol-Ft-gUT" secondAttribute="trailing" id="tC1-3O-kr3"/>
                             <constraint firstItem="VJf-XG-pUj" firstAttribute="top" secondItem="Hol-Ft-gUT" secondAttribute="bottom" constant="8" id="wfi-bl-jYg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N2P-gf-cO7" secondAttribute="trailing" id="xlv-Lc-fm9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7tq-hm-3LT" secondAttribute="leading" id="ygS-7t-bkd"/>
                             <constraint firstItem="moa-f5-YKQ" firstAttribute="top" secondItem="VJf-XG-pUj" secondAttribute="bottom" constant="8" id="z6H-cU-61c"/>
-                            <constraint firstItem="Hol-Ft-gUT" firstAttribute="top" secondItem="3jC-NQ-Qll" secondAttribute="bottom" constant="8" symbolic="YES" id="zqD-xC-9IM"/>
                         </constraints>
                     </view>
                     <connections>

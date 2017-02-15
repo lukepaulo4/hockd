@@ -74,6 +74,7 @@
 		00A100DB1D6D968200ADDBCF /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DA1D6D968200ADDBCF /* MessagesViewController.m */; };
 		00A100DE1D6D96D000ADDBCF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */; };
 		00A100E41D6D971D00ADDBCF /* HockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A100E31D6D971D00ADDBCF /* HockViewController.m */; };
+		00B10FF71E5121B3003D0633 /* AllItemFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B10FF61E5121B3003D0633 /* AllItemFullScreenViewController.m */; };
 		00DAA2FA1DCAA15500098ECC /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA2F91DCAA15400098ECC /* Login.m */; };
 		00DAA2FE1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT in Resources */ = {isa = PBXBuildFile; fileRef = 00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */; };
 		00DAA3041DD19D2400098ECC /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA3031DD19D2400098ECC /* CreateAccountViewController.m */; };
@@ -232,6 +233,8 @@
 		00A100DD1D6D96D000ADDBCF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		00A100E21D6D971D00ADDBCF /* HockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HockViewController.h; sourceTree = "<group>"; };
 		00A100E31D6D971D00ADDBCF /* HockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HockViewController.m; sourceTree = "<group>"; };
+		00B10FF51E5121B3003D0633 /* AllItemFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItemFullScreenViewController.h; sourceTree = "<group>"; };
+		00B10FF61E5121B3003D0633 /* AllItemFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItemFullScreenViewController.m; sourceTree = "<group>"; };
 		00DAA2F81DCAA15400098ECC /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		00DAA2F91DCAA15400098ECC /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		00DAA2FD1DCDD18500098ECC /* SF Orson Casual Heavy Reg FONT */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Orson Casual Heavy Reg FONT"; sourceTree = "<group>"; };
@@ -508,6 +511,8 @@
 				00A100D41D6D954700ADDBCF /* SearchTableViewController.m */,
 				00EE3F2A1E2F543300BE3E59 /* AllItemTVCell.h */,
 				00EE3F2B1E2F543300BE3E59 /* AllItemTVCell.m */,
+				00B10FF51E5121B3003D0633 /* AllItemFullScreenViewController.h */,
+				00B10FF61E5121B3003D0633 /* AllItemFullScreenViewController.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -839,6 +844,7 @@
 				004915AD1DED97E800892B8D /* TGAlbum.m in Sources */,
 				004915B41DED97E800892B8D /* TGCameraGrid.m in Sources */,
 				004915B01DED97E800892B8D /* TGCameraColor.m in Sources */,
+				00B10FF71E5121B3003D0633 /* AllItemFullScreenViewController.m in Sources */,
 				0056FA021DF8E33C0059475E /* UpdatePasswordViewController.m in Sources */,
 				004915B91DED97F400892B8D /* TGAssetImageFile.m in Sources */,
 				0061445A1E3731ED00E98A2B /* MyItemFullScreenViewController.m in Sources */,
