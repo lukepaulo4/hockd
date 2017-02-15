@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataSource.h"
 
 @class User;
 
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSUInteger, ItemStatus) {
     postedForSale
 };
 
-@interface MyItem : NSObject
+@interface MyItem : NSObject <NSCoding>
 
 //Declare the initializer
 - (instancetype) initWithDictionary:(NSDictionary *)itemDictionary;

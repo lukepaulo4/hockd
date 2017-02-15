@@ -15,7 +15,7 @@
 
 
 
-@interface AllItem : NSObject
+@interface AllItem : NSObject <NSCoding>
 
 //Declare the initializer
 - (instancetype) initWithDictionary:(NSDictionary *)allItemDictionary;

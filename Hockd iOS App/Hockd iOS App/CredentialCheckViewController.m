@@ -22,7 +22,13 @@
 
     
     //create a data source so it can receive the access token notification
-    [DataSource sharedInstance];
+    if ([DataSource sharedInstance].accessToken) {
+        
+        dispatch_async(dispatch_get_main_queue(),   ^{
+            [self performSegueWithIdentifier:@"GoToSearchViewController" sender:self];
+        });
+        
+    } else if (![DataSource sharedInstance].accessToken) {
     
     //if have the access token, segue to Search VC
     [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
@@ -35,7 +41,7 @@
     dispatch_async(dispatch_get_main_queue(),   ^{
     [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
     });
-  
+    }
     
 }
 

@@ -11,6 +11,7 @@
 #import "MyItem.h"
 #import "AllItem.h"
 #import "LoginViewController.h"
+#import <UICKeyChainStore.h>
 
 
 @interface DataSource () {
@@ -120,7 +121,14 @@
     if (self) {
         [self addRandomData];
         
-        [self registerForAccessTokenNotification];
+        self.accessToken = [UICKeyChainStore stringForKey:@"access token"];
+        
+        if (!self.accessToken) {
+            [self registerForAccessTokenNotification];
+        } else {
+            //[self populateDataWithParameters:nil completionHandler:nil]; need to add this funcitonality first.... If P World ever fixes the items like I asked...
+        }
+        
 
     }
     
@@ -130,6 +138,7 @@
 - (void) registerForAccessTokenNotification {
     [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         self.accessToken = note.object;
+        [UICKeyChainStore setString:self.accessToken forKey:@"access token"];
     }];
 }
 
@@ -541,6 +550,63 @@
     }];
 }
 
+
+
+
+
+
+//Objects conform to NSCoding. Need to save file to disc and check for it at launch. Add a method to create the full path to a file given a filename
+- (NSString *) pathForFilename:(NSString *) filename {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:filename];
+    return dataPath;
+}
+
+//Need to write to file when new data arrives. CALL THIS METHOD AT THE END OF parseDataFromFeedDictionary:fromRequestWIthParameters... which isn't written yet
+- (void) saveMyItems {
+    
+    if (self.myItems.count > 0) {
+        // Write the changes to disk
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSUInteger numberOfItemsToSave = MIN(self.myItems.count, 10);
+            NSArray *myItemsToSave = [self.myItems subarrayWithRange:NSMakeRange(0, numberOfItemsToSave)];
+            
+            NSString *fullPath = [self pathForFilename:NSStringFromSelector(@selector(myItems))];
+            NSData *myItemData = [NSKeyedArchiver archivedDataWithRootObject:myItemsToSave];
+            
+            NSError *dataError;
+            BOOL wroteSuccessfully = [myItemData writeToFile:fullPath options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen error:&dataError];
+            
+            if (!wroteSuccessfully) {
+                NSLog(@"Couldn't write file: %@", dataError);
+            }
+        });
+        
+    }
+}
+
+- (void) saveAllItems {
+    
+    if (self.allItems.count > 0) {
+        // Write the changes to disk
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSUInteger numberOfItemsToSave = MIN(self.allItems.count, 50);
+            NSArray *allItemsToSave = [self.allItems subarrayWithRange:NSMakeRange(0, numberOfItemsToSave)];
+            
+            NSString *fullPath = [self pathForFilename:NSStringFromSelector(@selector(allItems))];
+            NSData *allItemData = [NSKeyedArchiver archivedDataWithRootObject:allItemsToSave];
+            
+            NSError *dataError;
+            BOOL wroteSuccessfully = [allItemData writeToFile:fullPath options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen error:&dataError];
+            
+            if (!wroteSuccessfully) {
+                NSLog(@"Couldn't write file: %@", dataError);
+            }
+        });
+        
+    }
+}
 
 
 

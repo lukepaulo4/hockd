@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataSource.h"
 
-@interface User : NSObject 
+@interface User : NSObject <NSCoding>
 
 - (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 

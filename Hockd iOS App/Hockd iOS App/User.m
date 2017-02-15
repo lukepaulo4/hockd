@@ -41,6 +41,39 @@
     return self;
 }
 
+
+
+# pragma mark - NSCoding
+
+- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    
+    if (self) {
+        self.ID = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(ID))];
+        self.username = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(username))];
+        self.addressOne = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(addressOne))];
+        self.addressTwo = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(addressTwo))];
+        self.state = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(state))];
+        self.city = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(city))];
+        self.zip = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(zip))];
+        self.email = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(email))];
+    }
+    
+    return self;
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.ID forKey:NSStringFromSelector(@selector(ID))];
+    [aCoder encodeObject:self.username forKey:NSStringFromSelector(@selector(username))];
+    [aCoder encodeObject:self.addressOne forKey:NSStringFromSelector(@selector(addressOne))];
+    [aCoder encodeObject:self.addressTwo forKey:NSStringFromSelector(@selector(addressTwo))];
+    [aCoder encodeObject:self.state forKey:NSStringFromSelector(@selector(state))];
+    [aCoder encodeObject:self.city forKey:NSStringFromSelector(@selector(city))];
+    [aCoder encodeObject:self.zip forKey:NSStringFromSelector(@selector(zip))];
+    [aCoder encodeObject:self.email forKey:NSStringFromSelector(@selector(email))];
+}
+
+
 /*these were if you make User a delegate
 - (void)addIdItem:(LoginViewController *)controller didFinishEnteringItem:(NSString *)userId {
     NSLog(@"Returned user ID from LoginVC is = %@", userId);
