@@ -25,7 +25,7 @@
 
 
 //Add an access string. Any object that needs to be notified when an access token is obtained will use this string.
-extern NSString *const LoginViewControllerDidGetAccessTokenNotifications;
+extern NSString *const LoginViewControllerDidGetAccessTokenNotification;
 
 /*Set up delegate property in case need to make other VC a delegate and pass data that way
 //set up a delegate property to pass items to other class

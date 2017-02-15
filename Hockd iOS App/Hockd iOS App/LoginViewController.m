@@ -38,6 +38,8 @@
 
 @implementation LoginViewController
 
+NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewControllerDidGetAccessTokenNotification";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -134,6 +136,15 @@
                 
                 NSString *token = [returnedDict objectForKey:@"token"];
                 NSLog(@"token =%@", token);
+                
+                
+                
+                //extract the access token and notify notif center
+                NSString *accessToken = token;
+                [[NSNotificationCenter defaultCenter] postNotificationName:LoginViewControllerDidGetAccessTokenNotification object:accessToken];
+                
+                
+                
                 
                 NSString *username = returnedDict[@"user_details"][@"username"];
                 NSLog(@"username = %@", username);

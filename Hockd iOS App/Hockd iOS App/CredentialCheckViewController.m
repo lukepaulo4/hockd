@@ -7,7 +7,8 @@
 //
 
 #import "CredentialCheckViewController.h"
-
+#import "DataSource.h"
+#import "LoginViewController.h"
 
 //This View controller should determine if a pin has been created. If it has, then we can segue to the search/home view controller. If not, we will segue to the LoginViewController so that they can create
 @interface CredentialCheckViewController ()
@@ -18,15 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
+    //create a data source so it can receive the access token notification
+    [DataSource sharedInstance];
     
-    //Then eval if we have this BOOL or not. If we do, that means the user has launched this app before and gone through the login process. In which case we send they ass to the SearchViewController. If not, we send them to the LoginViewController.
-    //if () {
+    //if have the access token, segue to Search VC
+    [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        dispatch_async(dispatch_get_main_queue(),   ^{
+        [self performSegueWithIdentifier:@"GoToSearchViewController" sender:self];
+        });
+    }];
+    
+
+    dispatch_async(dispatch_get_main_queue(),   ^{
     [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
-    //    } else {
-    //        //Segue to Login view controller
-    //        [self performSegueWithIdentifier:@"GoToSearchViewController" sender:self];
-    //    }
+    });
+  
     
 }
 

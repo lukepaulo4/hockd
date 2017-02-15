@@ -10,7 +10,7 @@
 #import "User.h"
 #import "MyItem.h"
 #import "AllItem.h"
-
+#import "LoginViewController.h"
 
 
 @interface DataSource () {
@@ -19,7 +19,7 @@
     NSMutableArray *_userData;
 }
 
-
+@property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, strong) NSArray *myItems;
 @property (nonatomic, strong) NSArray *allItems;
 @property (nonatomic, strong) NSArray *userData;
@@ -113,15 +113,24 @@
 
 #pragma mark - Random Data Add To Test Table View
 
-//Add some placeholder data to store.
+//Add some placeholder data to store.  ONCE THE REAL DATA IS LIFE FIX THIS
 - (instancetype) init {
     self = [super init];
     
     if (self) {
         [self addRandomData];
+        
+        [self registerForAccessTokenNotification];
+
     }
     
     return self;
+}
+
+- (void) registerForAccessTokenNotification {
+    [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        self.accessToken = note.object;
+    }];
 }
 
 

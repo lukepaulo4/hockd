@@ -25,6 +25,9 @@ typedef void (^NewItemCompletionBlockPTR)(NSError *error);
 @property (nonatomic, strong, readonly) NSArray *allItems;
 
 
+//create property to store the access token
+@property (nonatomic, strong, readonly) NSString *accessToken;
+
 
 //method for table view to call when user executes a pull-to-refresh gesture. Asynchronous so require the caller pass a version of our completion handler
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlockPTR)completionHandler;
