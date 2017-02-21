@@ -106,7 +106,7 @@
 //    }
 //}
 
-//Output for when we do select something. Makes a little pop up screen son.
+//Segues for each row
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *rowValue = self.settingsLabels[indexPath.row];
@@ -159,9 +159,28 @@
 }
 
 //Set the cell height here... Make it proportional to the number of cells and the over screen size? Bigger screen means can show more info, but should all the sizes be the same, or should it start to scale down at a certain size?
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
+    
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenHeight = screenSize.height;
+    
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    CGFloat navControllerHeight = self.navigationController.toolbar.frame.size.height;
+    
+    CGFloat correctHeight = screenHeight - navBarHeight - navControllerHeight - 25;
+    
+    //CGFloat height = CGRectGetHeight(self.view.frame);
+    CGFloat numSettings = self.settingsLabels.count;
+    
+    CGFloat cellHeight = correctHeight / numSettings;
+    
+    NSLog(@"Settings cell height is equal to %f", cellHeight);
+    
+    return cellHeight;
+}
 
 
 
