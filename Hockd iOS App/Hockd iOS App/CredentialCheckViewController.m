@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    /*
     //create a data source so it can receive the access token notification
     if ([DataSource sharedInstance].accessToken) {
         
@@ -42,6 +42,9 @@
     [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
     });
     }
+    */
+    
+    [self performSegueWithIdentifier:@"GoToLoginViewController" sender:self];
     
 }
 
